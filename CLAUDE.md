@@ -8,6 +8,7 @@ Owner: Michael Bastin (Mike). Working style: decisive and fast. Write through, h
 1. `docs/betranslated-co-uk/00-handoff.md`: what happened so far and current state.
 2. `docs/betranslated-co-uk/01-style-guide.md`: mandatory language and format rules.
 3. `docs/betranslated-co-uk/06-backlog.md`: what to do next.
+4. `docs/betranslated-co-uk/07-handoff-to-victoria-2026-10-13.md`: current state, unfinished work, the safe editing method and a twelve-week plan.
 Then the doc relevant to your task (SEO playbook, WordPress runbook, migration, templates).
 
 ## Other BeTranslated repositories
