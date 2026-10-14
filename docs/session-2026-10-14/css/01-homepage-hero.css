@@ -1,0 +1,73 @@
+/*
+ * Homepage hero (betranslated.co.uk, page ID 224563).
+ * Lives in the Custom CSS field of the hero COLUMN (module_class "bt-hero", Divi column > Advanced > Custom CSS > Free-form).
+ * Snapshot of what the browser receives, normalised. Do not paste this back into a Divi field as is:
+ * Divi strips or breaks quotes and square brackets inside shortcode attributes (see technical-appendix.md).
+ *
+ * Structure: section 0 (parallax, navy) > row > column.bt-hero > modules:
+ *   eyebrow text (.bt-eyebrow), H1 text (.bt-h1), image bubble (.bt-bubble, dipi_image_mask), lede text (.bt-lede), button grid.
+ * Desktop: CSS grid, text left, bubble right. Under 981px: block layout, bubble sits under the H1.
+ * The two teal pills are ::before and ::after of the SECTION, drawn behind the row (z-index 0 vs row z-index 2).
+ * btFloatA / btFloatB keyframes exist but are NOT applied (the float animation was removed on request).
+ */
+
+@media (min-width: 981px) {
+  .bt-hero { grid-template-columns: minmax(0px, 1.1fr) minmax(0px, 1fr); column-gap: 32px; align-items: center; display: grid !important; }
+  .bt-hero .bt-eyebrow { grid-area: 1 / 1; }
+  .bt-hero .bt-h1 { grid-area: 2 / 1; }
+  .bt-hero .bt-lede { grid-area: 3 / 1; }
+  .bt-hero .dipi_button_grid { grid-area: 4 / 1; }
+  .bt-hero .bt-bubble { grid-area: 1 / 2 / span 4; align-self: center; }
+}
+.bt-hero .et_pb_module { width: 100%; max-width: 100% !important; margin-left: 0px !important; margin-right: 0px !important; }
+.bt-hero .bt-eyebrow, .bt-hero .bt-eyebrow .et_pb_text_inner, .bt-hero .bt-lede, .bt-hero .bt-lede .et_pb_text_inner, .bt-hero .bt-h1 { text-align: left !important; }
+.bt-hero .bt-lede { font-size: 18px; }
+.bt-hero .dipi-button-grid-container { justify-content: flex-start !important; }
+@media (max-width: 980px) {
+  .bt-hero { display: block !important; }
+  .bt-hero .bt-bubble { max-width: 380px !important; margin: 10px auto 24px !important; }
+}
+
+/* Background: brand navy grey, parallax image and spans removed */
+body #page-container .et_pb_section.et_pb_section_0 { background: #2F3143 !important; }
+.et_pb_section_0 { position: relative; background-image: none !important; overflow: hidden !important; }
+.et_pb_section_0 .et_parallax_bg_wrap { display: none !important; }
+
+/* Fonts and colours: body Poppins, heading Fraunces bold, text white */
+.bt-hero, .bt-hero .et_pb_text_inner, .bt-hero .et_pb_text_inner p, .bt-hero .et_pb_text_inner strong { font-family: Poppins, Helvetica, Arial, sans-serif !important; }
+.bt-hero .bt-lede, .bt-hero .bt-lede p, .bt-hero .bt-lede strong { color: #FFFFFF !important; }
+
+/* H1 is a plain et_pb_text with an h1 (the Divi text highlighter module was replaced) */
+.bt-hero .bt-h1 { position: relative; z-index: 1; isolation: isolate; }
+.bt-hero .bt-h1 h1 { font-family: Fraunces, Georgia, serif !important; font-weight: 700 !important; color: #FFFFFF !important; font-size: 46px !important; line-height: 1.3em !important; text-align: left !important; padding: 0 !important; }
+@media (max-width: 980px) { .bt-hero .bt-h1 h1 { font-size: 38px !important; } }
+@media (max-width: 767px) { .bt-hero .bt-h1 h1 { font-size: 30px !important; } }
+
+/* Orange highlighter marker behind "Business Growth": draws once, no loop */
+.bt-hero .bt-h1 .bt-mark {
+  background-image: linear-gradient(rgba(246, 118, 24, 0.95), rgba(246, 118, 24, 0.95));
+  background-repeat: no-repeat; background-position: 0 78%; background-size: 0% 46%;
+  padding: 0 0.12em; margin: 0 -0.12em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  animation: btMark 1.1s 0.5s ease-out forwards;
+  color: #FFFFFF !important;
+}
+@keyframes btMark { to { background-size: 100% 46%; } }
+@media (prefers-reduced-motion: reduce) { .bt-hero .bt-h1 .bt-mark { animation: none; background-size: 100% 46%; } }
+
+/* "SINCE 2002" line above the closing sentence */
+.bt-hero .bt-lede .bt-since, .bt-hero .bt-lede p.bt-since { text-transform: uppercase; letter-spacing: 0.14em; margin-top: 4px; color: #F67618 !important; font-weight: 700 !important; font-size: 19px !important; line-height: 1.3em !important; padding-bottom: 6px !important; }
+
+/* Teal background pills, behind the content */
+.et_pb_section_0::before, .et_pb_section_0::after { content: ""; position: absolute; z-index: 0; border-radius: 999px; background: #7EBEC5; pointer-events: none; }
+.et_pb_section_0::before { width: 520px; height: 170px; right: -230px; top: 70px; transform: rotate(-24deg); }
+.et_pb_section_0::after { width: 380px; height: 130px; left: -210px; bottom: 90px; transform: rotate(-24deg); }
+.et_pb_section_0 .et_pb_row { position: relative; z-index: 2; }
+@keyframes btFloatA { 0%, 100% { transform: translate(0, 0) rotate(-24deg); } 50% { transform: translate(-28px, 20px) rotate(-20deg); } }
+@keyframes btFloatB { 0%, 100% { transform: translate(0, 0) rotate(-24deg); } 50% { transform: translate(30px, -22px) rotate(-28deg); } }
+
+/* Buttons: "Get a free Quote" is the first child of a LOCAL (detached) dipi_button_grid.
+   The shared global module 275749 was detached for the hero so other pages keep "Get a Quote". */
+body #page-container .et_pb_section .bt-hero .dipi_button_grid_child_0 .dipi-button-wrap { background-color: #F67618 !important; border-color: #F67618 !important; color: #FFFFFF !important; }
+body #page-container .et_pb_section .bt-hero .dipi_button_grid_child_0 .dipi-button-wrap * { color: #FFFFFF !important; font-weight: 700 !important; font-size: 19px !important; }
+body #page-container .et_pb_section .bt-hero .dipi_button_grid_child_0 .dipi-button-wrap:hover { background-color: #D9610F !important; border-color: #D9610F !important; }

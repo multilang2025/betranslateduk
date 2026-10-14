@@ -1,0 +1,21 @@
+<!--
+  betranslated.co.uk dark and light mode switch.
+  Paste into: WordPress > Divi > Theme Options > Integration > "Add code to the <head> of your blog"
+  (tick "Enable header code", then Save Changes).
+
+  It adds the class "bt-js" to the page (this switches on the dark styles that already live in the
+  Theme Builder header layout, post 275393), restores the visitor's saved choice, tags light cards so
+  they can be darkened, and toggles the class "bt-light" when the header button is clicked.
+  Remove it and the site goes back to normal, because every dark rule needs "bt-js".
+-->
+<script>
+(function(){
+var d=document,h=d.documentElement,k='bt-mode';
+h.classList.add('bt-js');
+try{if(localStorage.getItem(k)==='light')h.classList.add('bt-light');}catch(e){}
+function lum(c){var m=c.match(/[\d.]+/g);if(!m)return 0;var a=m.length>3?+m[3]:1;if(a<0.5)return 0;return(0.2126*+m[0]+0.7152*+m[1]+0.0722*+m[2])/255;}
+function tag(){var n=d.querySelectorAll('#et-main-area .et_pb_row,#et-main-area .et_pb_column,#et-main-area .et_pb_blurb,#et-main-area .et_pb_module');for(var i=0;i<n.length;i++){if(lum(getComputedStyle(n[i]).backgroundColor)>0.9)n[i].classList.add('bt-lb');}}
+d.addEventListener('DOMContentLoaded',tag);window.addEventListener('load',tag);
+d.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.bt-mode-btn');if(!b)return;var l=h.classList.toggle('bt-light');try{localStorage.setItem(k,l?'light':'dark');}catch(x){}});
+})();
+</script>

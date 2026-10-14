@@ -1,0 +1,24 @@
+/*
+ * "What Happens Next?" (white section, module_class "bt-ctasec bt-band") and the CTA box
+ * (separate navy grey section, module_class "bt-ctabox", background #2F3143). Homepage, page ID 224563.
+ * These rules live in the Custom CSS of the What Happens Next COLUMN (module_class "bt-cta-col") and apply page-wide.
+ *
+ * The timeline is a Divi Pixel dipi_timeline module. Cards are pale grey-white with navy text, arrow colour #F4F5FA.
+ * The CTA box is one et_pb_text in the second section:
+ *   <div class="bt-cta"><h2>, <p>, <p class="bt-cta-contact"> phone + email links, <a class="bt-cta-btn"></div>
+ * Both sections were once one section. The old Contact us block (shared global module 275916) was detached and removed.
+ */
+
+.bt-ctasec .dipi_timeline_item_card { background: #F4F5FA !important; box-shadow: 0 4px 14px rgba(47, 49, 67, 0.08) !important; }
+.bt-ctasec .dipi_timeline_item_content, .bt-ctasec .dipi_timeline_item_content p, .bt-ctasec .dipi_timeline_item_content h6, .bt-ctasec .dipi_timeline_item_content span, .bt-ctasec .dipi_timeline_ribbon_text { color: #2F3143 !important; }
+.bt-ctasec .dipi_timeline_ribbon_text { font-weight: 600; }
+.bt-ctasec .dipi-text-highlight-wrapper, .bt-ctasec .dipi-highlight-text-wrapper, .bt-ctasec .dipi-highlight-text { color: #2F3143 !important; }
+
+/* CTA box: teal ombre (light aqua to brand teal to deeper teal) with a soft shadow */
+.bt-cta { background-color: #7EBEC5; background-image: linear-gradient(135deg, #9AD6DB 0%, #7EBEC5 50%, #62A6B1 100%); box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25); border-radius: 18px; padding: 38px 40px; text-align: center; margin-top: 0; }
+.bt-cta h2 { font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 30px; line-height: 1.25em; color: #2F3143; margin: 0 0 10px; padding: 0; }
+.bt-cta p { margin: 0 0 14px; padding: 0; color: #2F3143; font-size: 17px; line-height: 1.6em; }
+.bt-cta .bt-cta-contact a { color: #2F3143; font-weight: 700; margin: 0 14px; text-decoration: underline; }
+.bt-cta .bt-cta-btn { display: inline-block; margin-top: 18px; background: #F67618; color: #FFFFFF; font-weight: 700; font-size: 18px; padding: 14px 34px; border-radius: 999px; text-decoration: none; }
+.bt-cta .bt-cta-btn:hover { background: #D9610F; }
+@media (max-width: 767px) { .bt-cta { padding: 28px 20px; } .bt-cta h2 { font-size: 25px; } .bt-cta .bt-cta-contact a { display: block; margin: 6px 0; } }
