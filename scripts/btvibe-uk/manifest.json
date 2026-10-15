@@ -1,7 +1,7 @@
 {
   "sourceDomain": "https://www.betranslated.co.uk",
   "scrapeMethod": "raw fetch + cheerio DOM extraction",
-  "started": "2026-10-15T09:11:02.024Z",
+  "started": "2026-10-15T10:11:51.777Z",
   "totals": {
     "pages": {
       "total": 105,
@@ -14,5 +14,5 @@
   },
   "notes": [],
   "skipped": [],
-  "lastRun": "2026-10-15T09:21:34.914Z"
+  "lastRun": "2026-10-15T10:25:10.874Z"
 }

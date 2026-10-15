@@ -40,6 +40,26 @@ function extractField(html, url) {
   const metaDescription = $('meta[name="description"]').attr('content') || '';
   const canonical = $('link[rel="canonical"]').attr('href') || '';
 
+  const htmlLang = $('html').attr('lang') || '';
+  const bodyClass = $('body').attr('class') || '';
+
+  // Divi generates per-page dynamic CSS files + inline <style> blocks in <head>.
+  // Capture all of it so Phase 2 can port the real visual/animation styling, not an approximation.
+  const headStylesheets = [];
+  $('head link[rel="stylesheet"], head link[rel="preload"][as="style"]').each((_, el) => {
+    headStylesheets.push({ id: $(el).attr('id') || '', href: $(el).attr('href') || '' });
+  });
+
+  const headInlineStyles = [];
+  $('head style').each((_, el) => {
+    headInlineStyles.push({ id: $(el).attr('id') || '', css: $(el).contents().text() });
+  });
+
+  const headScripts = [];
+  $('script[src]').each((_, el) => {
+    headScripts.push({ id: $(el).attr('id') || '', src: $(el).attr('src') || '' });
+  });
+
   const ogImage = $('meta[property="og:image"]').attr('content') || '';
   const ogTitle = $('meta[property="og:title"]').attr('content') || '';
   const ogDescription = $('meta[property="og:description"]').attr('content') || '';
@@ -83,6 +103,11 @@ function extractField(html, url) {
     url,
     title,
     metaDescription,
+    htmlLang,
+    bodyClass,
+    headStylesheets,
+    headInlineStyles,
+    headScripts,
     bodyHtml,
     bodyText,
     links,

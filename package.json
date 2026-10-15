@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/multilang2025/betranslateduk.git"
@@ -17,6 +14,18 @@
     "url": "https://github.com/multilang2025/betranslateduk/issues"
   },
   "homepage": "https://github.com/multilang2025/betranslateduk#readme",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "scrape": "node scripts/btvibe-uk/scrape.js all",
+    "scrape:assets": "node scripts/btvibe-uk/fetch-assets.js"
+  },
+  "dependencies": {
+    "next": "16.4.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
   "devDependencies": {
     "cheerio": "^1.2.0"
   }
