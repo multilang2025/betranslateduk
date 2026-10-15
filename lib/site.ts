@@ -26,9 +26,10 @@ export const CONTACT = {
 
 export const NAV = [
   { label: "Home", href: "/" },
-  { label: "Services", href: live("/translation-services/") },
-  { label: "Languages", href: live("/languages/") },
-  { label: "About", href: live("/translation-agency/") },
+  { label: "Services", href: "/translation-services/" },
+  { label: "Languages", href: "/languages/" },
+  { label: "About", href: "/translation-agency/" },
   { label: "Blog", href: live("/blog/") },
+  { label: "Contact", href: "/contact-us/" },
   { label: "Quote", href: QUOTE_URL },
 ] as const;
