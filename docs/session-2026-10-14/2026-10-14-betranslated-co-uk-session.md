@@ -1,6 +1,6 @@
 # betranslated.co.uk edit session, 14 October 2026
 
-This is a record for review. These edits were made **directly in WordPress (Divi)** on https://www.betranslated.co.uk/ through the AISA connector, before this repo held any site code, and **they are already live**. The files here document them and capture the CSS and markup so they can be moved into this repo, which is now the place future changes start (see `../../README.md`). This PR contains documentation only, so merging it changes nothing on the live site.
+This is a record for review. These edits were made **directly in WordPress (Divi)** on https://www.betranslated.co.uk/ through the AISA connector, before this repo held any site code, and **they are already live**. The files here document them and capture the CSS and markup, which will be the spec for the working copy of the site that this repo is meant to hold (see `../../README.md`). New work happens on that copy and Mike decides later whether to merge it. This PR contains documentation only, so merging it changes nothing on the live site.
 
 The full running record, with before and after wording, is the **Change log** tab of the Google Sheet "BT UK content review" (rows 2 to 35).
 
