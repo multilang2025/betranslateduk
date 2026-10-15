@@ -16,7 +16,7 @@
   "homepage": "https://github.com/multilang2025/betranslateduk#readme",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "scrape": "node scripts/btvibe-uk/scrape.js all",
     "scrape:assets": "node scripts/btvibe-uk/fetch-assets.js"
