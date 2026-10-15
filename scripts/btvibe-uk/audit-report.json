@@ -1,0 +1,50 @@
+{
+  "totalPages": 171,
+  "totalCategoryRoutes": 58,
+  "missingTitle": [],
+  "missingMeta": [],
+  "missingOgImage": [
+    "pages\\blog.json",
+    "pages\\contact-us.json",
+    "pages\\industry\\marketing\\travel.json",
+    "pages\\industry\\tourism.json",
+    "pages\\languages\\korean-translation-services\\korean-it-translation-services.json",
+    "pages\\languages\\korean-translation-services\\korean-technical-translation-services.json",
+    "pages\\languages\\korean-translation-services\\korean-tourism-translation-services.json",
+    "pages\\languages\\spanish-translation-services\\marketing.json",
+    "pages\\languages\\spanish-translation-services\\spanish-audiovisual.json",
+    "pages\\languages\\spanish-translation-services\\spanish-business.json",
+    "pages\\languages\\spanish-translation-services\\spanish-document.json",
+    "pages\\languages\\spanish-translation-services\\spanish-financial.json",
+    "pages\\languages\\spanish-translation-services\\spanish-it.json",
+    "pages\\languages\\spanish-translation-services\\spanish-legal.json",
+    "pages\\languages\\spanish-translation-services\\spanish-retail-ecommerce.json",
+    "pages\\languages\\spanish-translation-services\\spanish-technical.json",
+    "pages\\languages\\spanish-translation-services\\spanish-tourism-travel.json",
+    "pages\\languages\\spanish-translation-services\\spanish-website.json",
+    "pages\\terms-conditions.json",
+    "pages\\thank-you.json",
+    "pages\\translation-agency\\customers.json",
+    "pages\\translation-agency\\locations.json",
+    "pages\\translation-agency\\quote.json",
+    "pages\\translation-agency\\rates.json",
+    "pages\\translation-agency\\turnaround.json",
+    "pages\\translation-services\\remote-interpreting.json"
+  ],
+  "emptyBody": [],
+  "brokenPageLinks": [],
+  "redirectedLinks": [
+    {
+      "onPage": "pages\\blog.json",
+      "href": "https://www.betranslated.co.uk/blog/page/2/?et_blog"
+    }
+  ],
+  "brokenUploadLinks": [],
+  "imagesSrcMissingLocal": [
+    {
+      "onPage": "pages\\industry.json",
+      "src": "https://www.betranslated.co.uk/wp-content/uploads/2023/09/specialised-translation.jpg"
+    }
+  ],
+  "needsBrowserRender": []
+}

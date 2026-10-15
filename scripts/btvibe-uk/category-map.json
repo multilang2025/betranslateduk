@@ -1,0 +1,445 @@
+{
+  "adventures-in-globalization-localization": {
+    "name": "Adventures in Globalization &amp; Localization",
+    "postSlugs": [
+      "international-advertising-benefits",
+      "lazy-monolingual-english-speakers"
+    ]
+  },
+  "ai": {
+    "name": "AI",
+    "postSlugs": [
+      "ai-disadvantages-for-businesses"
+    ]
+  },
+  "audio-blog": {
+    "name": "Audio Blog",
+    "postSlugs": [
+      "movie-dubbing",
+      "dubbing-english-language-content"
+    ]
+  },
+  "belgium": {
+    "name": "Belgium",
+    "postSlugs": [
+      "belgium-market-translation"
+    ]
+  },
+  "business": {
+    "name": "Business",
+    "postSlugs": [
+      "business-need-financial-translation",
+      "get-a-job-in-the-translation-industry",
+      "trademark-translation-business-expansion",
+      "how-much-translate-document",
+      "zoom-interpreting"
+    ]
+  },
+  "business-tips": {
+    "name": "Business Tips",
+    "postSlugs": [
+      "ai-disadvantages-for-businesses",
+      "trademark-translation-business-expansion",
+      "boost-reach-video-subtitling",
+      "communication-agencies-translation",
+      "professional-translation",
+      "benefits-multilingual-people-for-companies",
+      "reach-new-heights-with-startup-business",
+      "environmental-translation-services-green-economy",
+      "tips-for-b2b-translation",
+      "tremendous-value-multilingual-website",
+      "belgium-market-translation"
+    ]
+  },
+  "careers": {
+    "name": "Careers",
+    "postSlugs": [
+      "get-a-job-in-the-translation-industry",
+      "translations-universities-uk-ireland",
+      "how-succeed-freelancer-translation-business"
+    ]
+  },
+  "communication": {
+    "name": "Communication",
+    "postSlugs": [
+      "business-need-financial-translation",
+      "press-release-translation",
+      "movie-dubbing",
+      "dubbing-english-language-content",
+      "communication-agencies-translation",
+      "commercial-translation-professionals"
+    ]
+  },
+  "culture": {
+    "name": "Culture",
+    "postSlugs": [
+      "british-footballers",
+      "8-british-habits-that-stand-out-abroad",
+      "british-characters",
+      "cultural-understanding-in-translation",
+      "blog-british-food-expats-miss"
+    ]
+  },
+  "e-commerce": {
+    "name": "E-commerce",
+    "postSlugs": [
+      "good-translation-online-retail",
+      "tremendous-value-multilingual-website"
+    ]
+  },
+  "e-learning": {
+    "name": "E-learning",
+    "postSlugs": [
+      "top-ten-translation-films"
+    ]
+  },
+  "education": {
+    "name": "Education",
+    "postSlugs": [
+      "language-degrees",
+      "lazy-monolingual-english-speakers",
+      "top-ten-translation-films",
+      "translations-universities-uk-ireland",
+      "learn-english-idioms",
+      "advantages-gifted-bilingual-kids",
+      "translation-schools-belgium"
+    ]
+  },
+  "expat-life": {
+    "name": "Expat Life",
+    "postSlugs": [
+      "blog-british-food-expats-miss"
+    ]
+  },
+  "financial-translation": {
+    "name": "Financial translation",
+    "postSlugs": [
+      "insurance-translation-services",
+      "commercial-translation-professionals"
+    ]
+  },
+  "freelancer-tips": {
+    "name": "Freelancer tips",
+    "postSlugs": [
+      "how-succeed-freelancer-translation-business",
+      "top-spots-location-independent-professional"
+    ]
+  },
+  "freelancing": {
+    "name": "Freelancing",
+    "postSlugs": [
+      "how-succeed-freelancer-translation-business",
+      "get-started-remote-freelancer",
+      "5-inspiring-freelance-jobs"
+    ]
+  },
+  "funny": {
+    "name": "Funny",
+    "postSlugs": [
+      "spanish-phrases"
+    ]
+  },
+  "globalisation": {
+    "name": "Globalisation",
+    "postSlugs": [
+      "international-advertising-benefits",
+      "seo-translation"
+    ]
+  },
+  "globalization": {
+    "name": "Globalization",
+    "postSlugs": [
+      "environmental-translation-services-green-economy",
+      "top-spots-location-independent-professional"
+    ]
+  },
+  "good-to-know": {
+    "name": "Good to Know",
+    "postSlugs": [
+      "british-footballers",
+      "british-english",
+      "working-out-translation-rates",
+      "movie-dubbing",
+      "vital-keyboard-shortcuts-translators",
+      "learn-english-idioms",
+      "tips-for-b2b-translation",
+      "get-high-quality-translations"
+    ]
+  },
+  "human-translation": {
+    "name": "Human translation",
+    "postSlugs": [
+      "latest-trends-translation-industry",
+      "specialised-healthcare-translation-services",
+      "commercial-translation-professionals",
+      "best-translation-tools",
+      "professional-translator-translation-app"
+    ]
+  },
+  "immigration": {
+    "name": "Immigration",
+    "postSlugs": [
+      "immigration-can-drive-business-growth",
+      "uk-visa-sponsorship-for-businesses"
+    ]
+  },
+  "international-development": {
+    "name": "International Development",
+    "postSlugs": [
+      "international-advertising-benefits",
+      "seo-translation",
+      "top-ten-translation-films"
+    ]
+  },
+  "interpreting": {
+    "name": "Interpreting",
+    "postSlugs": [
+      "translator-vs-interpreter",
+      "note-taking-interpreting"
+    ]
+  },
+  "language-learning": {
+    "name": "Language learning",
+    "postSlugs": [
+      "language-degrees",
+      "spanish-phrases",
+      "cultural-understanding-in-translation",
+      "guide-western-european-languages"
+    ]
+  },
+  "languages": {
+    "name": "Languages",
+    "postSlugs": [
+      "cultural-understanding-in-translation",
+      "guide-western-european-languages",
+      "benefits-multilingual-people-for-companies",
+      "tips-learn-new-language-abroad",
+      "learn-english-idioms",
+      "advantages-gifted-bilingual-kids"
+    ]
+  },
+  "legal-translation": {
+    "name": "Legal Translation",
+    "postSlugs": [
+      "immigration-can-drive-business-growth",
+      "uk-visa-sponsorship-for-businesses"
+    ]
+  },
+  "lifestyle": {
+    "name": "Lifestyle",
+    "postSlugs": [
+      "blog-british-food-expats-miss",
+      "top-spots-location-independent-professional"
+    ]
+  },
+  "localisation": {
+    "name": "Localisation",
+    "postSlugs": [
+      "press-release-translation"
+    ]
+  },
+  "logistics": {
+    "name": "Logistics",
+    "postSlugs": [
+      "logistics-transport-translation-services"
+    ]
+  },
+  "machine-translation": {
+    "name": "Machine Translation",
+    "postSlugs": [
+      "ai-disadvantages-for-businesses",
+      "why-choose-betranslated-and-not-ai",
+      "latest-trends-translation-industry",
+      "best-translation-tools",
+      "multilingual-chatbots-shake-up-your-sales-strategy"
+    ]
+  },
+  "marketing": {
+    "name": "Marketing",
+    "postSlugs": [
+      "press-release-translation",
+      "environmental-translation-services-green-economy"
+    ]
+  },
+  "medical-translation": {
+    "name": "Medical Translation",
+    "postSlugs": [
+      "multilingual-healthcare-system",
+      "specialised-healthcare-translation-services"
+    ]
+  },
+  "multilingual": {
+    "name": "Multilingual",
+    "postSlugs": [
+      "boost-reach-video-subtitling",
+      "benefits-multilingual-people-for-companies",
+      "lazy-monolingual-english-speakers",
+      "multilingual-chatbots-shake-up-your-sales-strategy"
+    ]
+  },
+  "outsourcing": {
+    "name": "Outsourcing",
+    "postSlugs": [
+      "how-much-translate-document",
+      "reach-new-heights-with-startup-business"
+    ]
+  },
+  "professional-translation": {
+    "name": "Professional Translation",
+    "postSlugs": [
+      "insurance-translation-services",
+      "trademark-translation-business-expansion",
+      "how-much-translate-document",
+      "vital-keyboard-shortcuts-translators",
+      "zoom-interpreting",
+      "logistics-transport-translation-services",
+      "specialised-healthcare-translation-services",
+      "translations-universities-uk-ireland",
+      "professional-translator-translation-app"
+    ]
+  },
+  "property-translation": {
+    "name": "Property Translation",
+    "postSlugs": [
+      "property-documentation-translation"
+    ]
+  },
+  "remote-work": {
+    "name": "Remote Work",
+    "postSlugs": [
+      "get-started-remote-freelancer"
+    ]
+  },
+  "retail": {
+    "name": "Retail",
+    "postSlugs": [
+      "good-translation-online-retail"
+    ]
+  },
+  "startup-business": {
+    "name": "Startup Business",
+    "postSlugs": [
+      "reach-new-heights-with-startup-business"
+    ]
+  },
+  "students": {
+    "name": "Students",
+    "postSlugs": [
+      "language-degrees",
+      "translation-schools-belgium"
+    ]
+  },
+  "technology": {
+    "name": "Technology",
+    "postSlugs": [
+      "dubbing-english-language-content",
+      "multilingual-chatbots-shake-up-your-sales-strategy"
+    ]
+  },
+  "tips-tricks": {
+    "name": "Tips and tricks",
+    "postSlugs": [
+      "spanish-phrases"
+    ]
+  },
+  "training": {
+    "name": "Training",
+    "postSlugs": [
+      "top-ten-translation-films",
+      "get-started-remote-freelancer"
+    ]
+  },
+  "translation": {
+    "name": "Translation",
+    "postSlugs": [
+      "expressions-from-the-it-crowd",
+      "professional-translation",
+      "property-documentation-translation",
+      "5-inspiring-freelance-jobs"
+    ]
+  },
+  "translation-agency": {
+    "name": "Translation agency",
+    "postSlugs": [
+      "translation-services-for-optical-practices",
+      "why-choose-betranslated-and-not-ai",
+      "what-is-betranslated",
+      "differents-types-translation-service-providers",
+      "get-high-quality-translations",
+      "belgium-market-translation",
+      "hire-small-translation-agency"
+    ]
+  },
+  "translation-app": {
+    "name": "Translation App",
+    "postSlugs": [
+      "professional-translator-translation-app"
+    ]
+  },
+  "translation-companies": {
+    "name": "Translation companies",
+    "postSlugs": [
+      "differents-types-translation-service-providers"
+    ]
+  },
+  "translation-news": {
+    "name": "Translation news",
+    "postSlugs": [
+      "betranslated-opens-its-doors-in-france"
+    ]
+  },
+  "translation-service-providers": {
+    "name": "Translation Service Providers",
+    "postSlugs": [
+      "why-choose-betranslated-and-not-ai",
+      "get-high-quality-translations"
+    ]
+  },
+  "translation-services": {
+    "name": "Translation services",
+    "postSlugs": [
+      "translation-services-for-optical-practices",
+      "translator-vs-interpreter",
+      "insurance-translation-services",
+      "seo-translation",
+      "get-a-job-in-the-translation-industry",
+      "translation-services-need-vpn",
+      "zoom-interpreting",
+      "boost-reach-video-subtitling",
+      "what-is-betranslated",
+      "tips-for-b2b-translation",
+      "differents-types-translation-service-providers"
+    ]
+  },
+  "translation-skills": {
+    "name": "Translation skills",
+    "postSlugs": [
+      "vital-keyboard-shortcuts-translators"
+    ]
+  },
+  "translation-tools": {
+    "name": "Translation tools",
+    "postSlugs": [
+      "latest-trends-translation-industry",
+      "best-translation-tools"
+    ]
+  },
+  "translators": {
+    "name": "Translators",
+    "postSlugs": [
+      "translator-vs-interpreter"
+    ]
+  },
+  "travel-and-tourism": {
+    "name": "Travel and Tourism",
+    "postSlugs": [
+      "property-documentation-translation"
+    ]
+  },
+  "vpns": {
+    "name": "VPNs",
+    "postSlugs": [
+      "translation-services-need-vpn"
+    ]
+  }
+}
