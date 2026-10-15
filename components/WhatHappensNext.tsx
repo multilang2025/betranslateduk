@@ -17,7 +17,6 @@ export function WhatHappensNext() {
               <li key={step.title}>
                 <span className="ic" aria-hidden="true">
                   <Icon size={22} strokeWidth={1.75} />
-                  <span className="num">{i + 1}</span>
                 </span>
                 <div className="card">
                   <strong>{step.title}</strong>
