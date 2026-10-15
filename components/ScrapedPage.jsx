@@ -21,8 +21,8 @@ function slugFromUrl(url) {
 
 // Generic renderer for any scraped page: the real ported theme/plugin
 // stylesheets, the original per-page inline CSS (Divi generates unique
-// dynamic CSS per page), the real body markup+classes, and the original
-// scripts so Divi's own entrance/scroll animations keep running.
+// dynamic CSS per page), the full original body (header/nav/content/footer
+// verbatim), and the original scripts so Divi's own animations keep running.
 export default function ScrapedPage({ page }) {
   const inlineCss = (page.headInlineStyles || []).map(s => s.css).join('\n');
   const bodyClass = page.bodyClass || '';
@@ -42,7 +42,11 @@ export default function ScrapedPage({ page }) {
         <link key={i} rel="stylesheet" href={href} />
       ))}
       {inlineCss ? <style dangerouslySetInnerHTML={{ __html: inlineCss }} /> : null}
-      <div className={bodyClass} dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(page.bodyHtml, { pageSlug }) }} />
+      {/* Divi's CSS is heavily scoped to classes on the real <body> tag
+          (body.et_fixed_nav etc.) -- set it synchronously, before paint,
+          rather than on a wrapper div where none of that CSS would match. */}
+      <script dangerouslySetInnerHTML={{ __html: 'document.body.className=' + JSON.stringify(bodyClass) + ';' }} />
+      <div dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(page.bodyHtml, { pageSlug }) }} />
       {scripts.map((s, i) => (
         <Script key={s.id || i} src={s.localSrc} strategy="afterInteractive" />
       ))}

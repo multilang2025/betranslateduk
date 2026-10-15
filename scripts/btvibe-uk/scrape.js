@@ -71,8 +71,12 @@ function extractField(html, url) {
     try { schema.push(JSON.parse(txt)); } catch (e) { schema.push({ parseError: true, raw: txt }); }
   });
 
-  let main = $('#content, main, .elementor, article').first();
-  if (!main || main.length === 0) main = $('body');
+  // Capture the FULL body, not just an inner content area: Divi's Theme
+  // Builder renders header/nav/footer/widgets as separate template regions
+  // outside #content, and most of the theme's CSS is scoped to classes on
+  // <body> itself (body.et_fixed_nav etc.) -- narrowing to a content
+  // selector silently drops the entire chrome and most styling.
+  const main = $('body');
 
   const bodyHtml = main.html() || '';
 
