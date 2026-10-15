@@ -1277,5 +1277,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "video subtitling",
+  "seoRobotsNoindex": false
 }

@@ -331,5 +331,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "Translation Proposal,quick translation",
+  "seoRobotsNoindex": false
 }

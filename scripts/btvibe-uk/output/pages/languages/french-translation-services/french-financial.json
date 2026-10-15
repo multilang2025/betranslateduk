@@ -403,5 +403,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "French financial translation services",
+  "seoRobotsNoindex": false
 }

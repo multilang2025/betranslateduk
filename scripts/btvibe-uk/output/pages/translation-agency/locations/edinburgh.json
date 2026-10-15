@@ -1140,5 +1140,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "Edinburgh Translation Services",
+  "seoRobotsNoindex": false
 }

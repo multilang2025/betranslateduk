@@ -1092,5 +1092,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "Patents and Trademarks Translation Services",
+  "seoRobotsNoindex": false
 }

@@ -1229,5 +1229,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "keyboard shortcuts",
+  "seoRobotsNoindex": false
 }

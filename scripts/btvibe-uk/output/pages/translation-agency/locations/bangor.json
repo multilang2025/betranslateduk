@@ -1164,5 +1164,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "Bangor Translation Services",
+  "seoRobotsNoindex": false
 }

@@ -441,5 +441,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "tourism translation",
+  "seoRobotsNoindex": false
 }

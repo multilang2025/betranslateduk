@@ -765,5 +765,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "French translation services",
+  "seoRobotsNoindex": false
 }

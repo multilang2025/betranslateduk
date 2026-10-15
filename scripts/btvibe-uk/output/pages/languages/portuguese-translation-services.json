@@ -395,5 +395,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "English-Portuguese translation",
+  "seoRobotsNoindex": false
 }

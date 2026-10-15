@@ -639,5 +639,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "German IT Translation Services",
+  "seoRobotsNoindex": false
 }

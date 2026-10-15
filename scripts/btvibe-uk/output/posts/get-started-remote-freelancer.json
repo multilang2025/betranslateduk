@@ -1265,5 +1265,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "remote freelancer",
+  "seoRobotsNoindex": false
 }

@@ -604,5 +604,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "medical translation,medical translation services",
+  "seoRobotsNoindex": false
 }

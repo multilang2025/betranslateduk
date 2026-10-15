@@ -1493,5 +1493,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "translation degrees",
+  "seoRobotsNoindex": false
 }

@@ -399,5 +399,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "German Technical Translation Services",
+  "seoRobotsNoindex": false
 }

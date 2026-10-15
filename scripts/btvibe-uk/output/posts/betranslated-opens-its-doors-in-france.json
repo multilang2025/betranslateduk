@@ -1219,5 +1219,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "BeTranslated Opens its Doors in France",
+  "seoRobotsNoindex": false
 }

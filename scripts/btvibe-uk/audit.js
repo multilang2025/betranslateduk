@@ -1,7 +1,10 @@
 // Phase 4 QA: non-visual content-parity audit. Checks route resolution
 // (scraped pages + generated category archives + the blog-pagination
-// redirect), internal link integrity, asset/image download parity, and
-// basic content-field sanity. Run with: node scripts/btvibe-uk/audit.js
+// redirect), internal link integrity, asset/image download parity, basic
+// content-field sanity, and SEO metatag/focus-keyword presence (pulled
+// separately from the CMS's own SEO plugin data, not the rendered HTML --
+// see scripts/btvibe-uk/merge-seo.js). Run with:
+//   node scripts/btvibe-uk/audit.js
 const fs = require('fs');
 const path = require('path');
 
@@ -67,6 +70,7 @@ function run() {
     brokenUploadLinks: [],
     imagesSrcMissingLocal: [],
     needsBrowserRender: [],
+    missingFocusKeyword: [], // focusKeyword field never merged in -- see merge-seo.js
   };
 
   let failedImages = new Set();
@@ -85,6 +89,7 @@ function run() {
     if (!d.og || !d.og.image) report.missingOgImage.push(rel);
     if (!d.bodyHtml || d.bodyHtml.trim().length < 50) report.emptyBody.push(rel);
     if (d.needsBrowserRender) report.needsBrowserRender.push(rel);
+    if (d.focusKeyword === undefined) report.missingFocusKeyword.push(rel);
 
     for (const link of d.links || []) {
       const internalPath = internalPathFromHref(link.href);
@@ -131,10 +136,15 @@ function run() {
   console.log('Links to /blog/page/N (handled by redirect to /blog/):', report.redirectedLinks.length);
   console.log('Broken upload/asset links:', report.brokenUploadLinks.length);
   console.log('Images referencing a failed download:', report.imagesSrcMissingLocal.length);
+  console.log('Missing focusKeyword (SEO parity gap):', report.missingFocusKeyword.length);
 
   if (report.brokenPageLinks.length) {
     console.log('\nBroken page links:');
     for (const b of report.brokenPageLinks) console.log(' ', b.onPage, '->', b.href);
+  }
+  if (report.missingFocusKeyword.length) {
+    console.log('\nPages missing focusKeyword:');
+    for (const b of report.missingFocusKeyword) console.log(' ', b);
   }
 }
 

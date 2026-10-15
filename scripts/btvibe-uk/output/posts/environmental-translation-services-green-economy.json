@@ -1350,5 +1350,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "environmental translation",
+  "seoRobotsNoindex": false
 }

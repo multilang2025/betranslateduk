@@ -315,5 +315,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "terms and conditions",
+  "seoRobotsNoindex": false
 }

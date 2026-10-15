@@ -1311,5 +1311,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "press release translation",
+  "seoRobotsNoindex": false
 }

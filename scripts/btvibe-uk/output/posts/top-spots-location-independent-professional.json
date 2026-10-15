@@ -1253,5 +1253,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "Location-independent",
+  "seoRobotsNoindex": false
 }

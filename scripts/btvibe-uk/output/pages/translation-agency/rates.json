@@ -714,5 +714,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "translation rates",
+  "seoRobotsNoindex": false
 }

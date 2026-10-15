@@ -852,5 +852,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "Specialised translation",
+  "seoRobotsNoindex": false
 }

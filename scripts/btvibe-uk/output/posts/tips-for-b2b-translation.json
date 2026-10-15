@@ -1265,5 +1265,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "B2B translation",
+  "seoRobotsNoindex": false
 }

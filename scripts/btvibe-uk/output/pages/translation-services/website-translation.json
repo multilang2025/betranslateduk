@@ -613,5 +613,7 @@
       ]
     }
   ],
-  "needsBrowserRender": false
+  "needsBrowserRender": false,
+  "focusKeyword": "website translation, web content translation",
+  "seoRobotsNoindex": false
 }
