@@ -47,5 +47,867 @@
     }
   ],
   "needsBrowserRender": [],
-  "missingFocusKeyword": []
+  "missingFocusKeyword": [],
+  "oldDomainAttrs": [
+    {
+      "onPage": "pages\\blog.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\contact-us.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\document-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\index.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\it-telecom.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\legal.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\legal\\contract-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\legal\\merger-and-acquisition-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\legal\\patents-and-trademarks-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\legal\\will-certified-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\legal\\will-certified-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\marketing.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\marketing\\travel.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\medical.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\technical.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\industry\\tourism.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\dutch-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\english-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\french-audiovisual.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\french-business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\french-e-commerce.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\french-financial.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\french-it.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\french-marketing.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\french-translation-services\\legal-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-e-commerce.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-financial.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-it.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-legal.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-marketing.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-subtitling.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-technical.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\german-translation-services\\german-tourism.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\italian-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-audiovisual.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-consumer-retail.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-financial.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-it-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-legal.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-marketing.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-technical-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\korean-translation-services\\korean-tourism-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\portuguese-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\marketing.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-audiovisual.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-document.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-financial.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-it.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-legal.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-retail-ecommerce.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-technical.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-tourism-travel.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\languages\\spanish-translation-services\\spanish-website.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\terms-conditions.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\thank-you.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\customers.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\aberdeen.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\bangor.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\belfast.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\cardiff.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\edinburgh.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\glasgow.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\londonderry.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\locations\\swansea.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\quote.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\rates.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-agency\\turnaround.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\bath.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\birmingham.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\bournemouth.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\brighton.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\bristol.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\cambridge.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\coventry.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\leeds.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\leicester.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\liverpool.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\london.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\manchester.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\newcastle.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\norwich.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\nottingham.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\plymouth.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\portsmouth.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\sheffield.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\southampton.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\southend-on-sea.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\sunderland.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\england\\york.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\remote-interpreting.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translation-services\\website-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "pages\\translators.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\5-inspiring-freelance-jobs.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\8-british-habits-that-stand-out-abroad.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\advantages-gifted-bilingual-kids.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\ai-disadvantages-for-businesses.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\belgium-market-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\benefits-multilingual-people-for-companies.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\best-translation-tools.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\betranslated-opens-its-doors-in-france.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\blog-british-food-expats-miss.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\boost-reach-video-subtitling.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\british-characters.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\british-english.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\british-footballers.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\business-need-financial-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\commercial-translation-professionals.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\communication-agencies-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\cultural-understanding-in-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\differents-types-translation-service-providers.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\dubbing-english-language-content.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\environmental-translation-services-green-economy.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\expressions-from-the-it-crowd.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\get-a-job-in-the-translation-industry.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\get-high-quality-translations.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\get-started-remote-freelancer.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\good-translation-online-retail.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\guide-western-european-languages.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\hire-small-translation-agency.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\how-much-translate-document.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\how-succeed-freelancer-translation-business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\immigration-can-drive-business-growth.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\insurance-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\international-advertising-benefits.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\language-degrees.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\latest-trends-translation-industry.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\lazy-monolingual-english-speakers.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\learn-english-idioms.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\logistics-transport-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\movie-dubbing.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\multilingual-chatbots-shake-up-your-sales-strategy.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\multilingual-healthcare-system.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\note-taking-interpreting.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\press-release-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\professional-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\professional-translator-translation-app.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\property-documentation-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\reach-new-heights-with-startup-business.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\seo-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\spanish-phrases.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\specialised-healthcare-translation-services.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\tips-for-b2b-translation.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\tips-learn-new-language-abroad.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\top-spots-location-independent-professional.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\top-ten-translation-films.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\trademark-translation-business-expansion.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\translation-schools-belgium.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\translation-services-for-optical-practices.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\translation-services-need-vpn.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\translations-universities-uk-ireland.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\translator-vs-interpreter.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\tremendous-value-multilingual-website.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\uk-visa-sponsorship-for-businesses.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\vital-keyboard-shortcuts-translators.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\what-is-betranslated.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\why-choose-betranslated-and-not-ai.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\working-out-translation-rates.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    },
+    {
+      "onPage": "posts\\zoom-interpreting.json",
+      "attr": "action",
+      "value": "https://www.betranslated.co.uk/"
+    }
+  ]
 }

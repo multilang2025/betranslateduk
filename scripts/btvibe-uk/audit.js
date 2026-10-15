@@ -1,10 +1,12 @@
-// Phase 4 QA: non-visual content-parity audit. Checks route resolution
+﻿// Phase 4 QA: non-visual content-parity audit. Checks route resolution
 // (scraped pages + generated category archives + the blog-pagination
 // redirect), internal link integrity, asset/image download parity, basic
-// content-field sanity, and SEO metatag/focus-keyword presence (pulled
-// separately from the CMS's own SEO plugin data, not the rendered HTML --
-// see scripts/btvibe-uk/merge-seo.js). Run with:
-//   node scripts/btvibe-uk/audit.js
+// content-field sanity, SEO metatag/focus-keyword presence (pulled
+// separately from the CMS SEO plugin data -- see merge-seo.js), and any
+// raw href/src/action attribute still pointing at the live domain (catches
+// things outside the pre-extracted links[]/images[] arrays, e.g. a
+// form action that sanitize.js had not been taught to rewrite yet).
+// Run with: node scripts/btvibe-uk/audit.js
 const fs = require('fs');
 const path = require('path');
 
@@ -36,7 +38,6 @@ function buildKnownRoutes() {
     const rel = path.relative(path.join(OUT, 'posts'), f).replace(/\.json$/, '').split(path.sep).join('/');
     routes.add('blog/' + rel);
   }
-  // Generated category archive routes
   for (const [slug, cat] of Object.entries(categoryMap)) {
     routes.add('blog/category/' + slug);
     const totalPages = Math.ceil(cat.postSlugs.length / PER_PAGE);
@@ -48,11 +49,21 @@ function buildKnownRoutes() {
 function internalPathFromHref(href) {
   try {
     const u = new URL(href, 'https://www.betranslated.co.uk');
-    if (!BASE_HOSTS.includes(u.hostname)) return null; // external
+    if (!BASE_HOSTS.includes(u.hostname)) return null;
     return u.pathname.replace(/^\/|\/$/g, '');
   } catch (e) {
     return null;
   }
+}
+
+const OLD_DOMAIN_ATTR_RE = /\b(href|src|action|data-href|data-url)="(https?:\/\/(?:www\.)?betranslated\.co\.uk[^"]*)"/gi;
+
+function findOldDomainAttrs(bodyHtml) {
+  const hits = [];
+  for (const m of bodyHtml.matchAll(OLD_DOMAIN_ATTR_RE)) {
+    hits.push({ attr: m[1], value: m[2] });
+  }
+  return hits;
 }
 
 function run() {
@@ -66,11 +77,12 @@ function run() {
     missingOgImage: [],
     emptyBody: [],
     brokenPageLinks: [],
-    redirectedLinks: [],   // /blog/page/N -- handled by a 301/302, not a gap
+    redirectedLinks: [],
     brokenUploadLinks: [],
     imagesSrcMissingLocal: [],
     needsBrowserRender: [],
-    missingFocusKeyword: [], // focusKeyword field never merged in -- see merge-seo.js
+    missingFocusKeyword: [],
+    oldDomainAttrs: [],
   };
 
   let failedImages = new Set();
@@ -90,6 +102,12 @@ function run() {
     if (!d.bodyHtml || d.bodyHtml.trim().length < 50) report.emptyBody.push(rel);
     if (d.needsBrowserRender) report.needsBrowserRender.push(rel);
     if (d.focusKeyword === undefined) report.missingFocusKeyword.push(rel);
+
+    for (const hit of findOldDomainAttrs(d.bodyHtml || '')) {
+      const attrLower = hit.attr.toLowerCase();
+      if (attrLower === 'href' || attrLower === 'src') continue;
+      report.oldDomainAttrs.push({ onPage: rel, attr: hit.attr, value: hit.value });
+    }
 
     for (const link of d.links || []) {
       const internalPath = internalPathFromHref(link.href);
@@ -137,6 +155,7 @@ function run() {
   console.log('Broken upload/asset links:', report.brokenUploadLinks.length);
   console.log('Images referencing a failed download:', report.imagesSrcMissingLocal.length);
   console.log('Missing focusKeyword (SEO parity gap):', report.missingFocusKeyword.length);
+  console.log('Non-href/src attrs still pointing at live domain (form action etc.):', report.oldDomainAttrs.length);
 
   if (report.brokenPageLinks.length) {
     console.log('\nBroken page links:');
@@ -145,6 +164,10 @@ function run() {
   if (report.missingFocusKeyword.length) {
     console.log('\nPages missing focusKeyword:');
     for (const b of report.missingFocusKeyword) console.log(' ', b);
+  }
+  if (report.oldDomainAttrs.length) {
+    console.log('\nNon-href/src attrs pointing at live domain (sample):');
+    for (const b of report.oldDomainAttrs.slice(0, 20)) console.log(' ', b.onPage, '[' + b.attr + ']', '->', b.value);
   }
 }
 
