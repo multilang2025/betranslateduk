@@ -1,0 +1,46 @@
+{
+  "url": "https://www.betranslated.co.uk/thank-you/",
+  "title": "Thank You - BeTranslated",
+  "metaDescription": "Thank you for contacting BeTranslated. Our team will review your translation request and reply shortly with a tailored proposal.",
+  "bodyHtml": "\n\n\t\t\t\t\n\t\t\t\t\t<div class=\"entry-content\">\n\t\t\t\t\t<div class=\"et-l et-l--post\">\n\t\t\t<div class=\"et_builder_inner_content et_pb_gutters3\"><div class=\"et_pb_section et_pb_section_0 et_section_regular\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_row et_pb_row_0\">\n\t\t\t\t<div class=\"et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h1 style=\"text-align: center;\">Thank You!</h1></div>\n\t\t\t</div><div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><p>&nbsp;</p>\n<h2 class=\"et_pb_module_header et-fb-editable-element et-fb-editable-element__editing\" data-shortcode-id=\"1.0.0.1-1759401732409\" data-quickaccess-id=\"header\" contenteditable=\"true\" data-lt-tmp-id=\"lt-569385\" spellcheck=\"false\" data-gramm=\"false\" style=\"text-align: center;\">Thank you for contacting BeTranslated. <br>We have received your request and will respond to you as soon as possible.</h2></div>\n\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t</div>\n\t\t\t\t\n\t\t\t\t\n\t\t\t</div>\t\t</div>\n\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\n\t\t\t\t",
+  "bodyText": "Thank You!\nThank you for contacting BeTranslated.\nWe have received your request and will respond to you as soon as possible.",
+  "links": [],
+  "canonical": "https://www.betranslated.co.uk/thank-you/",
+  "images": [],
+  "og": {
+    "image": "",
+    "title": "Thank You - BeTranslated",
+    "description": "Thank you for contacting BeTranslated. Our team will review your translation request and reply shortly with a tailored proposal.",
+    "twitterCard": "summary_large_image"
+  },
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.betranslated.co.uk/thank-you/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": "1",
+              "item": {
+                "@id": "http://betranslated.co.uk",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": "2",
+              "item": {
+                "@id": "https://www.betranslated.co.uk/thank-you/",
+                "name": "Thank You"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "needsBrowserRender": false
+}
