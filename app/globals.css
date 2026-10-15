@@ -269,11 +269,38 @@ body {
 @media (max-width: 767px) { .cta-box { padding: 28px 20px 34px; } .cta-box h2 { font-size: 27px; } .cta-section { padding: 50px 0; } .cta-box .btn-cta { padding: 15px 30px; } }
 
 /* ---------- Footer ---------- */
-.site-footer { background: #262838; color: #d9dbe8; padding: 48px 0 28px; font-size: 14px; }
-.site-footer .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
-.site-footer img { height: 28px; width: auto; filter: brightness(0) invert(1); }
-.site-footer h4 { color: #fff; font-size: 15px; margin: 0 0 12px; }
-.site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.site-footer a { color: #7ebec5; }
-.site-footer .copy { border-top: 1px solid #4a4e66; margin-top: 32px; padding-top: 18px; color: #a9acc0; }
-@media (max-width: 767px) { .site-footer .cols { grid-template-columns: 1fr; } }
+/* Modelled on the betranslated.com footer: navy, serif group headings, orange line icons, round social buttons. */
+.site-footer { background: #2f3143; border-top: 1px solid #4a4e66; color: #e2e8f0; padding: 80px 0 36px; font-size: 15px; }
+.foot-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 56px; }
+.foot-brand img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+.foot-brand p { margin: 20px 0 0; max-width: 360px; color: #93a4c8; font-size: 17px; line-height: 1.65; }
+.social { display: flex; gap: 10px; list-style: none; margin: 24px 0 0; padding: 0; }
+.social a { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 9999px; background: #3a3d52; color: #fff; transition: background 0.2s; }
+.social a:hover { background: var(--color-orange); }
+.foot-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 32px; }
+.foot-group h3 { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: #fff; margin: 0 0 18px; }
+.foot-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 13px; }
+.foot-group a { display: flex; align-items: flex-start; gap: 10px; color: #fff; font-size: 15px; font-weight: 500; line-height: 1.35; }
+.foot-group a svg { color: var(--color-orange); flex: none; margin-top: 1px; }
+.foot-group a:hover span { color: var(--color-teal); }
+.foot-group .line { display: block; }
+.more { margin-top: 13px; }
+.more summary { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; color: #93a4c8; font-size: 14px; list-style: none; }
+.more summary::-webkit-details-marker { display: none; }
+.more summary svg { transition: transform 0.2s; }
+.more[open] summary svg { transform: rotate(180deg); }
+.more ul { margin-top: 13px; }
+.foot-sites { margin-top: 56px; padding-top: 28px; border-top: 1px solid #4a4e66; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.foot-sites h3 { font-size: 14px; font-weight: 600; color: #93a4c8; margin: 0; }
+.foot-sites ul { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.foot-sites a { display: inline-block; padding: 6px 14px; border: 1px solid #4a4e66; border-radius: 9999px; color: #e2e8f0; font-size: 13px; transition: border-color 0.2s, color 0.2s; }
+.foot-sites a:hover { border-color: var(--color-teal); color: var(--color-teal); }
+.foot-bottom { margin-top: 28px; padding-top: 24px; border-top: 1px solid #4a4e66; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; color: #93a4c8; font-size: 14px; }
+.foot-bottom p { margin: 0; }
+.foot-bottom ul { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; margin: 0; padding: 0; }
+.foot-bottom a { color: #93a4c8; }
+.foot-bottom a:hover { color: #fff; }
+.copy-note { margin: 14px 0 0; color: #a9acc0; font-size: 12px; }
+@media (max-width: 1100px) { .foot-top { grid-template-columns: 1fr; gap: 40px; } .foot-brand p { max-width: 520px; } }
+@media (max-width: 860px) { .foot-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .site-footer { padding: 56px 0 28px; } .foot-groups { grid-template-columns: 1fr; gap: 36px; } }
