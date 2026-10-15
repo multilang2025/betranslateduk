@@ -146,6 +146,7 @@ export const about = {
 };
 
 export const whatNext = {
+  eyebrow: "How it works",
   heading: "What Happens Next?",
   steps: [
     { title: "Request a Quote", text: "One of our regional managers will receive your request for a translation quote." },
