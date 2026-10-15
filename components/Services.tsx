@@ -4,7 +4,7 @@ export function Services() {
   return (
     <section className="section" aria-labelledby="services-title">
       <div className="container-bt">
-        <p className="eyebrow-text eyebrow-center">{services.eyebrow}</p>
+        <p className="eyebrow-text">{services.eyebrow}</p>
         <h2 id="services-title">{services.heading}</h2>
 
         <div className="svc-grid">

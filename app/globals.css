@@ -164,7 +164,7 @@ body {
 
 /* ---------- Client band (white in both themes) ---------- */
 .band { background: #fff; padding: 40px 0 64px; }
-.band .title { text-align: center; margin: 0 0 18px; color: var(--color-teal); font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
+.band .title { text-align: left; margin: 0 0 18px; color: var(--color-teal); font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
 .marquee { overflow: hidden; width: 100%; }
 .track { display: flex; align-items: center; width: max-content; animation: marquee 70s linear infinite; }
 .track:hover { animation-play-state: paused; }
@@ -179,8 +179,8 @@ body {
 
 /* ---------- Generic section ---------- */
 .section { background: var(--sec-bg); padding: 90px 0; }
-.section .eyebrow-center { text-align: center; }
-.section h2 { font-family: var(--font-display); font-weight: 700; color: var(--sec-heading); text-align: center; font-size: 38px; line-height: 1.25; max-width: 900px; margin: 15px auto 0; }
+.section .eyebrow-text { text-align: left; }
+.section h2 { font-family: var(--font-display); font-weight: 700; color: var(--sec-heading); text-align: left; font-size: 38px; line-height: 1.25; max-width: 900px; margin: 15px 0 0; }
 @media (max-width: 980px) { .section { padding: 60px 0; } .section h2 { font-size: 30px; } }
 
 /* ---------- Services ---------- */
@@ -201,7 +201,7 @@ body {
 .svc-card li span { grid-column: 2; margin-top: 2px; font-size: 14px; line-height: 1.5; color: var(--card-sub); }
 .svc-btn { align-self: flex-start; background: var(--color-orange); color: #fff; font-weight: 700; font-size: 16px; padding: 13px 28px; border-radius: 9999px; }
 .svc-btn:hover { background: var(--color-orange-dark); }
-.svc-more { text-align: center; margin: 30px 0 0; font-size: 15px; line-height: 1.7; color: var(--sec-text); }
+.svc-more { text-align: left; margin: 30px 0 0; font-size: 15px; line-height: 1.7; color: var(--sec-text); }
 .svc-more a { color: var(--sec-link); }
 @media (max-width: 980px) { .svc-grid { grid-template-columns: 1fr; } }
 
