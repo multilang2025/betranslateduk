@@ -158,7 +158,12 @@ export const whatNext = {
 };
 
 export const cta = {
-  heading: "Get Your Free, No-Obligation Quote",
-  text: "Tell us what you need and one of our managers will reply within a couple of hours.",
-  buttonLabel: "Get a free quote",
+  heading: "Ready to Take Your Business Global?",
+  text: "Tell us about your project and we will come back within a couple of hours with a free, no-obligation quote. No jargon, no pressure, just clear answers from people who do this every day.",
+  buttonLabel: "Get My Free Quote",
+  person: {
+    name: "Mike Bastin",
+    role: "Founder and CEO",
+    image: "/images/team/mike-bastin.webp",
+  },
 };
