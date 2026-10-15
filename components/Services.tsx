@@ -1,4 +1,13 @@
-import { services } from "@/content/home";
+import {
+  Factory, Gavel, Globe, HardHat, Landmark, Languages, Megaphone, Palette, Presentation, Scale, ScanSearch, Video,
+  type LucideIcon,
+} from "lucide-react";
+import { services, type ServiceIcon } from "@/content/home";
+
+/** One consistent line-icon set. The tile colour comes from the card's theme (see .svc-card in globals.css). */
+const ICONS: Record<ServiceIcon, LucideIcon> = {
+  Scale, Gavel, Landmark, Globe, Languages, HardHat, Factory, Presentation, Video, ScanSearch, Megaphone, Palette,
+};
 
 export function Services() {
   return (
@@ -14,13 +23,18 @@ export function Services() {
               <h3>{card.heading}</h3>
               <p className="pitch">{card.pitch}</p>
               <ul>
-                {card.items.map((item) => (
-                  <li key={item.title}>
-                    <img src={`/images/icons/${item.icon}.svg`} alt="" width={44} height={44} />
-                    <a href={item.href}>{item.title}</a>
-                    <span>{item.text}</span>
-                  </li>
-                ))}
+                {card.items.map((item) => {
+                  const Icon = ICONS[item.icon];
+                  return (
+                    <li key={item.title}>
+                      <span className="ic" aria-hidden="true">
+                        <Icon size={22} strokeWidth={1.75} />
+                      </span>
+                      <a href={item.href}>{item.title}</a>
+                      <span className="sub">{item.text}</span>
+                    </li>
+                  );
+                })}
               </ul>
               <a className="svc-btn" href={card.buttonHref}>
                 {card.buttonLabel}

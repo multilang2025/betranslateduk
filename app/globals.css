@@ -40,7 +40,10 @@
   --card-rule: #4c5070;
   --card-int-top: #9ea3c0;
   --tag-int: #d5d8e6;
-  --icon-chip: #ffffff;
+  --ic-bg-teal: rgba(126, 190, 197, 0.16);
+  --ic-fg-teal: #7ebec5;
+  --ic-bg-navy: rgba(255, 255, 255, 0.1);
+  --ic-fg-navy: #d5d8e6;
 
   --about-bg: #2f3143;
   --about-text: #ffffff;
@@ -74,7 +77,10 @@
   --card-rule: #eeeeee;
   --card-int-top: #2f3143;
   --tag-int: #2f3143;
-  --icon-chip: transparent;
+  --ic-bg-teal: rgba(126, 190, 197, 0.24);
+  --ic-fg-teal: #3d8e98;
+  --ic-bg-navy: rgba(47, 49, 67, 0.08);
+  --ic-fg-navy: #2f3143;
 
   --about-bg: #f9f8fe;
   --about-text: #1d2327;
@@ -195,10 +201,15 @@ body {
 .svc-card .pitch { margin: 0 0 18px; font-size: 15px; line-height: 1.7; color: var(--card-text); }
 .svc-card ul { list-style: none; margin: 0 0 24px; padding: 0; flex: 1; }
 .svc-card li { display: grid; grid-template-columns: 48px 1fr; column-gap: 14px; align-items: center; padding: 12px 0; border-top: 1px solid var(--card-rule); }
-.svc-card li img { grid-row: 1 / span 2; width: 44px; height: 44px; object-fit: contain; background: var(--icon-chip); border-radius: 10px; padding: 5px; }
+/* Icon tile: one line-icon set, tinted by the card's theme. Teal for Translation, soft navy for Interpretation, orange for Digital. */
+.svc-card { --ic-bg: var(--ic-bg-teal); --ic-fg: var(--ic-fg-teal); }
+.svc-card.interpretation { --ic-bg: var(--ic-bg-navy); --ic-fg: var(--ic-fg-navy); }
+.svc-card.digital { --ic-bg: rgba(246, 118, 24, 0.14); --ic-fg: var(--color-orange); }
+.svc-card li .ic { grid-row: 1 / span 2; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--ic-bg); color: var(--ic-fg); transition: background 0.2s, color 0.2s, transform 0.2s; }
+.svc-card li:hover .ic { background: var(--ic-fg); color: var(--card-bg); transform: translateY(-1px); }
 .svc-card li a { grid-column: 2; font-weight: 600; font-size: 16px; color: var(--card-title); }
 .svc-card li a:hover { color: var(--color-orange); }
-.svc-card li span { grid-column: 2; margin-top: 2px; font-size: 14px; line-height: 1.5; color: var(--card-sub); }
+.svc-card li .sub { grid-column: 2; margin-top: 2px; font-size: 14px; line-height: 1.5; color: var(--card-sub); }
 .svc-btn { align-self: flex-start; background: var(--color-orange); color: #fff; font-weight: 700; font-size: 16px; padding: 13px 28px; border-radius: 9999px; }
 .svc-btn:hover { background: var(--color-orange-dark); }
 .svc-more { text-align: left; margin: 30px 0 0; font-size: 15px; line-height: 1.7; color: var(--sec-text); }

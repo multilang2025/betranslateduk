@@ -53,7 +53,11 @@ export const clients: Client[] = [
 
 export const clientsTitle = "Trusted by Global Brands";
 
-export type ServiceItem = { icon: string; title: string; text: string; href: string };
+/** Names of lucide-react icons, mapped to components in components/Services.tsx. */
+export type ServiceIcon =
+  | "Scale" | "Gavel" | "Landmark" | "Globe" | "Languages" | "HardHat" | "Factory"
+  | "Presentation" | "Video" | "ScanSearch" | "Megaphone" | "Palette";
+export type ServiceItem = { icon: ServiceIcon; title: string; text: string; href: string };
 export type ServiceCard = {
   theme: "translation" | "interpretation" | "digital";
   tag: string;
@@ -75,10 +79,10 @@ export const services = {
       pitch:
         "Contracts, accounts and technical manuals have to be right first time. Our specialist translators have worked with UK businesses for over 20 years, and you get a free quote before you commit.",
       items: [
-        { icon: "icon_25_blue", title: "Legal document translation services", text: "Contracts, patents and certified documents.", href: live("/industry/legal/") },
-        { icon: "icon_05_blue", title: "Business and financial translation", text: "Reports, accounts, tenders and corporate documents.", href: live("/industry/business/") },
-        { icon: "icon_04_blue", title: "Website translation services", text: "Speak to every market in its own language.", href: live("/translation-services/website-translation/") },
-        { icon: "icon_07_blue", title: "Construction and engineering translation", text: "Manuals, specifications and tender documents.", href: live("/industry/technical/") },
+        { icon: "Scale", title: "Legal document translation services", text: "Contracts, patents and certified documents.", href: live("/industry/legal/") },
+        { icon: "Landmark", title: "Business and financial translation", text: "Reports, accounts, tenders and corporate documents.", href: live("/industry/business/") },
+        { icon: "Globe", title: "Website translation services", text: "Speak to every market in its own language.", href: live("/translation-services/website-translation/") },
+        { icon: "HardHat", title: "Construction and engineering translation", text: "Manuals, specifications and tender documents.", href: live("/industry/technical/") },
       ],
       buttonLabel: "Get a free translation quote",
       buttonHref: QUOTE_URL,
@@ -90,10 +94,10 @@ export const services = {
       pitch:
         "When the conversation is live, there is no second chance to get it right. We provide professional interpreters on site, by video or by phone, for your meeting, hearing or event.",
       items: [
-        { icon: "icon_25_blue", title: "Legal interpreting services", text: "Client consultations, depositions and hearings.", href: main("/on-site-interpreting-services/consecutive/") },
-        { icon: "icon_15", title: "Business and finance interpreting", text: "Board meetings, negotiations and conferences.", href: main("/on-site-interpreting-services/simultaneous/") },
-        { icon: "icon_13", title: "Remote interpreting services", text: "Video calls, webinars and live-streamed events.", href: live("/translation-services/remote-interpreting/") },
-        { icon: "icon_07_blue", title: "Site visit interpreting", text: "Inspections, factory tours and technical briefings.", href: main("/on-site-interpreting-services/liaison/") },
+        { icon: "Gavel", title: "Legal interpreting services", text: "Client consultations, depositions and hearings.", href: main("/on-site-interpreting-services/consecutive/") },
+        { icon: "Presentation", title: "Business and finance interpreting", text: "Board meetings, negotiations and conferences.", href: main("/on-site-interpreting-services/simultaneous/") },
+        { icon: "Video", title: "Remote interpreting services", text: "Video calls, webinars and live-streamed events.", href: live("/translation-services/remote-interpreting/") },
+        { icon: "Factory", title: "Site visit interpreting", text: "Inspections, factory tours and technical briefings.", href: main("/on-site-interpreting-services/liaison/") },
       ],
       buttonLabel: "Get a free interpreting quote",
       buttonHref: INTERPRETING_QUOTE_URL,
@@ -105,10 +109,10 @@ export const services = {
       pitch:
         "Translation gets your message across. Digital marketing gets it found. We help you rank in Google and appear in AI search answers in every market you sell to, then turn that traffic into enquiries.",
       items: [
-        { icon: "icon_17", title: "Multilingual SEO and GEO", text: "Rank in Google and be cited by AI search tools.", href: main("/digital/services/seo/") },
-        { icon: "icon_04_blue", title: "Website language conversion", text: "Launch and maintain your site in new languages.", href: live("/translation-services/website-translation/") },
-        { icon: "icon_08_blue", title: "International paid advertising", text: "Search and social ads built for each market.", href: main("/digital/services/paid-ads/") },
-        { icon: "icon_18", title: "Multilingual branding and design", text: "Names, messages and visuals that work abroad.", href: main("/digital/services/branding-design/") },
+        { icon: "ScanSearch", title: "Multilingual SEO and GEO", text: "Rank in Google and be cited by AI search tools.", href: main("/digital/services/seo/") },
+        { icon: "Languages", title: "Website language conversion", text: "Launch and maintain your site in new languages.", href: live("/translation-services/website-translation/") },
+        { icon: "Megaphone", title: "International paid advertising", text: "Search and social ads built for each market.", href: main("/digital/services/paid-ads/") },
+        { icon: "Palette", title: "Multilingual branding and design", text: "Names, messages and visuals that work abroad.", href: main("/digital/services/branding-design/") },
       ],
       buttonLabel: "Get a free SEO audit",
       buttonHref: SEO_AUDIT_URL,
