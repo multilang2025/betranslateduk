@@ -1,0 +1,910 @@
+{
+  "ok": 1,
+  "notOk": [
+    {
+      "route": "/blog/",
+      "status": 308
+    },
+    {
+      "route": "/contact-us/",
+      "status": 308
+    },
+    {
+      "route": "/document-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/industry/",
+      "status": 308
+    },
+    {
+      "route": "/industry/business/",
+      "status": 308
+    },
+    {
+      "route": "/industry/it-telecom/",
+      "status": 308
+    },
+    {
+      "route": "/industry/legal/",
+      "status": 308
+    },
+    {
+      "route": "/industry/legal/contract-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/industry/legal/merger-and-acquisition-translation/",
+      "status": 308
+    },
+    {
+      "route": "/industry/legal/patents-and-trademarks-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/industry/legal/will-certified-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/industry/marketing/",
+      "status": 308
+    },
+    {
+      "route": "/industry/marketing/travel/",
+      "status": 308
+    },
+    {
+      "route": "/industry/medical/",
+      "status": 308
+    },
+    {
+      "route": "/industry/technical/",
+      "status": 308
+    },
+    {
+      "route": "/industry/tourism/",
+      "status": 308
+    },
+    {
+      "route": "/languages/",
+      "status": 308
+    },
+    {
+      "route": "/languages/dutch-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/english-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/french-audiovisual/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/french-business/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/french-e-commerce/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/french-financial/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/french-it/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/french-marketing/",
+      "status": 308
+    },
+    {
+      "route": "/languages/french-translation-services/legal-translation/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-business/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-e-commerce/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-financial/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-it/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-legal/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-marketing/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-subtitling/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-technical/",
+      "status": 308
+    },
+    {
+      "route": "/languages/german-translation-services/german-tourism/",
+      "status": 308
+    },
+    {
+      "route": "/languages/italian-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-audiovisual/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-business/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-consumer-retail/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-financial/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-it-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-legal/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-marketing/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-technical-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/korean-translation-services/korean-tourism-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/portuguese-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/marketing/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-audiovisual/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-business/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-document/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-financial/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-it/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-legal/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-retail-ecommerce/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-technical/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-tourism-travel/",
+      "status": 308
+    },
+    {
+      "route": "/languages/spanish-translation-services/spanish-website/",
+      "status": 308
+    },
+    {
+      "route": "/terms-conditions/",
+      "status": 308
+    },
+    {
+      "route": "/thank-you/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/customers/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/aberdeen/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/bangor/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/belfast/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/cardiff/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/edinburgh/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/glasgow/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/londonderry/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/locations/swansea/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/quote/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/rates/",
+      "status": 308
+    },
+    {
+      "route": "/translation-agency/turnaround/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/bath/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/birmingham/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/bournemouth/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/brighton/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/bristol/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/cambridge/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/coventry/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/leeds/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/leicester/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/liverpool/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/london/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/manchester/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/newcastle/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/norwich/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/nottingham/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/plymouth/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/portsmouth/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/sheffield/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/southampton/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/southend-on-sea/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/sunderland/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/england/york/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/remote-interpreting/",
+      "status": 308
+    },
+    {
+      "route": "/translation-services/website-translation/",
+      "status": 308
+    },
+    {
+      "route": "/translators/",
+      "status": 308
+    },
+    {
+      "route": "/blog/5-inspiring-freelance-jobs/",
+      "status": 308
+    },
+    {
+      "route": "/blog/8-british-habits-that-stand-out-abroad/",
+      "status": 308
+    },
+    {
+      "route": "/blog/advantages-gifted-bilingual-kids/",
+      "status": 308
+    },
+    {
+      "route": "/blog/ai-disadvantages-for-businesses/",
+      "status": 308
+    },
+    {
+      "route": "/blog/belgium-market-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/benefits-multilingual-people-for-companies/",
+      "status": 308
+    },
+    {
+      "route": "/blog/best-translation-tools/",
+      "status": 308
+    },
+    {
+      "route": "/blog/betranslated-opens-its-doors-in-france/",
+      "status": 308
+    },
+    {
+      "route": "/blog/blog-british-food-expats-miss/",
+      "status": 308
+    },
+    {
+      "route": "/blog/boost-reach-video-subtitling/",
+      "status": 308
+    },
+    {
+      "route": "/blog/british-characters/",
+      "status": 308
+    },
+    {
+      "route": "/blog/british-english/",
+      "status": 308
+    },
+    {
+      "route": "/blog/british-footballers/",
+      "status": 308
+    },
+    {
+      "route": "/blog/business-need-financial-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/commercial-translation-professionals/",
+      "status": 308
+    },
+    {
+      "route": "/blog/communication-agencies-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/cultural-understanding-in-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/differents-types-translation-service-providers/",
+      "status": 308
+    },
+    {
+      "route": "/blog/dubbing-english-language-content/",
+      "status": 308
+    },
+    {
+      "route": "/blog/environmental-translation-services-green-economy/",
+      "status": 308
+    },
+    {
+      "route": "/blog/expressions-from-the-it-crowd/",
+      "status": 308
+    },
+    {
+      "route": "/blog/get-a-job-in-the-translation-industry/",
+      "status": 308
+    },
+    {
+      "route": "/blog/get-high-quality-translations/",
+      "status": 308
+    },
+    {
+      "route": "/blog/get-started-remote-freelancer/",
+      "status": 308
+    },
+    {
+      "route": "/blog/good-translation-online-retail/",
+      "status": 308
+    },
+    {
+      "route": "/blog/guide-western-european-languages/",
+      "status": 308
+    },
+    {
+      "route": "/blog/hire-small-translation-agency/",
+      "status": 308
+    },
+    {
+      "route": "/blog/how-much-translate-document/",
+      "status": 308
+    },
+    {
+      "route": "/blog/how-succeed-freelancer-translation-business/",
+      "status": 308
+    },
+    {
+      "route": "/blog/immigration-can-drive-business-growth/",
+      "status": 308
+    },
+    {
+      "route": "/blog/insurance-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/blog/international-advertising-benefits/",
+      "status": 308
+    },
+    {
+      "route": "/blog/language-degrees/",
+      "status": 308
+    },
+    {
+      "route": "/blog/latest-trends-translation-industry/",
+      "status": 308
+    },
+    {
+      "route": "/blog/lazy-monolingual-english-speakers/",
+      "status": 308
+    },
+    {
+      "route": "/blog/learn-english-idioms/",
+      "status": 308
+    },
+    {
+      "route": "/blog/logistics-transport-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/blog/movie-dubbing/",
+      "status": 308
+    },
+    {
+      "route": "/blog/multilingual-chatbots-shake-up-your-sales-strategy/",
+      "status": 308
+    },
+    {
+      "route": "/blog/multilingual-healthcare-system/",
+      "status": 308
+    },
+    {
+      "route": "/blog/note-taking-interpreting/",
+      "status": 308
+    },
+    {
+      "route": "/blog/press-release-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/professional-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/professional-translator-translation-app/",
+      "status": 308
+    },
+    {
+      "route": "/blog/property-documentation-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/reach-new-heights-with-startup-business/",
+      "status": 308
+    },
+    {
+      "route": "/blog/seo-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/spanish-phrases/",
+      "status": 308
+    },
+    {
+      "route": "/blog/specialised-healthcare-translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/blog/tips-for-b2b-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/tips-learn-new-language-abroad/",
+      "status": 308
+    },
+    {
+      "route": "/blog/top-spots-location-independent-professional/",
+      "status": 308
+    },
+    {
+      "route": "/blog/top-ten-translation-films/",
+      "status": 308
+    },
+    {
+      "route": "/blog/trademark-translation-business-expansion/",
+      "status": 308
+    },
+    {
+      "route": "/blog/translation-schools-belgium/",
+      "status": 308
+    },
+    {
+      "route": "/blog/translation-services-for-optical-practices/",
+      "status": 308
+    },
+    {
+      "route": "/blog/translation-services-need-vpn/",
+      "status": 308
+    },
+    {
+      "route": "/blog/translations-universities-uk-ireland/",
+      "status": 308
+    },
+    {
+      "route": "/blog/translator-vs-interpreter/",
+      "status": 308
+    },
+    {
+      "route": "/blog/tremendous-value-multilingual-website/",
+      "status": 308
+    },
+    {
+      "route": "/blog/uk-visa-sponsorship-for-businesses/",
+      "status": 308
+    },
+    {
+      "route": "/blog/vital-keyboard-shortcuts-translators/",
+      "status": 308
+    },
+    {
+      "route": "/blog/what-is-betranslated/",
+      "status": 308
+    },
+    {
+      "route": "/blog/why-choose-betranslated-and-not-ai/",
+      "status": 308
+    },
+    {
+      "route": "/blog/working-out-translation-rates/",
+      "status": 308
+    },
+    {
+      "route": "/blog/zoom-interpreting/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/adventures-in-globalization-localization/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/ai/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/audio-blog/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/belgium/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/business/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/business-tips/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/careers/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/communication/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/culture/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/e-commerce/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/e-learning/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/education/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/expat-life/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/financial-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/freelancer-tips/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/freelancing/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/funny/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/globalisation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/globalization/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/good-to-know/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/human-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/immigration/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/international-development/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/interpreting/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/language-learning/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/languages/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/legal-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/lifestyle/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/localisation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/logistics/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/machine-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/marketing/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/medical-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/multilingual/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/outsourcing/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/professional-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/property-translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/remote-work/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/retail/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/startup-business/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/students/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/technology/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/tips-tricks/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/training/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-agency/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-app/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-companies/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-news/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-service-providers/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-services/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-skills/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translation-tools/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/translators/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/travel-and-tourism/",
+      "status": 308
+    },
+    {
+      "route": "/blog/category/vpns/",
+      "status": 308
+    }
+  ],
+  "total": 227
+}

@@ -2,6 +2,13 @@
 const nextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
+  // The original site uses trailing-slash URLs everywhere (WordPress
+  // default), and every scraped internal link/slug matches that form.
+  // Without this, Next.js 308-redirects every single page from its
+  // scraped trailing-slash URL to a non-trailing-slash form -- same
+  // destination, but it breaks exact URL parity and adds a redirect hop
+  // on every request.
+  trailingSlash: true,
   async redirects() {
     return [
       {
