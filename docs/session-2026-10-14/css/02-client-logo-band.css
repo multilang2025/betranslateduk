@@ -1,0 +1,42 @@
+/*
+ * Client logo band "Trusted by Global Brands" (homepage, page ID 224563).
+ * Lives in the Custom CSS of the band COLUMN (module_class "bt-clients"). The section has module_class "bt-band"
+ * (white strip, excluded from dark mode so the logos stay readable).
+ *
+ * It is a CSS marquee inside one et_pb_text, NOT the Divi Pixel carousel (the carousel stalled after one move).
+ * HTML: <p class="bt-clients-title"> then <div class="bt-marquee"><div class="bt-track"> ...logo list TWICE... </div></div>
+ * Each item: <div class="bt-logo"><img src="..." alt="Name" class="mono navy" /></div>
+ * The list is duplicated so translateX(-50%) loops with no jump.
+ *
+ * Logo classes (set on the img; a WebP plugin may move them to a wrapping picture element, so both are styled):
+ *   .navy  white-only source files (Brandwatch, UNESCO, Barbados): turned navy with a filter so they show on white
+ *   .mono  transparent logo, sized at 78% width, max 46px tall (Proxymity, Save the Children, BIC and the white-only three)
+ *   none   white-background JPGs from the customers list: shown at their original colours, edges clipped 2px to hide a baked-in frame
+ *
+ * History: an earlier version recoloured every logo navy with mix-blend-mode. Original colours were requested later,
+ * so the filter and blend rules are now cancelled with !important. Safe to simplify when rebuilding.
+ */
+
+.bt-clients .bt-marquee { overflow: hidden; width: 100%; }
+.bt-clients .bt-track { display: flex; align-items: center; width: max-content; animation: btScroll 70s linear infinite; }
+.bt-clients .bt-track:hover { animation-play-state: paused; }
+.bt-clients .bt-logo { position: relative; isolation: isolate; flex: 0 0 auto; width: 190px; height: 84px; margin: 0 28px; display: flex; align-items: center; justify-content: center; background: #FFFFFF; }
+.bt-clients .bt-logo, .bt-clients .bt-logo img, .bt-clients .bt-logo picture { border: 0 !important; box-shadow: none !important; outline: 0 !important; }
+
+/* default (white-background JPG): fill the slot at original colours */
+.bt-clients .bt-logo img { display: block; width: 100%; height: 100%; object-fit: fill; filter: none !important; mix-blend-mode: normal !important; }
+.bt-clients .bt-logo picture { display: flex; align-items: center; justify-content: center; height: 100%; aspect-ratio: 225 / 198; isolation: isolate; background: transparent !important; overflow: hidden; clip-path: inset(2px); }
+.bt-clients .bt-logo picture img { transform: scale(1.03); }
+
+/* transparent logos */
+.bt-clients .bt-logo img.mono, .bt-clients .bt-logo picture.mono img { width: 78%; height: auto; max-height: 46px; transform: none; }
+.bt-clients .bt-logo picture.mono { width: 100%; aspect-ratio: auto; clip-path: none; }
+
+/* white-only logos shown navy (#2F3143 approximated with a CSS filter chain) */
+.bt-clients .bt-logo img.navy, .bt-clients .bt-logo picture.navy img { filter: brightness(0) invert(17%) sepia(18%) saturate(900%) hue-rotate(195deg) brightness(95%) !important; }
+
+.bt-clients .bt-clients-title { text-align: center; margin: 0 0 18px; padding: 0; color: #7EBEC5; font-size: 15px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; line-height: 1.6em; }
+
+@keyframes btScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .bt-clients .bt-track { animation: none; } }
+@media (max-width: 767px) { .bt-clients .bt-logo { width: 150px; height: 70px; margin: 0 18px; } }
