@@ -1,5 +1,5 @@
-// Dark rounded band with orange stars, real page copy and (when the page's
-// own scraped images provide them) client logos -- no invented logos.
+// Dark rounded band with orange stars, real page copy and (when provided)
+// real client logos -- no invented logos.
 export default function ClientsBand({ title, html, logos = [] }) {
   if (!title && !html) return null;
   return (
@@ -14,9 +14,7 @@ export default function ClientsBand({ title, html, logos = [] }) {
             {html ? <div className="clients-band__copy" dangerouslySetInnerHTML={{ __html: html }} /> : null}
             {logos.length ? (
               <ul className="clients-band__logos">
-                {logos.map((l) => (
-                  <li key={l.src}><img src={l.src} alt={l.alt || ""} loading="lazy" /></li>
-                ))}
+                {logos.map((l) => (<li key={l.src}><img src={l.src} alt={l.alt || ""} loading="lazy" /></li>))}
               </ul>
             ) : null}
           </div>

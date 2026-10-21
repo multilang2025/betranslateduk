@@ -1,0 +1,35 @@
+/* Page illustrations (data/page-illustrations.json, lib/illustrations.js):
+   one 3:2 photo beside a text band near the top, never in the hero.
+   Desktop: intro text left, photo right. Mobile: photo under the text. */
+.bt .pg-illus { margin: 0; padding: 0; border: 0; background: none; box-shadow: none; display: block; }
+.bt .pg-illus img,
+.bt .sec__in .pg-illus img {
+  display: block; width: 100%; height: auto; max-width: 100%; max-height: none;
+  aspect-ratio: 3 / 2; object-fit: cover; margin: 0;
+  border-radius: var(--r-xl); box-shadow: var(--shadow-md);
+  background: #EEF4F5;
+}
+
+/* Scraped bands: heading above, text + photo below (a short intro takes the
+   heading into the text column). */
+.bt .sec-media { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: center; }
+.bt .sec-media__text > :first-child { margin-top: 0; }
+.bt .sec-media__text > :last-child { margin-bottom: 0; }
+.bt .sec-media__text > h2 { font-size: var(--fs-h3); margin: 0 0 16px; }
+.bt .sec-media + * { margin-top: 32px; }
+
+/* Hand-built templates: the photo sits under the key facts, right column. */
+.bt .ip-split .pg-illus { margin: 28px 0; }
+.bt .ip-split .pg-illus:last-child { margin-bottom: 0; }
+.bt .ip-split .pg-illus--top { margin: 0 0 32px; }
+
+@media (max-width: 900px) {
+  .bt .sec-media { grid-template-columns: 1fr; gap: 24px; }
+  .bt .pg-illus img { border-radius: var(--r-lg); }
+}
+
+/* Photo beside a card grid (besideCards): the cards run two across in the text column. */
+.bt .sec-media--cards { align-items: start; }
+.bt .sec-media--cards .mini-grid[data-count] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bt .sec-media--cards .mini-grid[data-count] > .mini { grid-column: auto; }
+@media (max-width: 900px) { .bt .sec-media--cards .mini-grid[data-count] { grid-template-columns: 1fr; } }

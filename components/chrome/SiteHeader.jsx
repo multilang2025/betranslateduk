@@ -4,58 +4,51 @@ import { preload } from "react-dom";
 import MobileMenu from "./MobileMenu";
 import SearchBox from "./SearchBox";
 
-// Same top-level links and hrefs as the live betranslated.co.uk header.
-const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  {
-    label: "Services",
-    href: "/translation-services/",
-    children: [
-      { label: "Document translation", href: "/document-translation-services/" },
-      { label: "Website translation", href: "/translation-services/website-translation/" },
-    ],
-  },
-  {
-    label: "Languages",
-    href: "/languages/",
-    children: [
-      { label: "English", href: "/languages/english-translation-services/" },
-      { label: "French", href: "/languages/french-translation-services/" },
-      { label: "German", href: "/languages/german-translation-services/" },
-      { label: "Italian", href: "/languages/italian-translation-services/" },
-      { label: "Portuguese", href: "/languages/portuguese-translation-services/" },
-      { label: "Spanish", href: "/languages/spanish-translation-services/" },
-      { label: "Dutch", href: "/languages/dutch-translation-services/" },
-    ],
-  },
-  {
-    label: "Expertise",
-    href: "/industry/",
-    children: [
-      { label: "Business & Finance", href: "/industry/business/" },
-      { label: "High Tech & IT", href: "/industry/it-telecom/" },
-      { label: "Industry & Construction", href: "/industry/technical/" },
-      { label: "Legal", href: "/industry/legal/" },
-      { label: "Marketing & Sales", href: "/industry/marketing/" },
-      { label: "Tourism & Travel", href: "/industry/tourism/" },
-    ],
-  },
-  {
-    label: "About",
-    href: "/translation-agency/",
-    children: [
-      { label: "Customers", href: "/translation-agency/customers/" },
-      { label: "Locations", href: "/translation-agency/locations/" },
-      { label: "Rates", href: "/translation-agency/rates/" },
-      { label: "Turnaround", href: "/translation-agency/turnaround/" },
-    ],
-  },
-  { label: "Translators", href: "/translators/" },
-  { label: "Blog", href: "/blog/" },
-];
+// Real scraped betranslated.co.uk header nav (single locale -- no es/fr).
+const NAV_ITEMS = {
+  en: [
+    { label: "Home", href: "/" },
+    {
+      label: "Services",
+      href: "/translation-services/",
+      children: [
+        { label: "Website translation", href: "/translation-services/website-translation/" },
+        { label: "Document translation", href: "/document-translation-services/" },
+        { label: "Remote interpreting", href: "/translation-services/remote-interpreting/" },
+      ],
+    },
+    { label: "Languages", href: "/languages/" },
+    {
+      label: "Expertise",
+      href: "/industry/",
+      children: [
+        { label: "Business & Finance", href: "/industry/business/" },
+        { label: "High Tech & IT", href: "/industry/it-telecom/" },
+        { label: "Industry & Construction", href: "/industry/technical/" },
+        { label: "Marketing & Sales", href: "/industry/marketing/" },
+        { label: "Tourism & Travel", href: "/industry/tourism/" },
+        { label: "Legal", href: "/industry/legal/" },
+        { label: "Medical", href: "/industry/medical/" },
+      ],
+    },
+    {
+      label: "About",
+      href: "/translation-agency/",
+      children: [
+        { label: "Turnaround", href: "/translation-agency/turnaround/" },
+        { label: "Rates", href: "/translation-agency/rates/" },
+        { label: "Customers", href: "/translation-agency/customers/" },
+        { label: "Translators", href: "/translators/" },
+        { label: "Locations", href: "/translation-agency/locations/" },
+        { label: "Contact us", href: "/contact-us/" },
+      ],
+    },
+    { label: "Blog", href: "/blog/" },
+  ],
+};
 
-const CTA_LABEL = "Get a Free Quote";
-const CTA_HREF = "https://betranslated.com/translation-quote/?utm_source=betranslated-couk";
+const CTA_LABEL = { en: "Get a free Quote" };
+const CTA_HREF = { en: "/translation-agency/quote/" };
 
 // Header logo: dark grey letters on light, white letters in dark mode. getImageProps
 // keeps the optimised srcSets of next/image inside a <picture>.
@@ -64,19 +57,27 @@ const { props: LOGO_LIGHT } = getImageProps({ ...LOGO, src: "/brand/logo-horizon
 const { props: LOGO_DARK } = getImageProps({ ...LOGO, src: "/brand/logo-on-dark.avif" });
 
 export default function SiteHeader() {
+  // Each scheme preloads only its own logo (what priority did for the single image).
   preload(LOGO_LIGHT.src, { as: "image", imageSrcSet: LOGO_LIGHT.srcSet, fetchPriority: "high", media: "(prefers-color-scheme: light)" });
   preload(LOGO_DARK.src, { as: "image", imageSrcSet: LOGO_DARK.srcSet, fetchPriority: "high", media: "(prefers-color-scheme: dark)" });
+  const items = NAV_ITEMS.en;
+  const home = "/";
+  const ctaLabel = CTA_LABEL.en;
+  const ctaHref = CTA_HREF.en;
 
   return (
+    <>
     <header className="bt-header">
       <div className="bt-header__inner">
-        <a href="/" className="bt-header__logo" aria-label="BeTranslated">
+        <a href={home} className="bt-header__logo" aria-label="BeTranslated">
+          {/* Dark mode swaps in the white-lettered logo (same size, no layout shift). */}
+          {/* Both logos are in the page; app/dark.css shows the white one in dark mode (system or switch). */}
           <img {...LOGO_LIGHT} className="bt-logo--light" alt="BeTranslated" fetchPriority="high" style={{ ...LOGO_LIGHT.style, height: 32, width: "auto" }} />
           <img {...LOGO_DARK} className="bt-logo--dark" alt="BeTranslated" style={{ ...LOGO_DARK.style, height: 32, width: "auto" }} />
         </a>
 
-        <nav className="bt-header__nav" aria-label="Primary">
-          {NAV_ITEMS.map((item) =>
+        <nav className="bt-header__nav" aria-label="Principal">
+          {items.map((item) =>
             item.children ? (
               <div key={item.href} className="bt-header__item">
                 <a href={item.href} className="bt-header__link bt-header__link--parent" aria-haspopup="true">
@@ -99,12 +100,13 @@ export default function SiteHeader() {
         <div className="bt-header__right">
           <SearchBox />
           <ThemeToggle />
-          <a href={CTA_HREF} className="bt-btn bt-btn--primary bt-btn--sm bt-header__cta">
-            {CTA_LABEL}
+          <a href={ctaHref} className="bt-btn bt-btn--primary bt-btn--sm bt-header__cta">
+            {ctaLabel}
           </a>
-          <MobileMenu items={[...NAV_ITEMS, { label: "Contact us", href: "/contact-us/" }]} ctaLabel={CTA_LABEL} ctaHref={CTA_HREF} />
+          <MobileMenu items={items} ctaLabel={ctaLabel} ctaHref={ctaHref} />
         </div>
       </div>
     </header>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { flattenBodyHtml, sanitizeBody, splitHero, splitTagline, splitLead, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
+import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
 import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, pathFromUrl, getAllPosts, postDate } from "@/lib/content";
 import { toLocalImagePath } from "@/lib/local-image";
@@ -7,14 +7,13 @@ import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
 import CtaBand from "./CtaBand";
-import TrustStrip from "./TrustStrip";
 import ClientsBand from "./ClientsBand";
 import ShareBar from "./ShareBar";
 import TocSpy from "./TocSpy";
 import PageFx from "./PageFx";
 import PageSchema from "./PageSchema";
-
-const KICKER = "Translation agency in the UK";
+import { KICKER } from "./StdHero";
+import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -47,7 +46,7 @@ function Children({ items, title }) {
               <a key={c.href} href={c.href} className="card card--link">
                 <h3>{childLabel(c.title)}</h3>
                 {c.description ? <p>{c.description}</p> : null}
-                <span className="card__more">{UI.readMore}</span>
+                <span className="card__more">{UI.en.readMore}</span>
               </a>
             ))}
           </div>
@@ -80,8 +79,8 @@ function BlogIndexView() {
           <div className="page-hero__text">
             <Breadcrumbs pathname="/blog/" current="Blog" />
             <span className="ip-kicker">{KICKER}</span>
-            <h1>Translation news</h1>
-            <p className="lead">Blogs about the translation industry.</p>
+            <h1>{UI.en.blogTitle}</h1>
+            <p className="lead">{UI.en.blogLead}</p>
           </div>
         </div>
       </section>
@@ -118,15 +117,14 @@ function readMinutes(text = "") {
 
 function BlogPostView({ data, slug }) {
   const pathname = `/blog/${slug}/`;
-  const ex = extractBlocks(flattenBodyHtml(data.bodyHtml, { pageSlug: slug }));
-  const { title: h1, body: cleanBody } = splitHero(ex.html);
+  const ex = extractBlocks(data.bodyHtml);
+  const { title: h1, body: cleanBody } = splitHero(sanitizeBody(ex.html));
   const title = (h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
   const chrome = stripPostChrome(cleanBody);
-  const { html: withQ, blocks } = { html: chrome.html, blocks: ex.blocks };
-  let body = questionRunsToFaq(withQ, "en", faqBlock, { keepLead: true });
+  let body = questionRunsToFaq(chrome.html, "en", faqBlock, { keepLead: true });
   body = faqSectionsToFaq(body, faqBlock);
   const { html: tocBody, toc } = withToc(enhanceTables(body));
-  body = restoreBlocks(tocBody, blocks);
+  body = restoreBlocks(tocBody, ex.blocks);
   const publishDate = postDate(data);
   const img = toLocalImagePath(data.og?.image);
   const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 4);
@@ -143,8 +141,8 @@ function BlogPostView({ data, slug }) {
             <h1>{title}</h1>
             {data.metaDescription ? <p className="page-hero__sub">{data.metaDescription}</p> : null}
             <div className="post-hero__meta">
-              {publishDate ? <span>{UI.published} {new Date(publishDate).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</span> : null}
-              <span>{readMinutes(data.bodyText)} {UI.minRead}</span>
+              {publishDate ? <span>{UI.en.published} {new Date(publishDate).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</span> : null}
+              <span>{readMinutes(data.bodyText)} {UI.en.minRead}</span>
             </div>
             <ShareBar path={pathname} title={title} compact />
           </div>
@@ -165,8 +163,8 @@ function BlogPostView({ data, slug }) {
           ) : null}
           <div className="quote-card">
             <span className="quote-card__eyebrow">Free quote</span>
-            <h3>{UI.ctaTitle}</h3>
-            <a href={UI.quoteHref} className="bt-btn bt-btn--primary quote-card__btn">{UI.ctaButton}</a>
+            <h3>{UI.en.ctaTitle}</h3>
+            <a href={UI.en.quoteHref} className="bt-btn bt-btn--primary quote-card__btn">{UI.en.ctaButton}</a>
             <a href={PHONE_HREF} className="quote-card__call">Call us · {PHONE}</a>
           </div>
         </aside>
@@ -174,7 +172,7 @@ function BlogPostView({ data, slug }) {
       {related.length ? (
         <section className="section section--tint related-posts">
           <div className="container">
-            <div className="section-head"><h2>{UI.relatedPosts}</h2></div>
+            <div className="section-head"><h2>{UI.en.relatedPosts}</h2></div>
             <div className="post-grid post-grid--related">
               {related.map((c) => {
                 const t = (c.data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
@@ -185,7 +183,7 @@ function BlogPostView({ data, slug }) {
                 );
               })}
             </div>
-            <p className="related-posts__all"><a href={UI.blogHref} className="card__more">{UI.backToBlog}</a></p>
+            <p className="related-posts__all"><a href={UI.en.blogHref} className="card__more">{UI.en.backToBlog}</a></p>
           </div>
         </section>
       ) : null}
@@ -195,26 +193,23 @@ function BlogPostView({ data, slug }) {
 }
 
 export default function ScrapedPage({ page, slug = [] }) {
-  if (!page) return null;
+  if (!page) return <NotFound />;
   if (slug[0] === "blog" && slug.length === 2) return <BlogPostView data={page} slug={slug[1]} />;
   if (slug.length === 1 && slug[0] === "blog") return <BlogIndexView />;
 
   const key = slug.join("/");
   const pathname = pathFromUrl(page.url) + (slug.length ? "/" : "");
-  const isHome = slug.length === 0;
   const isHub = HUB_SLUGS.has(key);
   const isQuote = key === QUOTE_SLUG;
   const isCustomers = key === CUSTOMERS_SLUG;
 
-  const flat = flattenBodyHtml(page.bodyHtml, { pageSlug: key || "index" });
-  const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(flat, { timelineLists: !isHub }));
-  const { tagline, ctas, body: afterTagline } = isHub || isHome ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
-  const { eyebrow: scrapedEyebrow, lead: scrapedLead, body: afterLead } = isHome ? splitLead(afterTagline) : { eyebrow: "", lead: "", body: afterTagline };
+  const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(page.bodyHtml, { timelineLists: !isHub }));
+  const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
   const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
-  let pageBody = dropLeadingCtas(afterLead);
+  let pageBody = dropLeadingCtas(afterTagline);
 
   const children = isHub ? listChildren(slug) : [];
-  const sections = toSections(pageBody, { more: UI.readMore });
+  const sections = toSections(pageBody, { more: UI.en.readMore });
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: toLocalImagePath(i.src), alt: i.alt })) : [];
 
@@ -226,9 +221,9 @@ export default function ScrapedPage({ page, slug = [] }) {
         <div className="container container--narrow">
           <div className="page-hero__text">
             <Breadcrumbs pathname={pathname} current={title} />
-            <span className="ip-kicker">{scrapedEyebrow || KICKER}</span>
+            <span className="ip-kicker">{KICKER}</span>
             <h1>{title}</h1>
-            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : scrapedLead ? <p className="lead" dangerouslySetInnerHTML={{ __html: scrapedLead }} /> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
+            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
             {isQuote ? (
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
@@ -240,15 +235,13 @@ export default function ScrapedPage({ page, slug = [] }) {
               <div className="page-hero__cta" dangerouslySetInnerHTML={{ __html: ctas }} />
             ) : !isQuote ? (
               <div className="page-hero__cta">
-                <a className="bt-btn bt-btn--primary" href={UI.quoteHref}>{UI.ctaButton}</a>
-                <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.ctaSecondary} · {PHONE}</a>
+                <a className="bt-btn bt-btn--primary" href={UI.en.quoteHref}>{UI.en.ctaButton}</a>
+                <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.en.ctaSecondary} · {PHONE}</a>
               </div>
             ) : null}
           </div>
         </div>
       </section>
-
-      {isHome ? <TrustStrip /> : null}
 
       {isQuote ? (
         <section className="section section--tint">
@@ -266,7 +259,7 @@ export default function ScrapedPage({ page, slug = [] }) {
 
       <Sections html={sections} />
 
-      {!isHub ? <Children items={children} title={UI.related} /> : null}
+      {!isHub ? <Children items={children} title={UI.en.related} /> : null}
 
       {isQuote ? null : <CtaBand />}
     </main>

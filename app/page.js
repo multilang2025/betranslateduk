@@ -1,6 +1,6 @@
 import { getHomePage } from '@/lib/content';
 import { toLocalImagePath } from '@/lib/local-image';
-import ScrapedPage from '@/components/ScrapedPage';
+import HomePage from '@/components/home/HomePage';
 
 export async function generateMetadata() {
   const page = getHomePage();
@@ -18,6 +18,5 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
-  const page = getHomePage();
-  return <ScrapedPage page={page} slug={[]} />;
+  return <HomePage locale="en" />;
 }

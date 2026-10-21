@@ -1,0 +1,1014 @@
+{
+  "_note": "Page illustrations (one per page, beside the first content band, never in the hero). Keys are page paths; '@sworn-city' is shared by every sworn city page ({city} is replaced by the city name). 'image' is the Higgsfield inventory number or generation id. src = 800 px WebP, srcLarge = large WebP for 2x screens. Built by scripts/build-page-illustrations.py.",
+  "/servicios/traduccion-jurada/": {
+    "src": "/img/es/traduccion-jurada-sello-traductor-jurado.webp",
+    "srcLarge": "/img/es/traduccion-jurada-sello-traductor-jurado-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción jurada con sello y firma del traductor jurado",
+    "image": "#7"
+  },
+  "/en/translation-services/sworn-translation/": {
+    "src": "/img/en/sworn-translation-spain-translator-seal.webp",
+    "srcLarge": "/img/en/sworn-translation-spain-translator-seal-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Sworn translation with the sworn translator's seal and signature",
+    "image": "#7"
+  },
+  "/fr/services/traduction-assermentee/": {
+    "src": "/img/fr/traduction-assermentee-espagne-sceau-traducteur.webp",
+    "srcLarge": "/img/fr/traduction-assermentee-espagne-sceau-traducteur-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction assermentée avec le sceau du traducteur juré",
+    "image": "#7"
+  },
+  "/servicios/traduccion-jurada/escrituras-publicas/": {
+    "src": "/img/es/traduccion-jurada-documentos-notariales.webp",
+    "srcLarge": "/img/es/traduccion-jurada-documentos-notariales-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción jurada de escrituras públicas y poderes notariales",
+    "image": "#100"
+  },
+  "/servicios/traduccion-jurada/actas-notariales/": {
+    "src": "/img/es/traduccion-jurada-documentos-notariales.webp",
+    "srcLarge": "/img/es/traduccion-jurada-documentos-notariales-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción jurada de actas notariales",
+    "image": "#100"
+  },
+  "/servicios/traduccion-jurada/documentos-notariales/": {
+    "src": "/img/es/traduccion-jurada-documentos-notariales.webp",
+    "srcLarge": "/img/es/traduccion-jurada-documentos-notariales-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de documentos notariales con sello del notario",
+    "image": "#100"
+  },
+  "/en/translation-services/sworn-translation/uk-power-of-attorney-translation-to-spanish/": {
+    "src": "/img/en/power-of-attorney-translation-spanish-notary.webp",
+    "srcLarge": "/img/en/power-of-attorney-translation-spanish-notary-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "UK power of attorney translation to Spanish",
+    "image": "#100"
+  },
+  "/servicios/traduccion-jurada/documentos-apostillados/": {
+    "src": "/img/es/traduccion-jurada-documentos-apostillados.webp",
+    "srcLarge": "/img/es/traduccion-jurada-documentos-apostillados-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción jurada de documentos apostillados",
+    "image": "#65"
+  },
+  "/servicios/traduccion-jurada/certificados-del-registro-mercantil/": {
+    "src": "/img/es/traduccion-jurada-documentos-apostillados.webp",
+    "srcLarge": "/img/es/traduccion-jurada-documentos-apostillados-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción jurada de certificados del registro mercantil",
+    "image": "#65"
+  },
+  "/en/translation-services/sworn-translation/uk-corporate-document-translation-to-spanish/": {
+    "src": "/img/en/corporate-document-translation-spanish-apostille.webp",
+    "srcLarge": "/img/en/corporate-document-translation-spanish-apostille-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "UK corporate document translation to Spanish with apostille",
+    "image": "#65"
+  },
+  "@sworn-city": {
+    "src": "/img/es/traductor-jurado-documento-oficial-sello.webp",
+    "srcLarge": "/img/es/traductor-jurado-documento-oficial-sello-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción jurada en {city}: documento oficial con sello",
+    "image": "#147"
+  },
+  "/servicios/interpretacion/": {
+    "src": "/img/es/servicios-de-interpretacion-cabina.webp",
+    "srcLarge": "/img/es/servicios-de-interpretacion-cabina-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Servicios de interpretación en cabina de conferencias",
+    "image": "#30"
+  },
+  "/en/translation-services/interpreting/": {
+    "src": "/img/en/interpreting-services-spain-booth.webp",
+    "srcLarge": "/img/en/interpreting-services-spain-booth-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Interpreting services in a conference booth",
+    "image": "#30"
+  },
+  "/fr/services/interpretation/": {
+    "src": "/img/fr/services-interpretation-espagne-cabine.webp",
+    "srcLarge": "/img/fr/services-interpretation-espagne-cabine-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Services d'interprétation en cabine de conférence",
+    "image": "#30"
+  },
+  "/servicios/interpretacion/simultanea/": {
+    "src": "/img/es/traduccion-simultanea-cabina-auriculares.webp",
+    "srcLarge": "/img/es/traduccion-simultanea-cabina-auriculares-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción simultánea en cabina con auriculares",
+    "image": "#172"
+  },
+  "/servicios/interpretacion/conferencias/": {
+    "src": "/img/es/interpretacion-de-conferencias-cabina.webp",
+    "srcLarge": "/img/es/interpretacion-de-conferencias-cabina-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Interpretación de conferencias desde la cabina",
+    "image": "#55"
+  },
+  "/servicios/interpretacion-remota/": {
+    "src": "/img/es/interpretacion-remota-videoconferencia.webp",
+    "srcLarge": "/img/es/interpretacion-remota-videoconferencia-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Interpretación remota por videoconferencia",
+    "image": "#3"
+  },
+  "/en/translation-services/remote-interpreting/": {
+    "src": "/img/en/remote-interpreting-video-call.webp",
+    "srcLarge": "/img/en/remote-interpreting-video-call-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Remote interpreting by video call",
+    "image": "#3"
+  },
+  "/servicios/interpretacion/medica/": {
+    "src": "/img/es/interpretacion-medica-consulta.webp",
+    "srcLarge": "/img/es/interpretacion-medica-consulta-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Interpretación médica en la consulta",
+    "image": "#42"
+  },
+  "/servicios/interpretacion/enlace/": {
+    "src": "/img/es/interpretacion-de-enlace-feria.webp",
+    "srcLarge": "/img/es/interpretacion-de-enlace-feria-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Interpretación de enlace en una feria comercial",
+    "image": "#52"
+  },
+  "/servicios/traduccion-medica/": {
+    "src": "/img/es/traduccion-medica-informe-clinico.webp",
+    "srcLarge": "/img/es/traduccion-medica-informe-clinico-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción médica de informes clínicos",
+    "image": "#62"
+  },
+  "/servicios/traduccion-cientifica/": {
+    "src": "/img/es/traduccion-cientifica-laboratorio.webp",
+    "srcLarge": "/img/es/traduccion-cientifica-laboratorio-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción científica de resultados de laboratorio",
+    "image": "#9"
+  },
+  "/servicios/traduccion-tecnica-industrial/": {
+    "src": "/img/es/traduccion-tecnica-industrial-manual.webp",
+    "srcLarge": "/img/es/traduccion-tecnica-industrial-manual-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción técnica e industrial de manuales",
+    "image": "#61"
+  },
+  "/en/translation-services/technical/": {
+    "src": "/img/en/technical-translation-industrial-manual.webp",
+    "srcLarge": "/img/en/technical-translation-industrial-manual-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Technical translation of industrial manuals",
+    "image": "#61"
+  },
+  "/fr/services/traduction-technique/": {
+    "src": "/img/fr/traduction-technique-manuel-industriel.webp",
+    "srcLarge": "/img/fr/traduction-technique-manuel-industriel-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction technique de manuels industriels",
+    "image": "#61"
+  },
+  "/servicios/traduccion-legal/": {
+    "src": "/img/es/traduccion-legal-juridica.webp",
+    "srcLarge": "/img/es/traduccion-legal-juridica-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción legal y jurídica de textos legales",
+    "image": "#29"
+  },
+  "/fr/services/traduction-juridique/": {
+    "src": "/img/fr/traduction-juridique-textes-de-loi.webp",
+    "srcLarge": "/img/fr/traduction-juridique-textes-de-loi-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction juridique de textes de loi",
+    "image": "#29"
+  },
+  "/servicios/traduccion-financiera/": {
+    "src": "/img/es/traduccion-financiera-balance.webp",
+    "srcLarge": "/img/es/traduccion-financiera-balance-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción financiera de balances y cuentas",
+    "image": "#67"
+  },
+  "/en/translation-services/financial/": {
+    "src": "/img/en/financial-translation-balance-sheet.webp",
+    "srcLarge": "/img/en/financial-translation-balance-sheet-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Financial translation of balance sheets",
+    "image": "#67"
+  },
+  "/fr/services/traduction-financiere/": {
+    "src": "/img/fr/traduction-financiere-bilan.webp",
+    "srcLarge": "/img/fr/traduction-financiere-bilan-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction financière de bilans comptables",
+    "image": "#67"
+  },
+  "/servicios/traduccion-pagina-web/": {
+    "src": "/img/es/traduccion-de-paginas-web-tienda-online.webp",
+    "srcLarge": "/img/es/traduccion-de-paginas-web-tienda-online-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de páginas web y tiendas online",
+    "image": "#8"
+  },
+  "/en/translation-services/website-translation/": {
+    "src": "/img/en/website-translation-online-shop.webp",
+    "srcLarge": "/img/en/website-translation-online-shop-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Website translation for an online shop",
+    "image": "#8"
+  },
+  "/fr/services/traduction-sites-web/": {
+    "src": "/img/fr/traduction-de-sites-web-boutique-en-ligne.webp",
+    "srcLarge": "/img/fr/traduction-de-sites-web-boutique-en-ligne-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction de sites web et boutiques en ligne",
+    "image": "#8"
+  },
+  "/servicios/traduccion-audiovisual/": {
+    "src": "/img/es/traduccion-audiovisual-subtitulado.webp",
+    "srcLarge": "/img/es/traduccion-audiovisual-subtitulado-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción audiovisual: subtitulado y doblaje",
+    "image": "#6"
+  },
+  "/en/translation-services/audiovisual/": {
+    "src": "/img/en/audiovisual-translation-subtitling.webp",
+    "srcLarge": "/img/en/audiovisual-translation-subtitling-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Audiovisual translation: subtitling and dubbing",
+    "image": "#6"
+  },
+  "/fr/services/traduction-audiovisuelle/": {
+    "src": "/img/fr/traduction-audiovisuelle-sous-titrage.webp",
+    "srcLarge": "/img/fr/traduction-audiovisuelle-sous-titrage-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction audiovisuelle : sous-titrage et doublage",
+    "image": "#6"
+  },
+  "/servicios/transcripcion/": {
+    "src": "/img/es/transcripcion-audio-video.webp",
+    "srcLarge": "/img/es/transcripcion-audio-video-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Transcripción de audio y vídeo en un estudio de grabación",
+    "image": "#31"
+  },
+  "/en/translation-services/transcription-services/": {
+    "src": "/img/en/audio-video-transcription.webp",
+    "srcLarge": "/img/en/audio-video-transcription-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Audio and video transcription in a recording studio",
+    "image": "#31"
+  },
+  "/servicios/posedicion/": {
+    "src": "/img/es/servicios-de-posedicion-traduccion-automatica.webp",
+    "srcLarge": "/img/es/servicios-de-posedicion-traduccion-automatica-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Servicios de posedición de traducción automática",
+    "image": "#90"
+  },
+  "/servicios/traduccion-turistica/": {
+    "src": "/img/es/traduccion-turistica-hotel.webp",
+    "srcLarge": "/img/es/traduccion-turistica-hotel-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción turística para hoteles y folletos de viaje",
+    "image": "#143"
+  },
+  "/en/translation-services/tourism/": {
+    "src": "/img/en/tourism-translation-hotel.webp",
+    "srcLarge": "/img/en/tourism-translation-hotel-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Tourism translation for hotels and travel brochures",
+    "image": "#143"
+  },
+  "/fr/services/traduction-touristique/": {
+    "src": "/img/fr/traduction-touristique-hotel.webp",
+    "srcLarge": "/img/fr/traduction-touristique-hotel-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction touristique pour hôtels et brochures",
+    "image": "#143"
+  },
+  "/servicios/servicios-de-maquetacion-multilingue/": {
+    "src": "/img/es/traduccion-y-maquetacion-multilingue.webp",
+    "srcLarge": "/img/es/traduccion-y-maquetacion-multilingue-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Servicios de maquetación multilingüe de catálogos",
+    "image": "#1"
+  },
+  "/en/translation-services/multilingual-desktop-publishing-services/": {
+    "src": "/img/en/multilingual-desktop-publishing.webp",
+    "srcLarge": "/img/en/multilingual-desktop-publishing-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Multilingual desktop publishing of brochures",
+    "image": "#1"
+  },
+  "/servicios/traduccion-documentos/": {
+    "src": "/img/es/traduccion-de-documentos.webp",
+    "srcLarge": "/img/es/traduccion-de-documentos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de documentos profesionales",
+    "image": "#5"
+  },
+  "/en/translation-services/documents-translation/": {
+    "src": "/img/en/document-translation.webp",
+    "srcLarge": "/img/en/document-translation-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Document translation for businesses",
+    "besideCards": true,
+    "image": "#5"
+  },
+  "/fr/services/traduction-documents/": {
+    "src": "/img/fr/traduction-de-documents.webp",
+    "srcLarge": "/img/fr/traduction-de-documents-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction de documents professionnels",
+    "image": "#5"
+  },
+  "/servicios/traduccion-comercial/": {
+    "src": "/img/es/traduccion-comercial-contratos-exportacion.webp",
+    "srcLarge": "/img/es/traduccion-comercial-contratos-exportacion-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción comercial de contratos y documentos de exportación",
+    "image": "#89"
+  },
+  "/fr/services/traduction-commerciale/": {
+    "src": "/img/fr/traduction-commerciale-contrats-export.webp",
+    "srcLarge": "/img/fr/traduction-commerciale-contrats-export-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traduction commerciale de contrats d'export",
+    "image": "#89"
+  },
+  "/empresa-traduccion/": {
+    "src": "/img/es/empresa-de-traduccion-oficina.webp",
+    "srcLarge": "/img/es/empresa-de-traduccion-oficina-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Oficina de una empresa de traducción",
+    "image": "#72"
+  },
+  "/en/about-us/": {
+    "src": "/img/en/translation-company-office.webp",
+    "srcLarge": "/img/en/translation-company-office-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Office of a translation company",
+    "image": "#72"
+  },
+  "/fr/societe-de-traduction/": {
+    "src": "/img/fr/societe-de-traduction-bureau.webp",
+    "srcLarge": "/img/fr/societe-de-traduction-bureau-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Bureau d'une société de traduction",
+    "image": "#72"
+  },
+  "/servicios/traduccion-en-valencia/": {
+    "src": "/img/es/traduccion-en-valencia-mercado-central.webp",
+    "srcLarge": "/img/es/traduccion-en-valencia-mercado-central-1200.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Traducción en Valencia: cúpula del Mercado Central",
+    "image": "#352"
+  },
+  "/servicios/traduccion-seo/": {
+    "src": "/img/es/traduccion-seo-auditoria-web.webp",
+    "srcLarge": "/img/es/traduccion-seo-auditoria-web-1200.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Traducción SEO: auditoría técnica de la web",
+    "image": "a9134f33"
+  },
+  "/en/translation-services/seo-translation/": {
+    "src": "/img/en/seo-translation-website-audit.webp",
+    "srcLarge": "/img/en/seo-translation-website-audit-1200.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "SEO translation and technical website audit",
+    "image": "a9134f33"
+  },
+  "/servicios/traduccion-seo/abogados/": {
+    "src": "/img/es/seo-para-abogados.webp",
+    "srcLarge": "/img/es/seo-para-abogados-1200.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "SEO para abogados y despachos",
+    "image": "9fa64ff6"
+  },
+  "/casos-de-exito/seo-abogados/": {
+    "src": "/img/es/caso-de-exito-seo-abogados.webp",
+    "srcLarge": "/img/es/caso-de-exito-seo-abogados-1200.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Caso de éxito de SEO para un despacho de abogados",
+    "image": "7b4cb432"
+  },
+  "/servicios/traduccion-medica/certificados-de-analisis/": {
+    "src": "/img/es/traduccion-certificados-de-analisis-laboratorio.webp",
+    "srcLarge": "/img/es/traduccion-certificados-de-analisis-laboratorio-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de certificados de análisis de laboratorio",
+    "image": "#45"
+  },
+  "/servicios/traduccion-medica/consentimientos-informados/": {
+    "src": "/img/es/traduccion-consentimiento-informado-paciente.webp",
+    "srcLarge": "/img/es/traduccion-consentimiento-informado-paciente-1200.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Traducción de consentimientos informados para pacientes",
+    "image": "#343"
+  },
+  "/servicios/traduccion-medica/documentos-de-farmacovigilancia/": {
+    "src": "/img/es/traduccion-documentos-farmacovigilancia.webp",
+    "srcLarge": "/img/es/traduccion-documentos-farmacovigilancia-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de documentos de farmacovigilancia",
+    "image": "#160"
+  },
+  "/servicios/traduccion-medica/documentos-registro-de-medicamentos/": {
+    "src": "/img/es/traduccion-registro-de-medicamentos-dosier.webp",
+    "srcLarge": "/img/es/traduccion-registro-de-medicamentos-dosier-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de dosieres para el registro de medicamentos",
+    "image": "#169"
+  },
+  "/servicios/traduccion-medica/estudios-de-ecotoxicologia/": {
+    "src": "/img/es/traduccion-estudios-ecotoxicologia.webp",
+    "srcLarge": "/img/es/traduccion-estudios-ecotoxicologia-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de estudios de ecotoxicología",
+    "image": "#114"
+  },
+  "/servicios/traduccion-medica/evaluaciones-de-impacto-ambiental/": {
+    "src": "/img/es/traduccion-evaluaciones-impacto-ambiental.webp",
+    "srcLarge": "/img/es/traduccion-evaluaciones-impacto-ambiental-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de evaluaciones de impacto ambiental",
+    "image": "#116"
+  },
+  "/servicios/traduccion-medica/farmaceutica/": {
+    "src": "/img/es/traduccion-farmaceutica-produccion.webp",
+    "srcLarge": "/img/es/traduccion-farmaceutica-produccion-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción farmacéutica para la industria del medicamento",
+    "image": "#49"
+  },
+  "/servicios/traduccion-medica/fichas-de-datos-de-seguridad/": {
+    "src": "/img/es/traduccion-fichas-de-datos-de-seguridad.webp",
+    "srcLarge": "/img/es/traduccion-fichas-de-datos-de-seguridad-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de fichas de datos de seguridad",
+    "image": "#41"
+  },
+  "/servicios/traduccion-medica/fichas-tecnicas-de-medicamentos/": {
+    "src": "/img/es/traduccion-fichas-tecnicas-medicamentos.webp",
+    "srcLarge": "/img/es/traduccion-fichas-tecnicas-medicamentos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de fichas técnicas de medicamentos",
+    "image": "#107"
+  },
+  "/servicios/traduccion-medica/informes-de-bioprospeccion/": {
+    "src": "/img/es/traduccion-informes-bioprospeccion.webp",
+    "srcLarge": "/img/es/traduccion-informes-bioprospeccion-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes de bioprospección",
+    "image": "#121"
+  },
+  "/servicios/traduccion-medica/informes-de-ensayos-clinicos/": {
+    "src": "/img/es/traduccion-ensayos-clinicos.webp",
+    "srcLarge": "/img/es/traduccion-ensayos-clinicos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes de ensayos clínicos",
+    "image": "#144"
+  },
+  "/servicios/traduccion-medica/investigacion-originales/": {
+    "src": "/img/es/traduccion-articulos-investigacion.webp",
+    "srcLarge": "/img/es/traduccion-articulos-investigacion-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de artículos de investigación originales",
+    "image": "#152"
+  },
+  "/servicios/traduccion-medica/medicina-estetica/": {
+    "src": "/img/es/traduccion-medicina-estetica.webp",
+    "srcLarge": "/img/es/traduccion-medicina-estetica-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción para medicina estética y cosmética",
+    "image": "#127"
+  },
+  "/servicios/traduccion-medica/prospectos-farmaceuticos/": {
+    "src": "/img/es/traduccion-prospectos-farmaceuticos.webp",
+    "srcLarge": "/img/es/traduccion-prospectos-farmaceuticos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de prospectos farmacéuticos",
+    "image": "#159"
+  },
+  "/servicios/traduccion-medica/psicologia/": {
+    "src": "/img/es/traduccion-psicologia-consulta.webp",
+    "srcLarge": "/img/es/traduccion-psicologia-consulta-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción para psicología: consulta y cuestionarios",
+    "image": "higgsfield-2026-10-17-3"
+  },
+  "/servicios/traduccion-medica/sector-dental/": {
+    "src": "/img/es/traduccion-sector-dental-clinica.webp",
+    "srcLarge": "/img/es/traduccion-sector-dental-clinica-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción para el sector dental y clínicas",
+    "image": "higgsfield-2026-10-17-2"
+  },
+  "/servicios/traduccion-medica/veterinaria/": {
+    "src": "/img/es/traduccion-veterinaria.webp",
+    "srcLarge": "/img/es/traduccion-veterinaria-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción veterinaria de informes clínicos",
+    "image": "higgsfield-2026-10-17-1"
+  },
+  "/servicios/traduccion-cientifica/informes-de-caracterizacion-de-proteinas/": {
+    "src": "/img/es/traduccion-informes-caracterizacion-proteinas.webp",
+    "srcLarge": "/img/es/traduccion-informes-caracterizacion-proteinas-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes de caracterización de proteínas",
+    "image": "higgsfield-2026-10-17-4"
+  },
+  "/servicios/traduccion-cientifica/informes-de-monitoreo-ambiental/": {
+    "src": "/img/es/traduccion-informes-monitoreo-ambiental.webp",
+    "srcLarge": "/img/es/traduccion-informes-monitoreo-ambiental-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes de monitoreo ambiental",
+    "image": "#59"
+  },
+  "/servicios/traduccion-cientifica/informes-de-sintesis-quimica/": {
+    "src": "/img/es/traduccion-informes-sintesis-quimica.webp",
+    "srcLarge": "/img/es/traduccion-informes-sintesis-quimica-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes de síntesis química",
+    "image": "#173"
+  },
+  "/servicios/traduccion-cientifica/informes-tecnicos-cientificos/": {
+    "src": "/img/es/traduccion-informes-tecnicos-cientificos.webp",
+    "srcLarge": "/img/es/traduccion-informes-tecnicos-cientificos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes técnicos y científicos",
+    "image": "#161"
+  },
+  "/servicios/traduccion-cientifica/manuales-de-laboratorio-y-sops/": {
+    "src": "/img/es/traduccion-manuales-laboratorio-sops.webp",
+    "srcLarge": "/img/es/traduccion-manuales-laboratorio-sops-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de manuales de laboratorio y SOPs",
+    "image": "#130"
+  },
+  "/servicios/traduccion-cientifica/metodos-analiticos/": {
+    "src": "/img/es/traduccion-metodos-analiticos.webp",
+    "srcLarge": "/img/es/traduccion-metodos-analiticos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de métodos analíticos y resultados",
+    "image": "#139"
+  },
+  "/servicios/traduccion-cientifica/monografias-cientificas/": {
+    "src": "/img/es/traduccion-monografias-cientificas.webp",
+    "srcLarge": "/img/es/traduccion-monografias-cientificas-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de monografías científicas",
+    "image": "#47"
+  },
+  "/servicios/traduccion-cientifica/planes-de-gestion-de-residuos/": {
+    "src": "/img/es/traduccion-planes-gestion-residuos.webp",
+    "srcLarge": "/img/es/traduccion-planes-gestion-residuos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de planes de gestión de residuos",
+    "image": "#106"
+  },
+  "/servicios/traduccion-cientifica/presentaciones-cientificas/": {
+    "src": "/img/es/traduccion-presentaciones-cientificas.webp",
+    "srcLarge": "/img/es/traduccion-presentaciones-cientificas-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de presentaciones científicas",
+    "image": "#53"
+  },
+  "/servicios/traduccion-cientifica/protocolos-de-cultivos-celulares/": {
+    "src": "/img/es/traduccion-protocolos-cultivos-celulares.webp",
+    "srcLarge": "/img/es/traduccion-protocolos-cultivos-celulares-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de protocolos de cultivos celulares",
+    "image": "higgsfield-2026-10-17-5"
+  },
+  "/servicios/traduccion-cientifica/protocolos-de-investigacion/": {
+    "src": "/img/es/traduccion-protocolos-investigacion.webp",
+    "srcLarge": "/img/es/traduccion-protocolos-investigacion-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de protocolos de investigación",
+    "image": "#21"
+  },
+  "/servicios/traduccion-cientifica/reivindicaciones-de-patente/": {
+    "src": "/img/es/traduccion-reivindicaciones-patente.webp",
+    "srcLarge": "/img/es/traduccion-reivindicaciones-patente-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de reivindicaciones de patente",
+    "image": "#104"
+  },
+  "/servicios/traduccion-cientifica/resumenes-de-congresos-cientificos/": {
+    "src": "/img/es/traduccion-resumenes-congresos-cientificos.webp",
+    "srcLarge": "/img/es/traduccion-resumenes-congresos-cientificos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de resúmenes de congresos científicos",
+    "image": "#140"
+  },
+  "/servicios/traduccion-cientifica/revisiones-sistematicas-y-meta-analisis/": {
+    "src": "/img/es/traduccion-revisiones-sistematicas-metaanalisis.webp",
+    "srcLarge": "/img/es/traduccion-revisiones-sistematicas-metaanalisis-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de revisiones sistemáticas y metaanálisis",
+    "image": "#168"
+  },
+  "/servicios/traduccion-cientifica/secuenciacion-genomica/": {
+    "src": "/img/es/traduccion-secuenciacion-genomica.webp",
+    "srcLarge": "/img/es/traduccion-secuenciacion-genomica-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de documentos de secuenciación genómica",
+    "image": "#82"
+  },
+  "/servicios/traduccion-cientifica/solicitudes-de-patente/": {
+    "src": "/img/es/traduccion-solicitudes-patente.webp",
+    "srcLarge": "/img/es/traduccion-solicitudes-patente-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de solicitudes de patente",
+    "image": "#128"
+  },
+  "/servicios/traduccion-cientifica/tesis-doctorales-cientificas/": {
+    "src": "/img/es/traduccion-tesis-doctorales-cientificas.webp",
+    "srcLarge": "/img/es/traduccion-tesis-doctorales-cientificas-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de tesis doctorales científicas",
+    "image": "#40"
+  },
+  "/servicios/traduccion-tecnica-industrial/descripciones-hojas-datos/": {
+    "src": "/img/es/traduccion-hojas-de-datos-tecnicos.webp",
+    "srcLarge": "/img/es/traduccion-hojas-de-datos-tecnicos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de descripciones y hojas de datos técnicos",
+    "image": "#79"
+  },
+  "/servicios/traduccion-tecnica-industrial/disenos-tecnicos-planos-esquemas/": {
+    "src": "/img/es/traduccion-planos-disenos-tecnicos.webp",
+    "srcLarge": "/img/es/traduccion-planos-disenos-tecnicos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de diseños técnicos, planos y esquemas",
+    "image": "#131"
+  },
+  "/servicios/traduccion-tecnica-industrial/industria-alimentaria/": {
+    "src": "/img/es/traduccion-industria-alimentaria.webp",
+    "srcLarge": "/img/es/traduccion-industria-alimentaria-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción para la industria alimentaria",
+    "image": "#117"
+  },
+  "/servicios/traduccion-tecnica-industrial/informes-impacto-social-ambiental/": {
+    "src": "/img/es/traduccion-informes-impacto-social-ambiental.webp",
+    "srcLarge": "/img/es/traduccion-informes-impacto-social-ambiental-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de informes de impacto social y ambiental",
+    "image": "#10"
+  },
+  "/servicios/traduccion-legal/contratos/": {
+    "src": "/img/es/traduccion-de-contratos.webp",
+    "srcLarge": "/img/es/traduccion-de-contratos-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de contratos firmados entre empresas",
+    "image": "#155"
+  },
+  "/servicios/traduccion-legal/estatutos-de-empresa/": {
+    "src": "/img/es/traduccion-estatutos-de-empresa.webp",
+    "srcLarge": "/img/es/traduccion-estatutos-de-empresa-1024.webp",
+    "w": 800,
+    "h": 533,
+    "wLarge": 1024,
+    "hLarge": 683,
+    "alt": "Traducción de estatutos de empresa",
+    "image": "#138"
+  },
+  "/servicios/traduccion-financiera/companias-de-seguros/": {
+    "src": "/blog/traduccion-para-companias-de-seguros.webp",
+    "srcLarge": "/blog/traduccion-para-companias-de-seguros.webp",
+    "w": 1200,
+    "h": 800,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Casa y coche en miniatura bajo un paraguas azul marino junto a pólizas y una calculadora naranja",
+    "image": "blog"
+  },
+  "/servicios/traduccion-marketing/comunicados-de-prensa/": {
+    "src": "/blog/traduccion-de-un-comunicado-de-prensa.webp",
+    "srcLarge": "/blog/traduccion-de-un-comunicado-de-prensa.webp",
+    "w": 1200,
+    "h": 800,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Escritorio de redacción con comunicados impresos, un teléfono azul marino y un pisapapeles naranja",
+    "image": "blog"
+  },
+  "/servicios/traduccion-comercial/catalogos-y-folletos/": {
+    "src": "/blog/traduccion-catalogos-folletos.webp",
+    "srcLarge": "/blog/traduccion-catalogos-folletos.webp",
+    "w": 1200,
+    "h": 800,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Catálogos y folletos abiertos en el mostrador de una imprenta con un montón de octavillas naranjas",
+    "image": "blog"
+  },
+  "/servicios/interpretacion/eventos-multilingues/": {
+    "src": "/blog/interpretes-evento-multilingue.webp",
+    "srcLarge": "/blog/interpretes-evento-multilingue.webp",
+    "w": 1200,
+    "h": 800,
+    "wLarge": 1200,
+    "hLarge": 800,
+    "alt": "Sala de conferencias con receptores de interpretación en sillas azul marino y una silla naranja",
+    "image": "blog"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "_doc": [
+    "Blog posts featured on the home page (components/home/FeaturedPosts.jsx): real UK post slugs from scripts/btvibe-uk/output/posts, single locale (en)."
+  ],
+  "en": [
+    "how-much-translate-document",
+    "property-documentation-translation",
+    "translation-services-for-optical-practices",
+    "tremendous-value-multilingual-website",
+    "8-british-habits-that-stand-out-abroad",
+    "5-inspiring-freelance-jobs"
+  ],
+  "es": [],
+  "fr": []
+}

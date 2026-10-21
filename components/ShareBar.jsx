@@ -3,10 +3,16 @@
 import { useState } from "react";
 import { BRAND, STROKE } from "./chrome/socialIcons";
 
-const SITE = "https://www.betranslated.co.uk";
-const L = { title: "Share this article", copy: "Copy link", copied: "Link copied", more: "More options", email: "Send by email", on: "Share on" };
+import { SITE } from "../lib/site";
 
+const L = {
+  en: { title: "Share this article", copy: "Copy link", copied: "Link copied", more: "More options", email: "Send by email", on: "Share on" },
+};
+
+// Share links work without JavaScript; copy and the native share sheet are
+// progressive extras. `compact` is the icon-only row in the post hero.
 export default function ShareBar({ path, title, compact = false }) {
+  const l = L.en;
   const [copied, setCopied] = useState(false);
   const url = SITE + path;
   const u = encodeURIComponent(url);
@@ -24,7 +30,7 @@ export default function ShareBar({ path, title, compact = false }) {
       setCopied(true);
       setTimeout(() => setCopied(false), 2200);
     } catch {
-      window.prompt(L.copy, url);
+      window.prompt(l.copy, url);
     }
   }
 
@@ -41,26 +47,28 @@ export default function ShareBar({ path, title, compact = false }) {
 
   return (
     <div className={"share" + (compact ? " share--compact" : "")}>
-      {compact ? null : <span className="share__title">{L.title}</span>}
+      {compact ? null : <span className="share__title">{l.title}</span>}
       <ul className="share__list">
         {nets.map(([k, name, href]) => (
           <li key={k}>
-            <a className={`share__btn share__btn--${k}`} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${L.on} ${name}`} title={name}>
+            <a className={`share__btn share__btn--${k}`} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${l.on} ${name}`} title={name}>
               {icon(BRAND[k])}
             </a>
           </li>
         ))}
-        <li><a className="share__btn" href={`mailto:?subject=${t}&body=${u}`} aria-label={L.email} title={L.email}>{icon(STROKE.email, false)}</a></li>
         <li>
-          <button type="button" className={"share__btn" + (copied ? " is-done" : "")} onClick={copy} aria-label={copied ? L.copied : L.copy} title={L.copy}>
+          <a className="share__btn" href={`mailto:?subject=${t}&body=${u}`} aria-label={l.email} title={l.email}>{icon(STROKE.email, false)}</a>
+        </li>
+        <li>
+          <button type="button" className={"share__btn" + (copied ? " is-done" : "")} onClick={copy} aria-label={copied ? l.copied : l.copy} title={l.copy}>
             {icon(copied ? STROKE.check : STROKE.link, false)}
           </button>
         </li>
         <li className="share__native">
-          <button type="button" className="share__btn" onClick={native} aria-label={L.more} title={L.more}>{icon(STROKE.share, false)}</button>
+          <button type="button" className="share__btn" onClick={native} aria-label={l.more} title={l.more}>{icon(STROKE.share, false)}</button>
         </li>
       </ul>
-      <span className="share__status" role="status" aria-live="polite">{copied ? L.copied : ""}</span>
+      <span className="share__status" role="status" aria-live="polite">{copied ? l.copied : ""}</span>
     </div>
   );
 }

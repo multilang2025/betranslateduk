@@ -16,10 +16,12 @@ export const STROKE = {
   check: "M20 6 9 17l-5-5",
 };
 
-// WhatsApp line for enquiries in Spain (WhatsApp only; calls go to the office number).
-export const WHATSAPP = "34651309024";
+// WhatsApp line: same UK office number used sitewide (scraped contact-us.json,
+// "Click to Chat for WhatsApp" plugin).
+export const WHATSAPP = "442030269848";
 
-// BeTranslated's social profiles, as linked in the scraped betranslated.co.uk footer.
+// BeTranslated's social profiles, as linked in the scraped betranslated.co.uk
+// footer. Also the schema Organization sameAs list (lib/business.js).
 export const SOCIAL = [
   ["linkedin", "LinkedIn", "https://www.linkedin.com/company/betranslated/"],
   ["facebook", "Facebook", "https://www.facebook.com/BeTranslated"],

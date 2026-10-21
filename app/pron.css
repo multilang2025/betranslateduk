@@ -1,0 +1,48 @@
+/* Pronunciation buttons after foreign-origin terms (lib/pronounce.js,
+   lib/pronScript.js). Teal, never orange: it is not a CTA. Fixed size and
+   rendered on the server, so nothing shifts when it loads or plays. */
+.pron-nw { white-space: nowrap; }
+/* Long compounds (63-letter German law names) may break rather than overflow on a phone. */
+.pron-t { overflow-wrap: anywhere; }
+
+.pron {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 0.1em 0 0.3em;
+  padding: 0;
+  border: 1px solid rgba(95, 169, 177, 0.6);
+  border-radius: 999px;
+  background: var(--bt-white, #fff);
+  color: var(--bt-accent-ink, #2F7F88);
+  font: inherit;
+  line-height: 1;
+  vertical-align: -0.22em;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+/* 32 px hit area around the 20 px disc, without moving the text. */
+.pron::before { content: ""; position: absolute; inset: -6px; border-radius: 999px; }
+.pron svg { display: block; width: 0.8rem; height: 0.8rem; pointer-events: none; }
+.pron:hover { background: var(--bt-accent-50, #EFF7F8); border-color: var(--bt-accent, #5FA9B1); }
+.pron:focus { outline: none; }
+.pron:focus-visible { outline: 2px solid var(--bt-accent-ink, #2F7F88); outline-offset: 2px; }
+
+/* Playing: filled disc, waves pulse. */
+.pron[data-playing] { background: var(--bt-accent-ink, #2F7F88); border-color: var(--bt-accent-ink, #2F7F88); color: #fff; }
+.pron[data-playing] .pron__w1 { animation: pron-wave 0.9s ease-in-out infinite; }
+.pron[data-playing] .pron__w2 { animation: pron-wave 0.9s ease-in-out 0.3s infinite; }
+@keyframes pron-wave { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) {
+  .pron, .pron[data-playing] .pron__w1, .pron[data-playing] .pron__w2 { transition: none; animation: none; }
+}
+@media (forced-colors: active) {
+  .pron { border-color: ButtonText; color: ButtonText; background: ButtonFace; }
+  .pron[data-playing] { background: Highlight; color: HighlightText; }
+}
+@media print { .pron { display: none; } }

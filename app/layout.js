@@ -9,11 +9,15 @@ import "./ui-fx.css";
 import "./ui-polish.css";
 import "./ui-tools.css";
 import "./ui-motion.css";
+import "./home-refresh.css";
 // Dark theme (prefers-color-scheme): last, so its overrides win over every file above.
 import "./dark.css";
 import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import CookieConsent from "@/components/chrome/CookieConsent";
+import ToneSections, { TONE_SCRIPT } from "@/components/ToneSections";
+import FloatingTools from "@/components/chrome/FloatingTools";
+import ArrivalTrail from "@/components/chrome/ArrivalTrail";
 import { THEME_SCRIPT } from "@/lib/themeScript";
 
 const poppins = Poppins({
@@ -50,7 +54,11 @@ export default function RootLayout({ children }) {
         <SiteHeader />
         {children}
         <SiteFooter />
+        <ToneSections />
+        <FloatingTools />
+        <ArrivalTrail />
         <CookieConsent />
+        <script dangerouslySetInnerHTML={{ __html: TONE_SCRIPT }} />
       </body>
     </html>
   );
