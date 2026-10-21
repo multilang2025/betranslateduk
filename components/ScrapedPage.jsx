@@ -8,6 +8,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import CtaBand from "./CtaBand";
 import ClientsBand from "./ClientsBand";
 import ShareBar from "./ShareBar";
+import QuoteForm from "./home/QuoteForm";
 import TocSpy from "./TocSpy";
 import PageFx from "./PageFx";
 import PageSchema from "./PageSchema";
@@ -249,6 +250,7 @@ export default function ScrapedPage({ page, slug = [] }) {
               <li><span>Phone</span><a href={PHONE_HREF}>{PHONE}</a></li>
               <li><span>Email</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
             </ul>
+            <div className="form-card quote-page__form"><QuoteForm locale="en" /></div>
           </div>
         </section>
       ) : null}

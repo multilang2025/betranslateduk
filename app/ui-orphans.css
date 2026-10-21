@@ -1,0 +1,60 @@
+/* Rules for classes the components use but only ui-interp.css (not loaded) styled. */
+.trust__item--rating .trust__num > span:first-child { color: var(--bt-orange-600); }
+.trust__item--tip { position: relative; cursor: help; outline: none; }
+.trust__tip { position: absolute; left: 50%; bottom: calc(100% + 10px); z-index: 20; width: max-content; max-width: 240px; padding: 9px 12px; border-radius: 10px; background: #2F3143; color: #fff; font: 500 12.5px/1.45 var(--font-ui); text-align: center; box-shadow: 0 10px 24px rgba(47,49,67,.25); opacity: 0; visibility: hidden; transform: translate(-50%, 4px); transition: opacity .15s ease, transform .15s ease, visibility .15s; pointer-events: none; }
+.trust__tip::after { content: ""; position: absolute; left: 50%; top: 100%; margin-left: -6px; border: 6px solid transparent; border-top-color: #2F3143; }
+.trust__item--tip:hover .trust__tip, .trust__item--tip:focus-visible .trust__tip, .trust__item--tip:focus .trust__tip { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.trust__item--tip:focus-visible { box-shadow: 0 0 0 2px #5FA9B1; border-radius: 12px; }
+@media (max-width: 600px) {
+  .trust__tip { left: auto; right: 0; transform: translateY(4px); }
+  .trust__item--tip:hover .trust__tip, .trust__item--tip:focus .trust__tip { transform: none; }
+  .trust__tip::after { left: auto; right: 24px; }
+}
+.post-grid--related { gap: 18px; }
+.post-grid--related .post__media { aspect-ratio: 16 / 10; }
+.post-grid--related .post__body { padding: 14px 16px 16px; }
+.post-grid--related .post h3 { font-size: 1rem; }
+.post-grid--related .post p { min-height: 0; font-size: .88rem; }
+.bt .tbl-pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font: 700 12px/1.6 var(--font-ui); letter-spacing: .02em; }
+.bt .tbl-note { display: block; margin-top: 4px; font-size: 13.5px; color: var(--bt-text-soft); }
+.bt .sec__in ol.timeline.timeline--list { list-style: none; padding: 0; margin: 28px 0 8px; max-width: none; }
+.bt .timeline__title { display: block; margin: 0 0 6px; font: 700 1.05rem/1.35 var(--font-display); color: var(--bt-navy); }
+.bt .timeline--list .timeline__card p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--bt-text-mid); }
+.bt .sec-quote { position: relative; padding: 44px 0; background: linear-gradient(135deg, #2F3143, #061A44); }
+.bt .sec-quote blockquote { max-width: 860px; margin: 0; padding: 4px 0 4px 64px; background: transparent; border: 0; border-radius: 0; }
+.bt .sec-quote blockquote + blockquote { margin-top: 24px; }
+.bt .sec-quote blockquote::before { left: 0; top: -6px; font-size: 64px; color: var(--bt-accent); }
+.bt .sec-quote blockquote p { font: 500 1.22rem/1.55 var(--font-display); color: #fff; }
+.bt .sec-quote blockquote p + p { margin-top: 10px; }
+.bt .sec-quote blockquote strong { color: #fff; }
+.bt .sec-quote blockquote > a, .bt .sec-quote blockquote a { color: #A9D3D8; border-top-color: rgba(255,255,255,.2); }
+@media (max-width: 640px) {
+  .bt .sec-quote { padding: 32px 0; }
+  .bt .sec-quote blockquote { padding-left: 44px; }
+  .bt .sec-quote blockquote::before { font-size: 48px; }
+  .bt .sec-quote blockquote p { font-size: 1.05rem; }
+}
+.bt blockquote p.q-end::after { content: "\201D"; margin-left: 2px; color: var(--bt-accent); font-family: var(--font-display); }
+.bt .sec-quote blockquote cite { color: rgba(255,255,255,.6); border-top-color: rgba(255,255,255,.18); }
+.bt .sec__subhead { margin: 18px 0 0; font: 700 1.05rem/1.4 var(--font-ui); color: var(--bt-navy); }
+.bt .prose .post-cta .post-cta__note { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font: 600 13.5px var(--font-ui); color: var(--bt-accent-ink); }
+.bt .prose .post-cta .post-cta__note::before { content: ""; width: 18px; height: 18px; border-radius: 50%; background: var(--bt-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 12px no-repeat; flex-shrink: 0; }
+.trust__item--tip:nth-child(even) .trust__tip { left: auto; right: 0; transform: translateY(4px); }
+.trust__item--tip:nth-child(even):hover .trust__tip, .trust__item--tip:nth-child(even):focus .trust__tip { transform: none; }
+.trust__item--tip:nth-child(even) .trust__tip::after { left: auto; right: 24px; }
+.trust__item--tip:nth-child(odd) .trust__tip { left: 0; transform: translateY(4px); }
+.trust__item--tip:nth-child(odd):hover .trust__tip, .trust__item--tip:nth-child(odd):focus .trust__tip { transform: none; }
+.trust__item--tip:nth-child(odd) .trust__tip::after { left: 24px; }
+@media (max-width: 520px) {
+  .trust__item--rating .trust__num { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; row-gap: 2px; }
+}
+.bt .blog-latest { margin: 8px 0 20px; font-size: clamp(1.4rem, 1.1rem + .8vw, 1.8rem); }
+.bt .post-grid--related .post .post__body p { font-size: 13px; }
+.bt .quote-hero__ticks { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.bt .quote-hero__ticks li { display: flex; align-items: center; gap: 8px; font: 600 14px var(--font-ui); color: var(--bt-navy); }
+.bt .quote-hero__ticks li::before { content: ""; width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: var(--bt-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 11px no-repeat; }
+.bt a.bt-video { display: inline-flex; align-items: center; gap: 10px; font: 600 15px/1.2 var(--font-ui); color: var(--bt-accent-ink); text-decoration: none; border: 0; }
+.bt a.bt-video::before { content: ""; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--bt-accent-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%235FA9B1'/%3E%3C/svg%3E") center / 18px no-repeat; box-shadow: inset 0 0 0 1px var(--bt-accent-200, rgba(95,169,177,.35)); transition: transform .2s ease; }
+.bt a.bt-video:hover::before { transform: scale(1.08); }
+.bt a.bt-video:hover { text-decoration: underline; text-underline-offset: 3px; }
+.bt .sec__in a.bt-video, .bt .prose a.bt-video { border-bottom: 0; background-image: none; box-shadow: none; text-decoration: none; }
