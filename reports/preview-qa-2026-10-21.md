@@ -14,6 +14,7 @@ Scope: the 171 pages and posts stored in `scripts/btvibe-uk/output/`, checked ag
 | `<hr>` and `<section>` | Removed (2 and 2 occurrences) |
 | Duplicate H1 | One page fixed (`/blog/latest-trends-translation-industry/`) |
 | Self links | 19 removed, text kept |
+| "By" plus gerund openers | 41 sentences rewritten in second person, active voice |
 | Meta descriptions outside 130 to 160 | 30 rewritten, all within range, each with the focus keyword and a call to action |
 | Meta titles over 60 characters | 0 |
 | Legacy WordPress and Divi code | Stripped. Rendered HTML of all 236 pages is unchanged |
@@ -21,7 +22,7 @@ Scope: the 171 pages and posts stored in `scripts/btvibe-uk/output/`, checked ag
 
 ## Still open (needs a writer or Mike)
 
-1. **30 pages with a sentence that opens "By" plus a gerund.** Each needs a rewrite, not a find and replace. The list comes from the scan in `scripts/btvibe-uk/style/` (rerun the QA scan to regenerate it).
+1. ~~Sentences that open "By" plus a gerund~~: 41 sentences on 32 pages rewritten (script `by-gerund.js`).
 2. **4 images without alt text**: `/`, `/document-translation-services/`, `/translation-services/england/portsmouth/`, `/blog/translation-services-for-optical-practices/`.
 3. **`/thank-you/` description** is 128 characters. The page should be `noindex`, so it was left alone.
 4. **Meta titles are in Title Case** by design (style guide section 5). Say if you want them in sentence case too.
