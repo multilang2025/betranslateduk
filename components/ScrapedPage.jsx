@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { flattenBodyHtml, sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
+import { flattenBodyHtml, sanitizeBody, splitHero, splitTagline, splitLead, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
 import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, pathFromUrl, getAllPosts, postDate } from "@/lib/content";
 import { toLocalImagePath } from "@/lib/local-image";
@@ -209,8 +209,9 @@ export default function ScrapedPage({ page, slug = [] }) {
   const flat = flattenBodyHtml(page.bodyHtml, { pageSlug: key || "index" });
   const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(flat, { timelineLists: !isHub }));
   const { tagline, ctas, body: afterTagline } = isHub || isHome ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
+  const { eyebrow: scrapedEyebrow, lead: scrapedLead, body: afterLead } = isHome ? splitLead(afterTagline) : { eyebrow: "", lead: "", body: afterTagline };
   const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
-  let pageBody = dropLeadingCtas(afterTagline);
+  let pageBody = dropLeadingCtas(afterLead);
 
   const children = isHub ? listChildren(slug) : [];
   const sections = toSections(pageBody, { more: UI.readMore });
@@ -225,9 +226,9 @@ export default function ScrapedPage({ page, slug = [] }) {
         <div className="container container--narrow">
           <div className="page-hero__text">
             <Breadcrumbs pathname={pathname} current={title} />
-            <span className="ip-kicker">{KICKER}</span>
+            <span className="ip-kicker">{scrapedEyebrow || KICKER}</span>
             <h1>{title}</h1>
-            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
+            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : scrapedLead ? <p className="lead" dangerouslySetInnerHTML={{ __html: scrapedLead }} /> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
             {isQuote ? (
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
