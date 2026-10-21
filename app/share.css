@@ -1,0 +1,14 @@
+/* Share bar on blog posts (extracted from blog-inserts.css, which the site does not load). */
+.share { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 40px 0 8px; padding: 18px 20px; border: 1px solid var(--bt-line); border-radius: 16px; background: #fff; }
+.share--compact { margin: 18px 0 0; padding: 0; border: 0; background: none; }
+.share__title { font: 600 15px var(--font-ui); color: var(--bt-navy); }
+.share__list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.share__list li { margin: 0; padding: 0; }
+.share__list li::before { content: none; }
+.bt .share__btn { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--bt-line-2); background: #fff; color: var(--bt-navy); cursor: pointer; transition: color .15s, border-color .15s, background .15s, transform .15s; text-decoration: none; }
+.share--compact .share__btn { width: 36px; height: 36px; }
+.bt .share__btn:hover, .bt .share__btn:focus-visible { color: #fff; background: var(--bt-accent); border-color: var(--bt-accent); transform: translateY(-2px); }
+.bt .share__btn.is-done { color: #fff; background: var(--bt-accent); border-color: var(--bt-accent); }
+.share__native { display: none; }
+@media (hover: none) { .share__native { display: list-item; } }
+.share__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
