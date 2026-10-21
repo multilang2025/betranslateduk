@@ -21,11 +21,11 @@ const COPY = {
       {
         title: "Expertise",
         links: [
-          ["Business & Finance", "/industry/business/"],
-          ["High Tech & IT", "/industry/it-telecom/"],
-          ["Industry & Construction", "/industry/technical/"],
-          ["Marketing & Sales", "/industry/marketing/"],
-          ["Tourism & Travel", "/industry/tourism/"],
+          ["Business & finance", "/industry/business/"],
+          ["High tech & IT", "/industry/it-telecom/"],
+          ["Industry & construction", "/industry/technical/"],
+          ["Marketing & sales", "/industry/marketing/"],
+          ["Tourism & travel", "/industry/tourism/"],
           ["Legal", "/industry/legal/"],
           ["Medical", "/industry/medical/"],
         ],
@@ -44,7 +44,7 @@ const COPY = {
         ],
       },
       {
-        title: "About Us",
+        title: "About us",
         links: [
           ["Rates", "/translation-agency/rates/"],
           ["Turnaround", "/translation-agency/turnaround/"],

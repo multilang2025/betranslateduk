@@ -6,8 +6,8 @@ const SEG = {
   "translation-services": "Services", languages: "Languages", "translation-agency": "About",
   industry: "Expertise", blog: "Blog", "document-translation-services": "Document translation",
   locations: "Locations", england: "England", posts: "Posts",
-  "it-telecom": "High Tech & IT", business: "Business & Finance", legal: "Legal", marketing: "Marketing & Sales",
-  medical: "Medical", technical: "Industry & Construction", tourism: "Tourism & Travel",
+  "it-telecom": "High tech & IT", business: "Business & finance", legal: "Legal", marketing: "Marketing & sales",
+  medical: "Medical", technical: "Industry & construction", tourism: "Tourism & travel",
 };
 // Crumbs for a path: [{ label, href }], the current page last (href null).
 export function breadcrumbTrail(_locale, pathname = "/", current) {

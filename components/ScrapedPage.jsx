@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
 import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
-import { listChildren, pathFromUrl, getAllPosts, postDate } from "@/lib/content";
+import { listChildren, pathFromUrl, getAllPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
@@ -87,7 +87,7 @@ function BlogIndexView() {
         <div className="container">
           <div className="post-grid">
             {posts.map(({ slug, data, date }) => {
-              const title = (data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+              const title = displayTitle(data);
               const img = data.og?.image; // already localized by lib/content.js at read time
               return (
                 <a key={slug} href={`/blog/${slug}/`} className="post">
@@ -174,7 +174,7 @@ function BlogPostView({ data, slug }) {
             <div className="section-head"><h2>{UI.en.relatedPosts}</h2></div>
             <div className="post-grid post-grid--related">
               {related.map((c) => {
-                const t = (c.data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+                const t = displayTitle(c.data);
                 return (
                   <a key={c.slug} href={`/blog/${c.slug}/`} className="post">
                     <div className="post__body"><h3>{t}</h3><p>{c.data.metaDescription}</p></div>

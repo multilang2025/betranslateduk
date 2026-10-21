@@ -1,0 +1,171 @@
+path,legacy_focus_keyword,new_focus_keyword,source,impressions,clicks,avg_position,note
+/blog/,translation blog,translation blog,manual,6,0,50.3,legacy
+/contact-us/,"Translation Proposal,quick translation",contact translation agency,manual,0,0,,no ranking data
+/document-translation-services/,"document translation services,document translation",document translation services,manual,0,0,,legacy; GSC long-tail belongs to other pages
+/,translation agency,translation agency uk,manual,0,0,,"H1 ""UK translation agency""; GSC only shows london long-tail at pos 40+"
+/industry/business/,"business translation,online business translation",business translation,manual,0,0,,legacy
+/industry/it-telecom/,IT translation services,it translation services,manual,0,0,,"GSC ""translation software"" is tool intent"
+/industry/legal/contract-translation-services/,contract translation services,contract translation services,legacy,0,0,,no meaningful GSC data
+/industry/legal/merger-and-acquisition-translation/,Merger and Acquisition Translation Services,merger and acquisition translation services,gsc+legacy,1,0,21.0,legacy confirmed by GSC
+/industry/legal/patents-and-trademarks-translation-services/,Patents and Trademarks Translation Services,patents and trademarks translation services,legacy,0,0,,no meaningful GSC data
+/industry/legal/will-certified-translation-services/,will certified translation services,will certified translation services,legacy,0,0,,no meaningful GSC data
+/industry/legal/,legal translation services,legal translation services,gsc+legacy,89,0,36.1,legacy confirmed by GSC
+/industry/marketing/travel/,"travel translation services, marketing translation agency",travel translation services,legacy,0,0,,no meaningful GSC data
+/industry/marketing/,"marketing translation services, marketing translation agency",marketing translation services,gsc+legacy,1366,0,46.3,legacy confirmed by GSC
+/industry/medical/,"medical translation,medical translation services",medical translation agency,gsc,353,0,31.7,top relevant query
+/industry/technical/,technical translation services,technical translation,gsc,891,0,35.8,top relevant query
+/industry/tourism/,tourism translation,tourism translation,legacy,0,0,,no meaningful GSC data
+/industry/,Specialised translation,specialised translation,manual,0,0,,legacy
+/languages/dutch-translation-services/,Dutch translation services,dutch translation services,gsc+legacy,419,0,31.1,legacy confirmed by GSC
+/languages/english-translation-services/,English translation services,english translation services,manual,0,0,,legacy
+/languages/french-translation-services/french-audiovisual/,French audiovisual translation services,french audiovisual translation services,legacy,0,0,,no meaningful GSC data
+/languages/french-translation-services/french-business/,french business translation service,french business translation services,legacy,0,0,,no meaningful GSC data
+/languages/french-translation-services/french-e-commerce/,French e-commerce translation services,french e-commerce translation services,legacy,0,0,,no meaningful GSC data
+/languages/french-translation-services/french-financial/,French financial translation services,french financial translation services,legacy,0,0,,no meaningful GSC data
+/languages/french-translation-services/french-it/,French IT Translation Services,french it translation services,manual,0,0,,legacy
+/languages/french-translation-services/french-marketing/,French Marketing Translation Services,french marketing translation services,legacy,0,0,,no meaningful GSC data
+/languages/french-translation-services/legal-translation/,French Legal Translation Services,french legal translation services,legacy,0,0,,no meaningful GSC data
+/languages/french-translation-services/,French translation services,french translation,gsc,395,0,12.0,top relevant query
+/languages/german-translation-services/german-business/,German Business Translation Services,german business translation services,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/german-e-commerce/,German E-Commerce Translation Services,german e-commerce translation services,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/german-financial/,German Financial Translation Services,german financial translation services,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/german-it/,German IT Translation Services,german it translation services,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/german-legal/,German Legal Translation Services,german legal translation services,gsc+legacy,19,0,30.9,legacy confirmed by GSC
+/languages/german-translation-services/german-marketing/,German Marketing Translation Services,german marketing translation,gsc,131,1,13.7,top relevant query
+/languages/german-translation-services/german-subtitling/,German Subtitling,german subtitling,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/german-technical/,German Technical Translation Services,german technical translation services,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/german-tourism/,German Tourism Translation Services,german tourism translation services,legacy,0,0,,no meaningful GSC data
+/languages/german-translation-services/,"German translation services, translation service from German to English",german translation services,gsc+legacy,755,0,34.3,legacy confirmed by GSC
+/languages/italian-translation-services/,"Italian translation services, italian translation agency",italian translation services,gsc+legacy,531,0,35.3,legacy confirmed by GSC
+/languages/korean-translation-services/korean-audiovisual/,Korean Audiovisual Translation Services,korean audiovisual translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-business/,Korean Business Translation Services,korean business translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-consumer-retail/,Korean Consumer and Retail Translation Services,korean consumer and retail translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-financial/,Korean Financial Translation Services,korean financial translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-it-translation-services/,Korean IT Translation Services,korean it translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-legal/,Korean Legal Translation Services,korean legal translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-marketing/,Korean Marketing Translation Services,korean marketing translation services,gsc+legacy,14,0,7.5,legacy confirmed by GSC
+/languages/korean-translation-services/korean-technical-translation-services/,Korean Technical Translation Services,korean technical translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/korean-tourism-translation-services/,Korean Tourism Translation Services,korean tourism translation services,legacy,0,0,,no meaningful GSC data
+/languages/korean-translation-services/,Korean Translation Services,korean translation services,manual,26,0,40.8,GSC keywords belong to sub-pages
+/languages/portuguese-translation-services/,English-Portuguese translation,portuguese translation services,gsc,306,0,53.2,top relevant query
+/languages/spanish-translation-services/marketing/,Spanish Marketing Translation Services,spanish marketing translation services,gsc+legacy,15,0,6.7,legacy confirmed by GSC
+/languages/spanish-translation-services/spanish-audiovisual/,Spanish Audiovisual Translation Services,spanish audiovisual translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-business/,Spanish Business Translation Services,spanish business translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-document/,spanish document translation services,spanish document translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-financial/,Spanish Financial Translation Services,spanish financial translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-it/,Spanish IT Translation Services,spanish it translation services,manual,0,0,,legacy
+/languages/spanish-translation-services/spanish-legal/,Spanish Legal Translation Services,spanish legal translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-retail-ecommerce/,Spanish Consumer and Retail Translation Services,spanish consumer and retail translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-technical/,Spanish Technical Translation Services,spanish technical translation services,manual,23,0,27.7,GSC top is a different intent
+/languages/spanish-translation-services/spanish-tourism-travel/,"Spanish Tourism Translation Services, travel translation services",spanish tourism translation services,legacy,0,0,,no meaningful GSC data
+/languages/spanish-translation-services/spanish-website/,Spanish Website Translation Services,spanish website translation services,gsc+legacy,43,0,29.4,legacy confirmed by GSC
+/languages/spanish-translation-services/,"Spanish translation services, Spanish translation agency",spanish translation services,gsc+legacy,2561,0,35.8,legacy confirmed by GSC
+/languages/,multilingual translation agency,multilingual translation agency,manual,2,0,8.5,legacy
+/terms-conditions/,terms and conditions,terms and conditions,legacy,0,0,,no meaningful GSC data
+/translation-agency/customers/,Translation customers,translation agency clients,manual,0,0,,no ranking data
+/translation-agency/locations/aberdeen/,Aberdeen Translation Services,aberdeen translation services,gsc+legacy,1,0,32.0,legacy confirmed by GSC
+/translation-agency/locations/bangor/,Bangor Translation Services,translation services bangor,legacy,0,0,,no meaningful GSC data
+/translation-agency/locations/belfast/,belfast translation services,translation services belfast,legacy,0,0,,no meaningful GSC data
+/translation-agency/locations/cardiff/,Cardiff Translation Services,translation services cardiff,gsc+legacy,462,0,28.9,legacy confirmed by GSC
+/translation-agency/locations/edinburgh/,Edinburgh Translation Services,translation services edinburgh,gsc+legacy,332,0,39.4,legacy confirmed by GSC
+/translation-agency/locations/glasgow/,Glasgow Translation Services,translation services glasgow,gsc+legacy,6,0,37.3,legacy confirmed by GSC
+/translation-agency/locations/londonderry/,Londonderry translation services,translation services londonderry,legacy,0,0,,no meaningful GSC data
+/translation-agency/locations/swansea/,Swansea translation services,translation services swansea,gsc+legacy,2,0,7.5,legacy confirmed by GSC
+/translation-agency/locations/,International translation services,translation agency locations uk,manual,0,0,,"legacy was non-UK (""international"")"
+/translation-agency/quote/,"Translation quote, Translation Services Quote",translation quote,manual,12,0,30.3,legacy
+/translation-agency/rates/,translation rates,translation rates,manual,154,0,24.0,legacy
+/translation-agency/turnaround/,Expected translation times,translation turnaround time,gsc,0,0,,"GSC 30 impressions, pos 9; legacy ""expected translation times"""
+/translation-agency/,Professional translation company,professional translation company,manual,0,0,,legacy
+/translation-services/england/bath/,Bath Translation Services,translation services bath,gsc+legacy,62,0,17.1,legacy confirmed by GSC
+/translation-services/england/birmingham/,translation services in birmingham,translation services birmingham,gsc+legacy,300,0,46.0,legacy confirmed by GSC
+/translation-services/england/bournemouth/,Bournemouth Translation Services,translation services bournemouth,legacy,0,0,,no meaningful GSC data
+/translation-services/england/brighton/,translation services in brighton,translation services brighton,gsc+legacy,2,0,24.5,legacy confirmed by GSC
+/translation-services/england/bristol/,Bristol Translation Services,bristol translation services,gsc+legacy,8,0,35.0,legacy confirmed by GSC
+/translation-services/england/cambridge/,Cambridge translation services,translation services cambridge,gsc+legacy,8,0,23.6,legacy confirmed by GSC
+/translation-services/england/coventry/,Coventry Translation Services,translation services coventry,legacy,0,0,,no meaningful GSC data
+/translation-services/england/leeds/,translation services in leeds,translation services leeds,gsc+legacy,60,0,33.2,legacy confirmed by GSC
+/translation-services/england/leicester/,translation services in leicester,translation services leicester,gsc+legacy,413,0,29.1,legacy confirmed by GSC
+/translation-services/england/liverpool/,translation services in liverpool,translation services liverpool,gsc+legacy,252,0,20.3,legacy confirmed by GSC
+/translation-services/england/london/,london translation services,translation services london,gsc+legacy,2975,2,43.5,legacy confirmed by GSC
+/translation-services/england/manchester/,Manchester translation services,translation services manchester,gsc+legacy,1040,0,30.6,legacy confirmed by GSC
+/translation-services/england/newcastle/,Newcastle Translation Services,translation services newcastle,gsc+legacy,44,0,14.8,legacy confirmed by GSC
+/translation-services/england/norwich/,Norwich translation services,translation services norwich,legacy,0,0,,no meaningful GSC data
+/translation-services/england/nottingham/,Nottingham Translation Services,translation services nottingham,gsc+legacy,241,0,18.0,legacy confirmed by GSC
+/translation-services/england/plymouth/,Plymouth Translation Services,translation services plymouth,gsc+legacy,47,0,15.0,legacy confirmed by GSC
+/translation-services/england/portsmouth/,Portsmouth translation services,translation services portsmouth,legacy,0,0,,no meaningful GSC data
+/translation-services/england/sheffield/,Sheffield Translation Services,translation services sheffield,gsc+legacy,7,0,23.3,legacy confirmed by GSC
+/translation-services/england/southampton/,translation services in Southampton,translation services southampton,legacy,0,0,,no meaningful GSC data
+/translation-services/england/southend-on-sea/,Southend-on-Sea Translation Services,translation services southend on sea,legacy,0,0,,no meaningful GSC data
+/translation-services/england/sunderland/,Sunderland Translation Services,translation services sunderland,legacy,0,0,,no meaningful GSC data
+/translation-services/england/york/,york translation services,translation services york,gsc+legacy,48,0,15.3,legacy confirmed by GSC
+/translation-services/england/,translation company in England,translation services england,manual,0,0,,legacy reworded
+/translation-services/remote-interpreting/,remote interpreting,remote interpreting services,gsc,372,0,63.7,top relevant query
+/translation-services/website-translation/,"website translation, web content translation",website translation,manual,0,0,,legacy
+/translation-services/,"translation services,business translation services",professional translation services,manual,0,0,,"style guide primary keyword; GSC maps ""translation services"" to a city page"
+/translators/,Professional translators,professional translators,manual,0,0,,legacy
+/blog/5-inspiring-freelance-jobs/,Inspiring freelance jobs,freelance jobs,manual,0,0,,legacy
+/blog/8-british-habits-that-stand-out-abroad/,"british habits,british",british habits,legacy,0,0,,no meaningful GSC data
+/blog/advantages-gifted-bilingual-kids/,bilingual children,bilingual children benefits,manual,3,0,50.3,GSC
+/blog/ai-disadvantages-for-businesses/,"AI,technology",ai disadvantages for businesses,manual,0,0,,"legacy ""AI,technology"" too generic"
+/blog/belgium-market-translation/,translation market,belgium translation market,manual,0,0,,legacy
+/blog/benefits-multilingual-people-for-companies/,employing multilingual people,benefits of multilingual employees,manual,0,0,,legacy
+/blog/best-translation-tools/,translation tools,software translation tools,gsc,707,0,43.1,top relevant query
+/blog/betranslated-opens-its-doors-in-france/,BeTranslated Opens its Doors in France,betranslated france,manual,0,0,,news post
+/blog/blog-british-food-expats-miss/,British foods,british food,manual,8,2,2.5,"GSC: 2 clicks, pos 2.5"
+/blog/boost-reach-video-subtitling/,video subtitling,video subtitling,legacy,0,0,,no meaningful GSC data
+/blog/british-characters/,"British,tv",iconic british characters,gsc,828,26,4.9,top relevant query
+/blog/british-english/,British English,british english,manual,0,0,,legacy
+/blog/british-footballers/,Footballers,british footballers,manual,1,0,1.0,legacy
+/blog/business-need-financial-translation/,financial translation,financial translation,gsc+legacy,76,0,13.8,legacy confirmed by GSC
+/blog/commercial-translation-professionals/,Commercial translation,commercial translation,manual,44,0,22.3,"legacy; GSC ""translation business"" is off-topic"
+/blog/communication-agencies-translation/,Communication agencies,communication agencies translation,manual,0,0,,legacy
+/blog/cultural-understanding-in-translation/,Cultural Understanding in Translation,cultural understanding in translation,manual,0,0,,legacy
+/blog/differents-types-translation-service-providers/,translation service providers,translation service provider,manual,27,0,40.1,legacy
+/blog/dubbing-english-language-content/,Dubbing,dubbing,gsc+legacy,2,0,59.5,legacy confirmed by GSC
+/blog/environmental-translation-services-green-economy/,environmental translation,environmental translation,gsc+legacy,380,0,10.4,legacy confirmed by GSC
+/blog/expressions-from-the-it-crowd/,expressions from the it crowd,it crowd expressions,manual,0,0,,legacy
+/blog/get-a-job-in-the-translation-industry/,Get A Job In The Translation Industry,get a job in the translation industry,legacy,0,0,,no meaningful GSC data
+/blog/get-high-quality-translations/,high-quality translation,high-quality translation,manual,0,0,,legacy
+/blog/get-started-remote-freelancer/,remote freelancer,remote freelancer,manual,0,0,,legacy
+/blog/good-translation-online-retail/,retail translation services,retail translation services,legacy,0,0,,no meaningful GSC data
+/blog/guide-western-european-languages/,Western european languages,western european languages,gsc+legacy,43,1,3.4,legacy confirmed by GSC
+/blog/hire-small-translation-agency/,small translation agency,small translation agency,legacy,0,0,,no meaningful GSC data
+/blog/how-much-translate-document/,Cost to translate,translation services cost,manual,143,0,47.9,GSC 94 impressions
+/blog/how-succeed-freelancer-translation-business/,freelance translator,freelance translator,manual,3,0,17.3,"legacy; GSC ""business translator"" is off-topic"
+/blog/immigration-can-drive-business-growth/,Immigration Can Drive Business Growth,immigration and business growth,manual,0,0,,legacy
+/blog/insurance-translation-services/,insurance translation services,insurance translation services,gsc+legacy,279,0,23.5,legacy confirmed by GSC
+/blog/international-advertising-benefits/,international advertising,international advertising,gsc+legacy,732,0,13.9,legacy confirmed by GSC
+/blog/language-degrees/,language degree,language degree,manual,0,0,,legacy
+/blog/latest-trends-translation-industry/,translation industry,translation industry,gsc+legacy,17,0,60.2,legacy confirmed by GSC
+/blog/lazy-monolingual-english-speakers/,monolingual English speakers,monolingual english speakers,gsc+legacy,1,0,1.0,legacy confirmed by GSC
+/blog/learn-english-idioms/,Learning English idioms,english idioms,manual,0,0,,legacy
+/blog/logistics-transport-translation-services/,Logistics translation services,logistics translation services,manual,95,0,9.4,legacy; GSC match is off-topic
+/blog/movie-dubbing/,movie dubbing,movie dubbing,gsc+legacy,78,0,21.6,legacy confirmed by GSC
+/blog/multilingual-chatbots-shake-up-your-sales-strategy/,multilingual chatbots,multilingual chatbots,legacy,0,0,,no meaningful GSC data
+/blog/multilingual-healthcare-system/,UK's Multilingual Healthcare System,multilingual healthcare system,manual,0,0,,"GSC ""healthcare translation"" belongs to the healthcare post"
+/blog/note-taking-interpreting/,Note-Taking,note taking interpreting,manual,4,0,31.2,GSC
+/blog/press-release-translation/,press release translation,press release translation,gsc+legacy,233,0,26.0,legacy confirmed by GSC
+/blog/professional-translation/,professional translation service,professional translation services,manual,0,0,,legacy
+/blog/professional-translator-translation-app/,Professional translation service,professional translation app,manual,0,0,,legacy was a duplicate of another post
+/blog/property-documentation-translation/,Property documentation translation,property documentation translation,legacy,0,0,,no meaningful GSC data
+/blog/reach-new-heights-with-startup-business/,start-up business,startup business growth,manual,0,0,,legacy
+/blog/seo-translation/,seo translation,seo translation,gsc+legacy,494,0,16.5,legacy confirmed by GSC
+/blog/spanish-phrases/,spanish phrases,spanish phrases,gsc+legacy,12,0,3.3,legacy confirmed by GSC
+/blog/specialised-healthcare-translation-services/,"healthcare translation services,healthcare translator",healthcare translation services,manual,75,0,45.2,legacy
+/blog/tips-for-b2b-translation/,B2B translation,b2b translation,gsc+legacy,1,0,4.0,legacy confirmed by GSC
+/blog/tips-learn-new-language-abroad/,learning a new language abroad,learning a new language abroad,legacy,0,0,,no meaningful GSC data
+/blog/top-spots-location-independent-professional/,Location-independent,location independent work,manual,1,0,63.0,GSC
+/blog/top-ten-translation-films/,films about translation,films about translation,legacy,0,0,,no meaningful GSC data
+/blog/trademark-translation-business-expansion/,trademark translation,trademark translation,manual,1,0,13.0,"GSC ""business translation"" is off-topic"
+/blog/translation-schools-belgium/,translation schools,translation schools belgium,manual,0,0,,legacy
+/blog/translation-services-for-optical-practices/,translation services for optical practices,translation services for optical practices,legacy,0,0,,no meaningful GSC data
+/blog/translation-services-need-vpn/,VPN,vpn for translation services,manual,0,0,,legacy
+/blog/translations-universities-uk-ireland/,translation degrees,translation degrees,gsc+legacy,81,0,24.3,legacy confirmed by GSC
+/blog/translator-vs-interpreter/,"translator vs interpreter, interpreter vs translator",translator vs interpreter,gsc+legacy,64,0,14.6,legacy confirmed by GSC
+/blog/tremendous-value-multilingual-website/,multilingual website,multilingual website,legacy,0,0,,no meaningful GSC data
+/blog/uk-visa-sponsorship-for-businesses/,,uk visa sponsorship,manual,0,0,,"no legacy keyword; GSC ""business sponsor visa"" 3 imp"
+/blog/vital-keyboard-shortcuts-translators/,keyboard shortcuts,keyboard shortcuts for translators,manual,0,0,,"GSC ""keyboard shortcut for translate"" pos 5.6"
+/blog/what-is-betranslated/,professional translation service,what is betranslated,manual,0,0,,brand page
+/blog/why-choose-betranslated-and-not-ai/,ai translation,how accurate is ai translation,manual,0,0,,"GSC 223 impressions, pos 13.6"
+/blog/working-out-translation-rates/,working out translation rates,working out translation rates,legacy,0,0,,no meaningful GSC data
+/blog/zoom-interpreting/,Zoom interpreting,zoom interpreting,legacy,0,0,,no meaningful GSC data

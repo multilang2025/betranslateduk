@@ -1,0 +1,18 @@
+/*
+ * About us section (homepage, page ID 224563). Section module_class "bt-about", background #2F3143 (set on the section).
+ * These rules sit in the hero column's Custom CSS (they are page-wide, written with full selectors).
+ *
+ * Markup notes:
+ *   eyebrow text module has module_class "bt-eyebrow2" (teal "ABOUT US")
+ *   <h3> heading, three paragraphs, emphasis words are <strong> (shown orange), links are white
+ *   right column: <p class="bt-founded">Founded in <strong>2002</strong></p> then the et_pb_video (YouTube O67In8Hkyxc, poster = uploaded thumbnail)
+ * Rule of the project: black text on a navy grey background becomes white.
+ */
+
+body #page-container .bt-about .et_pb_text_inner p,
+body #page-container .bt-about .et_pb_text_inner li { color: #FFFFFF !important; }
+body #page-container .bt-about .et_pb_text_inner p a { color: #FFFFFF !important; }
+body #page-container .bt-about .et_pb_text_inner h3 { font-family: Fraunces, Georgia, serif !important; font-weight: 700 !important; line-height: 1.25em !important; color: #FFFFFF !important; }
+body #page-container .bt-about .bt-eyebrow2 .et_pb_text_inner p, body #page-container .bt-about .bt-eyebrow2 p { color: #7EBEC5 !important; }
+body #page-container .bt-about .et_pb_text_inner strong, body #page-container .bt-about .et_pb_text_inner p strong { color: #F67618 !important; font-weight: 700; }
+body #page-container .bt-about .bt-founded { margin: 0; padding: 0; white-space: nowrap; font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.3em; color: #FFFFFF !important; }
