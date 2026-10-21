@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { getPageBySlug, getAllPageSlugs } from '@/lib/content';
-import { toLocalImagePath } from '@/lib/local-image';
 import ScrapedPage from '@/components/ScrapedPage';
 
 export async function generateStaticParams() {
@@ -13,7 +12,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = getPageBySlug(slug);
   if (!page) return {};
-  const ogImage = toLocalImagePath(page.og?.image);
+  const ogImage = page.og?.image; // already localized by lib/content.js at read time
   return {
     title: page.title,
     description: page.metaDescription,

@@ -1,11 +1,10 @@
 import { getHomePage } from '@/lib/content';
-import { toLocalImagePath } from '@/lib/local-image';
 import HomePage from '@/components/home/HomePage';
 
 export async function generateMetadata() {
   const page = getHomePage();
   if (!page) return {};
-  const ogImage = toLocalImagePath(page.og?.image);
+  const ogImage = page.og?.image; // already localized by lib/content.js at read time
   return {
     title: page.title,
     description: page.metaDescription,

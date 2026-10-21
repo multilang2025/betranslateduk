@@ -2,7 +2,6 @@ import Image from "next/image";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
 import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, pathFromUrl, getAllPosts, postDate } from "@/lib/content";
-import { toLocalImagePath } from "@/lib/local-image";
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
@@ -89,7 +88,7 @@ function BlogIndexView() {
           <div className="post-grid">
             {posts.map(({ slug, data, date }) => {
               const title = (data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
-              const img = toLocalImagePath(data.og?.image);
+              const img = data.og?.image; // already localized by lib/content.js at read time
               return (
                 <a key={slug} href={`/blog/${slug}/`} className="post">
                   <div className="post__media">
@@ -126,7 +125,7 @@ function BlogPostView({ data, slug }) {
   const { html: tocBody, toc } = withToc(enhanceTables(body));
   body = restoreBlocks(tocBody, ex.blocks);
   const publishDate = postDate(data);
-  const img = toLocalImagePath(data.og?.image);
+  const img = data.og?.image; // already localized by lib/content.js at read time
   const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 4);
 
   return (
@@ -211,7 +210,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   const children = isHub ? listChildren(slug) : [];
   const sections = toSections(pageBody, { more: UI.en.readMore });
 
-  const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: toLocalImagePath(i.src), alt: i.alt })) : [];
+  const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
     <main className={isHub ? "hub" : undefined}>
