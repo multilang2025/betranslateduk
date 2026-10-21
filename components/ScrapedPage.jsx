@@ -10,14 +10,10 @@ function slugFromUrl(url) {
 
 // Generic renderer for any scraped page: the real scraped content (verbatim,
 // including its own on-page H1), restyled with the new design system's
-// typography instead of the original Divi theme/plugin CSS.
+// typography. sanitizeBodyHtml already bands the content into <section>s
+// that mirror Divi's own section/row/column structure, so this just renders
+// that output -- no extra wrapper needed.
 export default function ScrapedPage({ page }) {
   const pageSlug = slugFromUrl(page.url);
-  return (
-    <main className="page-body">
-      <div className="container container--narrow">
-        <div className="prose" dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(page.bodyHtml, { pageSlug }) }} />
-      </div>
-    </main>
-  );
+  return <div dangerouslySetInnerHTML={{ __html: sanitizeBodyHtml(page.bodyHtml, { pageSlug }) }} />;
 }
