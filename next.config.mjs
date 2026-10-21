@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nlrpizplminaccqlaved.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   // The original site uses trailing-slash URLs everywhere (WordPress

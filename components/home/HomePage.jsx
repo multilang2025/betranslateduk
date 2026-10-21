@@ -125,7 +125,7 @@ export default function HomePage({ locale = "es" }) {
           <div className="hero__visual" aria-hidden="true">
             <div className="hero__card hero__card--a">
               {/* The visual is hidden under 560px (home-refresh.css): the 1px size makes the priority preload fetch a 16px thumbnail there instead of the photo (no vw in sizes, or next/image would not offer widths under 640). */}
-              <Image src="/team/office-work.webp" alt="" width={1000} height={549} priority sizes="(max-width: 560px) 1px, (max-width: 900px) 600px, 440px" quality={82} />
+              <Image src="https://nlrpizplminaccqlaved.supabase.co/storage/v1/object/public/btvibe-images/team/office-work.webp" alt="" width={1000} height={549} priority sizes="(max-width: 560px) 1px, (max-width: 900px) 600px, 440px" quality={82} />
             </div>
             <div className="hero__card hero__card--b">
               <HeroArt />
