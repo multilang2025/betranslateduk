@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { searchIndex } from "@/lib/content";
 
-export const dynamic = "force-dynamic";
-
 const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
 function snippet(text, terms) {
