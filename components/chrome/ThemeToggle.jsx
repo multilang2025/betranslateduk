@@ -4,25 +4,15 @@ import { useEffect, useState } from "react";
 
 const LABEL = { dark: "Switch to dark mode", light: "Switch to light mode" };
 
-// Light/dark switch. Without a choice the site follows the system setting;
-// a click stores the choice (localStorage "bt-theme") and sets
-// html[data-theme], which app/dark.css honours (lib/themeScript.js restores it
-// before the first paint).
+// Light/dark switch. The site always opens light; a click stores the choice
+// (localStorage "bt-theme") and sets html[data-theme], which app/dark.css honours
+// (lib/themeScript.js restores it before the first paint).
 
-const isDark = () => {
-  const t = document.documentElement.getAttribute("data-theme");
-  return t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-};
+const isDark = () => document.documentElement.getAttribute("data-theme") === "dark";
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(null);
-  useEffect(() => {
-    setDark(isDark());
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = () => setDark(isDark());
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
+  const [dark, setDark] = useState(false);
+  useEffect(() => { setDark(isDark()); }, []);
   const toggle = () => {
     const next = isDark() ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
