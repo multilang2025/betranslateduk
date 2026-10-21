@@ -35,7 +35,7 @@ The site is WordPress (Divi, Rank Math) today and will be converted to a vibecod
 - Internal links only to URLs verified live in the sitemap. Never link a page to itself.
 - No outbound links to competing or industry-adjacent sites.
 - Metadata and JSON-LD only when requested, as separate labelled outputs.
-- FAQPage and HowTo are the only schema added on WordPress (Rank Math handles the rest). The vibecode build must emit the rest itself, once.
+- No FAQPage schema anywhere (Google no longer uses it; decision by Mike, 21 October 2026). FAQs are visible content only, five per service page. HowTo is the only schema added on WordPress (Rank Math handles the rest). The vibecode build must emit the rest itself, once.
 - Leave 2018 to 2023 era draft posts untouched.
 - Never write credentials, tokens or Application Passwords into files, commits or chat. Use connector authorisation flows.
 - Content stays as DRAFT until Mike approves publishing.

@@ -301,61 +301,7 @@
           "image": {
             "@id": "https://www.betranslated.co.uk/wp-content/uploads/2020/06/french-translation.jpg"
           },
-          "subjectOf": [
-            {
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "How much does a French translation cost in the UK?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Price depends on word count, subject matter and turnaround. Send us your document for a free, no-obligation quote."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How long does a French translation take?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Turnaround depends on the length and complexity of your document. Tell us your deadline when you request a quote."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can you provide a certified French translation for UK use?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, for documents that need a certified translation, such as legal and official paperwork. Tell us which organisation will receive the document and we match its requirements."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you translate into Canadian French as well as French from France?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. We match the translator to your audience, whether that is France, Belgium, Switzerland or Québec."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Can you translate and localise my website into French?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Our website translation service covers content, metadata and multilingual SEO."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Which areas of French translation do you cover?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our specialisms include French business, financial, legal and IT translation. We also cover French marketing, e-commerce and audiovisual translation. Tell us about your project and we match it to the right translator."
-                  }
-                }
-              ]
-            }
-          ],
+          "subjectOf": [],
           "@id": "https://www.betranslated.co.uk/languages/french-translation-services/#schema-80608",
           "mainEntityOfPage": {
             "@id": "https://www.betranslated.co.uk/languages/french-translation-services/#webpage"

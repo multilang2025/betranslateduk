@@ -1,0 +1,3867 @@
+{
+ "source": "Ahrefs project 1813246 (Search Console data), country GB, 2026-04-20 to 2026-10-18, top 5 queries per page by impressions",
+ "pages": {
+  "/blog/": [
+   {
+    "k": "translation blog",
+    "c": 0,
+    "i": 6,
+    "p": 50.3
+   },
+   {
+    "k": "foreign translations",
+    "c": 0,
+    "i": 2,
+    "p": 44.0
+   },
+   {
+    "k": "not translated",
+    "c": 0,
+    "i": 1,
+    "p": 34.0
+   },
+   {
+    "k": "more british idioms",
+    "c": 0,
+    "i": 1,
+    "p": 3.0
+   },
+   {
+    "k": "funny english terms",
+    "c": 0,
+    "i": 1,
+    "p": 3.0
+   }
+  ],
+  "/industry/marketing/": [
+   {
+    "k": "marketing translation services",
+    "c": 0,
+    "i": 1115,
+    "p": 44.2
+   },
+   {
+    "k": "marketing translation",
+    "c": 0,
+    "i": 540,
+    "p": 55.1
+   },
+   {
+    "k": "marketing translation service",
+    "c": 0,
+    "i": 251,
+    "p": 48.4
+   },
+   {
+    "k": "marketing material translation",
+    "c": 0,
+    "i": 174,
+    "p": 51.8
+   },
+   {
+    "k": "marketing translation company",
+    "c": 0,
+    "i": 149,
+    "p": 35.6
+   }
+  ],
+  "/languages/english-translation-services/": [
+   {
+    "k": "transliteration service",
+    "c": 0,
+    "i": 98,
+    "p": 52.4
+   },
+   {
+    "k": "foreign language translation services",
+    "c": 0,
+    "i": 26,
+    "p": 63.3
+   },
+   {
+    "k": "language translator service",
+    "c": 0,
+    "i": 21,
+    "p": 76.7
+   },
+   {
+    "k": "british localisation services",
+    "c": 0,
+    "i": 20,
+    "p": 31.6
+   },
+   {
+    "k": "translation and localization services",
+    "c": 0,
+    "i": 18,
+    "p": 67.2
+   }
+  ],
+  "/languages/german-translation-services/": [
+   {
+    "k": "german translation services",
+    "c": 0,
+    "i": 755,
+    "p": 34.3
+   },
+   {
+    "k": "german translators",
+    "c": 0,
+    "i": 308,
+    "p": 32.1
+   },
+   {
+    "k": "translation agency german",
+    "c": 0,
+    "i": 190,
+    "p": 30.1
+   },
+   {
+    "k": "german translation companies",
+    "c": 0,
+    "i": 184,
+    "p": 62.6
+   },
+   {
+    "k": "german to english translation services",
+    "c": 0,
+    "i": 177,
+    "p": 49.4
+   }
+  ],
+  "/languages/portuguese-translation-services/": [
+   {
+    "k": "portuguese translation services",
+    "c": 0,
+    "i": 300,
+    "p": 50.9
+   },
+   {
+    "k": "english to portuguese translation services",
+    "c": 0,
+    "i": 186,
+    "p": 49.3
+   },
+   {
+    "k": "portuguese translation services uk",
+    "c": 0,
+    "i": 94,
+    "p": 69.2
+   },
+   {
+    "k": "portuguese marketing translation",
+    "c": 0,
+    "i": 26,
+    "p": 25.8
+   },
+   {
+    "k": "portuguese translation company",
+    "c": 0,
+    "i": 24,
+    "p": 41.6
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-it/": [
+   {
+    "k": "spanish technical translation",
+    "c": 0,
+    "i": 95,
+    "p": 19.3
+   },
+   {
+    "k": "technology translation services",
+    "c": 0,
+    "i": 54,
+    "p": 28.1
+   },
+   {
+    "k": "telecommunications translation services",
+    "c": 0,
+    "i": 20,
+    "p": 19.1
+   },
+   {
+    "k": "translation spanish",
+    "c": 0,
+    "i": 1,
+    "p": 9.0
+   },
+   {
+    "k": "translated from spanish",
+    "c": 0,
+    "i": 1,
+    "p": 17.0
+   }
+  ],
+  "/languages/spanish-translation-services/": [
+   {
+    "k": "spanish translation services",
+    "c": 0,
+    "i": 1729,
+    "p": 34.3
+   },
+   {
+    "k": "spanish translation service",
+    "c": 0,
+    "i": 832,
+    "p": 37.2
+   },
+   {
+    "k": "marketing translation services into spanish",
+    "c": 0,
+    "i": 407,
+    "p": 15.8
+   },
+   {
+    "k": "spanish to english translators",
+    "c": 0,
+    "i": 207,
+    "p": 59.2
+   },
+   {
+    "k": "spanish translation services uk",
+    "c": 0,
+    "i": 177,
+    "p": 44.4
+   }
+  ],
+  "/translation-agency/locations/": [
+   {
+    "k": "international translation agencies",
+    "c": 0,
+    "i": 18,
+    "p": 52.3
+   },
+   {
+    "k": "international translation services",
+    "c": 0,
+    "i": 6,
+    "p": 35.3
+   },
+   {
+    "k": "translation location",
+    "c": 0,
+    "i": 1,
+    "p": 33.0
+   },
+   {
+    "k": "michael bastin",
+    "c": 0,
+    "i": 1,
+    "p": 8.0
+   },
+   {
+    "k": "localisation agency uk",
+    "c": 0,
+    "i": 1,
+    "p": 67.0
+   }
+  ],
+  "/translation-services/england/birmingham/": [
+   {
+    "k": "translation services birmingham",
+    "c": 0,
+    "i": 229,
+    "p": 45.4
+   },
+   {
+    "k": "translation services in birmingham",
+    "c": 0,
+    "i": 139,
+    "p": 44.7
+   },
+   {
+    "k": "birmingham translation agency",
+    "c": 0,
+    "i": 74,
+    "p": 42.8
+   },
+   {
+    "k": "translation service birmingham",
+    "c": 0,
+    "i": 71,
+    "p": 46.5
+   },
+   {
+    "k": "birmingham translation services",
+    "c": 0,
+    "i": 68,
+    "p": 42.6
+   }
+  ],
+  "/translation-services/england/leeds/": [
+   {
+    "k": "translation services leeds",
+    "c": 0,
+    "i": 37,
+    "p": 24.2
+   },
+   {
+    "k": "translation service leeds",
+    "c": 0,
+    "i": 23,
+    "p": 42.3
+   },
+   {
+    "k": "translation companies leeds",
+    "c": 0,
+    "i": 5,
+    "p": 27.0
+   },
+   {
+    "k": "translation services in leeds",
+    "c": 0,
+    "i": 3,
+    "p": 25.0
+   },
+   {
+    "k": "certified translation leeds",
+    "c": 0,
+    "i": 3,
+    "p": 19.0
+   }
+  ],
+  "/translation-services/england/norwich/": [
+   {
+    "k": "translation services",
+    "c": 0,
+    "i": 1776,
+    "p": 49.5
+   },
+   {
+    "k": "seo packages fornorwich",
+    "c": 0,
+    "i": 13,
+    "p": 77.4
+   },
+   {
+    "k": "translation company in norfolk",
+    "c": 0,
+    "i": 12,
+    "p": 44.2
+   },
+   {
+    "k": "translation services in norfolk",
+    "c": 0,
+    "i": 11,
+    "p": 42.8
+   },
+   {
+    "k": "literary translation agency",
+    "c": 0,
+    "i": 10,
+    "p": 62.9
+   }
+  ],
+  "/translation-services/england/southend-on-sea/": [
+   {
+    "k": "translation services near me",
+    "c": 1,
+    "i": 47,
+    "p": 32.6
+   },
+   {
+    "k": "translation offices near me",
+    "c": 1,
+    "i": 3,
+    "p": 13.0
+   },
+   {
+    "k": "official document translation services near me",
+    "c": 0,
+    "i": 3,
+    "p": 7.3
+   },
+   {
+    "k": "translations near me",
+    "c": 0,
+    "i": 1,
+    "p": 8.0
+   },
+   {
+    "k": "spanish translation services near me",
+    "c": 0,
+    "i": 1,
+    "p": 6.0
+   }
+  ],
+  "/translation-services/": [
+   {
+    "k": "professional translation",
+    "c": 0,
+    "i": 15,
+    "p": 31.3
+   },
+   {
+    "k": "professional transcreation uk",
+    "c": 0,
+    "i": 5,
+    "p": 43.0
+   }
+  ],
+  "/blog/belgium-market-translation/": [
+   {
+    "k": "translation belgium",
+    "c": 0,
+    "i": 14,
+    "p": 11.6
+   },
+   {
+    "k": "belgian translation",
+    "c": 0,
+    "i": 5,
+    "p": 10.0
+   },
+   {
+    "k": "belgium english translation",
+    "c": 0,
+    "i": 2,
+    "p": 10.5
+   },
+   {
+    "k": "belgian translated language",
+    "c": 0,
+    "i": 2,
+    "p": 10.0
+   },
+   {
+    "k": "translate belgium",
+    "c": 0,
+    "i": 1,
+    "p": 12.0
+   }
+  ],
+  "/blog/british-characters/": [
+   {
+    "k": "iconic british characters",
+    "c": 26,
+    "i": 828,
+    "p": 4.9
+   },
+   {
+    "k": "british characters",
+    "c": 5,
+    "i": 682,
+    "p": 5.4
+   },
+   {
+    "k": "british tv icons",
+    "c": 8,
+    "i": 380,
+    "p": 4.6
+   },
+   {
+    "k": "famous british characters",
+    "c": 6,
+    "i": 263,
+    "p": 7.3
+   },
+   {
+    "k": "british tv characters",
+    "c": 13,
+    "i": 259,
+    "p": 3.0
+   }
+  ],
+  "/blog/cultural-understanding-in-translation/": [
+   {
+    "k": "translation culture",
+    "c": 0,
+    "i": 1,
+    "p": 69.0
+   },
+   {
+    "k": "professional language translator",
+    "c": 0,
+    "i": 1,
+    "p": 12.0
+   },
+   {
+    "k": "culture translation",
+    "c": 0,
+    "i": 1,
+    "p": 74.0
+   },
+   {
+    "k": "a different culture",
+    "c": 0,
+    "i": 1,
+    "p": 19.0
+   }
+  ],
+  "/blog/get-high-quality-translations/": [
+   {
+    "k": "translator service",
+    "c": 0,
+    "i": 66,
+    "p": 70.0
+   },
+   {
+    "k": "language translation company",
+    "c": 0,
+    "i": 41,
+    "p": 51.5
+   },
+   {
+    "k": "how do i find a translator",
+    "c": 0,
+    "i": 11,
+    "p": 20.2
+   },
+   {
+    "k": "legal translators",
+    "c": 0,
+    "i": 6,
+    "p": 44.3
+   },
+   {
+    "k": "quality translation",
+    "c": 0,
+    "i": 4,
+    "p": 22.8
+   }
+  ],
+  "/blog/how-succeed-freelancer-translation-business/": [
+   {
+    "k": "business translator",
+    "c": 0,
+    "i": 184,
+    "p": 43.9
+   },
+   {
+    "k": "how to become a freelance translator",
+    "c": 0,
+    "i": 26,
+    "p": 56.1
+   },
+   {
+    "k": "how to become freelance translator",
+    "c": 0,
+    "i": 22,
+    "p": 62.3
+   },
+   {
+    "k": "how to succeed as a freelance translator",
+    "c": 0,
+    "i": 8,
+    "p": 14.6
+   },
+   {
+    "k": "working as a freelance translator",
+    "c": 0,
+    "i": 3,
+    "p": 60.3
+   }
+  ],
+  "/blog/lazy-monolingual-english-speakers/": [
+   {
+    "k": "monolingual english speakers",
+    "c": 0,
+    "i": 1,
+    "p": 1.0
+   },
+   {
+    "k": "how much does it cost to hire a translator",
+    "c": 0,
+    "i": 1,
+    "p": 45.0
+   },
+   {
+    "k": "\"monolingual habit\" holliday",
+    "c": 0,
+    "i": 1,
+    "p": 1.0
+   }
+  ],
+  "/blog/note-taking-interpreting/": [
+   {
+    "k": "note taking interpreting",
+    "c": 0,
+    "i": 4,
+    "p": 31.2
+   },
+   {
+    "k": "interpreting note taking",
+    "c": 0,
+    "i": 4,
+    "p": 31.5
+   },
+   {
+    "k": "interpreting",
+    "c": 0,
+    "i": 4,
+    "p": 59.8
+   },
+   {
+    "k": "note taking techniques for interpreters",
+    "c": 0,
+    "i": 3,
+    "p": 10.3
+   },
+   {
+    "k": "note taking in interpreting",
+    "c": 0,
+    "i": 3,
+    "p": 23.7
+   }
+  ],
+  "/blog/seo-translation/": [
+   {
+    "k": "seo translation services",
+    "c": 0,
+    "i": 268,
+    "p": 13.3
+   },
+   {
+    "k": "seo translation",
+    "c": 0,
+    "i": 253,
+    "p": 17.4
+   },
+   {
+    "k": "seo translations",
+    "c": 0,
+    "i": 241,
+    "p": 15.7
+   },
+   {
+    "k": "seo translator",
+    "c": 0,
+    "i": 33,
+    "p": 19.1
+   },
+   {
+    "k": "translated seo services",
+    "c": 0,
+    "i": 31,
+    "p": 13.3
+   }
+  ],
+  "/blog/top-ten-translation-films/": [
+   {
+    "k": "translation film",
+    "c": 0,
+    "i": 18,
+    "p": 13.6
+   },
+   {
+    "k": "translation movie",
+    "c": 0,
+    "i": 11,
+    "p": 24.1
+   },
+   {
+    "k": "translations film",
+    "c": 0,
+    "i": 8,
+    "p": 24.4
+   },
+   {
+    "k": "movies about translators",
+    "c": 0,
+    "i": 6,
+    "p": 19.5
+   },
+   {
+    "k": "translation+movies",
+    "c": 0,
+    "i": 5,
+    "p": 8.2
+   }
+  ],
+  "/blog/translator-vs-interpreter/": [
+   {
+    "k": "difference between interpreter and translator",
+    "c": 0,
+    "i": 113,
+    "p": 36.5
+   },
+   {
+    "k": "translator vs interpreter",
+    "c": 0,
+    "i": 64,
+    "p": 14.6
+   },
+   {
+    "k": "interpreter vs translator",
+    "c": 0,
+    "i": 40,
+    "p": 23.2
+   },
+   {
+    "k": "interpreter translate",
+    "c": 0,
+    "i": 14,
+    "p": 26.3
+   },
+   {
+    "k": "interpreter translator",
+    "c": 0,
+    "i": 13,
+    "p": 22.1
+   }
+  ],
+  "/blog/working-out-translation-rates/": [
+   {
+    "k": "translation services rate",
+    "c": 0,
+    "i": 21,
+    "p": 51.2
+   },
+   {
+    "k": "localisation rates uk",
+    "c": 0,
+    "i": 17,
+    "p": 43.7
+   },
+   {
+    "k": "proz translation rates per word",
+    "c": 0,
+    "i": 11,
+    "p": 10.3
+   },
+   {
+    "k": "proz rates",
+    "c": 0,
+    "i": 7,
+    "p": 12.0
+   },
+   {
+    "k": "average cost of translation services",
+    "c": 0,
+    "i": 6,
+    "p": 25.0
+   }
+  ],
+  "/contact-us/": [
+   {
+    "k": "betranslated",
+    "c": 0,
+    "i": 16,
+    "p": 1.8
+   },
+   {
+    "k": "business translation company",
+    "c": 0,
+    "i": 1,
+    "p": 37.0
+   }
+  ],
+  "/industry/legal/merger-and-acquisition-translation/": [
+   {
+    "k": "merger and acquisition translation services",
+    "c": 0,
+    "i": 1,
+    "p": 21.0
+   },
+   {
+    "k": "m&a translation",
+    "c": 0,
+    "i": 1,
+    "p": 4.0
+   }
+  ],
+  "/industry/medical/": [
+   {
+    "k": "medical translation agency",
+    "c": 0,
+    "i": 353,
+    "p": 31.7
+   },
+   {
+    "k": "medical translation company",
+    "c": 0,
+    "i": 308,
+    "p": 43.8
+   },
+   {
+    "k": "pharmaceutical translation services",
+    "c": 0,
+    "i": 294,
+    "p": 50.4
+   },
+   {
+    "k": "medical translations",
+    "c": 0,
+    "i": 219,
+    "p": 49.1
+   },
+   {
+    "k": "medical translation service",
+    "c": 0,
+    "i": 182,
+    "p": 37.1
+   }
+  ],
+  "/languages/german-translation-services/german-legal/": [
+   {
+    "k": "german translation services",
+    "c": 0,
+    "i": 755,
+    "p": 34.3
+   },
+   {
+    "k": "translation agency german",
+    "c": 0,
+    "i": 190,
+    "p": 30.1
+   },
+   {
+    "k": "german legal translation",
+    "c": 0,
+    "i": 37,
+    "p": 23.6
+   },
+   {
+    "k": "german to english translation service",
+    "c": 0,
+    "i": 26,
+    "p": 54.0
+   },
+   {
+    "k": "german legal translation services",
+    "c": 0,
+    "i": 19,
+    "p": 30.9
+   }
+  ],
+  "/languages/italian-translation-services/": [
+   {
+    "k": "italian translation services",
+    "c": 0,
+    "i": 401,
+    "p": 36.5
+   },
+   {
+    "k": "italian translation agency",
+    "c": 0,
+    "i": 287,
+    "p": 30.9
+   },
+   {
+    "k": "italian english interpreter",
+    "c": 0,
+    "i": 205,
+    "p": 44.7
+   },
+   {
+    "k": "italian translation service",
+    "c": 0,
+    "i": 130,
+    "p": 34.1
+   },
+   {
+    "k": "italian translation services uk",
+    "c": 0,
+    "i": 71,
+    "p": 57.5
+   }
+  ],
+  "/languages/korean-translation-services/korean-legal/": [
+   {
+    "k": "legal translation agency",
+    "c": 0,
+    "i": 61,
+    "p": 41.3
+   },
+   {
+    "k": "korean legal translation",
+    "c": 0,
+    "i": 41,
+    "p": 8.9
+   },
+   {
+    "k": "korean to english translation services",
+    "c": 0,
+    "i": 24,
+    "p": 25.0
+   },
+   {
+    "k": "translation services for legal",
+    "c": 0,
+    "i": 11,
+    "p": 35.3
+   },
+   {
+    "k": "ip translation services",
+    "c": 0,
+    "i": 11,
+    "p": 5.7
+   }
+  ],
+  "/languages/spanish-translation-services/marketing/": [
+   {
+    "k": "marketing translation agency",
+    "c": 0,
+    "i": 259,
+    "p": 37.4
+   },
+   {
+    "k": "spanish marketing translation services",
+    "c": 0,
+    "i": 15,
+    "p": 6.7
+   },
+   {
+    "k": "marketing translation spanish",
+    "c": 0,
+    "i": 2,
+    "p": 9.0
+   },
+   {
+    "k": "how to translate spanish marketing creatives on the web",
+    "c": 0,
+    "i": 2,
+    "p": 9.5
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-legal/": [
+   {
+    "k": "spanish legal translations",
+    "c": 0,
+    "i": 2,
+    "p": 27.5
+   },
+   {
+    "k": "legal spanish translations",
+    "c": 0,
+    "i": 1,
+    "p": 27.0
+   }
+  ],
+  "/languages/": [
+   {
+    "k": "multilingual translation",
+    "c": 0,
+    "i": 136,
+    "p": 15.8
+   },
+   {
+    "k": "multilingual translation company",
+    "c": 0,
+    "i": 96,
+    "p": 19.1
+   },
+   {
+    "k": "multilingual design agency",
+    "c": 0,
+    "i": 91,
+    "p": 54.6
+   },
+   {
+    "k": "multi lingual calling agency",
+    "c": 0,
+    "i": 82,
+    "p": 48.1
+   },
+   {
+    "k": "multi-lingual calling agency",
+    "c": 0,
+    "i": 80,
+    "p": 47.0
+   }
+  ],
+  "/translation-agency/locations/cardiff/": [
+   {
+    "k": "translation agency",
+    "c": 1,
+    "i": 2240,
+    "p": 35.8
+   },
+   {
+    "k": "translation services cardiff",
+    "c": 0,
+    "i": 462,
+    "p": 28.9
+   },
+   {
+    "k": "translation cardiff",
+    "c": 0,
+    "i": 197,
+    "p": 32.5
+   },
+   {
+    "k": "translation office",
+    "c": 0,
+    "i": 71,
+    "p": 40.4
+   },
+   {
+    "k": "language translation agency",
+    "c": 0,
+    "i": 69,
+    "p": 41.4
+   }
+  ],
+  "/translation-agency/quote/": [
+   {
+    "k": "translation quote",
+    "c": 0,
+    "i": 12,
+    "p": 30.3
+   },
+   {
+    "k": "quotation for translation services",
+    "c": 0,
+    "i": 10,
+    "p": 44.0
+   },
+   {
+    "k": "quote for translation services",
+    "c": 0,
+    "i": 3,
+    "p": 33.7
+   },
+   {
+    "k": "quote for translation",
+    "c": 0,
+    "i": 3,
+    "p": 38.3
+   },
+   {
+    "k": "website translation quote",
+    "c": 0,
+    "i": 2,
+    "p": 17.0
+   }
+  ],
+  "/translation-services/england/bournemouth/": [
+   {
+    "k": "certified document translation services near me",
+    "c": 0,
+    "i": 4,
+    "p": 9.8
+   },
+   {
+    "k": "translation document services near me",
+    "c": 0,
+    "i": 3,
+    "p": 10.0
+   },
+   {
+    "k": "creative translation services",
+    "c": 0,
+    "i": 3,
+    "p": 14.7
+   },
+   {
+    "k": "bournemouth interpreters group",
+    "c": 0,
+    "i": 3,
+    "p": 30.7
+   },
+   {
+    "k": "translation centre near me",
+    "c": 0,
+    "i": 2,
+    "p": 9.0
+   }
+  ],
+  "/translation-services/england/leicester/": [
+   {
+    "k": "translation service leicester",
+    "c": 0,
+    "i": 261,
+    "p": 31.3
+   },
+   {
+    "k": "translation services leicester",
+    "c": 0,
+    "i": 152,
+    "p": 27.0
+   },
+   {
+    "k": "translation agency leicester",
+    "c": 0,
+    "i": 131,
+    "p": 27.5
+   },
+   {
+    "k": "document translation services",
+    "c": 1,
+    "i": 125,
+    "p": 34.3
+   },
+   {
+    "k": "translation services in leicester",
+    "c": 0,
+    "i": 111,
+    "p": 22.0
+   }
+  ],
+  "/translation-services/england/nottingham/": [
+   {
+    "k": "translation services nottingham",
+    "c": 0,
+    "i": 241,
+    "p": 18.0
+   },
+   {
+    "k": "industrial translation services",
+    "c": 0,
+    "i": 77,
+    "p": 17.5
+   },
+   {
+    "k": "translator nottingham",
+    "c": 0,
+    "i": 22,
+    "p": 30.5
+   },
+   {
+    "k": "translation nottingham",
+    "c": 0,
+    "i": 22,
+    "p": 23.9
+   },
+   {
+    "k": "education translation services",
+    "c": 0,
+    "i": 18,
+    "p": 17.0
+   }
+  ],
+  "/translation-services/england/sunderland/": [
+   {
+    "k": "sustainability translation services",
+    "c": 0,
+    "i": 177,
+    "p": 15.7
+   },
+   {
+    "k": "translaton services location/city",
+    "c": 0,
+    "i": 15,
+    "p": 23.1
+   },
+   {
+    "k": "local translation services",
+    "c": 0,
+    "i": 9,
+    "p": 17.2
+   },
+   {
+    "k": "translate to english near me",
+    "c": 0,
+    "i": 2,
+    "p": 9.0
+   },
+   {
+    "k": "oil & gas translation services near me",
+    "c": 0,
+    "i": 2,
+    "p": 28.5
+   }
+  ],
+  "/translators/": [
+   {
+    "k": "writing translators",
+    "c": 0,
+    "i": 11,
+    "p": 66.9
+   },
+   {
+    "k": "experienced translator",
+    "c": 0,
+    "i": 5,
+    "p": 29.6
+   }
+  ],
+  "/blog/benefits-multilingual-people-for-companies/": [
+   {
+    "k": "top agency for inclusive reward and benefits translation",
+    "c": 0,
+    "i": 49,
+    "p": 40.8
+   }
+  ],
+  "/blog/british-english/": [
+   {
+    "k": "uk slang",
+    "c": 0,
+    "i": 5,
+    "p": 1.6
+   },
+   {
+    "k": "uk",
+    "c": 0,
+    "i": 5,
+    "p": 1.6
+   },
+   {
+    "k": "british",
+    "c": 0,
+    "i": 5,
+    "p": 5.6
+   },
+   {
+    "k": "british english localisation",
+    "c": 0,
+    "i": 4,
+    "p": 36.8
+   },
+   {
+    "k": "london slang",
+    "c": 0,
+    "i": 2,
+    "p": 2.5
+   }
+  ],
+  "/blog/differents-types-translation-service-providers/": [
+   {
+    "k": "translation service provider",
+    "c": 0,
+    "i": 27,
+    "p": 40.1
+   },
+   {
+    "k": "translation contractor",
+    "c": 0,
+    "i": 2,
+    "p": 65.5
+   }
+  ],
+  "/blog/immigration-can-drive-business-growth/": [
+   {
+    "k": "is remote better suited for small businesses or large enterprise immigration needs?",
+    "c": 0,
+    "i": 6,
+    "p": 8.8
+   },
+   {
+    "k": "immigration for businesses",
+    "c": 0,
+    "i": 4,
+    "p": 36.8
+   },
+   {
+    "k": "drive business growth",
+    "c": 0,
+    "i": 4,
+    "p": 40.0
+   },
+   {
+    "k": "migration business",
+    "c": 0,
+    "i": 2,
+    "p": 42.5
+   },
+   {
+    "k": "business migration",
+    "c": 0,
+    "i": 2,
+    "p": 36.5
+   }
+  ],
+  "/blog/learn-english-idioms/": [
+   {
+    "k": "language idioms",
+    "c": 0,
+    "i": 1,
+    "p": 7.0
+   }
+  ],
+  "/blog/press-release-translation/": [
+   {
+    "k": "press release translation",
+    "c": 0,
+    "i": 233,
+    "p": 26.0
+   },
+   {
+    "k": "press release translation services",
+    "c": 0,
+    "i": 69,
+    "p": 20.5
+   },
+   {
+    "k": "media news translation services",
+    "c": 0,
+    "i": 24,
+    "p": 22.5
+   },
+   {
+    "k": "media news and pr translation services",
+    "c": 0,
+    "i": 21,
+    "p": 18.0
+   },
+   {
+    "k": "media news and pr translation company",
+    "c": 0,
+    "i": 18,
+    "p": 25.9
+   }
+  ],
+  "/blog/spanish-phrases/": [
+   {
+    "k": "dar la lata in english",
+    "c": 0,
+    "i": 20,
+    "p": 9.8
+   },
+   {
+    "k": "spanish phrases",
+    "c": 0,
+    "i": 12,
+    "p": 3.3
+   },
+   {
+    "k": "dar la lata meaning",
+    "c": 0,
+    "i": 10,
+    "p": 7.3
+   },
+   {
+    "k": "dar la lata",
+    "c": 0,
+    "i": 6,
+    "p": 8.2
+   },
+   {
+    "k": "spanish sentences",
+    "c": 0,
+    "i": 5,
+    "p": 8.4
+   }
+  ],
+  "/blog/trademark-translation-business-expansion/": [
+   {
+    "k": "business translation",
+    "c": 0,
+    "i": 529,
+    "p": 35.0
+   },
+   {
+    "k": "marketing translations",
+    "c": 0,
+    "i": 253,
+    "p": 54.0
+   },
+   {
+    "k": "translation for marketing",
+    "c": 0,
+    "i": 192,
+    "p": 56.1
+   },
+   {
+    "k": "trademark translation services",
+    "c": 0,
+    "i": 146,
+    "p": 5.1
+   },
+   {
+    "k": "intellectual property translation",
+    "c": 0,
+    "i": 17,
+    "p": 5.9
+   }
+  ],
+  "/blog/tremendous-value-multilingual-website/": [
+   {
+    "k": "multilingual website translation",
+    "c": 0,
+    "i": 5,
+    "p": 19.4
+   },
+   {
+    "k": "why you need a multilingual website",
+    "c": 0,
+    "i": 1,
+    "p": 17.0
+   },
+   {
+    "k": "why manufacturers need a multilingual website",
+    "c": 0,
+    "i": 1,
+    "p": 16.0
+   }
+  ],
+  "/blog/zoom-interpreting/": [
+   {
+    "k": "zoom interpreting services",
+    "c": 0,
+    "i": 2,
+    "p": 22.5
+   },
+   {
+    "k": "zoom interpretation service",
+    "c": 0,
+    "i": 1,
+    "p": 28.0
+   }
+  ],
+  "/document-translation-services/": [
+   {
+    "k": "business translation services",
+    "c": 0,
+    "i": 1007,
+    "p": 27.6
+   },
+   {
+    "k": "technical document translation services",
+    "c": 0,
+    "i": 387,
+    "p": 29.8
+   },
+   {
+    "k": "translation businesses",
+    "c": 0,
+    "i": 141,
+    "p": 43.6
+   },
+   {
+    "k": "business translation service",
+    "c": 0,
+    "i": 76,
+    "p": 24.9
+   },
+   {
+    "k": "translate companies",
+    "c": 0,
+    "i": 67,
+    "p": 44.4
+   }
+  ],
+  "/industry/legal/patents-and-trademarks-translation-services/": [
+   {
+    "k": "patents translations london",
+    "c": 0,
+    "i": 11,
+    "p": 14.4
+   },
+   {
+    "k": "patent translation firms",
+    "c": 0,
+    "i": 6,
+    "p": 35.0
+   },
+   {
+    "k": "intellectual property translation services",
+    "c": 0,
+    "i": 5,
+    "p": 19.0
+   },
+   {
+    "k": "patent translation services uk",
+    "c": 0,
+    "i": 4,
+    "p": 29.0
+   },
+   {
+    "k": "patents translation services",
+    "c": 0,
+    "i": 1,
+    "p": 27.0
+   }
+  ],
+  "/industry/technical/": [
+   {
+    "k": "technical translation",
+    "c": 0,
+    "i": 590,
+    "p": 31.1
+   },
+   {
+    "k": "technical translation company",
+    "c": 0,
+    "i": 380,
+    "p": 26.6
+   },
+   {
+    "k": "technical translator",
+    "c": 0,
+    "i": 372,
+    "p": 47.7
+   },
+   {
+    "k": "technical translations",
+    "c": 0,
+    "i": 301,
+    "p": 40.4
+   },
+   {
+    "k": "engineering translations",
+    "c": 0,
+    "i": 216,
+    "p": 67.9
+   }
+  ],
+  "/languages/french-translation-services/french-business/": [
+   {
+    "k": "french business translation",
+    "c": 0,
+    "i": 3,
+    "p": 15.3
+   },
+   {
+    "k": "french translation uk",
+    "c": 0,
+    "i": 1,
+    "p": 36.0
+   },
+   {
+    "k": "business translation services french",
+    "c": 0,
+    "i": 1,
+    "p": 10.0
+   }
+  ],
+  "/languages/french-translation-services/": [
+   {
+    "k": "french translation",
+    "c": 0,
+    "i": 395,
+    "p": 12.0
+   },
+   {
+    "k": "professional french translation",
+    "c": 0,
+    "i": 384,
+    "p": 20.1
+   },
+   {
+    "k": "french interpreter",
+    "c": 0,
+    "i": 271,
+    "p": 59.5
+   },
+   {
+    "k": "professional french translator",
+    "c": 0,
+    "i": 234,
+    "p": 25.4
+   },
+   {
+    "k": "french translator service",
+    "c": 0,
+    "i": 215,
+    "p": 24.7
+   }
+  ],
+  "/languages/german-translation-services/german-marketing/": [
+   {
+    "k": "german marketing translation",
+    "c": 1,
+    "i": 131,
+    "p": 13.7
+   },
+   {
+    "k": "german marketing translator",
+    "c": 0,
+    "i": 13,
+    "p": 8.4
+   }
+  ],
+  "/languages/korean-translation-services/korean-audiovisual/": [
+   {
+    "k": "korean subtitling agency",
+    "c": 0,
+    "i": 10,
+    "p": 49.8
+   },
+   {
+    "k": "korean av",
+    "c": 0,
+    "i": 5,
+    "p": 2.0
+   },
+   {
+    "k": "translation of korean language",
+    "c": 0,
+    "i": 2,
+    "p": 9.0
+   },
+   {
+    "k": "korean voice over",
+    "c": 0,
+    "i": 1,
+    "p": 6.0
+   }
+  ],
+  "/languages/korean-translation-services/korean-marketing/": [
+   {
+    "k": "korean marketing translation services",
+    "c": 0,
+    "i": 14,
+    "p": 7.5
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-audiovisual/": [
+   {
+    "k": "industry-specific spanish translation services",
+    "c": 0,
+    "i": 99,
+    "p": 11.4
+   },
+   {
+    "k": "spanish subtitling agency",
+    "c": 0,
+    "i": 35,
+    "p": 34.6
+   },
+   {
+    "k": "spanish subtitling service",
+    "c": 0,
+    "i": 32,
+    "p": 26.6
+   },
+   {
+    "k": "video interpreter spanish",
+    "c": 0,
+    "i": 1,
+    "p": 71.0
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-retail-ecommerce/": [
+   {
+    "k": "spanish ecommerce translation",
+    "c": 0,
+    "i": 40,
+    "p": 10.7
+   }
+  ],
+  "/translation-agency/locations/edinburgh/": [
+   {
+    "k": "translation services edinburgh",
+    "c": 0,
+    "i": 302,
+    "p": 39.0
+   },
+   {
+    "k": "translation companies edinburgh",
+    "c": 0,
+    "i": 172,
+    "p": 41.1
+   },
+   {
+    "k": "translation agency edinburgh",
+    "c": 0,
+    "i": 162,
+    "p": 34.9
+   },
+   {
+    "k": "translate services",
+    "c": 0,
+    "i": 159,
+    "p": 32.8
+   },
+   {
+    "k": "edinburgh translation agency",
+    "c": 0,
+    "i": 70,
+    "p": 35.0
+   }
+  ],
+  "/translation-agency/rates/": [
+   {
+    "k": "website translation cost",
+    "c": 0,
+    "i": 293,
+    "p": 65.9
+   },
+   {
+    "k": "translation cost calculation",
+    "c": 0,
+    "i": 272,
+    "p": 55.1
+   },
+   {
+    "k": "translation rates",
+    "c": 0,
+    "i": 154,
+    "p": 24.0
+   },
+   {
+    "k": "translation cost",
+    "c": 0,
+    "i": 122,
+    "p": 51.1
+   },
+   {
+    "k": "translation services quote",
+    "c": 0,
+    "i": 86,
+    "p": 24.5
+   }
+  ],
+  "/translation-services/england/brighton/": [
+   {
+    "k": "localisation services brighton",
+    "c": 0,
+    "i": 4,
+    "p": 11.0
+   },
+   {
+    "k": "translation services brighton",
+    "c": 0,
+    "i": 2,
+    "p": 24.5
+   }
+  ],
+  "/translation-services/england/liverpool/": [
+   {
+    "k": "translation services",
+    "c": 0,
+    "i": 1776,
+    "p": 49.5
+   },
+   {
+    "k": "translation service liverpool",
+    "c": 0,
+    "i": 252,
+    "p": 20.3
+   },
+   {
+    "k": "translation agencies",
+    "c": 0,
+    "i": 242,
+    "p": 51.7
+   },
+   {
+    "k": "tourism translation agency",
+    "c": 0,
+    "i": 155,
+    "p": 63.4
+   },
+   {
+    "k": "translation companies",
+    "c": 0,
+    "i": 116,
+    "p": 40.3
+   }
+  ],
+  "/translation-services/england/plymouth/": [
+   {
+    "k": "tourism translation agency",
+    "c": 0,
+    "i": 155,
+    "p": 63.4
+   },
+   {
+    "k": "transportation translations services",
+    "c": 0,
+    "i": 48,
+    "p": 10.8
+   },
+   {
+    "k": "translation services plymouth",
+    "c": 0,
+    "i": 47,
+    "p": 15.0
+   },
+   {
+    "k": "translation agency plymouth",
+    "c": 0,
+    "i": 14,
+    "p": 9.4
+   },
+   {
+    "k": "multilingual jobs in plymouth",
+    "c": 0,
+    "i": 2,
+    "p": 36.0
+   }
+  ],
+  "/translation-services/england/york/": [
+   {
+    "k": "translation services york",
+    "c": 0,
+    "i": 48,
+    "p": 15.3
+   },
+   {
+    "k": "york translate",
+    "c": 0,
+    "i": 1,
+    "p": 9.0
+   }
+  ],
+  "/blog/5-inspiring-freelance-jobs/": [
+   {
+    "k": "freelance remote",
+    "c": 0,
+    "i": 3,
+    "p": 33.3
+   },
+   {
+    "k": "remote freelancer",
+    "c": 0,
+    "i": 2,
+    "p": 67.5
+   },
+   {
+    "k": "great freelance jobs",
+    "c": 0,
+    "i": 2,
+    "p": 43.0
+   },
+   {
+    "k": "remote freelancing",
+    "c": 0,
+    "i": 1,
+    "p": 52.0
+   },
+   {
+    "k": "remote freelancers",
+    "c": 0,
+    "i": 1,
+    "p": 46.0
+   }
+  ],
+  "/blog/best-translation-tools/": [
+   {
+    "k": "software translation tools",
+    "c": 0,
+    "i": 707,
+    "p": 43.1
+   },
+   {
+    "k": "best translation software",
+    "c": 0,
+    "i": 498,
+    "p": 29.7
+   },
+   {
+    "k": "best translation tool",
+    "c": 0,
+    "i": 451,
+    "p": 26.7
+   },
+   {
+    "k": "best translation tools",
+    "c": 0,
+    "i": 399,
+    "p": 29.2
+   },
+   {
+    "k": "tools for translation",
+    "c": 0,
+    "i": 367,
+    "p": 39.1
+   }
+  ],
+  "/blog/british-footballers/": [
+   {
+    "k": "good football players",
+    "c": 0,
+    "i": 7,
+    "p": 1.0
+   },
+   {
+    "k": "good footballers",
+    "c": 0,
+    "i": 4,
+    "p": 1.0
+   },
+   {
+    "k": "is jude bellingham british",
+    "c": 0,
+    "i": 3,
+    "p": 11.0
+   },
+   {
+    "k": "football players",
+    "c": 0,
+    "i": 3,
+    "p": 7.0
+   },
+   {
+    "k": "black footballers",
+    "c": 0,
+    "i": 3,
+    "p": 1.0
+   }
+  ],
+  "/blog/dubbing-english-language-content/": [
+   {
+    "k": "video translation and subtitling",
+    "c": 0,
+    "i": 4,
+    "p": 12.8
+   },
+   {
+    "k": "english dubbing",
+    "c": 0,
+    "i": 4,
+    "p": 29.5
+   },
+   {
+    "k": "dubbing services uk",
+    "c": 0,
+    "i": 3,
+    "p": 4.0
+   },
+   {
+    "k": "dubbing english",
+    "c": 0,
+    "i": 2,
+    "p": 32.0
+   },
+   {
+    "k": "dubbing",
+    "c": 0,
+    "i": 2,
+    "p": 59.5
+   }
+  ],
+  "/blog/good-translation-online-retail/": [
+   {
+    "k": "retail translation",
+    "c": 0,
+    "i": 58,
+    "p": 20.0
+   },
+   {
+    "k": "online store translation",
+    "c": 0,
+    "i": 39,
+    "p": 56.5
+   },
+   {
+    "k": "consumer goods translation services",
+    "c": 0,
+    "i": 34,
+    "p": 18.9
+   },
+   {
+    "k": "retail and ecommerce translation",
+    "c": 0,
+    "i": 32,
+    "p": 68.8
+   },
+   {
+    "k": "buy translation services",
+    "c": 0,
+    "i": 22,
+    "p": 64.8
+   }
+  ],
+  "/blog/insurance-translation-services/": [
+   {
+    "k": "insurance translation services",
+    "c": 0,
+    "i": 279,
+    "p": 23.5
+   },
+   {
+    "k": "insurance translation",
+    "c": 0,
+    "i": 120,
+    "p": 35.0
+   },
+   {
+    "k": "translator insurance",
+    "c": 0,
+    "i": 107,
+    "p": 50.4
+   },
+   {
+    "k": "interpreter insurance",
+    "c": 0,
+    "i": 63,
+    "p": 81.7
+   },
+   {
+    "k": "translators insurance",
+    "c": 0,
+    "i": 28,
+    "p": 48.9
+   }
+  ],
+  "/blog/logistics-transport-translation-services/": [
+   {
+    "k": "french english translation service",
+    "c": 0,
+    "i": 182,
+    "p": 46.6
+   },
+   {
+    "k": "logistics translation services",
+    "c": 0,
+    "i": 95,
+    "p": 9.4
+   },
+   {
+    "k": "logistics and shipping translation services",
+    "c": 0,
+    "i": 55,
+    "p": 12.5
+   },
+   {
+    "k": "logistics document translations",
+    "c": 0,
+    "i": 30,
+    "p": 17.1
+   },
+   {
+    "k": "transport and logistics translation",
+    "c": 0,
+    "i": 26,
+    "p": 7.6
+   }
+  ],
+  "/blog/professional-translation/": [
+   {
+    "k": "professional translator",
+    "c": 0,
+    "i": 36,
+    "p": 50.6
+   },
+   {
+    "k": "professional translation services for global business success",
+    "c": 0,
+    "i": 7,
+    "p": 18.7
+   },
+   {
+    "k": "translator professional",
+    "c": 0,
+    "i": 1,
+    "p": 25.0
+   },
+   {
+    "k": "pro translating services",
+    "c": 0,
+    "i": 1,
+    "p": 14.0
+   }
+  ],
+  "/blog/specialised-healthcare-translation-services/": [
+   {
+    "k": "medical translation company",
+    "c": 0,
+    "i": 308,
+    "p": 43.8
+   },
+   {
+    "k": "healthcare translation services",
+    "c": 0,
+    "i": 75,
+    "p": 45.2
+   },
+   {
+    "k": "medical translation companies",
+    "c": 0,
+    "i": 46,
+    "p": 35.5
+   },
+   {
+    "k": "web translation services",
+    "c": 0,
+    "i": 35,
+    "p": 20.5
+   },
+   {
+    "k": "clinical translation services",
+    "c": 0,
+    "i": 24,
+    "p": 54.3
+   }
+  ],
+  "/blog/translation-schools-belgium/": [
+   {
+    "k": "best language school belgium",
+    "c": 0,
+    "i": 28,
+    "p": 18.6
+   },
+   {
+    "k": "belgium translation",
+    "c": 1,
+    "i": 23,
+    "p": 9.0
+   },
+   {
+    "k": "translators in belgium",
+    "c": 0,
+    "i": 5,
+    "p": 11.2
+   },
+   {
+    "k": "translation belgium to english",
+    "c": 0,
+    "i": 3,
+    "p": 11.3
+   },
+   {
+    "k": "english belgium translation",
+    "c": 0,
+    "i": 2,
+    "p": 13.0
+   }
+  ],
+  "/blog/uk-visa-sponsorship-for-businesses/": [
+   {
+    "k": "business sponsor visa",
+    "c": 0,
+    "i": 3,
+    "p": 44.0
+   },
+   {
+    "k": "uk sponsorship rules",
+    "c": 0,
+    "i": 2,
+    "p": 31.5
+   },
+   {
+    "k": "working sponsorship uk",
+    "c": 0,
+    "i": 1,
+    "p": 88.0
+   },
+   {
+    "k": "uk work visa sponsorship",
+    "c": 0,
+    "i": 1,
+    "p": 54.0
+   },
+   {
+    "k": "uk work sponsorship",
+    "c": 0,
+    "i": 1,
+    "p": 13.0
+   }
+  ],
+  "/": [
+   {
+    "k": "translation agency london",
+    "c": 0,
+    "i": 1280,
+    "p": 50.2
+   },
+   {
+    "k": "translation london",
+    "c": 0,
+    "i": 1060,
+    "p": 47.7
+   },
+   {
+    "k": "translation company",
+    "c": 0,
+    "i": 873,
+    "p": 46.7
+   },
+   {
+    "k": "translation agencies london",
+    "c": 0,
+    "i": 797,
+    "p": 49.8
+   },
+   {
+    "k": "translation service",
+    "c": 0,
+    "i": 692,
+    "p": 55.4
+   }
+  ],
+  "/industry/tourism/": [
+   {
+    "k": "tourism translation",
+    "c": 0,
+    "i": 229,
+    "p": 74.4
+   },
+   {
+    "k": "travel and tourism translations",
+    "c": 0,
+    "i": 69,
+    "p": 59.7
+   },
+   {
+    "k": "tourism translator",
+    "c": 0,
+    "i": 23,
+    "p": 60.1
+   },
+   {
+    "k": "tourist translation",
+    "c": 0,
+    "i": 18,
+    "p": 34.8
+   },
+   {
+    "k": "tourism document translations",
+    "c": 0,
+    "i": 16,
+    "p": 55.3
+   }
+  ],
+  "/languages/french-translation-services/french-e-commerce/": [
+   {
+    "k": "french ecommerce translation",
+    "c": 0,
+    "i": 68,
+    "p": 7.5
+   },
+   {
+    "k": "e-commerce translation services",
+    "c": 0,
+    "i": 8,
+    "p": 28.1
+   },
+   {
+    "k": "ecommerce translation company",
+    "c": 0,
+    "i": 7,
+    "p": 45.6
+   },
+   {
+    "k": "e-commerce translation service",
+    "c": 0,
+    "i": 2,
+    "p": 37.5
+   }
+  ],
+  "/languages/german-translation-services/german-subtitling/": [
+   {
+    "k": "german subtitling agency",
+    "c": 0,
+    "i": 24,
+    "p": 9.3
+   },
+   {
+    "k": "german subtitling services",
+    "c": 0,
+    "i": 16,
+    "p": 15.8
+   },
+   {
+    "k": "german subtitling company",
+    "c": 0,
+    "i": 12,
+    "p": 13.5
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-technical/": [
+   {
+    "k": "professional technical translator spanish",
+    "c": 0,
+    "i": 204,
+    "p": 8.2
+   },
+   {
+    "k": "spanish technical translation services",
+    "c": 0,
+    "i": 23,
+    "p": 27.7
+   },
+   {
+    "k": "technical spanish translation services",
+    "c": 0,
+    "i": 1,
+    "p": 12.0
+   }
+  ],
+  "/translation-agency/locations/glasgow/": [
+   {
+    "k": "translation services glasgow",
+    "c": 0,
+    "i": 6,
+    "p": 37.3
+   }
+  ],
+  "/translation-agency/turnaround/": [
+   {
+    "k": "how long does a translation take",
+    "c": 0,
+    "i": 35,
+    "p": 35.9
+   },
+   {
+    "k": "translation turnaround time",
+    "c": 1,
+    "i": 30,
+    "p": 9.1
+   },
+   {
+    "k": "translation turnaround",
+    "c": 0,
+    "i": 18,
+    "p": 6.8
+   },
+   {
+    "k": "how long does it take to translate a document",
+    "c": 0,
+    "i": 8,
+    "p": 16.0
+   },
+   {
+    "k": "translation time",
+    "c": 0,
+    "i": 7,
+    "p": 13.6
+   }
+  ],
+  "/translation-services/england/bristol/": [
+   {
+    "k": "translation agency bristol",
+    "c": 0,
+    "i": 107,
+    "p": 39.7
+   },
+   {
+    "k": "bristol transcription services",
+    "c": 0,
+    "i": 18,
+    "p": 49.3
+   },
+   {
+    "k": "translation companies bristol",
+    "c": 0,
+    "i": 9,
+    "p": 35.7
+   },
+   {
+    "k": "interpretation bristol",
+    "c": 0,
+    "i": 9,
+    "p": 41.8
+   },
+   {
+    "k": "bristol translation",
+    "c": 0,
+    "i": 9,
+    "p": 38.2
+   }
+  ],
+  "/translation-services/england/london/": [
+   {
+    "k": "translation services london",
+    "c": 2,
+    "i": 1906,
+    "p": 41.2
+   },
+   {
+    "k": "london translation services",
+    "c": 0,
+    "i": 1366,
+    "p": 31.3
+   },
+   {
+    "k": "translator in london",
+    "c": 0,
+    "i": 1104,
+    "p": 41.7
+   },
+   {
+    "k": "translator london",
+    "c": 0,
+    "i": 1080,
+    "p": 42.9
+   },
+   {
+    "k": "translation service london",
+    "c": 0,
+    "i": 1069,
+    "p": 45.8
+   }
+  ],
+  "/translation-services/england/portsmouth/": [
+   {
+    "k": "document translation services near me",
+    "c": 0,
+    "i": 75,
+    "p": 27.8
+   },
+   {
+    "k": "seo packages forportsmouth",
+    "c": 0,
+    "i": 7,
+    "p": 82.4
+   },
+   {
+    "k": "website translation service",
+    "c": 0,
+    "i": 5,
+    "p": 27.6
+   },
+   {
+    "k": "authorised translators near me",
+    "c": 0,
+    "i": 5,
+    "p": 9.6
+   },
+   {
+    "k": "turkish translator near me",
+    "c": 0,
+    "i": 2,
+    "p": 12.0
+   }
+  ],
+  "/translation-services/england/": [
+   {
+    "k": "translation company east london",
+    "c": 0,
+    "i": 138,
+    "p": 39.4
+   },
+   {
+    "k": "logistics translation company",
+    "c": 0,
+    "i": 125,
+    "p": 7.8
+   },
+   {
+    "k": "english translation services",
+    "c": 0,
+    "i": 67,
+    "p": 52.5
+   },
+   {
+    "k": "english translation service",
+    "c": 0,
+    "i": 31,
+    "p": 48.0
+   },
+   {
+    "k": "legal documents translation services",
+    "c": 0,
+    "i": 15,
+    "p": 25.2
+   }
+  ],
+  "/blog/8-british-habits-that-stand-out-abroad/": [
+   {
+    "k": "british understatement",
+    "c": 0,
+    "i": 71,
+    "p": 35.0
+   },
+   {
+    "k": "british culture",
+    "c": 0,
+    "i": 10,
+    "p": 2.7
+   },
+   {
+    "k": "uk habits",
+    "c": 0,
+    "i": 8,
+    "p": 9.1
+   },
+   {
+    "k": "typical brit abroad",
+    "c": 0,
+    "i": 8,
+    "p": 15.5
+   },
+   {
+    "k": "united kingdom",
+    "c": 0,
+    "i": 7,
+    "p": 4.7
+   }
+  ],
+  "/blog/business-need-financial-translation/": [
+   {
+    "k": "what are the benefits of using a specialized financial translation service?",
+    "c": 0,
+    "i": 88,
+    "p": 8.4
+   },
+   {
+    "k": "french financial translation",
+    "c": 0,
+    "i": 41,
+    "p": 4.7
+   },
+   {
+    "k": "financial translation",
+    "c": 0,
+    "i": 40,
+    "p": 13.8
+   },
+   {
+    "k": "financial translations",
+    "c": 0,
+    "i": 36,
+    "p": 13.7
+   },
+   {
+    "k": "which finance service is best for translating company data into commercial strategy?",
+    "c": 0,
+    "i": 30,
+    "p": 23.1
+   }
+  ],
+  "/blog/environmental-translation-services-green-economy/": [
+   {
+    "k": "environmental translation",
+    "c": 0,
+    "i": 372,
+    "p": 8.7
+   },
+   {
+    "k": "environmental translation company",
+    "c": 0,
+    "i": 269,
+    "p": 7.4
+   },
+   {
+    "k": "environmental translation services",
+    "c": 0,
+    "i": 238,
+    "p": 10.3
+   },
+   {
+    "k": "environmental translation agency",
+    "c": 0,
+    "i": 193,
+    "p": 6.3
+   },
+   {
+    "k": "translations for the environmental sector",
+    "c": 0,
+    "i": 80,
+    "p": 12.2
+   }
+  ],
+  "/blog/guide-western-european-languages/": [
+   {
+    "k": "western european languages",
+    "c": 1,
+    "i": 43,
+    "p": 3.4
+   },
+   {
+    "k": "western languages",
+    "c": 0,
+    "i": 41,
+    "p": 2.4
+   },
+   {
+    "k": "language groups in europe",
+    "c": 0,
+    "i": 27,
+    "p": 11.1
+   },
+   {
+    "k": "languages in western europe",
+    "c": 1,
+    "i": 10,
+    "p": 1.8
+   },
+   {
+    "k": "european languages",
+    "c": 0,
+    "i": 10,
+    "p": 22.2
+   }
+  ],
+  "/blog/international-advertising-benefits/": [
+   {
+    "k": "international advertising",
+    "c": 0,
+    "i": 732,
+    "p": 13.9
+   },
+   {
+    "k": "international advertising strategy",
+    "c": 0,
+    "i": 377,
+    "p": 12.7
+   },
+   {
+    "k": "international paid media",
+    "c": 0,
+    "i": 111,
+    "p": 72.1
+   },
+   {
+    "k": "should i also consider an international tv advertising partner",
+    "c": 0,
+    "i": 92,
+    "p": 14.4
+   },
+   {
+    "k": "international paid media campaigns",
+    "c": 0,
+    "i": 21,
+    "p": 41.5
+   }
+  ],
+  "/blog/movie-dubbing/": [
+   {
+    "k": "movie dubbing",
+    "c": 0,
+    "i": 78,
+    "p": 21.6
+   },
+   {
+    "k": "dubbing services movies/shows",
+    "c": 0,
+    "i": 57,
+    "p": 24.7
+   },
+   {
+    "k": "what does dubbed mean in movies",
+    "c": 0,
+    "i": 31,
+    "p": 14.3
+   },
+   {
+    "k": "film dubbing",
+    "c": 0,
+    "i": 31,
+    "p": 28.7
+   },
+   {
+    "k": "what is a dubbed movie",
+    "c": 0,
+    "i": 17,
+    "p": 10.9
+   }
+  ],
+  "/blog/tips-for-b2b-translation/": [
+   {
+    "k": "business to business translation services",
+    "c": 0,
+    "i": 25,
+    "p": 27.6
+   },
+   {
+    "k": "b2b localisation services",
+    "c": 0,
+    "i": 20,
+    "p": 19.3
+   },
+   {
+    "k": "b2b deals",
+    "c": 0,
+    "i": 4,
+    "p": 43.5
+   },
+   {
+    "k": "b2b website translation",
+    "c": 0,
+    "i": 3,
+    "p": 8.7
+   },
+   {
+    "k": "what should i do before hiring a translator",
+    "c": 0,
+    "i": 1,
+    "p": 9.0
+   }
+  ],
+  "/blog/vital-keyboard-shortcuts-translators/": [
+   {
+    "k": "hotkey translator",
+    "c": 0,
+    "i": 17,
+    "p": 15.6
+   },
+   {
+    "k": "translation shortcut",
+    "c": 0,
+    "i": 8,
+    "p": 8.5
+   },
+   {
+    "k": "translate shortcut key",
+    "c": 0,
+    "i": 7,
+    "p": 9.4
+   },
+   {
+    "k": "which is the shift key",
+    "c": 0,
+    "i": 6,
+    "p": 2.3
+   },
+   {
+    "k": "keyboard shortcut for translate",
+    "c": 0,
+    "i": 5,
+    "p": 5.6
+   }
+  ],
+  "/industry/business/": [
+   {
+    "k": "business document translation",
+    "c": 0,
+    "i": 201,
+    "p": 27.0
+   },
+   {
+    "k": "translations for companies",
+    "c": 0,
+    "i": 59,
+    "p": 50.5
+   },
+   {
+    "k": "business translation agency",
+    "c": 0,
+    "i": 55,
+    "p": 19.0
+   },
+   {
+    "k": "business translation professional",
+    "c": 0,
+    "i": 42,
+    "p": 29.8
+   },
+   {
+    "k": "industry translations",
+    "c": 0,
+    "i": 19,
+    "p": 30.1
+   }
+  ],
+  "/industry/legal/": [
+   {
+    "k": "legal document translation services",
+    "c": 0,
+    "i": 75,
+    "p": 24.9
+   },
+   {
+    "k": "legal translation service",
+    "c": 0,
+    "i": 55,
+    "p": 32.6
+   },
+   {
+    "k": "legal documents translated",
+    "c": 0,
+    "i": 48,
+    "p": 16.7
+   },
+   {
+    "k": "translate legal documents",
+    "c": 0,
+    "i": 35,
+    "p": 20.0
+   },
+   {
+    "k": "legal translations services",
+    "c": 0,
+    "i": 34,
+    "p": 39.6
+   }
+  ],
+  "/industry/": [
+   {
+    "k": "translations agency",
+    "c": 0,
+    "i": 194,
+    "p": 33.3
+   },
+   {
+    "k": "b2b translation agency",
+    "c": 0,
+    "i": 60,
+    "p": 27.3
+   },
+   {
+    "k": "it translation services",
+    "c": 0,
+    "i": 18,
+    "p": 21.2
+   },
+   {
+    "k": "expert translations",
+    "c": 0,
+    "i": 8,
+    "p": 31.6
+   },
+   {
+    "k": "corporate publishing translation services",
+    "c": 0,
+    "i": 8,
+    "p": 75.8
+   }
+  ],
+  "/languages/french-translation-services/french-financial/": [
+   {
+    "k": "french financial translation",
+    "c": 0,
+    "i": 40,
+    "p": 4.0
+   }
+  ],
+  "/languages/german-translation-services/german-e-commerce/": [
+   {
+    "k": "german ecommerce translation",
+    "c": 0,
+    "i": 112,
+    "p": 6.5
+   },
+   {
+    "k": "german e-commerce translation",
+    "c": 0,
+    "i": 5,
+    "p": 4.6
+   },
+   {
+    "k": "german website translation",
+    "c": 0,
+    "i": 2,
+    "p": 34.0
+   },
+   {
+    "k": "translation product",
+    "c": 0,
+    "i": 1,
+    "p": 39.0
+   },
+   {
+    "k": "german commerce",
+    "c": 0,
+    "i": 1,
+    "p": 4.0
+   }
+  ],
+  "/languages/german-translation-services/german-technical/": [
+   {
+    "k": "german technical translation",
+    "c": 0,
+    "i": 14,
+    "p": 24.7
+   },
+   {
+    "k": "technical german translation",
+    "c": 0,
+    "i": 2,
+    "p": 29.5
+   }
+  ],
+  "/languages/korean-translation-services/korean-consumer-retail/": [
+   {
+    "k": "korean marketing translation",
+    "c": 0,
+    "i": 127,
+    "p": 11.0
+   },
+   {
+    "k": "e-commerce website translation",
+    "c": 0,
+    "i": 5,
+    "p": 20.0
+   },
+   {
+    "k": "language translations for ecommerce",
+    "c": 0,
+    "i": 3,
+    "p": 15.0
+   },
+   {
+    "k": "kore translation",
+    "c": 0,
+    "i": 2,
+    "p": 11.0
+   },
+   {
+    "k": "translation for korean",
+    "c": 0,
+    "i": 1,
+    "p": 8.0
+   }
+  ],
+  "/translation-agency/locations/aberdeen/": [
+   {
+    "k": "tłumacz przysięgły aberdeen",
+    "c": 0,
+    "i": 1,
+    "p": 39.0
+   },
+   {
+    "k": "translation aberdeen",
+    "c": 0,
+    "i": 1,
+    "p": 31.0
+   },
+   {
+    "k": "tlumacz przysiegly aberdeen",
+    "c": 0,
+    "i": 1,
+    "p": 27.0
+   },
+   {
+    "k": "aberdeen translation services",
+    "c": 0,
+    "i": 1,
+    "p": 32.0
+   }
+  ],
+  "/translation-agency/locations/londonderry/": [
+   {
+    "k": "translation services northern ireland",
+    "c": 0,
+    "i": 1,
+    "p": 43.0
+   },
+   {
+    "k": "best translation near me",
+    "c": 0,
+    "i": 1,
+    "p": 5.0
+   }
+  ],
+  "/translation-agency/": [
+   {
+    "k": "betranslated",
+    "c": 0,
+    "i": 5,
+    "p": 1.0
+   },
+   {
+    "k": "translation company",
+    "c": 0,
+    "i": 1,
+    "p": 80.0
+   },
+   {
+    "k": "translation agency",
+    "c": 0,
+    "i": 1,
+    "p": 230.0
+   }
+  ],
+  "/translation-services/england/cambridge/": [
+   {
+    "k": "translation service cambridge",
+    "c": 0,
+    "i": 8,
+    "p": 23.6
+   },
+   {
+    "k": "professional translation services cambridge",
+    "c": 0,
+    "i": 3,
+    "p": 26.3
+   },
+   {
+    "k": "book translation services cambridge",
+    "c": 0,
+    "i": 3,
+    "p": 48.3
+   },
+   {
+    "k": "professional translation cambridge",
+    "c": 0,
+    "i": 2,
+    "p": 33.0
+   }
+  ],
+  "/translation-services/england/manchester/": [
+   {
+    "k": "translation services manchester",
+    "c": 0,
+    "i": 981,
+    "p": 33.4
+   },
+   {
+    "k": "medical translation services",
+    "c": 0,
+    "i": 825,
+    "p": 37.9
+   },
+   {
+    "k": "translation agency manchester",
+    "c": 0,
+    "i": 693,
+    "p": 35.1
+   },
+   {
+    "k": "translation companies manchester",
+    "c": 0,
+    "i": 422,
+    "p": 37.5
+   },
+   {
+    "k": "legal service translation manchester",
+    "c": 0,
+    "i": 342,
+    "p": 39.3
+   }
+  ],
+  "/translation-services/england/sheffield/": [
+   {
+    "k": "translation services sheffield",
+    "c": 0,
+    "i": 7,
+    "p": 23.3
+   },
+   {
+    "k": "sheffield translation",
+    "c": 0,
+    "i": 1,
+    "p": 31.0
+   }
+  ],
+  "/translation-services/remote-interpreting/": [
+   {
+    "k": "remote interpreting services",
+    "c": 0,
+    "i": 372,
+    "p": 63.7
+   },
+   {
+    "k": "remote interpreting",
+    "c": 0,
+    "i": 354,
+    "p": 70.6
+   },
+   {
+    "k": "video interpreting services",
+    "c": 0,
+    "i": 207,
+    "p": 69.1
+   },
+   {
+    "k": "on-demand interpreting",
+    "c": 0,
+    "i": 133,
+    "p": 58.3
+   },
+   {
+    "k": "remote simultaneous interpretation",
+    "c": 0,
+    "i": 84,
+    "p": 69.3
+   }
+  ],
+  "/blog/advantages-gifted-bilingual-kids/": [
+   {
+    "k": "benefits of raising bilingual child",
+    "c": 0,
+    "i": 8,
+    "p": 66.3
+   },
+   {
+    "k": "bilingual children benefits",
+    "c": 0,
+    "i": 3,
+    "p": 50.3
+   },
+   {
+    "k": "benefits of bilingualism",
+    "c": 0,
+    "i": 2,
+    "p": 13.0
+   }
+  ],
+  "/blog/blog-british-food-expats-miss/": [
+   {
+    "k": "british food sent to expats worldwide",
+    "c": 0,
+    "i": 22,
+    "p": 29.7
+   },
+   {
+    "k": "food",
+    "c": 0,
+    "i": 12,
+    "p": 5.4
+   },
+   {
+    "k": "british food abroad",
+    "c": 0,
+    "i": 10,
+    "p": 30.2
+   },
+   {
+    "k": "british food",
+    "c": 2,
+    "i": 8,
+    "p": 2.5
+   },
+   {
+    "k": "traditional british food",
+    "c": 0,
+    "i": 5,
+    "p": 3.2
+   }
+  ],
+  "/blog/commercial-translation-professionals/": [
+   {
+    "k": "translation business",
+    "c": 0,
+    "i": 359,
+    "p": 42.6
+   },
+   {
+    "k": "business translations",
+    "c": 0,
+    "i": 342,
+    "p": 41.3
+   },
+   {
+    "k": "corporate translation services",
+    "c": 0,
+    "i": 117,
+    "p": 38.3
+   },
+   {
+    "k": "business translation companies",
+    "c": 0,
+    "i": 92,
+    "p": 28.0
+   },
+   {
+    "k": "commercial translations",
+    "c": 0,
+    "i": 44,
+    "p": 22.3
+   }
+  ],
+  "/blog/expressions-from-the-it-crowd/": [
+   {
+    "k": "shit innit",
+    "c": 0,
+    "i": 4,
+    "p": 6.3
+   },
+   {
+    "k": "english",
+    "c": 0,
+    "i": 3,
+    "p": 3.7
+   },
+   {
+    "k": "what about in the uk",
+    "c": 0,
+    "i": 1,
+    "p": 1.0
+   },
+   {
+    "k": "the crowd goes mild",
+    "c": 0,
+    "i": 1,
+    "p": 30.0
+   },
+   {
+    "k": "is it a good thing?",
+    "c": 0,
+    "i": 1,
+    "p": 1.0
+   }
+  ],
+  "/blog/hire-small-translation-agency/": [
+   {
+    "k": "is it worth it to hire a professional translator",
+    "c": 0,
+    "i": 26,
+    "p": 18.7
+   },
+   {
+    "k": "hire translators",
+    "c": 0,
+    "i": 1,
+    "p": 57.0
+   }
+  ],
+  "/blog/language-degrees/": [
+   {
+    "k": "degree language",
+    "c": 0,
+    "i": 3,
+    "p": 17.0
+   },
+   {
+    "k": "language+graduation",
+    "c": 0,
+    "i": 2,
+    "p": 8.0
+   },
+   {
+    "k": "language majors",
+    "c": 0,
+    "i": 2,
+    "p": 38.5
+   },
+   {
+    "k": "language degrees employability",
+    "c": 0,
+    "i": 1,
+    "p": 47.0
+   }
+  ],
+  "/blog/property-documentation-translation/": [
+   {
+    "k": "real estate translation service",
+    "c": 0,
+    "i": 358,
+    "p": 33.0
+   },
+   {
+    "k": "property translation",
+    "c": 0,
+    "i": 117,
+    "p": 5.8
+   },
+   {
+    "k": "real estate translation services",
+    "c": 0,
+    "i": 49,
+    "p": 25.5
+   },
+   {
+    "k": "translation of a property sale agreement",
+    "c": 0,
+    "i": 43,
+    "p": 10.8
+   },
+   {
+    "k": "real estate translations",
+    "c": 0,
+    "i": 23,
+    "p": 51.2
+   }
+  ],
+  "/blog/tips-learn-new-language-abroad/": [
+   {
+    "k": "how to learn a new language",
+    "c": 0,
+    "i": 12,
+    "p": 19.7
+   },
+   {
+    "k": "learning a new language",
+    "c": 0,
+    "i": 9,
+    "p": 16.8
+   },
+   {
+    "k": "tips for learning a new language",
+    "c": 0,
+    "i": 2,
+    "p": 14.0
+   },
+   {
+    "k": "how to learn another language",
+    "c": 0,
+    "i": 2,
+    "p": 26.0
+   },
+   {
+    "k": "fastest way to learn a foreign language",
+    "c": 0,
+    "i": 2,
+    "p": 6.0
+   }
+  ],
+  "/blog/translation-services-need-vpn/": [
+   {
+    "k": "what are the advantages of using a dedicated ip translation service over general translation?",
+    "c": 0,
+    "i": 87,
+    "p": 5.5
+   },
+   {
+    "k": "language app vs vpn",
+    "c": 0,
+    "i": 29,
+    "p": 7.1
+   },
+   {
+    "k": "difference between language app and vpn",
+    "c": 0,
+    "i": 22,
+    "p": 6.3
+   },
+   {
+    "k": "difference between vpn and language app",
+    "c": 0,
+    "i": 19,
+    "p": 8.1
+   },
+   {
+    "k": "vpn vs language app",
+    "c": 0,
+    "i": 14,
+    "p": 9.4
+   }
+  ],
+  "/blog/what-is-betranslated/": [
+   {
+    "k": "be translation",
+    "c": 0,
+    "i": 5,
+    "p": 3.2
+   }
+  ],
+  "/industry/it-telecom/": [
+   {
+    "k": "translation software",
+    "c": 0,
+    "i": 795,
+    "p": 41.7
+   },
+   {
+    "k": "translations for the it sector",
+    "c": 0,
+    "i": 37,
+    "p": 12.8
+   },
+   {
+    "k": "software translation",
+    "c": 0,
+    "i": 32,
+    "p": 49.0
+   },
+   {
+    "k": "it translation",
+    "c": 0,
+    "i": 27,
+    "p": 8.6
+   },
+   {
+    "k": "data translation services",
+    "c": 0,
+    "i": 9,
+    "p": 33.8
+   }
+  ],
+  "/industry/marketing/travel/": [
+   {
+    "k": "tourism translation company",
+    "c": 0,
+    "i": 150,
+    "p": 66.2
+   },
+   {
+    "k": "travel localisation agency",
+    "c": 0,
+    "i": 52,
+    "p": 25.2
+   },
+   {
+    "k": "travel industry translation",
+    "c": 0,
+    "i": 37,
+    "p": 58.7
+   },
+   {
+    "k": "brochure translation services",
+    "c": 0,
+    "i": 35,
+    "p": 45.1
+   },
+   {
+    "k": "travel industry marketing translation",
+    "c": 0,
+    "i": 31,
+    "p": 19.1
+   }
+  ],
+  "/languages/dutch-translation-services/": [
+   {
+    "k": "dutch translation services",
+    "c": 0,
+    "i": 357,
+    "p": 32.2
+   },
+   {
+    "k": "dutch translation service",
+    "c": 0,
+    "i": 62,
+    "p": 29.9
+   },
+   {
+    "k": "dutch translators",
+    "c": 0,
+    "i": 28,
+    "p": 38.1
+   },
+   {
+    "k": "dutch translator service",
+    "c": 0,
+    "i": 25,
+    "p": 42.0
+   },
+   {
+    "k": "dutch translator london",
+    "c": 0,
+    "i": 13,
+    "p": 44.0
+   }
+  ],
+  "/languages/french-translation-services/french-it/": [
+   {
+    "k": "french translation services",
+    "c": 0,
+    "i": 934,
+    "p": 33.6
+   },
+   {
+    "k": "french translation service",
+    "c": 0,
+    "i": 150,
+    "p": 30.6
+   },
+   {
+    "k": "enterprise translation",
+    "c": 0,
+    "i": 107,
+    "p": 68.2
+   },
+   {
+    "k": "translation services french",
+    "c": 0,
+    "i": 44,
+    "p": 32.5
+   },
+   {
+    "k": "translation services software",
+    "c": 0,
+    "i": 15,
+    "p": 53.7
+   }
+  ],
+  "/languages/german-translation-services/german-financial/": [
+   {
+    "k": "german financial translation",
+    "c": 0,
+    "i": 46,
+    "p": 11.5
+   }
+  ],
+  "/languages/korean-translation-services/korean-financial/": [
+   {
+    "k": "korean financial translation",
+    "c": 0,
+    "i": 100,
+    "p": 4.5
+   },
+   {
+    "k": "korean document translation",
+    "c": 0,
+    "i": 2,
+    "p": 9.0
+   }
+  ],
+  "/languages/korean-translation-services/": [
+   {
+    "k": "korean financial translation",
+    "c": 0,
+    "i": 100,
+    "p": 4.5
+   },
+   {
+    "k": "korean technical translation",
+    "c": 0,
+    "i": 65,
+    "p": 13.4
+   },
+   {
+    "k": "korean translation",
+    "c": 0,
+    "i": 49,
+    "p": 32.2
+   },
+   {
+    "k": "english to korean translation service",
+    "c": 0,
+    "i": 46,
+    "p": 26.1
+   },
+   {
+    "k": "korean translation company",
+    "c": 0,
+    "i": 40,
+    "p": 32.2
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-financial/": [
+   {
+    "k": "spanish financial translation",
+    "c": 0,
+    "i": 114,
+    "p": 3.4
+   }
+  ],
+  "/languages/spanish-translation-services/spanish-website/": [
+   {
+    "k": "spanish website translation services",
+    "c": 0,
+    "i": 43,
+    "p": 29.4
+   }
+  ],
+  "/translation-agency/locations/bangor/": [
+   {
+    "k": "translation agency cardiff",
+    "c": 0,
+    "i": 52,
+    "p": 21.8
+   },
+   {
+    "k": "translation service in north wales",
+    "c": 0,
+    "i": 5,
+    "p": 19.2
+   },
+   {
+    "k": "translate spanish business legal documents and content for commercial purposes with professional accuracy and legal compliance.",
+    "c": 0,
+    "i": 2,
+    "p": 6.0
+   }
+  ],
+  "/translation-agency/locations/swansea/": [
+   {
+    "k": "best environmental translation services",
+    "c": 0,
+    "i": 151,
+    "p": 10.0
+   },
+   {
+    "k": "all translation services",
+    "c": 0,
+    "i": 15,
+    "p": 29.9
+   },
+   {
+    "k": "which web agencies in wales specialise in bilingual websites?",
+    "c": 0,
+    "i": 3,
+    "p": 9.7
+   },
+   {
+    "k": "translation services swansea",
+    "c": 0,
+    "i": 2,
+    "p": 7.5
+   }
+  ],
+  "/translation-services/england/bath/": [
+   {
+    "k": "translation services bath",
+    "c": 0,
+    "i": 62,
+    "p": 17.1
+   },
+   {
+    "k": "bath translation agency",
+    "c": 0,
+    "i": 2,
+    "p": 13.5
+   }
+  ],
+  "/translation-services/england/newcastle/": [
+   {
+    "k": "engineering translation services",
+    "c": 0,
+    "i": 506,
+    "p": 29.9
+   },
+   {
+    "k": "technical translation service",
+    "c": 0,
+    "i": 308,
+    "p": 31.5
+   },
+   {
+    "k": "translation services newcastle upon tyne",
+    "c": 0,
+    "i": 53,
+    "p": 18.7
+   },
+   {
+    "k": "translation services newcastle",
+    "c": 0,
+    "i": 44,
+    "p": 14.8
+   },
+   {
+    "k": "translation services for business",
+    "c": 0,
+    "i": 14,
+    "p": 16.4
+   }
+  ],
+  "/translation-services/england/southampton/": [
+   {
+    "k": "freight translation services",
+    "c": 0,
+    "i": 144,
+    "p": 11.3
+   },
+   {
+    "k": "tlumaczenia southampton",
+    "c": 0,
+    "i": 26,
+    "p": 26.8
+   },
+   {
+    "k": "translation services in northampton",
+    "c": 0,
+    "i": 13,
+    "p": 67.3
+   },
+   {
+    "k": "translation agency in northampton",
+    "c": 0,
+    "i": 12,
+    "p": 68.4
+   },
+   {
+    "k": "translation company in northamptonshire",
+    "c": 0,
+    "i": 5,
+    "p": 71.4
+   }
+  ],
+  "/translation-services/website-translation/": [
+   {
+    "k": "website translation agency",
+    "c": 0,
+    "i": 54,
+    "p": 28.9
+   },
+   {
+    "k": "web site translation services",
+    "c": 0,
+    "i": 5,
+    "p": 26.4
+   },
+   {
+    "k": "web page translation service",
+    "c": 0,
+    "i": 5,
+    "p": 22.0
+   },
+   {
+    "k": "translation services for websites",
+    "c": 0,
+    "i": 2,
+    "p": 28.0
+   },
+   {
+    "k": "web translations",
+    "c": 0,
+    "i": 1,
+    "p": 30.0
+   }
+  ],
+  "/blog/ai-disadvantages-for-businesses/": [
+   {
+    "k": "the damage of ai",
+    "c": 0,
+    "i": 1,
+    "p": 1.0
+   },
+   {
+    "k": "artificial intelligence ai -powered financial translation market report",
+    "c": 0,
+    "i": 1,
+    "p": 14.0
+   }
+  ],
+  "/blog/how-much-translate-document/": [
+   {
+    "k": "translation costs",
+    "c": 0,
+    "i": 97,
+    "p": 34.9
+   },
+   {
+    "k": "translation services cost",
+    "c": 0,
+    "i": 94,
+    "p": 49.9
+   },
+   {
+    "k": "translation prices",
+    "c": 0,
+    "i": 76,
+    "p": 50.3
+   },
+   {
+    "k": "translation costs uk",
+    "c": 0,
+    "i": 67,
+    "p": 49.6
+   },
+   {
+    "k": "translation services prices",
+    "c": 0,
+    "i": 58,
+    "p": 51.1
+   }
+  ],
+  "/blog/latest-trends-translation-industry/": [
+   {
+    "k": "translation industry",
+    "c": 0,
+    "i": 17,
+    "p": 60.2
+   },
+   {
+    "k": "translation trends",
+    "c": 0,
+    "i": 10,
+    "p": 48.8
+   },
+   {
+    "k": "translation industry trends",
+    "c": 0,
+    "i": 10,
+    "p": 43.6
+   },
+   {
+    "k": "translation news blog",
+    "c": 0,
+    "i": 8,
+    "p": 63.0
+   },
+   {
+    "k": "human translation",
+    "c": 0,
+    "i": 7,
+    "p": 11.3
+   }
+  ],
+  "/blog/multilingual-healthcare-system/": [
+   {
+    "k": "healthcare translation",
+    "c": 0,
+    "i": 357,
+    "p": 25.9
+   },
+   {
+    "k": "multilingual medical information services",
+    "c": 0,
+    "i": 33,
+    "p": 12.8
+   },
+   {
+    "k": "multilingual healthcare translation",
+    "c": 0,
+    "i": 29,
+    "p": 5.1
+   },
+   {
+    "k": "best interpretation services for medical facilities needing seamless multilingual patient communication to support growing teams",
+    "c": 0,
+    "i": 16,
+    "p": 9.4
+   },
+   {
+    "k": "language services in healthcare",
+    "c": 0,
+    "i": 4,
+    "p": 34.8
+   }
+  ],
+  "/blog/reach-new-heights-with-startup-business/": [
+   {
+    "k": "how to grow startup company",
+    "c": 0,
+    "i": 4,
+    "p": 26.8
+   },
+   {
+    "k": "29. how do startups expand into new markets?",
+    "c": 0,
+    "i": 3,
+    "p": 8.3
+   },
+   {
+    "k": "tips for starting a new business",
+    "c": 0,
+    "i": 1,
+    "p": 51.0
+   },
+   {
+    "k": "startup business tips",
+    "c": 0,
+    "i": 1,
+    "p": 10.0
+   },
+   {
+    "k": "process of starting a business",
+    "c": 0,
+    "i": 1,
+    "p": 5.0
+   }
+  ],
+  "/blog/top-spots-location-independent-professional/": [
+   {
+    "k": "location independent work",
+    "c": 0,
+    "i": 1,
+    "p": 63.0
+   },
+   {
+    "k": "location independent",
+    "c": 0,
+    "i": 1,
+    "p": 27.0
+   },
+   {
+    "k": "independent location",
+    "c": 0,
+    "i": 1,
+    "p": 23.0
+   }
+  ],
+  "/blog/translations-universities-uk-ireland/": [
+   {
+    "k": "translation degree",
+    "c": 0,
+    "i": 122,
+    "p": 35.4
+   },
+   {
+    "k": "translation university degree",
+    "c": 0,
+    "i": 85,
+    "p": 41.0
+   },
+   {
+    "k": "translation degrees",
+    "c": 0,
+    "i": 81,
+    "p": 24.3
+   },
+   {
+    "k": "translation university",
+    "c": 0,
+    "i": 56,
+    "p": 54.3
+   },
+   {
+    "k": "best translation masters",
+    "c": 0,
+    "i": 42,
+    "p": 36.4
+   }
+  ],
+  "/blog/why-choose-betranslated-and-not-ai/": [
+   {
+    "k": "ai translation",
+    "c": 0,
+    "i": 81,
+    "p": 6.6
+   },
+   {
+    "k": "ai translation uk",
+    "c": 0,
+    "i": 17,
+    "p": 36.2
+   },
+   {
+    "k": "ai translators",
+    "c": 0,
+    "i": 16,
+    "p": 9.1
+   },
+   {
+    "k": "ai translation software",
+    "c": 0,
+    "i": 13,
+    "p": 13.2
+   },
+   {
+    "k": "ai translation tools",
+    "c": 0,
+    "i": 9,
+    "p": 17.3
+   }
+  ]
+ }
+}

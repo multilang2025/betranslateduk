@@ -285,53 +285,6 @@
           ]
         },
         {
-          "@type": [
-            "WebPage",
-            "FAQPage"
-          ],
-          "@id": "https://www.betranslated.co.uk/blog/belgium-market-translation/#webpage",
-          "url": "https://www.betranslated.co.uk/blog/belgium-market-translation/",
-          "name": "Belgium: A Small Country with a Thriving Translation Market",
-          "datePublished": "2016-11-16T10:30:32+00:00",
-          "dateModified": "2026-10-13T11:41:08+01:00",
-          "isPartOf": {
-            "@id": "https://www.betranslated.co.uk/#website"
-          },
-          "primaryImageOfPage": {
-            "@id": "https://www.betranslated.co.uk/wp-content/uploads/2016/11/belgian-translation-market.jpg"
-          },
-          "inLanguage": "en-GB",
-          "breadcrumb": {
-            "@id": "https://www.betranslated.co.uk/blog/belgium-market-translation/#breadcrumb"
-          },
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Which languages are required to enter the Belgian market?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Belgium operates with three official languages. Dutch, French, and German. Most UK companies require professional translation into Dutch and French depending on the target region."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do UK companies need localised translations for Belgium?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Belgian consumers expect localised language, cultural accuracy, and region-specific terminology. Literal translation is rarely sufficient."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can one English translation work across Belgium?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. English can support B2B communication, but Dutch and French translations are essential for legal, marketing, and customer-facing content."
-              }
-            }
-          ]
-        },
-        {
           "@type": "WebPage",
           "@id": "https://www.betranslated.co.uk/blog/belgium-market-translation/#webpage",
           "url": "https://www.betranslated.co.uk/blog/belgium-market-translation/",

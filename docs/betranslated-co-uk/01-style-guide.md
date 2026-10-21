@@ -93,7 +93,7 @@ Never invent statistics. Every figure needs a verifiable neutral source, named i
 
 ## 9. Structured data (JSON-LD)
 
-- While on WordPress with Rank Math: inject only `FAQPage` and `HowTo` in body content. Rank Math already outputs Article, Organization, WebPage and BreadcrumbList. Duplicating them causes Google Search Console warnings.
+- While on WordPress with Rank Math: inject only `HowTo` in body content (never `FAQPage`, hard rule from 21 October 2026). Rank Math already outputs Article, Organization, WebPage and BreadcrumbList. Duplicating them causes Google Search Console warnings.
 - On pages that sell a service, `Product` schema is allowed if Mike requests it. Every Product must carry both a price and an image.
 - `BreadcrumbList` `position` values are strings: `"position": "1"`.
 - Use "X" not "Twitter" in `sameAs` and descriptions.

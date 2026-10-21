@@ -62,7 +62,7 @@ Store the inventory as `data/inventory.csv` in the new repo.
 | Canonical URLs | Self-referencing canonical on every page |
 | Open Graph and X card tags | Generated from the same fields (use "X", not "Twitter", in labels) |
 | Article, Organization, WebPage, BreadcrumbList JSON-LD | Emit exactly once each. BreadcrumbList `position` as strings. |
-| FAQPage and HowTo (added in content) | FAQ component outputs FAQPage JSON-LD from the same data as the visible FAQ |
+| FAQs (visible content) | FAQ component renders the dropdown only. No FAQPage JSON-LD (hard rule, 21 October 2026) |
 | Product schema | Only where requested. Must include price and image. |
 | XML sitemap | Generated at build, 200 indexable URLs only |
 | Redirections module | Redirect map in config, tested in CI |

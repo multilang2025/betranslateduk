@@ -19,7 +19,7 @@ Read `docs/betranslated-co-uk/01-style-guide.md` sections 5 and 9. Check the sib
 - Titles Google rewrites: align title with the H1 and search intent, keep the keyword near the start.
 
 ## JSON-LD rules
-- WordPress phase: FAQPage and HowTo only. Rank Math already outputs Article, Organization, WebPage and BreadcrumbList.
+- Never output FAQPage schema (hard rule). WordPress phase: HowTo only. Rank Math already outputs Article, Organization, WebPage and BreadcrumbList.
 - Product only on request, and always with a price and an image.
 - BreadcrumbList `position` values are strings.
 - Use "X", not "Twitter".

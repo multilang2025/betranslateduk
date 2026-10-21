@@ -49,7 +49,7 @@ The AISA scope must also be communicated to Andre (who works on the plugin).
 
 ### Rank Math
 - `rank_math_title`, `rank_math_description`, `rank_math_focus_keyword` are not registered with `show_in_rest`. A REST PUT to `/wp/v2/pages/{id}` or `/wp/v2/posts/{id}` silently drops them. Write them with WP-CLI `post meta update {id} {key} '{value}'` (via AISA `wp_cli_set` or `set_seo` if verified), then read back.
-- Rank Math injects Article, Organization, WebPage and BreadcrumbList JSON-LD. Add only FAQPage or HowTo.
+- Rank Math injects Article, Organization, WebPage and BreadcrumbList JSON-LD. Add only HowTo. Never FAQPage (hard rule).
 
 ### WP-CLI shell filtering (seen on WPVibe's `/wpvibe/v1/cli/run`; verify on AISA)
 - Wrap values in single quotes. Escape an internal single quote as `'\''`.

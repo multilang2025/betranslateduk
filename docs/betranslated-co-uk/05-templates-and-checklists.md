@@ -80,7 +80,7 @@ Links and facts
 - [ ] Entities (HMRC, NHS and others) are used accurately.
 
 Schema (when produced)
-- [ ] FAQPage or HowTo only on WordPress. No duplicate of Rank Math output.
+- [ ] No FAQPage schema (hard rule). HowTo only on WordPress. No duplicate of Rank Math output.
 - [ ] BreadcrumbList positions are strings.
 - [ ] Product has price and image.
 - [ ] "X" not "Twitter".
