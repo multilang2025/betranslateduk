@@ -40,3 +40,8 @@ Fixed:
 Still open:
 - **Client logo band** on the homepage shows broken images for 3 of the logos on the local build. Check the `/images/...` paths on the live preview.
 - The live preview at the time of the check was an older build (it still showed the Sunderland "500,000" sentence), so it needs another look once Hostinger has built the latest commit.
+
+## Follow-up, 21 October 2026
+- Client logos are not broken: all files exist and return 200 on the Hostinger preview. The broken images in the headless screenshot were lazy loading.
+- The Manchester "over £5 billion" and Leeds "over £1.3 billion" claims are removed. No trusted source supports either figure (published estimates range from £671 million to £15 billion for Leeds, and from £3.4 billion to £5 billion for Manchester).
+- Still open for Mike: Rates page euro figures and Korean heading, five FAQs with FAQPage schema on service pages (content to be written and approved), outbound links (left as they are).
