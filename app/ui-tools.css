@@ -1,0 +1,214 @@
+/* Floating tools: section stepper above the WhatsApp button (bottom right),
+   and the arrival letter trail. */
+.ftools { position: fixed; right: 18px; bottom: 18px; z-index: 90; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+body:has(.lang-suggest.is-in) .ftools { transform: translateY(-104px); }
+body:has(.bt-drawer.is-open) .ftools { visibility: hidden; }
+
+.ftools__nav { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border: 1px solid var(--bt-line); border-radius: 999px; box-shadow: 0 10px 28px rgba(47,49,67,.14); opacity: 0; visibility: hidden; transform: translateY(12px) scale(.96); transition: opacity .25s ease, transform .3s cubic-bezier(.2,.8,.2,1), visibility .25s; }
+.ftools.is-shown .ftools__nav { opacity: 1; visibility: visible; transform: none; }
+
+.ftools__step, .ftools__top { position: relative; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--bt-navy); cursor: pointer; transition: background .15s, color .15s; }
+.ftools__top { width: 44px; height: 44px; }
+.ftools__step:hover:not(:disabled), .ftools__top:hover, .ftools__step:focus-visible, .ftools__top:focus-visible { background: var(--bt-accent); color: #fff; outline: none; }
+.ftools__step:disabled { color: var(--bt-line-2); cursor: default; }
+.ftools__ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); pointer-events: none; }
+.ftools__ring circle { fill: none; stroke-width: 2.4; }
+.ftools__track { stroke: var(--bt-line); }
+.ftools__fill { stroke: var(--bt-accent); stroke-dasharray: 100; stroke-dashoffset: 100; stroke-linecap: round; transition: stroke-dashoffset .12s linear; }
+.ftools__top:hover .ftools__fill, .ftools__top:focus-visible .ftools__fill { stroke: #fff; }
+
+/* Hints: the name of the section an arrow leads to, shown on hover. */
+.ftools__hint { position: absolute; right: calc(100% + 12px); top: 50%; transform: translate(6px, -50%); white-space: nowrap; max-width: 300px; overflow: hidden; text-overflow: ellipsis; padding: 7px 12px; font: 600 13px/1.2 var(--font-ui); color: #fff; background: var(--bt-navy); border-radius: 8px; box-shadow: 0 8px 20px rgba(47,49,67,.2); opacity: 0; pointer-events: none; transition: opacity .18s ease, transform .2s ease; }
+.ftools__step:hover .ftools__hint, .ftools__step:focus-visible .ftools__hint, .ftools__top:hover .ftools__hint, .ftools__top:focus-visible .ftools__hint, .ftools__wa:hover .ftools__hint, .ftools__wa:focus-visible .ftools__hint { opacity: 1; transform: translate(0, -50%); }
+
+/* WhatsApp keeps its brand green so it is recognised at a glance. */
+.bt a.ftools__wa { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff; border: 0; box-shadow: 0 10px 26px rgba(37,211,102,.35), 0 2px 6px rgba(47,49,67,.15); transition: transform .2s ease, box-shadow .2s ease; }
+.bt a.ftools__wa:hover, .bt a.ftools__wa:focus-visible { color: #fff; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(37,211,102,.42), 0 2px 6px rgba(47,49,67,.15); }
+
+@media (max-width: 640px) {
+  .ftools { right: 12px; bottom: 12px; gap: 10px; }
+  .ftools__step { display: none; }
+  .ftools__nav { padding: 3px; }
+  .bt a.ftools__wa { width: 52px; height: 52px; }
+  .ftools__hint { display: none; }
+}
+@media (hover: none) { .ftools__hint { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ftools, .ftools__nav, .ftools__hint { transition: none; } }
+@media print { .ftools { display: none; } }
+
+.arrival-trail { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; }
+
+/* Footer: rating badge, follow icons, contact lines with icons. */
+.bt .bt-footer__rating { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; font: 600 13px var(--font-ui); color: #fff; background: rgba(255,255,255,.06); transition: background .2s, border-color .2s; }
+.bt .bt-footer__rating:hover { color: #fff; background: rgba(95,169,177,.18); border-color: rgba(95,169,177,.6); }
+.bt-footer__stars { color: #F6B93B; letter-spacing: 1px; font-size: 12px; }
+.bt-footer__follow { margin-top: 26px; }
+.bt-footer__follow .bt-footer__col-title { margin-bottom: 12px; }
+.bt-footer__social { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.bt-footer__social li { margin: 0; padding: 0; }
+.bt-footer__social li::before { content: none; }
+.bt .bt-footer__soc { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); transition: transform .2s cubic-bezier(.2,.8,.2,1), background .2s, border-color .2s, box-shadow .2s; }
+.bt .bt-footer__soc:hover, .bt .bt-footer__soc:focus-visible { color: #fff; background: var(--bt-accent); border-color: var(--bt-accent); transform: translateY(-3px); box-shadow: 0 10px 22px rgba(95,169,177,.35); }
+.bt .bt-footer__ci { display: flex; align-items: flex-start; gap: 10px; }
+.bt-footer__ci svg { flex-shrink: 0; margin-top: 3px; color: var(--bt-accent); }
+.bt-footer__ci small { display: block; margin-top: 4px; font-size: 12.5px; color: rgba(255,255,255,.5); }
+.bt .bt-footer__col .bt-footer__link { position: relative; width: fit-content; }
+.bt .bt-footer__col:not(.bt-footer__contact) .bt-footer__link::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px; background: var(--bt-accent); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.bt .bt-footer__col:not(.bt-footer__contact) .bt-footer__link:hover::after { transform: scaleX(1); }
+
+/* Browser scrollbar: slim navy track, thumb that shifts from teal to orange as you scroll
+   (the gradient is fixed to the viewport), wider and glowing on hover. */
+html { scrollbar-width: thin; scrollbar-color: var(--bt-accent) #EEF2F5; }
+@supports selector(::-webkit-scrollbar) {
+  html { scrollbar-width: auto; scrollbar-color: auto; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #EEF2F5; }
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid #EEF2F5; border-radius: 999px;
+    background: linear-gradient(180deg, #5FA9B1 0%, #4E8F9C 45%, #2F3143 70%, #F67618 100%) fixed;
+  }
+  ::-webkit-scrollbar-thumb:hover { border-width: 1px; }
+  ::-webkit-scrollbar-thumb:active { border-width: 0; background: linear-gradient(180deg, #F67618, #5FA9B1) fixed; }
+  ::-webkit-scrollbar-corner { background: #EEF2F5; }
+}
+.bt-footer__nw { white-space: nowrap; }
+
+/* 404: navy stage with drifting "where?" words and a glass card (from betranslated.com). */
+.nf { position: relative; overflow: hidden; min-height: calc(100vh - 76px); display: grid; place-items: center; padding: 72px 16px 96px; color: #fff;
+  background: radial-gradient(900px 520px at 18% 8%, rgba(95,169,177,.30), transparent 60%), radial-gradient(800px 600px at 90% 100%, rgba(95,169,177,.16), transparent 60%), linear-gradient(160deg, #3A3D54 0%, #2F3143 55%, #232534 100%); }
+.nf__words { position: absolute; inset: 0; pointer-events: none; }
+.nf__words span { position: absolute; font: 700 1em/1 var(--font-ui); color: #fff; white-space: nowrap; filter: blur(.4px); animation: nf-drift 14s ease-in-out infinite alternate; }
+@keyframes nf-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(28px, -22px, 0); } }
+.nf__card { position: relative; z-index: 1; width: min(680px, 100%); padding: 48px 48px 36px; text-align: center; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 28px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 30px 80px rgba(10,12,24,.35); }
+.nf__eyebrow { display: inline-block; padding: 6px 16px; border: 1px solid rgba(95,169,177,.55); border-radius: 999px; font: 700 12px var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: #8FD0D6; background: rgba(95,169,177,.10); }
+.bt .nf__code { margin: 18px 0 6px; font: 800 clamp(96px, 18vw, 168px)/1 var(--font-ui); letter-spacing: -.04em; color: #fff; text-shadow: 0 0 28px rgba(95,169,177,.65), 0 0 70px rgba(95,169,177,.35); }
+.bt .nf__title { margin: 0 0 18px; font-size: clamp(32px, 5vw, 50px); line-height: 1.08; color: #fff; }
+.bt .nf__lead { margin: 0 0 10px; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,.88); }
+.bt .nf__body { margin: 0 auto 28px; max-width: 560px; font-size: 15px; line-height: 1.65; color: rgba(255,255,255,.66); }
+.nf__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.bt a.nf__ghost { display: inline-flex; align-items: center; padding: 15px 28px; border: 1.5px solid rgba(255,255,255,.6); border-radius: 999px; font: 600 16px var(--font-ui); color: #fff; transition: background .2s, border-color .2s; }
+.bt a.nf__ghost:hover { color: var(--bt-navy); background: #fff; border-color: #fff; }
+.nf__try { margin-top: 32px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); }
+.nf__try > span { display: block; margin-bottom: 12px; font: 700 12px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+.nf__try ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin: 0; padding: 0; list-style: none; }
+.nf__try li { margin: 0; padding: 0; }
+.nf__try li::before { content: none; }
+.bt .nf__try a { font-size: 14.5px; color: #8FD0D6; }
+.bt .nf__try a:hover { color: #fff; }
+body:has(.nf) .bt-footer { background: #232534; padding-top: 64px; }
+@media (max-width: 560px) { .nf__card { padding: 36px 22px 28px; border-radius: 22px; } }
+@media (prefers-reduced-motion: reduce) { .nf__words span { animation: none; } }
+
+/* Clutch badge on the about pages, under the Chamber of Commerce badge. Space is
+   reserved so the iframe does not shift the page when it loads. */
+.clutch-band { display: flex; justify-content: center; min-height: 50px; margin-top: 20px; }
+.clutch-band .clutch-widget { width: 100%; max-width: 320px; min-height: 50px; }
+
+/* Cookie banner: bottom-left card (full width on phones). Accept and reject share
+   one style so neither is pushed; orange stays for CTAs. */
+.cc { position: fixed; z-index: 96; left: 16px; bottom: 16px; width: min(420px, calc(100vw - 32px)); padding: 18px 20px; background: #fff; border: 1px solid var(--bt-line); border-radius: 16px; box-shadow: 0 18px 44px rgba(47,49,67,.18); font-size: 14px; line-height: 1.5; color: var(--bt-text); animation: cc-in .35s cubic-bezier(.2,.8,.2,1); }
+@keyframes cc-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.cc__title { margin: 0 0 4px; font: 700 15px var(--font-ui); color: var(--bt-navy); }
+.cc__text { margin: 0 0 14px; }
+.bt .cc__text a { color: var(--bt-accent-ink, #3E8790); }
+.cc__actions { display: flex; gap: 10px; }
+.cc__btn { flex: 1; padding: 11px 16px; border: 1.5px solid var(--bt-navy); border-radius: 999px; background: var(--bt-navy); color: #fff; font: 600 14px var(--font-ui); cursor: pointer; transition: background .15s, color .15s; }
+.cc__btn:hover, .cc__btn:focus-visible { background: #fff; color: var(--bt-navy); }
+body:has(.cc.is-open) .lang-suggest { display: none; }
+.cc__short { display: none; }
+/* Phones: a compact strip, short text and small buttons, so the banner never
+   outweighs the hero (it was the LCP element on short pages). */
+@media (max-width: 640px) {
+  .cc { left: 10px; bottom: 10px; width: calc(100vw - 20px); padding: 10px 12px; border-radius: 14px; font-size: 12.5px; line-height: 1.4; }
+  .cc__title, .cc__long { display: none; }
+  .cc__short { display: inline; }
+  .cc__text { margin: 0 0 8px; }
+  .cc__actions { gap: 8px; }
+  .cc__btn { padding: 7px 12px; font-size: 13px; }
+  body:has(.cc.is-open) .ftools { transform: translateY(-96px); }
+}
+.bt .bt-footer__cookies { background: none; border: 0; padding: 0; margin: 0 0 12px; font: inherit; font-size: 13px; cursor: pointer; text-align: left; }
+@media (prefers-reduced-motion: reduce) { .cc { animation: none; } }
+@media print { .cc { display: none; } }
+
+/* Buttons on phones (Mike, 2026-10-17): the orange pill hugs its label instead of
+   spanning the screen, with tighter padding, so it no longer wraps onto two lines.
+   The mobile menu keeps its full-width button. */
+@media (max-width: 640px) {
+  .bt .bt-btn { width: auto; max-width: 100%; padding: 13px 20px; font-size: 15px; line-height: 1.25; text-wrap: balance; }
+  .bt a.bt-btn[href^="tel:"] { white-space: nowrap; }
+  .bt .bt-btn.bt-btn--lg { padding: 14px 24px; font-size: 16px; }
+  .bt .quote-form > .bt-btn { justify-self: start; }
+  .bt main.ip .page-hero__cta, .bt .page-hero__cta { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+  .bt main.ip .page-hero__cta .bt-btn, .bt .page-hero__cta .bt-btn { width: auto; flex: 0 0 auto; }
+  .bt .svc-cta .bt-btn, .bt .sec__in figure > a.bt-btn, .bt .sec__in figure > .cta-row { width: auto; }
+  .bt .bt-drawer__cta .bt-btn { width: 100%; }
+}
+
+/* Read-more toggles (Mike, 2026-10-17): a round + / − button instead of
+   "Leer más / Leer menos". The words stay in the markup (font-size 0) so screen
+   readers still announce them. */
+.bt .sec__more > summary, .bt .timeline__more > summary, .bt .feature__more > summary {
+  font-size: 0; gap: 0; padding: 0; border: 0; background: none; box-shadow: none; min-height: 0;
+}
+.bt .feature__more > summary > span { font-size: 0; }
+.bt .sec__more > summary::after, .bt .timeline__more > summary::after, .bt .feature__more > summary::after {
+  content: "+"; display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid rgba(246,118,24,.45); background: #FEF3E9 none; color: #E0660E;
+  font: 500 22px/1 var(--font-ui); transform: none; transition: background .18s, color .18s, border-color .18s;
+}
+.bt .sec__more[open] > summary::after, .bt .timeline__more[open] > summary::after, .bt .feature__more[open] > summary::after { content: "−"; transform: none; }
+.bt .sec__more > summary:hover::after, .bt .timeline__more > summary:hover::after, .bt .feature__more > summary:hover::after,
+.bt .sec__more > summary:focus-visible::after, .bt .timeline__more > summary:focus-visible::after, .bt .feature__more > summary:focus-visible::after {
+  background: #F67618; border-color: #F67618; color: #fff;
+}
+.bt .sec__more > summary:focus-visible, .bt .timeline__more > summary:focus-visible, .bt .feature__more > summary:focus-visible { outline: none; }
+
+/* Closing CTA card on phones (Mike, 2026-10-17): centred, with the phone number
+   on one line. */
+@media (max-width: 640px) {
+  .bt .cta-band__inner { text-align: center; justify-content: center; }
+  .bt .cta-band__inner > * { margin-inline: auto; }
+  .bt .cta-band__actions { justify-content: center; width: 100%; }
+  .bt .cta-band__actions .bt-btn { white-space: nowrap; }
+}
+
+/* Blog post CTA box on phones (Mike, 2026-10-17): the quote button, phone and email
+   are rounded pills that hug their text, centred, never full-width boxes. */
+@media (max-width: 760px) {
+  .bt .prose .post-cta { text-align: center; }
+  .bt .post-cta__actions { justify-content: center; }
+  .bt .post-cta__actions > * { flex: 0 0 auto; }
+  .bt .prose a.post-cta__contact { border-radius: 999px; padding: 9px 16px; }
+  .bt .prose .post-cta .bt-btn { width: auto; font-size: 15.5px; line-height: 1.25; padding: 13px 22px; }
+}
+
+/* Footer Google rating: white card with the Google mark, stars above the text, one line each. */
+.bt .bt-footer__rating { gap: 12px; padding: 10px 18px 10px 10px; border-radius: 16px; background: #fff; border-color: transparent; color: var(--bt-navy); box-shadow: 0 10px 24px -14px rgba(0,0,0,.6); }
+.bt .bt-footer__rating:hover { background: #fff; color: var(--bt-navy); border-color: transparent; transform: translateY(-2px); }
+.bt .bt-footer__g { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: #F4F6F8; flex-shrink: 0; }
+.bt .bt-footer__rt { display: flex; flex-direction: column; gap: 2px; line-height: 1.25; white-space: nowrap; }
+.bt .bt-footer__rt .bt-footer__stars { font-size: 14px; letter-spacing: 2px; color: #FBBC05; }
+.bt .bt-footer__rt > span:last-child { font: 600 13px var(--font-ui); }
+
+/* Light/dark switch in the header: sun shows in dark mode, moon in light. */
+.bt .bt-theme { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 50%; background: transparent; color: var(--bt-navy); cursor: pointer; transition: background .2s ease, color .2s ease; }
+.bt .bt-theme:hover { background: var(--bt-accent-50); color: var(--bt-accent-ink); }
+.bt .bt-theme:focus-visible { outline: 2px solid var(--bt-accent); outline-offset: 2px; }
+.bt .bt-theme svg { grid-area: 1 / 1; transition: opacity .2s ease, transform .3s ease; }
+.bt .bt-theme__sun { opacity: 0; transform: rotate(-45deg) scale(.7); }
+html[data-theme="dark"] .bt .bt-theme__sun { opacity: 1; transform: none; }
+html[data-theme="dark"] .bt .bt-theme__moon { opacity: 0; transform: rotate(45deg) scale(.7); }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .bt .bt-theme__sun { opacity: 1; transform: none; }
+  html:not([data-theme="light"]) .bt .bt-theme__moon { opacity: 0; transform: rotate(45deg) scale(.7); }
+}
+html[data-theme="dark"] .bt .bt-theme { color: var(--bt-text); }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .bt .bt-theme { color: var(--bt-text); } }
+@media (prefers-reduced-motion: reduce) { .bt .bt-theme svg { transition: none; } }
+
+/* Footer links: the hover underline follows the words (text-decoration), not
+   the box, so a link that wraps onto two lines underlines only its text. */
+.bt .bt-footer__col:not(.bt-footer__contact) .bt-footer__link::after { content: none; }
+.bt .bt-footer__link { border-bottom: 0; text-decoration: none; }
+.bt .bt-footer a.bt-footer__link:hover, .bt .bt-footer a.bt-footer__link:focus-visible { text-decoration: underline; text-decoration-color: var(--bt-accent); text-decoration-thickness: 1px; text-underline-offset: 4px; }

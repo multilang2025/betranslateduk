@@ -1,0 +1,127 @@
+/* Loaded after bt-chrome.css. Button fixes + search, crumbs, CTA band,
+   interior-page cards, team portraits and reviews carousel. */
+
+/* Buttons: selectors carry ".bt a" so they beat the global link rules in
+   design-system.css, which otherwise recolour button text and strip the
+   bottom border (the cropped-pill bug). */
+.bt a.bt-btn,
+.bt button.bt-btn { border: 1.5px solid transparent; line-height: 1.25; }
+.bt .bt-btn--primary { background: var(--bt-orange); border-color: var(--bt-orange); box-shadow: var(--shadow-cta); }
+.bt a.bt-btn--primary,
+.bt a.bt-btn--primary:hover,
+.bt button.bt-btn--primary { color: #fff; }
+.bt .bt-btn--primary:hover { background: var(--bt-orange-600); border-color: var(--bt-orange-600); transform: translateY(-2px); }
+.bt a.bt-btn--ghost,
+.bt button.bt-btn--ghost { background: #fff; color: var(--bt-navy); border-color: var(--bt-navy); }
+.bt a.bt-btn--ghost:hover,
+.bt button.bt-btn--ghost:hover { background: var(--bt-navy); color: #fff; border-color: var(--bt-navy); }
+.bt .bt-btn--secondary { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.45); }
+.bt a.bt-btn--secondary,
+.bt a.bt-btn--secondary:hover { color: #fff; }
+.bt .bt-btn--secondary:hover { background: rgba(255, 255, 255, 0.2); border-color: rgba(255, 255, 255, 0.75); }
+
+/* Search */
+.bt-iconbtn { width: 40px; height: 40px; display: inline-grid; place-items: center; border: 0; background: transparent; color: var(--bt-navy); border-radius: var(--r-md); cursor: pointer; transition: background 0.15s, color 0.15s; }
+.bt-iconbtn:hover { background: var(--bt-paper-2); color: var(--bt-orange); }
+.bt-search { position: fixed; inset: 0; z-index: 100; background: rgba(6, 26, 68, 0.5); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: flex-start; padding: 10vh 16px 16px; }
+.bt-search__panel { width: min(680px, 100%); background: #fff; border-radius: var(--r-xl); box-shadow: var(--shadow-lg); overflow: hidden; max-height: 80vh; display: flex; flex-direction: column; }
+.bt-search__bar { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--bt-line); color: var(--bt-text-soft); }
+.bt-search__bar input { flex: 1; border: 0; outline: 0; font: inherit; font-size: 17px; color: var(--bt-text); background: transparent; min-width: 0; }
+.bt-search__close { border: 0; background: var(--bt-paper-2); border-radius: var(--r-pill); padding: 6px 12px; font: 600 12px var(--font-ui); color: var(--bt-navy); cursor: pointer; }
+.bt-search__results { overflow-y: auto; padding: 8px; }
+.bt-search__msg { margin: 0; padding: 20px 14px; color: var(--bt-text-soft); font-size: 15px; }
+.bt .bt-search__item { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: var(--r-md); border-bottom: 0; }
+.bt .bt-search__item.is-active,
+.bt .bt-search__item:hover { background: var(--bt-orange-50); color: inherit; border-bottom: 0; }
+.bt-search__title { font-family: var(--font-ui); font-weight: 600; color: var(--bt-navy); }
+.bt-search__snippet { font-size: 13.5px; color: var(--bt-text-mid); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.bt-search__path { font-size: 12px; color: var(--bt-text-soft); }
+
+/* Breadcrumbs, hero meta */
+.crumbs { margin-bottom: 18px; font-size: 13.5px; }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.crumbs li + li::before { content: "/"; margin-right: 6px; color: var(--bt-text-soft); }
+.bt .crumbs a { color: var(--bt-text-mid); }
+.bt .crumbs a:hover { color: var(--bt-orange); }
+.crumbs [aria-current] { color: var(--bt-navy); font-weight: 500; }
+/* Phones: one line, nothing cut. The trail shows the parent links only; the H1
+   right below names the current page (the schema BreadcrumbList keeps it).
+   contain: inline-size stops the nowrap trail from widening its column. */
+@media (max-width: 640px) {
+  .crumbs { font-size: 12.5px; contain: inline-size; max-width: 100%; }
+  .crumbs ol { flex-wrap: nowrap; white-space: nowrap; overflow: hidden; gap: 4px; }
+  .crumbs li + li::before { margin-right: 4px; }
+  .crumbs li { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .crumbs li:last-child:not(:first-child):has(> [aria-current]) { display: none; }
+}
+.page-hero__meta { margin: 0 0 10px; font-size: 13.5px; color: var(--bt-text-soft); }
+.page-body--after { padding-top: 24px; }
+
+/* CTA band */
+.cta-band { background: var(--bt-navy-deep); color: #fff; padding: 64px 0; margin-top: 40px; }
+.cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.cta-band h2 { color: #fff; margin: 0 0 8px; font-size: var(--fs-h3); }
+.cta-band p { color: rgba(255, 255, 255, 0.75); margin: 0; max-width: 52ch; }
+.cta-band__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.section + .cta-band { margin-top: 0; }
+
+/* Cards for hubs and blog */
+.card--link { padding: 26px 24px; }
+.card--link h3 { font-size: 1.1rem; }
+.card--link p,
+.card--post p { overflow-wrap: anywhere; }
+.card__tile { aspect-ratio: 16 / 7; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 3.5rem; color: rgba(255, 255, 255, 0.9); }
+.card__tile--0 { background: linear-gradient(135deg, var(--bt-navy-deep), #2f4a8a); }
+.card__tile--1 { background: linear-gradient(135deg, var(--bt-orange), #f9a15f); }
+.card__tile--2 { background: linear-gradient(135deg, var(--bt-teal-600), var(--bt-teal)); }
+.card__date { font-size: 12.5px; color: var(--bt-text-soft); margin-bottom: 8px; }
+.blog-tools { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+.blog-tools input { flex: 1; min-width: 220px; font: inherit; font-size: 16px; padding: 13px 18px; border: 1.5px solid var(--bt-line-2); border-radius: var(--r-pill); }
+.blog-tools input:focus { outline: none; border-color: var(--bt-orange); box-shadow: 0 0 0 4px rgba(95, 169, 177, 0.15); }
+.blog-tools__count { font-size: 14px; color: var(--bt-text-soft); }
+
+/* Team portraits */
+.team { grid-template-columns: repeat(5, 1fr); }
+.team__card { padding: 0; overflow: hidden; gap: 0; transition: transform 0.25s, box-shadow 0.25s; }
+.team__card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.team__photo { aspect-ratio: 4 / 4.6; overflow: hidden; background: var(--bt-paper-2); }
+.team__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.5s; }
+.team__card:hover .team__photo img { transform: scale(1.05); }
+.team__meta { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 2px; }
+.team__meta strong { font-family: var(--font-ui); color: var(--bt-navy); }
+.team__meta span { font-size: 13.5px; color: var(--bt-text-soft); }
+@media (max-width: 1100px) { .team { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .team { grid-template-columns: repeat(2, 1fr); } }
+
+/* Reviews carousel */
+.reviews { margin-top: 40px; text-align: left; }
+.reviews__head { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; color: #fff; }
+.reviews__head strong { font-family: var(--font-ui); font-size: 20px; }
+.reviews__stars { color: #ffc107; letter-spacing: 2px; }
+.reviews__viewport { overflow: hidden; border-radius: var(--r-xl); }
+.reviews__track { display: flex; list-style: none; margin: 0; padding: 0; transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reviews__slide { flex: 0 0 100%; padding: 4px; }
+.reviews__slide figure { margin: 0; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--r-xl); padding: 32px 36px; }
+.reviews__slide blockquote { margin: 0 0 24px; font-size: 1.15rem; line-height: 1.6; color: #fff; }
+.reviews__slide figcaption { display: flex; align-items: center; gap: 14px; }
+.reviews__slide figcaption > span:last-child { display: flex; flex-direction: column; }
+.reviews__slide strong { color: #fff; font-family: var(--font-ui); }
+.reviews__slide small { color: rgba(255, 255, 255, 0.82); }
+.reviews__avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--bt-orange); color: #fff; font: 700 18px var(--font-ui); }
+.reviews__controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 20px; }
+.reviews__controls > button { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.4); background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; transition: background 0.15s; }
+.reviews__controls > button:hover { background: rgba(255, 255, 255, 0.18); }
+.reviews__dots { display: flex; gap: 8px; }
+.reviews__dots button { width: 9px; height: 9px; padding: 0; border-radius: 50%; border: 0; background: rgba(255, 255, 255, 0.3); cursor: pointer; transition: width 0.25s, background 0.25s; }
+.reviews__dots button.is-active { width: 26px; border-radius: 6px; background: var(--bt-orange); }
+@media (max-width: 560px) { .reviews__slide figure { padding: 24px 20px; } }
+
+.reviews__more { position: relative; display: inline-block; }
+.reviews__ellipsis { background: none; border: 0; padding: 0 2px; margin: 0; color: inherit; font: inherit; font-weight: 700; cursor: pointer; text-decoration: underline dotted; }
+.reviews__ellipsis:focus-visible { outline: 2px solid var(--bt-orange); outline-offset: 2px; }
+.reviews__tooltip { position: absolute; left: 0; bottom: calc(100% + 10px); z-index: 5; width: min(320px, 80vw); background: #1a1a1a; color: #fff; font-size: 0.9rem; line-height: 1.5; padding: 14px 16px; border-radius: 10px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+.reviews__tooltip::after { content: ""; position: absolute; top: 100%; left: 18px; border: 7px solid transparent; border-top-color: #1a1a1a; }
+.reviews__more:hover .reviews__tooltip,
+.reviews__more:focus-within .reviews__tooltip { display: block; }
+.reviews__tooltip[hidden] { display: none; }
+

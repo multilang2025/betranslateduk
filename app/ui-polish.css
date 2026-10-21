@@ -1,0 +1,314 @@
+/* Site-wide polish: uniform heroes, stronger section contrast, footer navy as
+   on betranslated.com, styled links, keyword CTAs with an arrow icon, and
+   richer language tiles. Loaded last (app/layout.js). */
+
+/* ---------- Uniform page heroes ---------- */
+.page-hero,
+.page-hero--post {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 56px 0 64px;
+  background:
+    radial-gradient(620px 320px at 92% 0%, rgba(95, 169, 177, .10), transparent 62%),
+    radial-gradient(520px 300px at 0% 100%, rgba(126, 190, 197, .18), transparent 62%),
+    #F4F1EA;
+  border-bottom: 1px solid #E7E2D6;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero > .container { width: 100%; position: relative; z-index: 1; }
+/* Decorative dot field and soft ring on the right of text-only heroes. */
+.page-hero::before {
+  content: "";
+  position: absolute;
+  right: -140px;
+  top: 50%;
+  width: 560px;
+  height: 560px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(47, 49, 67, .16) 0 1.4px, transparent 1.8px) 0 0 / 22px 22px;
+  -webkit-mask: radial-gradient(circle, #000 30%, transparent 68%);
+  mask: radial-gradient(circle, #000 30%, transparent 68%);
+  pointer-events: none;
+}
+.page-hero::after {
+  content: "";
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  width: 260px;
+  height: 260px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 2px solid rgba(95, 169, 177, .22);
+  box-shadow: 0 0 0 28px rgba(95, 169, 177, .05), 0 0 0 64px rgba(126, 190, 197, .07);
+  pointer-events: none;
+  animation: heroRing 9s ease-in-out infinite alternate;
+}
+@keyframes heroRing { from { transform: translateY(-50%) scale(1); } to { transform: translateY(-54%) scale(1.06); } }
+.page-hero--split::before, .page-hero--split::after { content: none; }
+@media (max-width: 900px) { .page-hero::before, .page-hero::after { opacity: .45; right: -200px; } }
+@media (prefers-reduced-motion: reduce) { .page-hero::after { animation: none; } }
+.page-hero h1 { font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.1rem); line-height: 1.08; max-width: 22ch; margin: 0 0 16px; }
+.page-hero .lead, .page-hero p.lead { max-width: 60ch; }
+.page-hero .crumbs { margin-bottom: 18px; }
+.page-hero__cta { margin-top: 22px; }
+.page-hero__cta .bt-btn--ghost { background: #fff; }
+@media (max-width: 760px) { .page-hero, .page-hero--post { min-height: 0; padding: 40px 0 44px; } }
+
+/* ---------- Legacy dotted background (Divi diagonal dot pattern, #E8E8E8) on
+   the white content bands; cards stay white so they stand out ---------- */
+.sec:not(.sec--alt),
+.section:not(.section--tint):not(.section--navy),
+.trust-wrap {
+  background-color: #fff;
+  background-image: url("/patterns/dots.svg");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ---------- Folded text in long bands ---------- */
+.sec__more { margin: 4px 0 1.2em; }
+.sec__more summary, .timeline__more summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 14px var(--font-ui);
+  color: var(--bt-orange-600);
+}
+.sec__more summary::-webkit-details-marker, .timeline__more summary::-webkit-details-marker { display: none; }
+.sec__more summary::after, .timeline__more summary::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bt-orange-50) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23E0660E%22 stroke-width=%222.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E") center / 12px no-repeat;
+  transition: transform .25s ease;
+}
+.sec__more[open] summary::after, .timeline__more[open] summary::after { transform: rotate(180deg); }
+/* Timeline steps: short teaser, full text on demand. */
+.timeline__more { margin: 10px 0 0; }
+.timeline__more[open] summary { margin-bottom: 10px; }
+.timeline__more[open] > div { animation: faqIn .3s ease both; }
+.timeline__more p { margin: 0 0 .6em; font-size: .96rem; line-height: 1.6; }
+.timeline__card:has(.timeline__more[open]) .timeline__teaser { display: none; }
+.sec__more[open] summary { margin-bottom: 12px; }
+.sec__more[open] .sec__more-body { animation: faqIn .3s ease both; }
+/* No darker "lead" first paragraph in bands: every body paragraph has the same colour and size. */
+
+/* ---------- Stronger contrast between sections ---------- */
+.sec { border-top: 1px solid transparent; }
+.sec--alt, .section--tint { background: linear-gradient(180deg, #E8F1F2 0%, #EEF5F6 100%); border-top: 1px solid #D5E5E7; border-bottom: 1px solid #D5E5E7; }
+.sec--alt .mini, .section--tint .card, .section--tint .tile, .sec--alt .timeline__card { box-shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 6px 18px rgba(15, 23, 42, .05); }
+.sec--alt .timeline__n { box-shadow: 0 0 0 6px #EBF3F4; }
+
+/* ---------- CTA band: light teal-tint card, dark text, orange primary button (same look as the sector CTA) ---------- */
+.cta-band {
+  background: #fff;
+  padding: 56px 24px 64px;
+  margin-top: 0;
+  border-top: 1px solid #ECEAE4;
+}
+.cta-band__inner {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 44px;
+  border-radius: 22px;
+  border: 1px solid var(--bt-line);
+  background: linear-gradient(120deg, #E8F3F4 0%, #DDEDEF 100%);
+}
+.cta-band__inner::before {
+  content: "";
+  position: absolute;
+  right: -70px;
+  top: -90px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(95, 169, 177, .32), transparent 68%);
+  pointer-events: none;
+}
+.cta-band__inner::after { display: none; }
+.cta-band__inner > * { position: relative; z-index: 1; }
+.cta-band h2 { color: var(--bt-navy); }
+.cta-band p { color: var(--bt-text-mid, #4B4E63); }
+/* Orange is for CTAs: the primary button keeps the default orange; the phone button is a quiet teal outline. */
+.bt .cta-band .bt-btn--secondary { background: transparent; color: var(--bt-navy); border: 1.5px solid rgba(47, 122, 132, .55); box-shadow: none; }
+.bt .cta-band .bt-btn--secondary:hover { background: #fff; color: #2F7A84; border-color: #2F7A84; }
+@media (max-width: 760px) { .cta-band__inner { padding: 28px 22px; border-radius: 18px; } }
+
+/* ---------- Footer: the navy used on betranslated.com ---------- */
+.bt-footer { background: var(--bt-navy); }
+.bt-footer__bottom { border-top-color: rgba(255, 255, 255, .14); }
+
+/* ---------- Content links: regular weight, coloured and underlined, with a hover background ---------- */
+.bt .sec__in a:not(.bt-btn),
+.bt .prose a:not(.bt-btn),
+.bt .feature__body a,
+.bt .faq__item p a,
+.bt .clients-band__copy a {
+  font-weight: inherit;
+  border-radius: 4px;
+  padding: 0 2px;
+  margin: 0 -2px;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.bt .sec__in a:not(.bt-btn):hover,
+.bt .prose a:not(.bt-btn):hover,
+.bt .feature__body a:hover,
+.bt .faq__item p a:hover {
+  background: var(--bt-orange-50);
+  color: var(--bt-orange-600);
+  border-bottom-color: transparent;
+}
+.bt .clients-band__copy a:hover { background: rgba(95, 169, 177, .16); }
+
+/* ---------- Keyword CTAs with an arrow icon ---------- */
+.card__more, .formats__card em {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 14px var(--font-ui);
+  color: var(--bt-orange-600);
+}
+.card__more::after, .formats__card em::after {
+  content: "";
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bt-orange-50) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23E0660E%22 stroke-width=%222.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M5 12h14%22/%3E%3Cpath d=%22m13 6 6 6-6 6%22/%3E%3C/svg%3E") center / 14px no-repeat;
+  transition: transform .25s cubic-bezier(.2, 1.4, .4, 1), background-color .2s ease;
+}
+a:hover .card__more::after, .card:hover .card__more::after, a.card__more:hover::after, .formats__card:hover em::after {
+  transform: translateX(4px);
+  background-color: #FDE3CB;
+}
+.feature__more summary { display: inline-flex; align-items: center; gap: 8px; }
+.feature__more summary::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bt-orange-50) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23E0660E%22 stroke-width=%222.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E") center / 12px no-repeat;
+  transition: transform .25s ease;
+}
+.feature__more[open] summary::after { content: ""; transform: rotate(180deg); }
+
+/* ---------- Language tiles ---------- */
+.lang-grid { gap: 14px; }
+.bt a.lang-tile {
+  overflow: hidden;
+  padding: 16px 18px;
+  min-height: 76px;
+  background: linear-gradient(135deg, #fff 55%, #FFF6EE 100%);
+}
+.bt a.lang-tile::before {
+  content: attr(data-code);
+  position: absolute;
+  right: -4px;
+  bottom: -22px;
+  font: 800 74px/1 var(--font-ui);
+  letter-spacing: -.04em;
+  color: rgba(47, 49, 67, .05);
+  pointer-events: none;
+  transition: color .3s ease, transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+.bt a.lang-tile:hover::before { color: rgba(95, 169, 177, .14); transform: translateY(-6px); }
+.lang-tile__code {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(140deg, #2F3143, #061A44);
+  box-shadow: 0 6px 14px rgba(6, 26, 68, .18);
+}
+.lang-tile--in .lang-tile__code { background: linear-gradient(140deg, #7EBEC5, #4E9AA2); box-shadow: 0 6px 14px rgba(78, 154, 162, .25); }
+.lang-tile--es .lang-tile__code { background: linear-gradient(140deg, #5FA9B1, #5FA9B1); box-shadow: 0 6px 14px rgba(95, 169, 177, .25); }
+.lang-tile:hover .lang-tile__code { background: linear-gradient(140deg, #5FA9B1, #5FA9B1); }
+.lang-tile__text { position: relative; z-index: 1; }
+.lang-tile__text small { display: inline-flex; align-items: center; gap: 4px; }
+.lang-tile__go {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bt-orange-50);
+  font-weight: 700;
+}
+
+/* ---------- Services hub intro: lead + callout on the left, four icon points ---------- */
+.hub-intro__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 48px; align-items: center; }
+.hub-intro__text h2 { margin-top: 0; }
+.hub-intro__points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.hub-intro__points .mini { margin: 0; }
+.hub-intro__points .mini p { margin: 0; font-size: 15px; }
+.hub-intro__callout {
+  margin-top: 26px;
+  padding: 22px 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #FFF6EE, #FDEBDD);
+  border: 1px solid #F9D5B7;
+  border-left: 4px solid var(--bt-orange);
+}
+.hub-intro__callout p { margin: 0 0 14px; font: 600 1.05rem/1.45 var(--font-ui); color: var(--bt-navy); }
+@media (max-width: 900px) {
+  .hub-intro__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 560px) { .hub-intro__points { grid-template-columns: 1fr; } }
+
+/* ---------- About: team intro as a lead + tick list; five portraits in 3 columns ---------- */
+.about-team__text .lead { font-size: 1.15rem; color: var(--bt-navy); margin-bottom: 14px; }
+.about-team__text ul.ticks { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 12px; }
+.about-team__text ul.ticks li {
+  position: relative;
+  padding-left: 36px;
+  line-height: 1.55;
+}
+.about-team__text ul.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bt-orange-50) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%235FA9B1%22 stroke-width=%222.6%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m5 12 5 5 9-10%22/%3E%3C/svg%3E") center / 13px no-repeat;
+}
+.about-team__text ul.ticks strong { color: var(--bt-navy); }
+/* Five people: three on the first row, two centred on the second. The
+   founder's card is marked with a navy caption. */
+.about-team .team { display: flex; flex-wrap: wrap; justify-content: center; }
+.about-team .team > li { flex: 0 0 calc((100% - 32px) / 3); }
+.about-team .team > li:first-child .team__meta { background: var(--bt-navy); }
+.about-team .team > li:first-child .team__meta strong { color: #fff; }
+.about-team .team > li:first-child .team__meta span { color: rgba(255, 255, 255, .78); }
+@media (max-width: 560px) { .about-team .team > li { flex-basis: calc((100% - 16px) / 2); } }
+.hub-intro__points .mini { padding: 22px 22px 20px; }
+.hub-intro__points .mini > h3:first-child::before { display: block; }
+.hub-intro__points .mini h3 { font: 700 17px/1.3 var(--font-ui); color: var(--bt-navy); margin: 0 0 8px; }
+.hub-intro__points .mini p { color: var(--bt-text-soft); line-height: 1.55; }
+.hub-intro__points .mini a, .hub-intro__text .lead a { font-weight: inherit; }
+.hub-intro__points .mini:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+/* CTA band title: the old H2 look on a paragraph (see CtaBand.jsx). */
+.bt .cta-band .cta-band__title {
+  margin: 0 0 8px; font-family: var(--font-display); font-variation-settings: "opsz" 144, "SOFT" 50; font-weight: 700;
+  font-size: var(--fs-h3); line-height: 1.1; letter-spacing: -0.02em; color: var(--bt-navy); text-wrap: balance;
+}
+/* Links in running text are never bold, even when the legacy copy wraps them in <strong> (Mike, 2026-10-18). */
+.bt :is(.sec__in, .prose, .feature__body, .faq__item, .mini) :is(strong, b) a:not(.bt-btn),
+.bt :is(.sec__in, .prose, .feature__body, .faq__item, .mini) a:not(.bt-btn) :is(strong, b) { font-weight: 400; }
+
+/* Display headings on phones: Fraunces bold at a large optical size with negative
+   tracking made words touch ("Cosasque veren"), worse at 115 % text size.
+   Near-neutral tracking and a touch of word space keep the words apart. */
+@media (max-width: 640px) {
+  .bt h1, .bt .page-hero h1, .bt .blog-post .page-hero h1 { letter-spacing: -0.005em; word-spacing: .06em; }
+}

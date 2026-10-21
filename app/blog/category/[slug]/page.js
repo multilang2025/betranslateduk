@@ -24,18 +24,20 @@ export default async function CategoryArchive({ params }) {
   if (!archive) notFound();
 
   return (
-    <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
-      <h1>{archive.name}</h1>
-      <ul>
-        {archive.posts.map(post => (
-          <li key={post.url}>
-            <Link href={post.url}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-      {archive.totalPages > 1 ? (
-        <p><Link href={'/blog/category/' + slug + '/page/2/'}>Next page</Link></p>
-      ) : null}
-    </div>
+    <main className="page-body">
+      <div className="container container--narrow prose">
+        <h1>{archive.name}</h1>
+        <ul>
+          {archive.posts.map(post => (
+            <li key={post.url}>
+              <Link href={post.url}>{post.title}</Link>
+            </li>
+          ))}
+        </ul>
+        {archive.totalPages > 1 ? (
+          <p><Link href={'/blog/category/' + slug + '/page/2/'}>Next page</Link></p>
+        ) : null}
+      </div>
+    </main>
   );
 }

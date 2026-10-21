@@ -30,19 +30,21 @@ export default async function CategoryArchivePage({ params }) {
   if (!archive || pageNum < 2 || pageNum > archive.totalPages) notFound();
 
   return (
-    <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
-      <h1>{archive.name}</h1>
-      <ul>
-        {archive.posts.map(post => (
-          <li key={post.url}>
-            <Link href={post.url}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-      <p>
-        {pageNum > 2 ? <Link href={'/blog/category/' + slug + '/page/' + (pageNum - 1) + '/'}>Previous page</Link> : <Link href={'/blog/category/' + slug + '/'}>Previous page</Link>}
-        {pageNum < archive.totalPages ? <> | <Link href={'/blog/category/' + slug + '/page/' + (pageNum + 1) + '/'}>Next page</Link></> : null}
-      </p>
-    </div>
+    <main className="page-body">
+      <div className="container container--narrow prose">
+        <h1>{archive.name}</h1>
+        <ul>
+          {archive.posts.map(post => (
+            <li key={post.url}>
+              <Link href={post.url}>{post.title}</Link>
+            </li>
+          ))}
+        </ul>
+        <p>
+          {pageNum > 2 ? <Link href={'/blog/category/' + slug + '/page/' + (pageNum - 1) + '/'}>Previous page</Link> : <Link href={'/blog/category/' + slug + '/'}>Previous page</Link>}
+          {pageNum < archive.totalPages ? <> | <Link href={'/blog/category/' + slug + '/page/' + (pageNum + 1) + '/'}>Next page</Link></> : null}
+        </p>
+      </div>
+    </main>
   );
 }
