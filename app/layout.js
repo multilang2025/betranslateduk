@@ -29,7 +29,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+// Preview, local and any new host stay out of search results until the build sets SITE_ENV=production (same switch as app/robots.js).
+const NOINDEX = process.env.SITE_ENV !== "production";
+
 export const metadata = {
+  ...(NOINDEX ? { robots: { index: false, follow: false } } : {}),
   title: "BeTranslated UK",
   description: "UK translation agency for business, legal, technical and marketing documents.",
 };
