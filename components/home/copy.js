@@ -4,7 +4,7 @@
 // HOME[locale] lookup with a different key never crashes.
 const en = {
   eyebrow: "Professional language services",
-  h1a: "Your UK translation agency for", h1b: "business growth", h1c: "Worldwide",
+  h1a: "Your UK translation agency for", h1b: "business growth", h1c: "worldwide",
   lead: "BeTranslated is the translation company UK businesses, institutions and NGOs call when accuracy matters. We deliver corporate translation services, interpreting and multilingual SEO in a wide range of European and Asian languages.",
   cta1: "Get a free quote", quoteHref: "/translation-agency/quote/", servicesHref: "/translation-services/",
   since: "Since 2002",
@@ -12,13 +12,13 @@ const en = {
   clientsLabel: "Trusted by global brands",
 
   servicesEyebrow: "Our services",
-  themesTitle: "Translation, Interpreting and Digital Marketing Services for UK Businesses Going Global",
+  themesTitle: "Translation, interpreting and digital marketing services for UK businesses going global",
   servicesLead: "Quality, deadlines and competitive prices for every kind of language project.",
   more: "Read more", moreAbout: "More about",
   serviceGroups: [
     {
       kind: "documents",
-      title: "Legal, Business and Technical Translation Services",
+      title: "Legal, business and technical translation services",
       lead: "Contracts, accounts and technical manuals have to be right first time. Our specialist translators have worked with UK businesses for over 20 years, and you get a free quote before you commit.",
       items: [
         ["Legal document translation services", "/industry/legal/"],
@@ -30,7 +30,7 @@ const en = {
     },
     {
       kind: "interpreting",
-      title: "Remote and On-Site Interpreting Services for Live Meetings",
+      title: "Remote and on-site interpreting services for live meetings",
       lead: "Professional interpreters for multilingual meetings, site visits and legal proceedings, online or in person.",
       items: [
         ["Legal interpreting services", "/translation-services/remote-interpreting/"],
@@ -41,7 +41,7 @@ const en = {
     },
     {
       kind: "marketing",
-      title: "Multilingual SEO, GEO and Digital Marketing for Global Growth",
+      title: "Multilingual SEO, GEO and digital marketing for global growth",
       lead: "Website language conversion, international paid advertising and multilingual branding for businesses going global.",
       items: [
         ["Website language conversion", "/translation-services/website-translation/"],

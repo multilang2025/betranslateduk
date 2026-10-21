@@ -30,3 +30,14 @@ Scope: the 171 pages and posts stored in `scripts/btvibe-uk/output/`, checked ag
 6. **Rates page** description no longer quotes euro prices. The euro figures and the Korean heading on the page body are still open from the Victoria handoff.
 7. **FAQs**: only one page has FAQPage schema. The playbook asks for five FAQs per service page.
 8. **Focus keyword vs title**: 18 pages have a focus keyword whose words are not all in the meta title (for example `/translation-agency/locations/`, `/blog/best-translation-tools/`). Titles were left unchanged. Review them with the CSV.
+
+## Visual check, 21 October 2026 (local build and live preview)
+
+Fixed:
+- The empty Divi "Table of content" band (visible as "i 3 Table Of Content") is removed from 400 content blocks.
+- All visible text is in sentence case: stored headings and short labels, card and list titles (rendered from the meta title through `lib/sentenceCase.js`, while the `<title>` tag stays in Title Case), footer and nav labels, and the homepage copy.
+
+Still open:
+- **"Watch our video" link** appears alone on 65 pages. The YouTube embed it belongs to was removed with the legacy code, so the link has nothing next to it.
+- **Client logo band** on the homepage shows broken images for 3 of the logos on the local build. Check the `/images/...` paths on the live preview.
+- The live preview at the time of the check was an older build (it still showed the Sunderland "500,000" sentence), so it needs another look once Hostinger has built the latest commit.
