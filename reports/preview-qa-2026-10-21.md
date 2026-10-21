@@ -45,3 +45,8 @@ Still open:
 - Client logos are not broken: all files exist and return 200 on the Hostinger preview. The broken images in the headless screenshot were lazy loading.
 - The Manchester "over £5 billion" and Leeds "over £1.3 billion" claims are removed. No trusted source supports either figure (published estimates range from £671 million to £15 billion for Leeds, and from £3.4 billion to £5 billion for Manchester).
 - Still open for Mike: Rates page euro figures and Korean heading, five FAQs with FAQPage schema on service pages (content to be written and approved), outbound links (left as they are).
+
+## Decisions by Mike, 21 October 2026 (applied)
+- **FAQs:** five per page on all 101 service, industry, language, location and agency pages (the French parent already had its own). Visible dropdown only. **No FAQPage schema anywhere** (hard rule): the two stored FAQPage nodes were removed and `PageSchema` now strips any FAQPage at render. FAQ copy is a draft for review. Statements about glossaries and translation memory, confidentiality and certification wording should be checked against how the team really works.
+- **Rates page:** the per-word prices are replaced by "We quote each project individually, so you see a clear price before any work starts." Euro figures are gone from the page and the meta description.
+- **Inventory:** `data/inventory.csv` (784 rows: the 171 sitemap pages with title, description, H1, focus keyword, links, images, FAQ flag and the best Search Console query, plus 613 other URLs from the Ahrefs crawl, 102 of them HTML). Ahrefs reports 785 internal URLs for the project, not 809. Regenerate with `node scripts/btvibe-uk/inventory.js <ahrefs-crawl.csv>`.

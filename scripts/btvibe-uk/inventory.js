@@ -42,14 +42,15 @@ if (crawl && fs.existsSync(crawl)) {
   const parse = (l) => { const out = []; let cur = '', q = false; for (let i = 0; i < l.length; i++) { const c = l[i]; if (q) { if (c === '"' && l[i + 1] === '"') { cur += '"'; i++; } else if (c === '"') q = false; else cur += c; } else if (c === '"') q = true; else if (c === ',') { out.push(cur); cur = ''; } else cur += c; } out.push(cur); return out; };
   const head = parse(lines[0]).map((x) => x.toLowerCase());
   const idx = (re) => head.findIndex((x) => re.test(x));
-  const iUrl = idx(/^url$|^page url/), iCode = idx(/http|status/), iIdx = idx(/index|compliant/), iTitle = idx(/^title/), iDesc = idx(/meta desc|description/), iH1 = idx(/^h1/), iCan = idx(/canonical/);
+  const iScope = idx(/^scope$/), iType = idx(/content_type/), iDepth = idx(/depth/), iIn = idx(/inlinks/), iUrl = idx(/^url$|^page url/), iCode = idx(/http|status/), iIdx = idx(/index|compliant/), iTitle = idx(/^title/), iDesc = idx(/meta desc|description/), iH1 = idx(/^h1/), iCan = idx(/canonical/);
   for (const l of lines.slice(1)) {
     const c = parse(l);
+    if (iScope >= 0 && c[iScope] && c[iScope] !== 'internal') continue;
     let u; try { u = new URL(c[iUrl]); } catch { continue; }
     const p = u.pathname + (u.search || '');
     if (seen.has(p)) continue;
     seen.add(p);
-    rows.push({ url_path: p, source: 'ahrefs crawl only', type: 'other', http_status: c[iCode] || '', indexable: c[iIdx] || '', title: c[iTitle] || '', title_chars: (c[iTitle] || '').length, meta_description: c[iDesc] || '', description_chars: (c[iDesc] || '').length, h1: c[iH1] || '', canonical: c[iCan] || '' });
+    rows.push({ url_path: p, source: 'ahrefs crawl only', type: (c[iType] || 'other').split(';')[0], http_status: c[iCode] || '', indexable: c[iIdx] || '', title: c[iTitle] || '', title_chars: (c[iTitle] || '').length, meta_description: c[iDesc] || '', description_chars: (c[iDesc] || '').length, h1: c[iH1] || '', canonical: c[iCan] || '', internal_links_out: '', word_count: '' });
   }
 }
 rows.sort((a, b) => a.url_path.localeCompare(b.url_path));
