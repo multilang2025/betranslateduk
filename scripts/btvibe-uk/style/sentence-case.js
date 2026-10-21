@@ -41,6 +41,7 @@ const PROPER = new Set(('english french german spanish korean dutch italian port
   'betranslated google zoom facebook instagram linkedin youtube pinterest brexit christmas monday tuesday wednesday thursday friday saturday sunday ' +
   'asian middle eastern slavic arabic chinese japanese russian polish turkish indian african latin western northern beckham bellingham city faculty institut universit katholieke université ' +
   'dominican republic cabarete sosua costa rica valencia spain spain’s ' +
+  'puerto escondido chiang mai bali ubud ' +
   'nhs hmrc gov covid brexit whatsapp skype teams microsoft apple amazon netflix disney').split(' '));
 const FORCE_LOWER = new Set(['expansion', 'monolingual', 'keyboard', 'shortcuts', 'reservation', 'shake', 'eccentric']);
 const SKIP_PAGES = /\/(british-characters|british-footballers|top-ten-translation-films|translation-schools-belgium|expressions-from-the-it-crowd)\/?$/;
