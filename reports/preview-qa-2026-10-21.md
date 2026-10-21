@@ -23,7 +23,7 @@ Scope: the 171 pages and posts stored in `scripts/btvibe-uk/output/`, checked ag
 ## Still open (needs a writer or Mike)
 
 1. ~~Sentences that open "By" plus a gerund~~: 41 sentences on 32 pages rewritten (script `by-gerund.js`).
-2. **4 images without alt text**: `/`, `/document-translation-services/`, `/translation-services/england/portsmouth/`, `/blog/translation-services-for-optical-practices/`.
+2. ~~Images without alt text~~: 4 fixed.
 3. **`/thank-you/` description** is 128 characters. The page should be `noindex`, so it was left alone.
 4. **Meta titles are in Title Case** by design (style guide section 5). Say if you want them in sentence case too.
 5. **Outbound links** to review against the no-competitors rule: upwork.com, guru.com, reverso.net, lokalise.com and the other external domains. Needs Mike's approval per domain.
@@ -38,6 +38,5 @@ Fixed:
 - All visible text is in sentence case: stored headings and short labels, card and list titles (rendered from the meta title through `lib/sentenceCase.js`, while the `<title>` tag stays in Title Case), footer and nav labels, and the homepage copy.
 
 Still open:
-- **"Watch our video" link** appears alone on 65 pages. The YouTube embed it belongs to was removed with the legacy code, so the link has nothing next to it.
 - **Client logo band** on the homepage shows broken images for 3 of the logos on the local build. Check the `/images/...` paths on the live preview.
 - The live preview at the time of the check was an older build (it still showed the Sunderland "500,000" sentence), so it needs another look once Hostinger has built the latest commit.
