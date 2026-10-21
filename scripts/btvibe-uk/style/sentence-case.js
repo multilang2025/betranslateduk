@@ -205,7 +205,8 @@ for (const [f, j] of files) {
       if (!own || own.length > 70) return;
       const block = $(el).closest('li, p, td, th, div');
       const blockText = block.length ? block.text().replace(/\s+/g, ' ').trim() : own;
-      if (blockText.length > own.length + 6) return;
+      const isLead = /^(strong|b)$/.test(el.name) && own.length <= 60;
+      if (!isLead && blockText.length > own.length + 6) return;
       if ($(el).closest('h1,h2,h3,h4,h5,h6').length) return;
       $(el).contents().each((__, c) => {
         if (c.type !== 'text') return;
