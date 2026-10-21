@@ -22,11 +22,11 @@ const NAV_ITEMS = {
       label: "Expertise",
       href: "/industry/",
       children: [
-        { label: "Business & Finance", href: "/industry/business/" },
-        { label: "High Tech & IT", href: "/industry/it-telecom/" },
-        { label: "Industry & Construction", href: "/industry/technical/" },
-        { label: "Marketing & Sales", href: "/industry/marketing/" },
-        { label: "Tourism & Travel", href: "/industry/tourism/" },
+        { label: "Business & finance", href: "/industry/business/" },
+        { label: "High tech & IT", href: "/industry/it-telecom/" },
+        { label: "Industry & construction", href: "/industry/technical/" },
+        { label: "Marketing & sales", href: "/industry/marketing/" },
+        { label: "Tourism & travel", href: "/industry/tourism/" },
         { label: "Legal", href: "/industry/legal/" },
         { label: "Medical", href: "/industry/medical/" },
       ],
@@ -47,7 +47,7 @@ const NAV_ITEMS = {
   ],
 };
 
-const CTA_LABEL = { en: "Get a free Quote" };
+const CTA_LABEL = { en: "Get a free quote" };
 const CTA_HREF = { en: "/translation-agency/quote/" };
 
 // Header logo: dark grey letters on light, white letters in dark mode. getImageProps

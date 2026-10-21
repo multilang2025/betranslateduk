@@ -8,6 +8,7 @@
 // Meta titles (the `title` field) stay in Title Case per the style guide.
 // Usage: node scripts/btvibe-uk/style/sentence-case.js [--write] [--list]
 const fs = require('fs');
+const cheerio = require('cheerio');
 const { listJson, WRITE } = require('./lib');
 
 const files = listJson().map((f) => [f, JSON.parse(fs.readFileSync(f, 'utf8'))]).filter(([, j]) => j.url && j.bodyHtml);
@@ -86,7 +87,7 @@ function fixHeading(inner) {
       const k = b.toLowerCase();
       const idx = segStart + j;
       if (!isTitle) return;
-      if (b === 'A' && j > 0 && t.lead !== 'colon') { out[idx] = 'a'; return; }
+      if (b === 'A' && (j > 0 || t.lead === 'colon')) { out[idx] = 'a'; return; }
       if (b[0] !== b[0].toUpperCase() || b === b.toUpperCase() || /[a-z][A-Z]/.test(b)) return;
       const afterColon = t.lead === 'colon';
       if (j === 0 && !afterColon && !(segStart === 0 && numeralLead)) return; // sentence start keeps its capital
@@ -154,9 +155,36 @@ function applyFixes(inner) {
   const tokens = (x) => x.match(/[A-Za-z][A-Za-z'’-]*/g) || [];
   const a = tokens(plain), b = tokens(to);
   let i = 0;
-  return inner.replace(/[A-Za-z][A-Za-z'’-]*/g, (w) => { const r = a[i] === w && b[i] ? b[i] : w; i++; return r; });
+  return inner.split(/(<[^>]+>)/).map((p, n) => (n % 2 ? p : p.replace(/[A-Za-z][A-Za-z'’-]*/g, (w) => { const r = a[i] === w && b[i] ? b[i] : w; i++; return r; }))).join('');
 }
 
+// Short labels outside headings (link text, list items, captions): converted
+// only when every capitalised word is a listed proper noun or a word the
+// corpus uses in lower case, so names and places are never touched.
+const isCommonWord = (k) => (lower.get(k) || 0) >= 3 && !isProperByCorpus(k);
+const NAMEISH_PHRASES = /Sign Language|Standards Authority|Intellectual Property|Trade Organisation|Government|Heritage|City of Film|Microsoft|Recovery Programme|Oil Capital|Port of|Acuitas|Patent Office|Advertising Standards|Prior Art/;
+const NAMEISH = /\b(University|House|Street|Road|Square|Court|Hospital|College|School)\b/;
+function fixLabel(text) {
+  const lead = text.match(/^\s*/)[0], tail = text.match(/\s*$/)[0], t = text.trim();
+  if (NAMEISH_PHRASES.test(t) || /[,(]$/.test(t) || /^[a-z]/.test(t) || t.length < 5 || t.length > 70 || /[.!?]\s+\S/.test(t) || NAMEISH.test(t) || /\d{4,}/.test(t)) return text;
+  const words = t.match(/[A-Za-z][A-Za-z'’-]*/g) || [];
+  if (words.length < 2) return text;
+  const base = (w) => w.replace(/[’']s$/, '');
+  const elig = words.slice(1).filter((w) => !SMALL.has(base(w).toLowerCase()) && base(w).length > 2 && base(w) !== base(w).toUpperCase() && !/[a-z][A-Z]/.test(w));
+  const caps = elig.filter((w) => /^[A-Z]/.test(w));
+  if (!elig.length || caps.length < Math.max(1, 0.6 * elig.length)) return text;
+  const fixed = fixHeading(t);
+  // every word that would stay capitalised must be a known proper noun, an acronym or the first word
+  const left = (fixed.match(/[A-Za-z][A-Za-z'’-]*/g) || []).slice(1).filter((w) => /^[A-Z][a-z]/.test(w) && !PROPER.has(base(w).toLowerCase()));
+  if (left.length) return text;
+  const unknown = caps.filter((w) => !isCommonWord(base(w).toLowerCase()) && !PROPER.has(base(w).toLowerCase()) && !SMALL.has(base(w).toLowerCase()));
+  if (unknown.length) return text;
+  return lead + fixed + tail;
+}
+
+module.exports = { fixHeading };
+
+if (require.main === module) {
 let nFiles = 0, nHeads = 0;
 const sample = [];
 for (const [f, j] of files) {
@@ -166,10 +194,34 @@ for (const [f, j] of files) {
     if (out !== inner) { n++; if (sample.length < 400) sample.push([inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(), out.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()]); }
     return open + out + close;
   });
-  if (n) { nFiles++; nHeads += n; if (WRITE) { j.bodyHtml = next; fs.writeFileSync(f, JSON.stringify(j, null, 2)); } }
+  let labels = 0;
+  let next2 = next;
+  if (!SKIP_PAGES.test(j.url.trim())) {
+    const $ = cheerio.load(`<div id="root">${next}</div>`, null, false);
+    // Only elements that are a whole label: short text, and no other text in the parent block.
+    $('#root').find('a, li, p, td, th, strong, b, span, em, summary, button, figcaption').each((_, el) => {
+      if (el.children.some((c) => c.type === 'tag' && !/^(strong|b|em|span|br)$/.test(c.name))) return;
+      const own = $(el).text().replace(/\s+/g, ' ').trim();
+      if (!own || own.length > 70) return;
+      const block = $(el).closest('li, p, td, th, div');
+      const blockText = block.length ? block.text().replace(/\s+/g, ' ').trim() : own;
+      if (blockText.length > own.length + 6) return;
+      if ($(el).closest('h1,h2,h3,h4,h5,h6').length) return;
+      $(el).contents().each((__, c) => {
+        if (c.type !== 'text') return;
+        const o = fixLabel(c.data);
+        if (o !== c.data) { c.data = o; labels++; if (sample.length < 2000) sample.push(['L: ' + c.data.trim(), o.trim()]); }
+      });
+    });
+    if (labels) next2 = $('#root').html();
+  }
+  if (labels) n += labels;
+  if (n) { nFiles++; nHeads += n; if (WRITE) { j.bodyHtml = next2; fs.writeFileSync(f, JSON.stringify(j, null, 2)); } }
 }
 console.log(`${WRITE ? 'Wrote' : 'Dry run'}: ${nHeads} headings in ${nFiles} files`);
 if (process.argv.includes('--list')) {
   const seen = new Set();
   for (const [a, b] of sample) if (!seen.has(a)) { seen.add(a); console.log(a + '\n   -> ' + b); }
+}
+
 }

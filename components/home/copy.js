@@ -3,13 +3,13 @@
 // unlike BTvibe-es's three-locale object; "es"/"fr" alias "en" so any stray
 // HOME[locale] lookup with a different key never crashes.
 const en = {
-  eyebrow: "Professional Language Services",
-  h1a: "Your UK Translation Agency for", h1b: "Business Growth", h1c: "Worldwide",
+  eyebrow: "Professional language services",
+  h1a: "Your UK translation agency for", h1b: "business growth", h1c: "Worldwide",
   lead: "BeTranslated is the translation company UK businesses, institutions and NGOs call when accuracy matters. We deliver corporate translation services, interpreting and multilingual SEO in a wide range of European and Asian languages.",
-  cta1: "Get a free Quote", quoteHref: "/translation-agency/quote/", servicesHref: "/translation-services/",
+  cta1: "Get a free quote", quoteHref: "/translation-agency/quote/", servicesHref: "/translation-services/",
   since: "Since 2002",
   proof: [["4.9", "Google rating"], ["79", "Google reviews"]],
-  clientsLabel: "Trusted by Global Brands",
+  clientsLabel: "Trusted by global brands",
 
   servicesEyebrow: "Our services",
   themesTitle: "Translation, Interpreting and Digital Marketing Services for UK Businesses Going Global",
@@ -52,23 +52,23 @@ const en = {
     },
   ],
 
-  specEyebrow: "Professional Translation Services", specTitle: "Translation of Professional Documents",
+  specEyebrow: "Professional translation services", specTitle: "Translation of professional documents",
   specialties: [
-    ["Document Translation", "From a single page to a full manual. Quality, deadlines and a price that fits your budget.", "/document-translation-services/"],
-    ["Website Translation", "SEO translation for websites, blogs and online stores.", "/translation-services/website-translation/"],
-    ["Business & Finance", "Reports, accounts, tenders and corporate documents.", "/industry/business/"],
-    ["High Tech & IT", "Interfaces, documentation and support content, translated and localised.", "/industry/it-telecom/"],
-    ["Industry & Construction", "Manuals, data sheets and specifications in your sector's terminology.", "/industry/technical/"],
-    ["Marketing & Sales", "Campaigns, websites and social media in your brand's tone, in every language.", "/industry/marketing/"],
-    ["Travel & Tourism", "Websites, brochures and menus in your visitors' language.", "/industry/tourism/"],
-    ["Legal Translation", "Contracts, patents and certified documents.", "/industry/legal/"],
+    ["Document translation", "From a single page to a full manual. Quality, deadlines and a price that fits your budget.", "/document-translation-services/"],
+    ["Website translation", "SEO translation for websites, blogs and online stores.", "/translation-services/website-translation/"],
+    ["Business & finance", "Reports, accounts, tenders and corporate documents.", "/industry/business/"],
+    ["High tech & IT", "Interfaces, documentation and support content, translated and localised.", "/industry/it-telecom/"],
+    ["Industry & construction", "Manuals, data sheets and specifications in your sector's terminology.", "/industry/technical/"],
+    ["Marketing & sales", "Campaigns, websites and social media in your brand's tone, in every language.", "/industry/marketing/"],
+    ["Travel & tourism", "Websites, brochures and menus in your visitors' language.", "/industry/tourism/"],
+    ["Legal translation", "Contracts, patents and certified documents.", "/industry/legal/"],
   ],
 
-  trustTitle: "The UK Translation Agency That Takes Your Business Global",
+  trustTitle: "The UK translation agency that takes your business global",
   trustBody: "Over 20 years of experience delivering accurate, on-time translation, interpreting and multilingual marketing for UK businesses, institutions and NGOs.",
   reviewCta: "Leave us a Google review",
 
-  pairsEyebrow: "Languages", pairsTitle: "Languages We Translate",
+  pairsEyebrow: "Languages", pairsTitle: "Languages we translate",
   pairs: [
     ["French", "/languages/french-translation-services/"],
     ["English", "/languages/english-translation-services/"],
@@ -81,7 +81,7 @@ const en = {
   ],
   pairsAllHref: "/languages/", pairsAll: "All languages",
 
-  stepsTitle: "Get Your Free, No-Obligation Quote",
+  stepsTitle: "Get your free, no-obligation quote",
   formTitle: "Start your project today",
   formLead: "Tell us what you need translated and we will send you a free, no-obligation quote.",
   steps: [
@@ -91,7 +91,7 @@ const en = {
     ["We deliver", "You receive the translated content by the agreed date."],
   ],
 
-  teamEyebrow: "Our Translators", teamTitle: "Experienced & Professional Translators",
+  teamEyebrow: "Our translators", teamTitle: "Experienced & professional translators",
   teamLead: "Select professional translators for quality and affordability, serving clients across the UK and all over Europe.",
   aboutHref: "/translators/", aboutCta: "Meet our translators",
 };

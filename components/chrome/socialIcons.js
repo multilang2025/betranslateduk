@@ -17,7 +17,7 @@ export const STROKE = {
 };
 
 // WhatsApp line: same UK office number used sitewide (scraped contact-us.json,
-// "Click to Chat for WhatsApp" plugin).
+// "Click to chat for WhatsApp" plugin).
 export const WHATSAPP = "442030269848";
 
 // BeTranslated's social profiles, as linked in the scraped betranslated.co.uk
