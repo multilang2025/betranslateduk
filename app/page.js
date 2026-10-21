@@ -19,5 +19,5 @@ export async function generateMetadata() {
 
 export default function Home() {
   const page = getHomePage();
-  return <ScrapedPage page={page} />;
+  return <ScrapedPage page={page} slug={[]} />;
 }

@@ -1,13 +1,548 @@
-/* Dark theme: only when the visitor picks it with the header switch
-   (html[data-theme="dark"], saved in localStorage) -- the site always opens
-   light by default, regardless of the OS/browser's own dark-mode setting.
-   Loaded last (app/layout.js).
+/* Dark theme: follows the system setting (prefers-color-scheme) unless the visitor picks a theme with the header switch (html[data-theme="light"|"dark"], saved in localStorage).
+   Why: without it, Chrome's "auto dark web pages" and Samsung Internet invert the
+   light design (maroon CTA, invisible logo, muddy bands). Browsers skip that forced
+   darkening when the page declares dark support and ships real dark styles.
+   Loaded last (app/layout.js). Every rule sits inside the dark media query, so the
+   light theme renders exactly as before; only color-scheme is declared outside.
    Palette: ink navy page, slightly lighter surfaces, light text, the brand teal
    kept (lighter ink for small text), the orange CTA unchanged. */
 
-:root { color-scheme: light; }
+:root { color-scheme: light dark; }
+html[data-theme="light"] { color-scheme: light; }
 html[data-theme="dark"] { color-scheme: dark; }
 .bt-logo--dark { display: none; }
+
+@media (prefers-color-scheme: dark) {
+
+  /* ---------- Tokens ---------- */
+  html:not([data-theme="light"]) {
+    --bt-white:        #0E1726;   /* page background */
+    --bt-paper:        #121D30;   /* bands */
+    --bt-paper-2:      #1B2840;   /* subtle fills, hovers */
+    --bt-surface:      #16223A;   /* cards (dark-only token) */
+    --bt-surface-2:    #1D2B45;   /* raised cards, inputs */
+    --bt-fill:         #2A3B58;   /* former navy fills with white text */
+    --bt-line:         #263550;
+    --bt-line-2:       #33445F;
+    --bt-line-teal:    #24434F;   /* hairlines of the teal boxes and bands */
+    --bt-text:         #E6EAF0;
+    --bt-text-mid:     #BAC3D0;
+    --bt-text-soft:    #9AA6B8;   /* 6:1 on cards */
+    --bt-navy:         #F1F4F8;   /* headings and emphasis turn light */
+    --bt-navy-deep:    #0A1220;   /* footer, dark CTA */
+    --bt-slate:        #16223A;
+    --bt-accent:       #5FA9B1;   /* 6:1 on the page */
+    --bt-accent-ink:   #7CC3CA;   /* small teal text */
+    --bt-accent-50:    #15303A;
+    --bt-teal:         #7EBEC5;
+    --bt-teal-600:     #6DB5BD;
+    --bt-teal-50:      #15303A;
+    --bt-orange-50:    #3A2416;
+    --bt-on-dark-soft: rgba(255,255,255,.82);
+    --shadow-xs:  0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-sm:  0 2px 8px rgba(0, 0, 0, .3);
+    --shadow-md:  0 6px 20px rgba(0, 0, 0, .35), 0 1px 2px rgba(0, 0, 0, .3);
+    --shadow-lg:  0 16px 40px rgba(0, 0, 0, .45), 0 2px 4px rgba(0, 0, 0, .3);
+    --shadow-cta: 0 8px 24px rgba(246, 118, 24, .25);
+  }
+  /* The teal remap of --bt-orange* (ui-interp.css) and the CTA restore list. */
+  html:not([data-theme="light"]) .bt { --bt-orange-600: #7CC3CA; --bt-orange-50: #15303A; }
+  html:not([data-theme="light"]) .bt .bt-btn,
+  html:not([data-theme="light"]) .bt .bt-header__cta,
+  html:not([data-theme="light"]) .bt .cta-band,
+  html:not([data-theme="light"]) .bt .page-hero__cta,
+  html:not([data-theme="light"]) .bt .hero__cta,
+  html:not([data-theme="light"]) .bt .ip-persona__link,
+  html:not([data-theme="light"]) .bt .feature__more > summary,
+  html:not([data-theme="light"]) .bt .sec__more > summary,
+  html:not([data-theme="light"]) .bt .timeline__more > summary,
+  html:not([data-theme="light"]) .bt .langs-more > summary,
+  html:not([data-theme="light"]) .bt .card__more,
+  html:not([data-theme="light"]) .bt .fmt-strip__all,
+  html:not([data-theme="light"]) .bt .ip-chips__more,
+  html:not([data-theme="light"]) .bt .finder__cta,
+  html:not([data-theme="light"]) .bt .reviews__more,
+  html:not([data-theme="light"]) .bt .quote-card__btn,
+  html:not([data-theme="light"]) .bt .post-cta__actions,
+  html:not([data-theme="light"]) .bt .formats__card em,
+  html:not([data-theme="light"]) .bt .ip-zone--remote em,
+  html:not([data-theme="light"]) .bt .mini .cta-row,
+  html:not([data-theme="light"]) .bt .aside-card--cta,
+  html:not([data-theme="light"]) .bt .bt-drawer .bt-btn {
+    --bt-orange-50: #3A2416;
+  }
+  html:not([data-theme="light"]) .bt { background: var(--bt-white); }
+
+  /* ---------- Buttons ---------- */
+  html:not([data-theme="light"]) .bt-btn--ghost,
+  html:not([data-theme="light"]) .bt a.bt-btn--ghost,
+  html:not([data-theme="light"]) .bt button.bt-btn--ghost,
+  html:not([data-theme="light"]) .page-hero__cta .bt-btn--ghost { background: transparent; color: var(--bt-navy); border-color: rgba(241, 244, 248, .6); }
+  html:not([data-theme="light"]) .bt-btn--ghost:hover,
+  html:not([data-theme="light"]) .bt a.bt-btn--ghost:hover,
+  html:not([data-theme="light"]) .bt button.bt-btn--ghost:hover { background: var(--bt-navy); color: var(--bt-white); border-color: var(--bt-navy); }
+  /* Second orange button in a hero row is the white "outline" variant. */
+  html:not([data-theme="light"]) .bt .page-hero__cta .bt-btn--primary ~ .bt-btn--primary,
+  html:not([data-theme="light"]) .bt .page-hero__cta .cta-row + .cta-row .bt-btn--primary { background: transparent; }
+
+  /* ---------- Header, dropdowns, mobile drawer ---------- */
+  html:not([data-theme="light"]) .bt-header { background: rgba(14, 23, 38, .9); border-bottom-color: var(--bt-line); }
+  html:not([data-theme="light"]) .bt-header__sub,
+  html:not([data-theme="light"]) .bt-header__menu,
+  html:not([data-theme="light"]) .bt-header__sub::after { background: var(--bt-surface); border-color: var(--bt-line-2); }
+  html:not([data-theme="light"]) .bt .bt-header__sublink:hover,
+  html:not([data-theme="light"]) .bt .bt-header__sub:hover { background: var(--bt-accent-50); color: var(--bt-accent-ink); }
+  html:not([data-theme="light"]) .bt-lang__menu { background: var(--bt-surface); border-color: var(--bt-line-2); }
+  html:not([data-theme="light"]) .bt .bt-lang__item.is-active { background: var(--bt-accent-50); color: var(--bt-accent-ink); }
+  html:not([data-theme="light"]) .bt-drawer { background: var(--bt-surface); }
+  @media (max-width: 899px) {
+    html:not([data-theme="light"]) .bt .bt-drawer { background: linear-gradient(180deg, #19263F 0%, #142034 100%); box-shadow: 0 24px 60px rgba(0, 0, 0, .55), 0 0 0 1px rgba(95, 169, 177, .22); }
+    html:not([data-theme="light"]) .bt .bt-drawer .bt-drawer__close,
+  html:not([data-theme="light"]) .bt .bt-drawer__ico { background: var(--bt-surface-2); box-shadow: 0 1px 4px rgba(0, 0, 0, .35); }
+    html:not([data-theme="light"]) .bt .bt-drawer__ico { color: var(--bt-accent-ink); }
+    html:not([data-theme="light"]) .bt .bt-drawer a.bt-drawer__link.is-current .bt-drawer__ico { background: #3F8DA6; color: #fff; }
+    html:not([data-theme="light"]) .bt .bt-drawer__cta { background: rgba(14, 23, 38, .55); }
+  }
+  html:not([data-theme="light"]) .bt-scrim { background: rgba(0, 0, 0, .55); }
+
+  /* ---------- Search ---------- */
+  html:not([data-theme="light"]) .bt-search,
+  html:not([data-theme="light"]) .sx { background: rgba(0, 0, 0, .6); }
+  html:not([data-theme="light"]) .bt-search__panel,
+  html:not([data-theme="light"]) .sx__panel { background: var(--bt-surface); }
+
+  /* ---------- Page background, section bands, patterns ---------- */
+  html:not([data-theme="light"]) .sec:not(.sec--alt),
+  html:not([data-theme="light"]) .section:not(.section--tint):not(.section--navy),
+  html:not([data-theme="light"]) .trust-wrap { background-color: var(--bt-white); background-image: url("/patterns/dots-dark.svg"); }
+  html:not([data-theme="light"]) .sec--alt,
+  html:not([data-theme="light"]) .section--tint { background: linear-gradient(180deg, #112030 0%, #132538 100%); border-top-color: var(--bt-line-teal); border-bottom-color: var(--bt-line-teal); }
+  html:not([data-theme="light"]) .bt main:not(.home) [data-tone="white"] { background: url("/patterns/dots-dark.svg") var(--bt-white) !important; background-size: 128px 128px !important; }
+  html:not([data-theme="light"]) .bt main:not(.home) [data-tone="ombre"] { background: linear-gradient(#112030 0%, #132538 100%) !important; border-top: 1px solid var(--bt-line-teal) !important; border-bottom: 1px solid var(--bt-line-teal) !important; }
+  html:not([data-theme="light"]) .bt main:not(.home) [data-tone="hero"] { background: #13283A !important; }
+  html:not([data-theme="light"]) main.ip > section.section:not(.section--navy):nth-of-type(odd),
+  html:not([data-theme="light"]) main.ip-specialty .sections > section.sec:nth-of-type(odd) { background: var(--bt-white) url("/patterns/dots-dark.svg"); }
+  html:not([data-theme="light"]) main.ip > section.section:not(.section--navy):nth-of-type(even),
+  html:not([data-theme="light"]) main.ip-specialty .sections > section.sec:nth-of-type(even) { background: linear-gradient(180deg, #112030 0%, #132538 100%); border-top-color: var(--bt-line-teal); border-bottom-color: var(--bt-line-teal); }
+  html:not([data-theme="light"]) main.hub .sec--alt:has(.timeline) { background: var(--bt-white); }
+  html:not([data-theme="light"]) .sec.lang-features { background: radial-gradient(700px 320px at 100% 0%, rgba(95, 169, 177, .08), transparent 60%), radial-gradient(600px 320px at 0% 100%, rgba(126, 190, 197, .08), transparent 60%), #112030 !important; }
+  /* Technical-files backdrop of the formats band: the navy line art redrawn in light ink. */
+  html:not([data-theme="light"]) .fmt-band { background-color: #111C2E !important; background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%22180%22 viewBox=%220 0 240 180%22 fill=%22none%22 stroke=%22%23E6EAF0%22 stroke-opacity=%22.06%22 stroke-width=%221.2%22%3E%3Cpath d=%22M20 20h40l14 14v58H20z%22/%3E%3Cpath d=%22M60 20v14h14%22/%3E%3Cpath d=%22M28 46h36M28 54h30M28 62h36M28 70h22%22/%3E%3Cpath d=%22M130 100h48l10 10v50h-58z%22/%3E%3Cpath d=%22M178 100v10h10%22/%3E%3Cpath d=%22M140 122h12M140 130h30M140 138h24%22/%3E%3Cpath d=%22M100 30v40M96 30h8M96 70h8%22/%3E%3Cpath d=%22M150 38l-8 8 8 8M168 38l8 8-8 8M162 34l-8 24%22/%3E%3Cpath d=%22M30 130h60M30 126v8M90 126v8%22/%3E%3Ccircle cx=%22212%22 cy=%2236%22 r=%2212%22/%3E%3Cpath d=%22M212 28v8l5 4%22/%3E%3C/svg%3E") !important; }
+
+  /* ---------- Heroes ---------- */
+  html:not([data-theme="light"]) .bt .hero,
+  html:not([data-theme="light"]) .bt .page-hero,
+  html:not([data-theme="light"]) .bt .page-hero--post,
+  html:not([data-theme="light"]) .bt .page-hero--split {
+    background:
+      radial-gradient(ellipse 60% 70% at 85% 10%, rgba(95, 169, 177, .20), transparent 70%),
+      radial-gradient(ellipse 50% 60% at 0% 100%, rgba(95, 169, 177, .12), transparent 70%),
+      linear-gradient(180deg, #0E1726 0%, #13283A 100%);
+  }
+  html:not([data-theme="light"]) .page-hero,
+  html:not([data-theme="light"]) .page-hero--post { border-bottom-color: var(--bt-line); }
+  html:not([data-theme="light"]) .post-hero { background: var(--bt-paper); border-bottom-color: var(--bt-line); }
+  html:not([data-theme="light"]) .post-hero--cover { background: linear-gradient(to bottom, var(--bt-paper) calc(100% - 200px), var(--bt-white) calc(100% - 200px)); }
+  html:not([data-theme="light"]) .post-hero__lead { color: var(--bt-text-mid); }
+  html:not([data-theme="light"]) .post-hero__meta { color: var(--bt-text-soft); border-top-color: var(--bt-line); }
+  html:not([data-theme="light"]) .hero__card { background: var(--bt-surface); border-color: var(--bt-surface); }
+  html:not([data-theme="light"]) .hero__proof { background: rgba(22, 34, 58, .85); }
+  html:not([data-theme="light"]) .bt a.gbp-badge { background: var(--bt-surface); border-color: var(--bt-line-2); box-shadow: 0 10px 28px rgba(0, 0, 0, .35); }
+  html:not([data-theme="light"]) .gbp-badge__faces span { border-color: var(--bt-surface); }
+  html:not([data-theme="light"]) .city-hero__bubbles span:first-child { background: var(--bt-surface); }
+
+  /* ---------- Cards, tiles, panels (white cards turn into ink surfaces) ---------- */
+  html:not([data-theme="light"]) .card,
+  html:not([data-theme="light"]) .team__card,
+  html:not([data-theme="light"]) .form-card,
+  html:not([data-theme="light"]) .quote-check,
+  html:not([data-theme="light"]) .mini,
+  html:not([data-theme="light"]) .bt a.tile,
+  html:not([data-theme="light"]) .chip,
+  html:not([data-theme="light"]) .bt a.featured,
+  html:not([data-theme="light"]) .bt a.post,
+  html:not([data-theme="light"]) .aside-card,
+  html:not([data-theme="light"]) .trust,
+  html:not([data-theme="light"]) .guide__country,
+  html:not([data-theme="light"]) .faq__item,
+  html:not([data-theme="light"]) .guide__variant,
+  html:not([data-theme="light"]) .bt .sec__in ul.feat-list li,
+  html:not([data-theme="light"]) .sec--alt ul.feat-list li,
+  html:not([data-theme="light"]) .bt .sec__in figure:has(> figcaption),
+  html:not([data-theme="light"]) .bt a.formats__card,
+  html:not([data-theme="light"]) .timeline__card,
+  html:not([data-theme="light"]) .bt a.lang-tile,
+  html:not([data-theme="light"]) .bt .fmt-strip a,
+  html:not([data-theme="light"]) .finder,
+  html:not([data-theme="light"]) .finder__opt,
+  html:not([data-theme="light"]) .ip-card,
+  html:not([data-theme="light"]) .bt a.ip-sector,
+  html:not([data-theme="light"]) .bt .ip-also a,
+  html:not([data-theme="light"]) .ip-zone,
+  html:not([data-theme="light"]) .ip-marquee li,
+  html:not([data-theme="light"]) .bt a.ip-case,
+  html:not([data-theme="light"]) .ip-kit li,
+  html:not([data-theme="light"]) .ip-chips li,
+  html:not([data-theme="light"]) .ip-kicker,
+  html:not([data-theme="light"]) .ip-facts,
+  html:not([data-theme="light"]) .ip-venues li,
+  html:not([data-theme="light"]) .bt .ip-citylinks a,
+  html:not([data-theme="light"]) .ip-langs-grid li,
+  html:not([data-theme="light"]) .bt .ip-spec a,
+  html:not([data-theme="light"]) details.lang-dir__group,
+  html:not([data-theme="light"]) .lang-features .feature,
+  html:not([data-theme="light"]) .bt a.fmt-file,
+  html:not([data-theme="light"]) .feature__more summary,
+  html:not([data-theme="light"]) .sworn-seal__doc,
+  html:not([data-theme="light"]) .bt .sworn-docs a,
+  html:not([data-theme="light"]) .docgrid__chip,
+  html:not([data-theme="light"]) .langs-more > summary,
+  html:not([data-theme="light"]) .chamber,
+  html:not([data-theme="light"]) .bt a.post-nav__link,
+  html:not([data-theme="light"]) .lang-suggest,
+  html:not([data-theme="light"]) .about-art__card,
+  html:not([data-theme="light"]) .about-art__chip,
+  html:not([data-theme="light"]) .bt ul.term-list > li,
+  html:not([data-theme="light"]) .sworn-links__group,
+  html:not([data-theme="light"]) .bt .sworn-links__formats a,
+  html:not([data-theme="light"]) .bt .sec__in .pills a:not(.bt-btn),
+  html:not([data-theme="light"]) .bt .prose .pills a:not(.bt-btn),
+  html:not([data-theme="light"]) .bt .lang-drop,
+  html:not([data-theme="light"]) .bt .contact-list--cards li,
+  html:not([data-theme="light"]) .bt .steps-card,
+  html:not([data-theme="light"]) .bt .sector-nav__list a,
+  html:not([data-theme="light"]) .bt .sec__in ul.stat-row li,
+  html:not([data-theme="light"]) .bt .related-posts__all a.card__more,
+  html:not([data-theme="light"]) .ip-proof--toned .ip-badges li,
+  html:not([data-theme="light"]) .bt a.ip-zone--dircta,
+  html:not([data-theme="light"]) .bt .blog-topics li,
+  html:not([data-theme="light"]) .bt .region-cities a,
+  html:not([data-theme="light"]) .bt .region-services a,
+  html:not([data-theme="light"]) .bt .region-stats li,
+  html:not([data-theme="light"]) .bt .svc-group,
+  html:not([data-theme="light"]) .bt .card--specialty,
+  html:not([data-theme="light"]) .bt .reviews__slide figure,
+  html:not([data-theme="light"]) .bt .lang-panel,
+  html:not([data-theme="light"]) .bt .lang-card,
+  html:not([data-theme="light"]) .pmap__card,
+  html:not([data-theme="light"]) .bt .office__card,
+  html:not([data-theme="light"]) .table-wrap,
+  html:not([data-theme="light"]) .post-toc,
+  html:not([data-theme="light"]) .prose .bi-steps,
+  html:not([data-theme="light"]) .bt .blog-post .prose figure.bi-steps,
+  html:not([data-theme="light"]) .share,
+  html:not([data-theme="light"]) .bt .share__btn,
+  html:not([data-theme="light"]) .bt .blog-post .prose ul.stat-row li,
+  html:not([data-theme="light"]) .mo,
+  html:not([data-theme="light"]) .mo-dt__card,
+  html:not([data-theme="light"]) .bt .pills a,
+  html:not([data-theme="light"]) .bt .pairs a {
+    background: var(--bt-surface);
+  }
+  html:not([data-theme="light"]) .ip-chips--city li { background: var(--bt-surface) !important; }
+  /* Trust strip keeps its teal-to-orange top bar (declared with !important upstream). */
+  html:not([data-theme="light"]) .trust { background: linear-gradient(90deg, var(--bt-teal), var(--bt-orange)) top / 100% 3px no-repeat, var(--bt-surface) !important; }
+  html:not([data-theme="light"]) .bt a.lang-tile { background: linear-gradient(135deg, var(--bt-surface) 55%, #1F2A3A 100%); }
+  html:not([data-theme="light"]) .bt a.lang-tile::before { color: rgba(241, 244, 248, .05); }
+  html:not([data-theme="light"]) .bt .pills a:hover,
+  html:not([data-theme="light"]) .bt .pairs a:hover { background: var(--bt-accent-50); color: var(--bt-navy); }
+  /* Folded corner of the file cards: the fold shows the band behind. */
+  html:not([data-theme="light"]) .bt a.fmt-file::before { background: linear-gradient(225deg, #111C2E 50%, var(--bt-orange-50) 50%); }
+  html:not([data-theme="light"]) .card__media,
+  html:not([data-theme="light"]) .team__photo { background: var(--bt-paper-2); }
+  html:not([data-theme="light"]) .grid--services4 .card__media { background: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .bt span.card__icon.card__icon--clay,
+  html:not([data-theme="light"]) .bt .card--specialty:hover span.card__icon.card__icon--clay { background: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .bt .sec__in figure:has(> figcaption) { border-color: var(--bt-line); }
+  /* Card hairlines from the light theme that are too pale on ink. */
+  html:not([data-theme="light"]) .bt a.featured,
+  html:not([data-theme="light"])[data-pv="a"] .bt .ip-personas > li.ip-card,
+  html:not([data-theme="light"])[data-pv="b"] .bt .ip-personas > li.ip-card,
+  html:not([data-theme="light"])[data-pv="c"] .bt .ip-personas,
+  html:not([data-theme="light"])[data-pv="c"] .bt .ip-personas > li.ip-card { border-color: var(--bt-line-2); }
+
+  /* Former navy fills (white text): a raised slate instead of a light block. */
+  html:not([data-theme="light"]) .chip.is-active,
+  html:not([data-theme="light"]) .finder__opt.is-on,
+  html:not([data-theme="light"]) .docgrid__chip.is-on,
+  html:not([data-theme="light"]) .ip-chips li:nth-child(-n+6) { background: var(--bt-navy); border-color: var(--bt-navy); color: var(--bt-white); }
+  html:not([data-theme="light"]) .ip-chips--city li:first-child { background: var(--bt-navy) !important; color: var(--bt-white) !important; }
+  html:not([data-theme="light"]) .docgrid__chip.is-on span { background: rgba(14, 23, 38, .12); color: var(--bt-white); }
+  html:not([data-theme="light"]) .prose .post-table th,
+  html:not([data-theme="light"]) .bt .sec__in .post-table th,
+  html:not([data-theme="light"]) .ip-art__bubble--es,
+  html:not([data-theme="light"]) .city-hero__bubbles span:last-child,
+  html:not([data-theme="light"]) .bt-tip__box,
+  html:not([data-theme="light"]) .about-art__chip--b,
+  html:not([data-theme="light"]) .sworn-links__ext,
+  html:not([data-theme="light"]) .ftools__hint,
+  html:not([data-theme="light"]) .lang-code--to,
+  html:not([data-theme="light"]) .bt .lang-code--to,
+  html:not([data-theme="light"])[data-pv="b"] .bt .ip-personas > li.ip-card > .ip-card__icon,
+  html:not([data-theme="light"]) .about-team .team > li:first-child .team__meta {
+    background: var(--bt-fill); border-color: var(--bt-fill); color: #fff;
+  }
+  html:not([data-theme="light"]) .prose .post-table td:first-child,
+  html:not([data-theme="light"]) .bt .sec__in .post-table td:first-child { background: var(--bt-fill) !important; }
+  html:not([data-theme="light"]) .ip-art__bubble { background: var(--bt-surface); }
+
+  /* Orange-tint hovers of the icon chips. */
+  html:not([data-theme="light"]) .mini--icon:hover > h3:first-child::before,
+  html:not([data-theme="light"]) .formats__card:hover .filebadge,
+  html:not([data-theme="light"]) .ip-card:hover .ip-card__icon,
+  html:not([data-theme="light"]) .bt a.ip-sector:hover .ip-card__icon,
+  html:not([data-theme="light"]) a:hover .card__more::after,
+  html:not([data-theme="light"]) .card:hover .card__more::after,
+  html:not([data-theme="light"]) a.card__more:hover::after,
+  html:not([data-theme="light"]) .formats__card:hover em::after { background-color: #4A2C14; }
+  html:not([data-theme="light"]) .formats__card:hover .filebadge--icon { background: var(--bt-surface-2); }
+
+  /* ---------- Teal boxes (house .box-soft style, CTA bands, quote cards) ---------- */
+  html:not([data-theme="light"]) .box-soft,
+  html:not([data-theme="light"]) .bt .svc-cta,
+  html:not([data-theme="light"]) .bt .section--services .svc-cta,
+  html:not([data-theme="light"]) .cta-band__inner,
+  html:not([data-theme="light"]) .bt .sec__in:has(> h2:first-child + figure.cta-close:last-child),
+  html:not([data-theme="light"]) .bt .prose .post-cta,
+  html:not([data-theme="light"]) .bt .quote-card,
+  html:not([data-theme="light"]) .bt .sworn-price,
+  html:not([data-theme="light"]) .bt a.ip-remote,
+  html:not([data-theme="light"]) .bt a.ip-zone--remote,
+  html:not([data-theme="light"]) .mini.mini--cta,
+  html:not([data-theme="light"]) .aside-card--cta {
+    background: linear-gradient(160deg, #163240 0%, #12293A 100%);
+    border-color: var(--bt-line-teal);
+  }
+  html:not([data-theme="light"]) .box-soft::before,
+  html:not([data-theme="light"]) .bt .svc-cta::before,
+  html:not([data-theme="light"]) .cta-band__inner::before { background: radial-gradient(circle, rgba(95, 169, 177, .18), transparent 65%); }
+  html:not([data-theme="light"]) .cta-band { background: var(--bt-white); border-top-color: var(--bt-line); }
+  html:not([data-theme="light"]) .cta-band p,
+  html:not([data-theme="light"]) .bt .sec__in figure.cta-close > p { color: var(--bt-text-mid); }
+  html:not([data-theme="light"]) .bt .cta-band .bt-btn--secondary { color: var(--bt-navy); border-color: rgba(124, 195, 202, .55); }
+  html:not([data-theme="light"]) .bt .cta-band .bt-btn--secondary:hover { background: var(--bt-accent-50); color: var(--bt-accent-ink); border-color: var(--bt-accent-ink); }
+  html:not([data-theme="light"]) .bt p.cta-contact a.cta-contact__link,
+  html:not([data-theme="light"]) .bt .prose a.post-cta__contact,
+  html:not([data-theme="light"]) .bt .prose a.post-cta__contact:hover,
+  html:not([data-theme="light"]) .bt a.quote-card__call,
+  html:not([data-theme="light"]) .bt a.quote-card__call:hover,
+  html:not([data-theme="light"]) .bt .quote-card__eyebrow,
+  html:not([data-theme="light"]) .bt .sworn-price__label {
+    background: var(--bt-surface); border-color: var(--bt-line-teal);
+  }
+  html:not([data-theme="light"]) .bt p.cta-contact a.cta-contact__link:hover,
+  html:not([data-theme="light"]) .bt p.cta-contact a.cta-contact__link:focus-visible { color: var(--bt-accent-ink); border-color: var(--bt-accent-ink); }
+  html:not([data-theme="light"]) .bt p.cta-contact a.cta-contact__link::before { background-color: var(--bt-accent-50); }
+  html:not([data-theme="light"]) .bt .sworn-price__ticks { border-top-color: var(--bt-line-teal); }
+  html:not([data-theme="light"]) .ip-dircta__icon { background: linear-gradient(140deg, #1B3A47, #15303A); }
+  html:not([data-theme="light"]) .ip-also { background: var(--bt-accent-50); }
+  html:not([data-theme="light"]) .ip-also > span { color: var(--bt-accent-ink); }
+  /* Warm callouts (orange-tinted in the light theme). */
+  html:not([data-theme="light"]) .hub-intro__callout,
+  html:not([data-theme="light"]) .ip-note { background: linear-gradient(135deg, #2A1F18, #23190F); border-color: #4A3322; }
+  html:not([data-theme="light"]) .bt a.ip-persona__link:hover,
+  html:not([data-theme="light"]) .bt a.ip-persona__link:focus-visible { background: #3A2416; }
+
+  /* ---------- Language tiles, flags, chips ---------- */
+  html:not([data-theme="light"]) .lang-dir__count,
+  html:not([data-theme="light"]) .docgrid__chip span { background: var(--bt-paper-2); }
+  html:not([data-theme="light"]) .bt .lang-card .lang-flags .flag { border-color: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .bt .lang-card .flagstack img { background: var(--bt-surface-2); box-shadow: 0 0 0 3px var(--bt-surface-2), 0 0 0 4px rgba(0, 0, 0, .3), 0 5px 12px rgba(0, 0, 0, .35); }
+  html:not([data-theme="light"]) .ip-flags img,
+  html:not([data-theme="light"]) .flagstack img,
+  html:not([data-theme="light"]) .bt .lang-drop__flags img,
+  html:not([data-theme="light"]) .about-art__face { border-color: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .flag--text { background: var(--bt-accent-50); }
+  html:not([data-theme="light"]) .bt .near-grid--interp .near-grid__wide ul a { background: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .bt .near-grid--interp .near-grid__wide ul a:hover { background: var(--bt-accent-50); }
+  html:not([data-theme="light"])[data-pv="a"] .bt .ip-personas > li.ip-card > .ip-card__icon,
+  html:not([data-theme="light"])[data-pv="a"] .bt .ip-personas > li.ip-card > h3,
+  html:not([data-theme="light"])[data-pv="a"] .bt .ip-personas > li.ip-card > .ip-persona__tag,
+  html:not([data-theme="light"])[data-pv="b"] .bt .ip-personas > li.ip-card > .ip-persona__tag { background: var(--bt-accent-50); }
+  html:not([data-theme="light"])[data-pv="a"] .bt .ip-personas > li.ip-card > .ip-card__icon svg { background: var(--bt-surface); }
+  html:not([data-theme="light"])[data-pv="b"] .bt .ip-personas > li.ip-card > a.ip-persona__link { background: #3A2416; }
+  html:not([data-theme="light"])[data-pv="b"] .bt .ip-personas > li.ip-card > a.ip-persona__link:hover { background: #4A2C14; }
+
+  /* ---------- Timelines, steps, process map (rings match the band behind) ---------- */
+  html:not([data-theme="light"]) .timeline__n,
+  html:not([data-theme="light"]) .mo-tl__node,
+  html:not([data-theme="light"]) .pmap__node,
+  html:not([data-theme="light"]) .pmap__cue span,
+  html:not([data-theme="light"]) .pmap__end span,
+  html:not([data-theme="light"]) .prose .bi-steps__n,
+  html:not([data-theme="light"]) .mo-dt__label,
+  html:not([data-theme="light"]) .mo-dt__card--end .mo-dt__icon { background: var(--bt-surface); }
+  html:not([data-theme="light"]) .sec:not(.sec--alt) .timeline__n,
+  html:not([data-theme="light"]) main.hub .sec--alt:has(.timeline) .timeline__n,
+  html:not([data-theme="light"]) main.ip-specialty .sections > section.sec:nth-of-type(odd) .timeline__n,
+  html:not([data-theme="light"]) .mo-tl__node { box-shadow: 0 0 0 6px var(--bt-white); }
+  html:not([data-theme="light"]) .sec--alt .timeline__n,
+  html:not([data-theme="light"]) main.ip-specialty .sections > section.sec:nth-of-type(even) .timeline__n { box-shadow: 0 0 0 6px #122335; }
+  html:not([data-theme="light"]) .steps li::before { box-shadow: 0 0 0 5px var(--bt-white); }
+  html:not([data-theme="light"]) .section--tint .steps li::before { box-shadow: 0 0 0 5px #122335; }
+  html:not([data-theme="light"]) .bt .steps-card .steps li::before { box-shadow: 0 0 0 5px var(--bt-surface); }
+  html:not([data-theme="light"]) .steps li:hover { background: rgba(255, 255, 255, .04); }
+  html:not([data-theme="light"]) .pmap__node { box-shadow: 0 0 0 7px #122335, 0 8px 18px rgba(0, 0, 0, .35); }
+  html:not([data-theme="light"]) .pmap--armed .pmap__item.is-in .pmap__node { background: var(--bt-accent-50); }
+  html:not([data-theme="light"]) .pmap__cue span,
+  html:not([data-theme="light"]) .pmap__end span { color: var(--bt-accent-ink); border-color: var(--bt-accent); }
+  html:not([data-theme="light"]) .mo-tl__seg::before,
+  html:not([data-theme="light"]) .prose .bi-steps ol::before { border-color: #2B5260; }
+  html:not([data-theme="light"]) .mo-dt__q,
+  html:not([data-theme="light"]) .mo-dt__card--end { border-color: var(--bt-line-teal); }
+  html:not([data-theme="light"]) .mo-dt__branch { border-left-color: #2B5260; }
+  /* Fills drawn in the (now lighter) small-text teal: dark text instead of white. */
+  html:not([data-theme="light"]) .mo-dt__branch--yes .mo-dt__label,
+  html:not([data-theme="light"]) .mo-dt__qi,
+  html:not([data-theme="light"]) .pron[data-playing] { color: var(--bt-white); }
+  html:not([data-theme="light"]) .mo-rates__card { background: var(--bt-surface); border-color: var(--bt-line); }
+  html:not([data-theme="light"]) .mo-rates__meter { background: var(--bt-accent-50); }
+
+  /* ---------- Forms ---------- */
+  html:not([data-theme="light"]) .field input,
+  html:not([data-theme="light"]) .field textarea,
+  html:not([data-theme="light"]) .field select { background-color: var(--bt-surface-2); border-color: var(--bt-line-2); }
+  html:not([data-theme="light"]) .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23E6EAF0' stroke-width='1.8'/%3E%3C/svg%3E"); }
+  html:not([data-theme="light"]) .field input::placeholder,
+  html:not([data-theme="light"]) .field textarea::placeholder { color: var(--bt-text-soft); }
+  html:not([data-theme="light"]) .field--file input[type="file"] { background: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .field--file input[type="file"]::file-selector-button { background: var(--bt-surface); color: var(--bt-navy); border-color: var(--bt-line-2); }
+  html:not([data-theme="light"]) .field__error { color: #FF8A7A; }
+  html:not([data-theme="light"]) .blog-tools input,
+  html:not([data-theme="light"]) .bt .blog-tools input { background-color: var(--bt-surface-2); color: var(--bt-text); border-color: var(--bt-line-2); }
+
+  /* ---------- Home ---------- */
+  /* Logo strip: dark-on-transparent client logos sit on a soft light plate. */
+  html:not([data-theme="light"]) .bt .clients { background: var(--bt-white); }
+  html:not([data-theme="light"]) .bt .clients__group li { padding: 10px 18px; border-radius: 14px; background: #EEF2F5; }
+  /* Hero marker: a solid orange underline reads better on ink than a tinted block. */
+  html:not([data-theme="light"]) .bt .hero .underline-accent { background-image: linear-gradient(transparent 84%, #F67618 84%, #F67618 94%, transparent 94%); }
+  /* Inline illustrations (HeroArt, ServiceArt, InterpretingArt): the pale teal backdrop
+     turns deep teal; navy strokes drawn on the backdrop turn light. Paper shapes and
+     the words inside them keep their light-theme colours. */
+  html:not([data-theme="light"]) .svc-art stop:first-child,
+  html:not([data-theme="light"]) .interp-art stop:first-child,
+  html:not([data-theme="light"]) .hero-art #ha-bg stop:first-child { stop-color: #173543; }
+  html:not([data-theme="light"]) .svc-art stop:last-child,
+  html:not([data-theme="light"]) .interp-art stop:last-child,
+  html:not([data-theme="light"]) .hero-art #ha-bg stop:last-child { stop-color: #1F4553; }
+  html:not([data-theme="light"]) .svc-art .sa-trend,
+  html:not([data-theme="light"]) .svc-art .sa-float--b [stroke="#2F3143"],
+  html:not([data-theme="light"]) .interp-art g[stroke="#2F3143"],
+  html:not([data-theme="light"]) .hero-art > circle[stroke="#2F3143"] { stroke: #E6EAF0; }
+  html:not([data-theme="light"]) .interp-art circle[fill="#2F3143"] { fill: #E6EAF0; }
+  html:not([data-theme="light"]) .svc-art .sa-float--b circle { fill: rgba(255, 255, 255, .12); }
+  /* Page-hero art (PairHeroArt, TopicArt): pale blobs behind the paper documents. */
+  html:not([data-theme="light"]) .pair-art__blob--a { fill: #15303A; }
+  html:not([data-theme="light"]) .pair-art__blob--b { fill: #1A2C3C; }
+  /* Service cards with white-background illustrations: a touch dimmer on ink. */
+  html:not([data-theme="light"]) .grid--services4 .card__media img { filter: brightness(.9); }
+  html:not([data-theme="light"]) .bt .section--slate,
+  html:not([data-theme="light"]) .bt .section--navy { color: var(--bt-text); }
+  html:not([data-theme="light"]) .bt main.home .section--slate,
+  html:not([data-theme="light"]) .bt main.home .section--navy { background: linear-gradient(#112030 0%, #132538 100%) !important; border-top-color: var(--bt-line-teal); border-bottom-color: var(--bt-line-teal); }
+  html:not([data-theme="light"]) .bt main.home .section--tint:has(.grid--specialties) { background: url("/patterns/dots-dark.svg") var(--bt-white) !important; background-size: 128px 128px !important; }
+  html:not([data-theme="light"]) .bt .section--services .svc-group__art,
+  html:not([data-theme="light"]) .bt .svc-group__art { background: #13283A; }
+  html:not([data-theme="light"]) .bt .section--services .svc-cta { background: linear-gradient(160deg, #163240 0%, #12293A 100%); }
+  html:not([data-theme="light"]) .bt .section--services .svc-chips li,
+  html:not([data-theme="light"]) .bt .svc-chips li,
+  html:not([data-theme="light"]) .bt .svc-group__body .svc-chips li:has(> a) { background: var(--bt-accent-50); }
+  html:not([data-theme="light"]) .bt .section--navy .reviews__dots button { background: rgba(241, 244, 248, .25); }
+  html:not([data-theme="light"]) .bt .section--navy .reviews__dots button.is-active { background: var(--bt-accent); }
+  html:not([data-theme="light"]) .bt .section--navy .reviews__controls > button { border-color: rgba(241, 244, 248, .4); }
+  html:not([data-theme="light"]) .bt .section--navy .reviews__controls > button:hover { background: rgba(241, 244, 248, .1); }
+  html:not([data-theme="light"]) .bt .section--slate .bt-btn--secondary:hover,
+  html:not([data-theme="light"]) .bt .section--navy .bt-btn--secondary:hover,
+  html:not([data-theme="light"]) .bt main.home .section--slate .bt-btn--secondary:hover,
+  html:not([data-theme="light"]) .bt main.home .section--navy .bt-btn--secondary:hover { background: var(--bt-navy); color: var(--bt-white); }
+  html:not([data-theme="light"]) .card--specialty:hover .spec-icon { stroke: #fff; }
+  html:not([data-theme="light"]) .spec-icon .si-bub { fill: var(--bt-white); }
+  html:not([data-theme="light"]) .fposts__dots i { background: #2B4655; }
+  html:not([data-theme="light"]) .bt main.home .fposts .fposts__btn,
+  html:not([data-theme="light"]) .bt .fposts .fposts__btn { background: var(--bt-surface); border-color: rgba(124, 195, 202, .5); }
+  html:not([data-theme="light"]) .bt main.home .fposts .fposts__btn:hover,
+  html:not([data-theme="light"]) .bt .fposts .fposts__btn:hover { background: var(--bt-accent-50); color: var(--bt-accent-ink); border-color: var(--bt-accent-ink); }
+  html:not([data-theme="light"]) .bt main.home .card__more { color: #FF8F3F; }
+  html:not([data-theme="light"]) .bt .office__facts svg { background: var(--bt-accent-50); color: var(--bt-accent-ink); }
+
+  /* ---------- Blog: post body, tables, inserts ---------- */
+  html:not([data-theme="light"]) .blog-post .prose,
+  html:not([data-theme="light"]) .blog-post .prose p,
+  html:not([data-theme="light"]) .blog-post .prose li,
+  html:not([data-theme="light"]) .prose table.post-table { color: var(--bt-text-mid); }
+  html:not([data-theme="light"]) .bt .post-toc a { color: var(--bt-text-mid); }
+  html:not([data-theme="light"]) .prose .post-table tbody tr:nth-child(even) td,
+  html:not([data-theme="light"]) .bt .sec__in .post-table tbody tr:nth-child(even) td { background: #182540; }
+  html:not([data-theme="light"]) .prose p.logo-chip,
+  html:not([data-theme="light"]) .sec__in p.logo-chip { background: #F4F6F8; }
+  html:not([data-theme="light"]) .bi-bars__bar { fill: #3C7480; }
+  html:not([data-theme="light"]) .bi-sweep__track { fill: #1F3A45; }
+  html:not([data-theme="light"]) .prose .bi-compare__col--b { background: #15303A; border-color: var(--bt-line-teal); }
+  html:not([data-theme="light"]) .bi-compare__vs circle { fill: var(--bt-surface); }
+  html:not([data-theme="light"]) .bt .blog-post .prose ul.stat-row li strong { color: #FF8F3F; }
+  /* ValenciaMove banner: warm sand turns into a warm dark card. */
+  html:not([data-theme="light"]) .vm-banner { background: radial-gradient(360px 200px at 100% 0%, rgba(232, 156, 44, .14), transparent 70%), #221B12; border-color: #43361F; color: #F2E6D3; }
+  html:not([data-theme="light"]) .vm-banner__eyebrow { background: #3A2C15; color: #F0B65A; }
+  html:not([data-theme="light"]) .vm-banner__title,
+  html:not([data-theme="light"]) .bt .vm-banner p.vm-banner__title { color: #F7EBD8; }
+  html:not([data-theme="light"]) .vm-banner__text,
+  html:not([data-theme="light"]) .bt .vm-banner p.vm-banner__text { color: #D9C9B0; }
+  html:not([data-theme="light"]) .bt .vm-banner .vm-banner__brand { border-bottom-color: #43361F; }
+  /* Its logo has dark letters: a sand plate keeps it legible. */
+  html:not([data-theme="light"]) .vm-banner__brand img { padding: 6px 10px; border-radius: 10px; background: #FDF7EB; }
+  @media (max-width: 640px) {
+    html:not([data-theme="light"]) .prose .post-table tr,
+  html:not([data-theme="light"]) .bt .sec__in .post-table tr { background: var(--bt-surface); }
+  }
+
+  /* ---------- Read-more toggles, pronunciation, misc ---------- */
+  html:not([data-theme="light"]) .bt .sec__more > summary::after,
+  html:not([data-theme="light"]) .bt .timeline__more > summary::after,
+  html:not([data-theme="light"]) .bt .feature__more > summary::after { background: #3A2416 none; color: #FF9A52; border-color: rgba(246, 118, 24, .5); }
+  html:not([data-theme="light"]) .pron { background: var(--bt-surface); }
+  html:not([data-theme="light"]) .pron:hover { background: var(--bt-accent-50); }
+  html:not([data-theme="light"]) .sitemap small { color: var(--bt-text-soft); }
+  /* Funding notice logos (ministry, IDAE, IVACE) are dark on transparent. */
+  html:not([data-theme="light"]) .funding img { padding: 6px 10px; border-radius: 10px; background: #EEF2F5; }
+  html:not([data-theme="light"]) .bt .pg-illus img,
+  html:not([data-theme="light"]) .bt .sec__in .pg-illus img { background: #DCE8EA; }
+  /* Legacy diagrams (WordPress "visual-selection" PNGs) are dark lines and text
+     on a transparent background: on a light plate they stay readable. */
+  html:not([data-theme="light"]) .prose img[src*=".png"],
+  html:not([data-theme="light"]) .bt .sec__in img[src*=".png"] { box-sizing: border-box; padding: 10px; border-radius: 12px; background: #F3F5F8; }
+
+  /* ---------- Cookie banner, floating tools ---------- */
+  html:not([data-theme="light"]) .cc { background: var(--bt-surface); border-color: var(--bt-line-2); box-shadow: 0 18px 44px rgba(0, 0, 0, .5); }
+  html:not([data-theme="light"]) .cc__btn { background: var(--bt-navy); border-color: var(--bt-navy); color: var(--bt-white); }
+  html:not([data-theme="light"]) .cc__btn:hover,
+  html:not([data-theme="light"]) .cc__btn:focus-visible { background: transparent; color: var(--bt-navy); }
+  html:not([data-theme="light"]) .ftools__nav { background: rgba(22, 34, 58, .94); border-color: var(--bt-line-2); box-shadow: 0 10px 28px rgba(0, 0, 0, .4); }
+
+  /* ---------- Footer (dark in both themes: a deeper ink, no light fade on top) ---------- */
+  html:not([data-theme="light"]) .bt .bt-footer { background: var(--bt-navy-deep); padding-top: 72px; border-top: 1px solid var(--bt-line); }
+  @media (max-width: 640px) { html:not([data-theme="light"]) .bt .bt-footer { padding-top: 56px; } }
+  /* The rating card stays white with dark text, like the Chamber badge. */
+  html:not([data-theme="light"]) .bt .bt-footer__rating,
+  html:not([data-theme="light"]) .bt .bt-footer__rating:hover { color: #2F3143; }
+  html:not([data-theme="light"]) .bt .bt-footer__g { background: #F4F6F8; }
+
+  /* ---------- 404 ---------- */
+  html:not([data-theme="light"]) .nf { background: radial-gradient(900px 520px at 18% 8%, rgba(95, 169, 177, .22), transparent 60%), radial-gradient(800px 600px at 90% 100%, rgba(95, 169, 177, .12), transparent 60%), linear-gradient(160deg, #18233A 0%, #0E1726 60%, #0A1220 100%); }
+  html:not([data-theme="light"]) .bt a.nf__ghost:hover { color: #2F3143; }
+  html:not([data-theme="light"]) body:has(.nf) .bt-footer { background: var(--bt-navy-deep); }
+
+  /* ---------- Scrollbar ---------- */
+  html:not([data-theme="light"]) { scrollbar-color: var(--bt-accent) #0A1220; }
+  @supports selector(::-webkit-scrollbar) {
+    html:not([data-theme="light"]) ::-webkit-scrollbar-track,
+  html:not([data-theme="light"]) ::-webkit-scrollbar-corner { background: #0A1220; }
+    html:not([data-theme="light"]) ::-webkit-scrollbar-thumb { border-color: #0A1220; }
+  }
+  /* Header logo: white letters. */
+  html:not([data-theme="light"]) .bt-logo--light { display: none; }
+  html:not([data-theme="light"]) .bt-logo--dark { display: inline-block; }
+}
 
 /*  ---------- Forced dark (theme switch), same rules as above ----------  */
 

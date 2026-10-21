@@ -30,5 +30,5 @@ export default async function Page({ params }) {
   const { slug } = await params;
   const page = getPageBySlug(slug);
   if (!page) notFound();
-  return <ScrapedPage page={page} />;
+  return <ScrapedPage page={page} slug={slug} />;
 }
