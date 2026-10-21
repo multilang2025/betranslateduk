@@ -76,3 +76,36 @@
 .bt-drawer__locales { display: flex; justify-content: center; gap: 6px; margin-top: 4px; }
 .bt a.bt-drawer__locale { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--bt-line-2); font: 500 13px var(--font-ui); color: var(--bt-text-mid); }
 .bt a.bt-drawer__locale.is-active { border-color: var(--bt-accent); background: var(--bt-accent-50); color: var(--bt-accent-ink); font-weight: 700; }
+
+/* Post cards: no cut excerpts, rows aligned by subgrid; back-to-blog button (from ES) */
+/* Blog cards: never cut the excerpt; slightly smaller text instead. */
+.bt .post-grid .post .post__body p, .bt .featured__body p, .bt .fposts__set .post p { display: block; -webkit-line-clamp: unset; overflow: visible; text-wrap: wrap; }
+.bt .post-grid .post .post__body p { font-size: 13.5px; line-height: 1.55; min-height: 0; }
+.bt .post-grid--related .post .post__body p { font-size: 13px; }
+
+/* Blog cards line up row by row (subgrid): image, tag + date, title and
+   excerpt start at the same height in every card of a row. Date always under
+   the tag so a long category never pushes the title down on its own. */
+@supports (grid-template-rows: subgrid) {
+  .bt .post-grid { grid-auto-rows: auto; }
+  .bt .post-grid > .post { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
+  .bt .post-grid > .post > .post__body { display: contents; }
+  .bt .post-grid > .post .post__top { padding: 18px 22px 0; }
+  .bt .post-grid > .post h3 { padding: 10px 22px 0; margin: 0; }
+  .bt .post-grid > .post .post__body p { padding: 10px 22px 22px; margin: 0; }
+  .bt .post-grid--related > .post .post__top { padding: 14px 16px 0; }
+  .bt .post-grid--related > .post h3 { padding: 8px 16px 0; }
+  .bt .post-grid--related > .post .post__body p { padding: 8px 16px 16px; }
+}
+.bt .post-grid .post__top { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; }
+/* "Volver al blog": a proper secondary button with room above it. */
+.bt .related-posts__all { margin: 32px 0 0; }
+.bt .related-posts__all a.card__more { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; background: #fff; border: 1px solid var(--bt-line-2); border-radius: var(--r-pill); box-shadow: var(--shadow-xs); color: var(--bt-navy); font: 600 14.5px var(--font-ui); text-decoration: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.bt .related-posts__all a.card__more:hover { border-color: var(--bt-accent); box-shadow: var(--shadow-sm); }
+.post-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.post-grid .post h3 { font-size: 1.12rem; }
+@media (max-width: 1100px) { .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .post-grid { grid-template-columns: minmax(0, 1fr); } }
+.post-grid .post { height: 100%; }
+.post-grid .post h3 { overflow-wrap: anywhere; }
+.post-grid .post p { min-height: calc(4 * 1.55em); line-height: 1.55; }
