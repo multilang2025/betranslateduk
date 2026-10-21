@@ -1198,7 +1198,7 @@
         {
           "@type": "Service",
           "name": "Professional German e-commerce translation services | German Translators",
-          "description": "German e-commerce translation services, such as product descriptions, website localization, marketing materials, customer reviews, etc.",
+          "description": "German e-commerce translation services, such as product descriptions, website localisation, marketing materials, customer reviews, etc.",
           "offers": {
             "@type": "Offer",
             "availability": "InStock"
