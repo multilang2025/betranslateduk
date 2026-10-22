@@ -1,32 +1,5 @@
 [
   {
-    "name": "Tony",
-    "role": "Professional French to English translator",
-    "photo": "/images/wp-content/uploads/2021/09/tony.jpg",
-    "bio": "Tony has been working as a full-time French-English translator for 10 years. He actually got into this profession when he moved to the French countryside. He specialises in various fields, ranging from the technical to the commercial sector, particularly specialising in the property market and tourism industry.",
-    "bioSource": "/industry/technical/\r",
-    "bioHtml": "Tony has been working as a full-time French-English translator for 10 years. He actually got into this profession when he moved to the French countryside. He specialises in various fields, ranging from the technical to the <a href=\"/industry/business/\">commercial sector</a>, particularly specialising in the <a href=\"/blog/property-documentation-translation/\">property market</a> and <a href=\"/industry/tourism/\">tourism industry</a>.",
-    "listedOnTranslatorsPage": true
-  },
-  {
-    "name": "Nancy",
-    "role": "French to English translator specialising in aeronautics",
-    "photo": "/images/wp-content/uploads/2014/07/nancy-150x150.jpg",
-    "bio": "Nancy brings her experience and attention to detail to BeTranslated’s clients by offering translations between French and English, as well as proofreading, editing, and writing services. She is also the representative of BeTranslated in the United States.",
-    "bioSource": "/industry/technical/\r",
-    "bioHtml": "Nancy brings her experience and attention to detail to BeTranslated’s clients by offering <a href=\"/languages/english-translation-services/\">translations between French and English, as well as proofreading, editing, and writing services</a>. She is also the representative of BeTranslated in the United States.",
-    "listedOnTranslatorsPage": true
-  },
-  {
-    "name": "Lola",
-    "role": "English to French copywriter and translator",
-    "photo": "/images/wp-content/uploads/2019/02/lola-french-marketing-translator-150x150.jpg",
-    "bio": "A graduate in translation from the University of Liège in Belgium, Lola translates from Spanish into French, as well as from English into French, in a wide range of fields. Her skills are highly appreciated by clients seeking a high editorial level in the tourism and travel sector. She is also a true master in the art of SEO writing, an essential skill online.",
-    "bioSource": "/languages/french-translation-services/\r",
-    "bioHtml": "A graduate in translation from the University of Liège in Belgium, Lola <a href=\"/languages/spanish-translation-services/\">translates from Spanish</a> into French, as well as from English into French, in a wide range of fields. Her skills are highly appreciated by clients seeking a high editorial level in the tourism and <a href=\"/industry/marketing/travel/\">travel sector</a>. She is also a true master in the art of <a href=\"/translation-services/website-translation/\">SEO</a> writing, <a href=\"/blog/seo-translation/\">an essential skill online</a>.",
-    "listedOnTranslatorsPage": true
-  },
-  {
     "name": "Kerry",
     "role": "French to English translator in the IT field",
     "photo": "/images/wp-content/uploads/2019/07/kerry-traducteur-professionnel-fran%25C3%25A7ais-anglais-4.jpg",
@@ -42,15 +15,6 @@
     "bio": "Originally from the south of France, Frédéric has dual French and Argentine citizenship. After studying industrial engineering, he worked for 10 years in various countries as a systems engineer, combining his professional qualifications with his taste for travel. Frédéric translates between English and Spanish and specialises in the fields technology, computers and tourism.",
     "bioSource": "/industry/technical/\r",
     "bioHtml": "Originally from the south of France, Frédéric has dual French and Argentine citizenship. After studying industrial engineering, he worked for 10 years in various countries as a systems engineer, combining his professional qualifications with his taste for travel. Frédéric translates between English and Spanish and specialises in the fields <a href=\"/industry/it-telecom/\">technology, computers</a> and tourism.",
-    "listedOnTranslatorsPage": true
-  },
-  {
-    "name": "Paul",
-    "role": "Technical and scientific translator",
-    "photo": "/images/wp-content/uploads/2017/11/paul-traducteur-technique.jpg",
-    "bio": "Paul specialises in technical and scientific translation. Curious by nature, his extensive area of knowledge has brought him many long-term clients. Perfect bilingual in English and French, he also speaks Spanish and Dutch. Organised and rigorous, Paul has good general knowledge, and is specialised in several fields, notably information technology.",
-    "bioSource": "/industry/technical/\r",
-    "bioHtml": "Paul specialises in technical and scientific translation. Curious by nature, his extensive area of knowledge has brought him many long-term clients. Perfect bilingual in English and French, he also speaks <a href=\"/languages/spanish-translation-services/\">Spanish</a> and <a href=\"/languages/dutch-translation-services/\">Dutch</a>. Organised and rigorous, Paul has good general knowledge, and is specialised in several fields, notably <a href=\"/languages/english-translation-services/\">information technology</a>.",
     "listedOnTranslatorsPage": true
   },
   {
