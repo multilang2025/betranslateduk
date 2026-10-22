@@ -5,6 +5,8 @@ import { listChildren, pathFromUrl, getAllPosts, relatedPosts, postDate, display
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
+import TranslatorsGrid from "./TranslatorsGrid";
+import TRANSLATORS from "@/data/translators.json";
 import CtaBand from "./CtaBand";
 import ClientsBand from "./ClientsBand";
 import ShareBar from "./ShareBar";
@@ -227,7 +229,9 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  const sections = fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore }));
+  let sections = fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore }));
+  // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
+  if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
@@ -276,7 +280,13 @@ export default function ScrapedPage({ page, slug = [] }) {
       {isHub ? <Children items={children} title={key === "translation-services" ? "Our translation services" : "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
-      <Sections html={sections} />
+      {key === "translators" && sections.includes("@@TRANSLATORS@@") ? (
+        <>
+          <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
+          <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
+          <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
+        </>
+      ) : <Sections html={sections} />}
 
       {!isHub ? <Children items={children} title={UI.en.related} /> : null}
 
