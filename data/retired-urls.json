@@ -1,6 +1,6 @@
 {
   "note": "Retired URLs and where they redirect (301). Add a row for every page or post you retire. Rows with managed 'manual' are added to next.config.mjs redirects; rows with managed 'leaf' come from lib/leafPages.js. Verify after launch with tools/check-retired-redirects.mjs.",
-  "site": "https://www.betranslated.co.uk",
+  "site": "https://betranslated.co.uk",
   "entries": [
     {
       "from": "/languages/korean-translation-services/korean-audiovisual/",

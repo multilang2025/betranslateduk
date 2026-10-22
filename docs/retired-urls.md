@@ -28,7 +28,7 @@ Add a row to `entries` in `data/retired-urls.json`:
 Check that every retired URL answers with a permanent redirect to the right place:
 
 ```bash
-node tools/check-retired-redirects.mjs https://www.betranslated.co.uk
+node tools/check-retired-redirects.mjs https://betranslated.co.uk
 ```
 
 ## Logged so far (22 October 2026)
