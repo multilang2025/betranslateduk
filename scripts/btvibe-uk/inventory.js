@@ -11,6 +11,7 @@ const gsc = JSON.parse(fs.readFileSync(path.join(__dirname, 'seo', 'gsc-top-quer
 const strip = (s) => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 const esc = (v) => { v = v == null ? '' : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
 const cols = ['url_path', 'source', 'type', 'http_status', 'indexable', 'title', 'title_chars', 'meta_description', 'description_chars', 'h1', 'h1_count', 'focus_keyword', 'canonical', 'word_count', 'internal_links_out', 'external_links_out', 'images', 'images_missing_alt', 'has_faq', 'gsc_top_query', 'gsc_impressions', 'gsc_clicks', 'gsc_avg_position'];
+const redirects = Object.fromEntries(JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'data', 'blog-redirects.json'), 'utf8')).map((r) => [r.source, r.destination]));
 const rows = [];
 const seen = new Set();
 for (const f of listJson()) {
@@ -25,7 +26,7 @@ for (const f of listJson()) {
   const q = (gsc[p] || [])[0] || {};
   const type = p === '/' ? 'home' : p.startsWith('/blog/') ? 'post' : p.split('/')[1];
   rows.push({
-    url_path: p, source: 'repo (sitemap)', type, http_status: 200, indexable: j.seoRobotsNoindex ? 'no' : 'yes',
+    url_path: p, source: redirects[p] ? 'redirect to ' + redirects[p] : 'repo (sitemap)', type, http_status: redirects[p] ? 301 : 200, indexable: redirects[p] || j.seoRobotsNoindex ? 'no' : 'yes',
     title: j.title, title_chars: (j.title || '').length, meta_description: j.metaDescription, description_chars: (j.metaDescription || '').length,
     h1: h1s[0] || '', h1_count: h1s.length, focus_keyword: j.focusKeyword || '', canonical: j.canonical || j.url.trim(),
     word_count: strip(h).split(' ').filter(Boolean).length,
@@ -56,4 +57,4 @@ if (crawl && fs.existsSync(crawl)) {
 rows.sort((a, b) => a.url_path.localeCompare(b.url_path));
 fs.mkdirSync(path.join(__dirname, '..', '..', 'data'), { recursive: true });
 fs.writeFileSync(path.join(__dirname, '..', '..', 'data', 'inventory.csv'), [cols.join(','), ...rows.map((r) => cols.map((c) => esc(r[c])).join(','))].join('\n') + '\n');
-console.log(`data/inventory.csv: ${rows.length} rows (${rows.filter((r) => r.source.startsWith('repo')).length} from the repo)`);
+console.log(`data/inventory.csv: ${rows.length} rows (${rows.filter((r) => r.source.startsWith('repo')).length} from the repo, ${rows.filter((r) => r.http_status === 301).length} redirects)`);

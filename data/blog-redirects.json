@@ -1,0 +1,127 @@
+[
+  {
+    "source": "/blog/hire-small-translation-agency/",
+    "destination": "/translation-agency/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/tremendous-value-multilingual-website/",
+    "destination": "/translation-services/website-translation/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/get-high-quality-translations/",
+    "destination": "/blog/differents-types-translation-service-providers/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/5-inspiring-freelance-jobs/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/get-started-remote-freelancer/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/professional-translator-translation-app/",
+    "destination": "/blog/professional-translation/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/how-succeed-freelancer-translation-business/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/multilingual-chatbots-shake-up-your-sales-strategy/",
+    "destination": "/blog/why-choose-betranslated-and-not-ai/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/tips-learn-new-language-abroad/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/what-is-betranslated/",
+    "destination": "/translation-agency/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/benefits-multilingual-people-for-companies/",
+    "destination": "/blog/lazy-monolingual-english-speakers/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/commercial-translation-professionals/",
+    "destination": "/industry/business/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/communication-agencies-translation/",
+    "destination": "/industry/marketing/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/specialised-healthcare-translation-services/",
+    "destination": "/industry/medical/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/boost-reach-video-subtitling/",
+    "destination": "/blog/movie-dubbing/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/zoom-interpreting/",
+    "destination": "/translation-services/remote-interpreting/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/dubbing-english-language-content/",
+    "destination": "/blog/movie-dubbing/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/trademark-translation-business-expansion/",
+    "destination": "/industry/legal/patents-and-trademarks-translation-services/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/translation-services-need-vpn/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/cultural-understanding-in-translation/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/betranslated-opens-its-doors-in-france/",
+    "destination": "/translation-agency/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/get-a-job-in-the-translation-industry/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/working-out-translation-rates/",
+    "destination": "/translation-agency/rates/",
+    "action": "merge"
+  },
+  {
+    "source": "/blog/immigration-can-drive-business-growth/",
+    "destination": "/blog/",
+    "action": "retire"
+  },
+  {
+    "source": "/blog/uk-visa-sponsorship-for-businesses/",
+    "destination": "/blog/",
+    "action": "retire"
+  }
+]

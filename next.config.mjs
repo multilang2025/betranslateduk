@@ -1,3 +1,8 @@
+import { readFileSync } from "node:fs";
+
+// Blog audit (22 October 2026): merged and retired posts, 301 to the target.
+const blogRedirects = JSON.parse(readFileSync(new URL("./data/blog-redirects.json", import.meta.url), "utf8")).map(({ source, destination }) => ({ source, destination, permanent: true }));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -20,6 +25,7 @@ const nextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      ...blogRedirects,
       {
         // The live site's /blog/page/N/ URLs are a non-canonical WP rewrite
         // artifact: they never 404 regardless of N, and their content is an

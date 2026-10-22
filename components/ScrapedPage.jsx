@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
 import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
-import { listChildren, pathFromUrl, getAllPosts, postDate, displayTitle } from "@/lib/content";
+import { listChildren, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
@@ -127,7 +127,7 @@ function BlogPostView({ data, slug }) {
   body = restoreBlocks(tocBody, ex.blocks);
   const publishDate = postDate(data);
   const img = data.og?.image; // already localized by lib/content.js at read time
-  const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 4);
+  const related = relatedPosts(slug, 4);
 
   return (
     <main className="blog-post">
@@ -174,14 +174,18 @@ function BlogPostView({ data, slug }) {
           <div className="container">
             <div className="section-head"><h2>{UI.en.relatedPosts}</h2></div>
             <div className="post-grid post-grid--related">
-              {related.map((c) => {
-                const t = displayTitle(c.data);
-                return (
-                  <a key={c.slug} href={`/blog/${c.slug}/`} className="post">
-                    <div className="post__body"><h3>{t}</h3><p>{c.data.metaDescription}</p></div>
-                  </a>
-                );
-              })}
+              {related.map((c) => (
+                <a key={c.href} href={c.href} className="post">
+                  <div className="post__media">
+                    {c.img ? <Image src={c.img} alt="" width={c.imgW} height={c.imgH} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 290px" /> : <span className="post__ph" aria-hidden="true">{c.title.charAt(0)}</span>}
+                  </div>
+                  <div className="post__body">
+                    <div className="post__top">{c.date ? <time dateTime={c.date} className="post__meta">{new Date(c.date).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}</time> : <span />}</div>
+                    <h3>{c.title}</h3>
+                    <p>{c.description}</p>
+                  </div>
+                </a>
+              ))}
             </div>
             <p className="related-posts__all"><a href={UI.en.blogHref} className="card__more">{UI.en.backToBlog}</a></p>
           </div>
