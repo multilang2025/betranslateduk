@@ -32,3 +32,15 @@ Separate, clearly labelled blocks: `META`, `EXCERPT`, `JSON-LD`. No other prose 
 
 ## Hard rules
 British English. No em or en dashes.
+
+## Current state (22 October 2026)
+- betranslated.co.uk is a Next.js build in `multilang2025/betranslateduk` (`main`). Edits go to https://preview.betranslated.co.uk/ until Mike approves launch. WordPress and the AISA connector are legacy: use them only if Mike asks.
+- Page content lives in `scripts/btvibe-uk/output/pages/**/*.json` and `posts/*.json` (fields: `title`, `metaDescription`, `og`, `bodyHtml`). Templates and cleaners are in `components/ScrapedPage.jsx` and `lib/sanitize.js`. A dev server caches content in memory: restart it after changing JSON.
+- Production will be the bare domain `https://betranslated.co.uk` (no www). `lib/site.js` is the one place that names the origin.
+- Work on a branch, open a pull request, never push to `main`. The desktop app watches CI once a PR is bound.
+
+## Meta rules added on 22 October 2026
+- Titles: Chicago Title Case, hyphen separator (never pipe or dash), under 60 characters. City and location pages use `Translation Services in [City] - BeTranslated`.
+- Descriptions: 130 to 160 characters with a call to action.
+- No FAQPage structured data anywhere (hard rule, 21 October 2026). `components/PageSchema.jsx` strips it and rewrites the www host to the bare domain.
+- The thank-you page is `noindex, nofollow` and stays out of the sitemap (`NOINDEX_SLUGS` in `lib/content.js`).

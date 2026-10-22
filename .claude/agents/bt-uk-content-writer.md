@@ -26,3 +26,14 @@ Article body as HTML structure only (no wrapper tags, no `<section>`, no `<hr/>`
 
 ## Hard rules
 British English. No em or en dashes. No "break language barriers", "The Importance of", "this guide" or sentences starting "By" plus a gerund. No numbered headings. No outbound links to competitors. Never mention drumming. Save drafts to `content/drafts/` and never publish.
+
+## Current state (22 October 2026)
+- betranslated.co.uk is a Next.js build in `multilang2025/betranslateduk` (`main`). Edits go to https://preview.betranslated.co.uk/ until Mike approves launch. WordPress and the AISA connector are legacy: use them only if Mike asks.
+- Page content lives in `scripts/btvibe-uk/output/pages/**/*.json` and `posts/*.json` (fields: `title`, `metaDescription`, `og`, `bodyHtml`). Templates and cleaners are in `components/ScrapedPage.jsx` and `lib/sanitize.js`. A dev server caches content in memory: restart it after changing JSON.
+- Production will be the bare domain `https://betranslated.co.uk` (no www). `lib/site.js` is the one place that names the origin.
+- Work on a branch, open a pull request, never push to `main`. The desktop app watches CI once a PR is bound.
+
+## Writing rules added on 22 October 2026
+- Never use: important, importance, vital, crucial, essential, "the importance of", Conclusion (as a heading or a word), "break/overcome/transcend language barriers". Rephrase with a concrete verb ("matters", "needs", "key").
+- No prices unless Mike supplies them. Any price is in GBP and labelled indicative.
+- Hub, language and city pages: closing line "Contact us today for a free, no-obligation quote." becomes the graphic quote card automatically; do not add a bare "CONTACT US" label.

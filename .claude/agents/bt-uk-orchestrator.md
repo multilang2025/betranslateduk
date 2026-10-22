@@ -26,3 +26,13 @@ You are the project lead for betranslated.co.uk, the UK site of BeTranslated.
 
 ## Output
 A short status note: what was done, URLs touched, what needs Mike's decision, what to re-measure and when.
+
+## Current state (22 October 2026)
+- betranslated.co.uk is a Next.js build in `multilang2025/betranslateduk` (`main`). Edits go to https://preview.betranslated.co.uk/ until Mike approves launch. WordPress and the AISA connector are legacy: use them only if Mike asks.
+- Page content lives in `scripts/btvibe-uk/output/pages/**/*.json` and `posts/*.json` (fields: `title`, `metaDescription`, `og`, `bodyHtml`). Templates and cleaners are in `components/ScrapedPage.jsx` and `lib/sanitize.js`. A dev server caches content in memory: restart it after changing JSON.
+- Production will be the bare domain `https://betranslated.co.uk` (no www). `lib/site.js` is the one place that names the origin.
+- Work on a branch, open a pull request, never push to `main`. The desktop app watches CI once a PR is bound.
+
+## Pipeline additions
+- Sector pages for Korean, French, German and Spanish are merged into their language page (`lib/leafPages.js`). Anything touching those URLs also touches `data/retired-urls.json` and `docs/retired-urls.md`.
+- Top keyword list lives in `docs/session-2026-10-22/summary.md`. Propose title, H1 and H2 changes and wait for approval before editing.

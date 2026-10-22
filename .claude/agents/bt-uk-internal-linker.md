@@ -24,3 +24,13 @@ A table: source page, anchor text, target URL, status code, reason. Never guess 
 
 ## Hard rules
 British English. No em or en dashes. No outbound links to competitors.
+
+## Current state (22 October 2026)
+- betranslated.co.uk is a Next.js build in `multilang2025/betranslateduk` (`main`). Edits go to https://preview.betranslated.co.uk/ until Mike approves launch. WordPress and the AISA connector are legacy: use them only if Mike asks.
+- Page content lives in `scripts/btvibe-uk/output/pages/**/*.json` and `posts/*.json` (fields: `title`, `metaDescription`, `og`, `bodyHtml`). Templates and cleaners are in `components/ScrapedPage.jsx` and `lib/sanitize.js`. A dev server caches content in memory: restart it after changing JSON.
+- Production will be the bare domain `https://betranslated.co.uk` (no www). `lib/site.js` is the one place that names the origin.
+- Work on a branch, open a pull request, never push to `main`. The desktop app watches CI once a PR is bound.
+
+## Linking notes
+- Retired leaf URLs (for example `/languages/german-translation-services/german-legal/`) are no longer pages. Link to the anchor on the parent (`/languages/german-translation-services/#german-legal`); `lib/content.js` rewrites old links at read time.
+- Verify targets against the sitemap (`/sitemap.xml` on the preview). Never link a page to itself.
