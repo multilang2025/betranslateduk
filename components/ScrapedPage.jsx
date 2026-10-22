@@ -27,14 +27,14 @@ const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
 function childLabel(title = "") {
-  return title.split(/\s[·|–]\s|:\s/)[0]
+  return title.split(/\s[-·|–]\s|:\s/)[0]
     .replace(/^(translation services for|translation services|translation|services)\s+(in |for |of )?/i, "")
     .trim() || title;
 }
 
 // Cards keep the full page name ("Translation Services in England"); pills use the short form.
 function cardLabel(title = "") {
-  return title.split(/\s[·|–]\s|:\s/)[0].trim() || title;
+  return title.split(/\s[-·|–]\s|:\s/)[0].trim() || title;
 }
 
 function Children({ items, title }) {
