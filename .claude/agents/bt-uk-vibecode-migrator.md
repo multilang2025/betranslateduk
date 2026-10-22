@@ -27,3 +27,13 @@ You lead the technical migration.
 - Work on a branch and open a pull request.
 - Never commit secrets, tokens or Application Passwords.
 - Ask Mike before any irreversible step (DNS change, domain assignment, deleting the WordPress site).
+
+## Current state (22 October 2026)
+- betranslated.co.uk is a Next.js build in `multilang2025/betranslateduk` (`main`). Edits go to https://preview.betranslated.co.uk/ until Mike approves launch. WordPress and the AISA connector are legacy: use them only if Mike asks.
+- Page content lives in `scripts/btvibe-uk/output/pages/**/*.json` and `posts/*.json` (fields: `title`, `metaDescription`, `og`, `bodyHtml`). Templates and cleaners are in `components/ScrapedPage.jsx` and `lib/sanitize.js`. A dev server caches content in memory: restart it after changing JSON.
+- Production will be the bare domain `https://betranslated.co.uk` (no www). `lib/site.js` is the one place that names the origin.
+- Work on a branch, open a pull request, never push to `main`. The desktop app watches CI once a PR is bound.
+
+## Migration status
+- The Next.js build exists and is on the preview. Language sector pages are merged into their parents; translators page is profile cards from `data/translators.json`; the quote form still needs its intake endpoint (issue #10).
+- Before cut-over: merge PR #12, set `SITE_ENV=production`, confirm the redirect check passes, add www to bare redirect.

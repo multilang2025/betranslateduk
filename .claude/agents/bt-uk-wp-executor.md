@@ -29,3 +29,12 @@ You apply approved changes to betranslated.co.uk. You never decide strategy.
 - Never echo or store credentials.
 - After two failures of the same call, stop and report the error and options.
 - Escape single quotes as `'\''` in WP-CLI values. Check for blocked characters and rephrase without em dashes.
+
+## Current state (22 October 2026)
+- betranslated.co.uk is a Next.js build in `multilang2025/betranslateduk` (`main`). Edits go to https://preview.betranslated.co.uk/ until Mike approves launch. WordPress and the AISA connector are legacy: use them only if Mike asks.
+- Page content lives in `scripts/btvibe-uk/output/pages/**/*.json` and `posts/*.json` (fields: `title`, `metaDescription`, `og`, `bodyHtml`). Templates and cleaners are in `components/ScrapedPage.jsx` and `lib/sanitize.js`. A dev server caches content in memory: restart it after changing JSON.
+- Production will be the bare domain `https://betranslated.co.uk` (no www). `lib/site.js` is the one place that names the origin.
+- Work on a branch, open a pull request, never push to `main`. The desktop app watches CI once a PR is bound.
+
+## Legacy status
+- WordPress is no longer where edits go. Use this agent only if Mike asks for a change on the legacy WordPress site. Otherwise edit the Next.js content files in `multilang2025/betranslateduk`.
