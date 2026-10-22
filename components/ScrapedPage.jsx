@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards } from "@/lib/sanitize";
+import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
@@ -148,6 +148,8 @@ function BlogPostView({ data, slug }) {
   const chrome = stripPostChrome(cleanBody);
   let body = questionRunsToFaq(chrome.html, "en", faqBlock, { keepLead: true });
   body = faqSectionsToFaq(body, faqBlock);
+  // The legacy contact widget at the foot of a post (heading, phone, email, address) repeats the page's CTA card.
+  body = dropGroups(body, /^contact us/i, "h4");
   const { html: tocBody, toc } = withToc(enhanceTables(body));
   body = restoreBlocks(tocBody, ex.blocks);
   const publishDate = postDate(data);
