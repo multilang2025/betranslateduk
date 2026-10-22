@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getPageBySlug, getAllPageSlugs } from '@/lib/content';
+import { getPageBySlug, getAllPageSlugs, NOINDEX_SLUGS } from '@/lib/content';
 import ScrapedPage from '@/components/ScrapedPage';
 
 export async function generateStaticParams() {
@@ -16,6 +16,7 @@ export async function generateMetadata({ params }) {
   return {
     title: page.title,
     description: page.metaDescription,
+    ...(NOINDEX_SLUGS.has(slug.join('/')) ? { robots: { index: false, follow: false } } : {}),
     alternates: page.canonical ? { canonical: '/' + slug.join('/') + '/' } : undefined,
     openGraph: {
       title: page.og?.title || page.title,
