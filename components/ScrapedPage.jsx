@@ -30,6 +30,11 @@ function childLabel(title = "") {
     .trim() || title;
 }
 
+// Cards keep the full page name ("Translation Services in England"); pills use the short form.
+function cardLabel(title = "") {
+  return title.split(/\s[·|–]\s|:\s/)[0].trim() || title;
+}
+
 function Children({ items, title }) {
   if (items.length < 2) return null;
   return (
@@ -44,7 +49,7 @@ function Children({ items, title }) {
           <div className="grid grid--services">
             {items.map((c) => (
               <a key={c.href} href={c.href} className="card card--link">
-                <h3>{childLabel(c.title)}</h3>
+                <h3>{cardLabel(c.title)}</h3>
                 {c.description ? <p>{c.description}</p> : null}
                 <span className="card__more">{UI.en.readMore}</span>
               </a>
@@ -213,6 +218,14 @@ export default function ScrapedPage({ page, slug = [] }) {
   let pageBody = dropLeadingCtas(afterTagline);
 
   const children = isHub ? listChildren(slug) : [];
+  // The services hub leads with certified translation (no dedicated page yet: links to the certified will service).
+  if (key === "translation-services") {
+    children.unshift({
+      title: "Certified translation for companies and individuals",
+      description: "Certified translations of contracts, company documents, wills and personal papers, with a free quote before you commit.",
+      href: "/industry/legal/will-certified-translation-services/",
+    });
+  }
   const sections = toSections(pageBody, { more: UI.en.readMore });
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
@@ -259,7 +272,7 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title="Explore" /> : null}
+      {isHub ? <Children items={children} title={key === "translation-services" ? "Our translation services" : "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       <Sections html={sections} />
