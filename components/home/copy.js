@@ -5,25 +5,25 @@
 const en = {
   eyebrow: "Professional language services",
   h1a: "Your UK translation agency for", h1b: "business growth", h1c: "worldwide",
-  lead: "BeTranslated is the translation company UK businesses, institutions and NGOs call when accuracy matters. We deliver corporate translation services, interpreting and multilingual SEO in a wide range of European and Asian languages.",
+  lead: "BeTranslated is the translation company UK businesses, institutions and NGOs call when accuracy matters. We deliver certified translations for companies and individuals, corporate translation services, interpreting and multilingual SEO in a wide range of European and Asian languages.",
   cta1: "Get a free quote", quoteHref: "/translation-agency/quote/", servicesHref: "/translation-services/",
   since: "Since 2002",
   proof: [["4.9", "Google rating"], ["79", "Google reviews"]],
   clientsLabel: "Trusted by global brands",
 
   servicesEyebrow: "Our services",
-  themesTitle: "Translation, interpreting and digital marketing services for UK businesses going global",
+  themesTitle: "Certified translation, interpreting and digital marketing services for UK companies and individuals",
   servicesLead: "Quality, deadlines and competitive prices for every kind of language project.",
   more: "Read more", moreAbout: "More about",
   serviceGroups: [
     {
       kind: "documents",
-      title: "Legal, business and technical translation services",
-      lead: "Contracts, accounts and technical manuals have to be right first time. Our specialist translators have worked with UK businesses for over 20 years, and you get a free quote before you commit.",
+      title: "Certified translations for companies and individuals",
+      lead: "Contracts, company accounts, wills and personal documents have to be right first time. Our specialist translators have worked with UK clients for over 20 years, and you get a free quote before you commit.",
       items: [
+        ["Certified will translation services", "/industry/legal/will-certified-translation-services/"],
         ["Legal document translation services", "/industry/legal/"],
         ["Business and financial translation", "/industry/business/"],
-        ["Website translation services", "/translation-services/website-translation/"],
         ["Construction and engineering translation", "/industry/technical/"],
       ],
       href: "/document-translation-services/",
