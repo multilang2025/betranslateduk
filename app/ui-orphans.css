@@ -125,3 +125,6 @@
 .bt .faq__more > summary::after { content: "+"; }
 .bt .faq__more[open] > summary::after { content: "2"; }
 .bt .faq__more-in { display: grid; gap: 12px; margin-top: 12px; }
+
+/* No floating WhatsApp button on phones (the header and CTA band already carry the phone number) */
+@media (max-width: 640px) { .bt a.ftools__wa { display: none; } }
