@@ -169,5 +169,5 @@
 .bt .cta-card::before { content: ""; position: absolute; right: -60px; top: -80px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(95, 169, 177, .14); pointer-events: none; }
 .bt .cta-card__icon { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: var(--bt-accent); color: #fff; box-shadow: 0 10px 24px rgba(95, 169, 177, .35); }
 .bt .cta-card .cta-card__text { position: relative; margin: 0; max-width: none; font: 600 1.05rem/1.5 var(--font-ui); color: var(--bt-navy); }
-.bt .cta-card .bt-btn { position: relative; white-space: nowrap; }
-@media (max-width: 760px) { .bt .cta-card { grid-template-columns: 1fr; padding: 22px 20px; } .bt .cta-card .bt-btn { width: 100%; justify-content: center; } }
+.bt .cta-card .bt-btn { position: relative; white-space: nowrap; width: auto; padding: 11px 22px; font-size: 14.5px; }
+@media (max-width: 760px) { .bt .cta-card { grid-template-columns: 1fr; padding: 22px 20px; } .bt .cta-card .bt-btn { justify-self: start; } }
