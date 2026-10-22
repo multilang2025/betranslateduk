@@ -110,6 +110,7 @@ function BlogIndexView() {
       </section>
       <section className="section">
         <div className="container">
+          <div className="section-head"><h2>Latest articles</h2></div>
           <div className="post-grid">
             {posts.map(({ slug, data, date }) => {
               const title = displayTitle(data);
