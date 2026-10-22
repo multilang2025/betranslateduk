@@ -19,6 +19,16 @@ import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
+// H2 over each hub's card grid, so the heading says what the cards are.
+const HUB_TITLES = {
+  "translation-services": "Our translation services",
+  "translation-services/england": "Cities we serve in England",
+  languages: "Languages we translate",
+  industry: "Industries we serve",
+  "translation-agency": "About BeTranslated",
+  "translation-agency/locations": "Our offices",
+};
+
 const HUB_SLUGS = new Set([
   "languages", "industry", "translation-services", "translation-agency",
   "translation-agency/locations", "translation-services/england",
@@ -289,7 +299,7 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title={key === "translation-services" ? "Our translation services" : "Explore"} /> : null}
+      {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       {leaves.length ? (
