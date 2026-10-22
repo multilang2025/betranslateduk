@@ -163,3 +163,11 @@
 .bt .leaf-nav__label { margin: 0 0 12px; font: 600 12.5px var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--bt-accent-ink); }
 .bt .leaf-nav .pills { margin: 0; }
 .bt .sec h2[id^="korean-"], .bt .sec h2[id^="french-"], .bt .sec h2[id^="german-"], .bt .sec h2[id^="spanish-"] { scroll-margin-top: 96px; }
+
+/* Graphic call-to-action card (closing "free quote" lines) */
+.bt .cta-card { position: relative; overflow: hidden; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px 24px; margin: 32px 0 8px; padding: 26px 30px; border: 1px solid rgba(95, 169, 177, .45); border-radius: 20px; background: linear-gradient(120deg, rgba(95, 169, 177, .24), rgba(78, 134, 176, .10) 60%, rgba(14, 23, 38, .2)); }
+.bt .cta-card::before { content: ""; position: absolute; right: -60px; top: -80px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(95, 169, 177, .14); pointer-events: none; }
+.bt .cta-card__icon { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: var(--bt-accent); color: #fff; box-shadow: 0 10px 24px rgba(95, 169, 177, .35); }
+.bt .cta-card .cta-card__text { position: relative; margin: 0; max-width: none; font: 600 1.05rem/1.5 var(--font-ui); color: var(--bt-navy); }
+.bt .cta-card .bt-btn { position: relative; white-space: nowrap; }
+@media (max-width: 760px) { .bt .cta-card { grid-template-columns: 1fr; padding: 22px 20px; } .bt .cta-card .bt-btn { width: 100%; justify-content: center; } }

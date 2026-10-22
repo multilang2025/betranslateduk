@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves } from "@/lib/sanitize";
+import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
@@ -241,7 +241,7 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  let sections = fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore }));
+  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore })));
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
