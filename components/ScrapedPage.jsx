@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
-import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
+import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips } from "@/lib/sanitize";
+import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
@@ -62,11 +62,12 @@ function Children({ items, title }) {
 }
 
 function enhanceBody(html, { timelineLists = true } = {}) {
-  let body = sanitizeBody(html, { dropImageChips: true, timelineLists });
+  const tr = extractTranslators(html);
+  let body = sanitizeBody(tr.html, { dropImageChips: true, timelineLists });
   body = boldQuestionsToFaq(faqSectionsToFaq(questionRunsToFaq(body, "en", faqBlock), faqBlock), faqBlock);
   body = tidyHeadingLevels(body, {});
   body = tidyWidgetDebris(body);
-  return body;
+  return restoreBlocks(body, tr.blocks);
 }
 
 function Sections({ html }) {
@@ -226,7 +227,7 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  const sections = toSections(pageBody, { more: UI.en.readMore });
+  const sections = fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore }));
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 

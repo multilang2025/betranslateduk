@@ -128,3 +128,16 @@
 
 /* No floating WhatsApp button on phones (the header and CTA band already carry the phone number) */
 @media (max-width: 640px) { .bt a.ftools__wa { display: none; } }
+
+/* Translator profiles: photo, name, role, bio */
+.bt .trans-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 24px 0 8px; }
+.bt .trans { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 22px 20px 24px; border: 1px solid var(--bt-line-2); border-radius: var(--r-lg); background: var(--bt-paper-2); }
+.bt .trans img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bt-accent); margin: 0 0 12px; }
+.bt .trans h5, .bt .trans h4 { margin: 0; font: 700 1.1rem var(--font-ui); color: var(--bt-navy); }
+.bt .trans .trans__role { margin: 0 0 8px; font: 600 12.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.bt .trans .trans__bio { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--bt-text-mid); }
+@media (max-width: 1100px) { .bt .trans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .bt .trans-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; } .bt .trans { padding: 18px 16px 20px; } }
+
+.bt .mini.mini--wide { grid-column: 1 / -1; background: none; border: 0; box-shadow: none; padding: 8px 0 0; }
+.bt .mini.mini--wide::after { display: none; }
