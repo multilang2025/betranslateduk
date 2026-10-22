@@ -3,10 +3,14 @@
 // BTvibe-es's lib/schema.js builds bespoke Product/Offer/sworn-city/
 // interpreting-city schema this site has no equivalent content for, and
 // inventing pricing/offer data would misrepresent the business.
+import { SITE } from "@/lib/site";
+
 export default function PageSchema({ schema }) {
   if (!schema) return null;
   // Hard rule (21 October 2026): no FAQPage structured data anywhere.
   const clean = (o) => (Array.isArray(o) ? o.filter((n) => ![].concat(n?.["@type"] || []).includes("FAQPage")).map(clean) : o && typeof o === "object" ? Object.fromEntries(Object.entries(o).map(([k, v]) => [k, clean(v)])) : o);
   schema = clean(schema);
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+  // The scraped JSON-LD still names the old www host; production is the bare domain (SITE).
+  const json = JSON.stringify(schema).replaceAll("https://www.betranslated.co.uk", SITE);
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
 }

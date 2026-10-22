@@ -1,10 +1,12 @@
 import Image from "next/image";
-import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels } from "@/lib/sanitize";
-import { extractBlocks, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
-import { listChildren, pathFromUrl, getAllPosts, postDate, displayTitle } from "@/lib/content";
+import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
+import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
+import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
+import TranslatorsGrid from "./TranslatorsGrid";
+import TRANSLATORS from "@/data/translators.json";
 import CtaBand from "./CtaBand";
 import ClientsBand from "./ClientsBand";
 import ShareBar from "./ShareBar";
@@ -17,6 +19,16 @@ import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
+// H2 over each hub's card grid, so the heading says what the cards are.
+const HUB_TITLES = {
+  "translation-services": "Our translation services",
+  "translation-services/england": "Cities we serve in England",
+  languages: "Languages we translate",
+  industry: "Industries we serve",
+  "translation-agency": "About BeTranslated",
+  "translation-agency/locations": "Our offices",
+};
+
 const HUB_SLUGS = new Set([
   "languages", "industry", "translation-services", "translation-agency",
   "translation-agency/locations", "translation-services/england",
@@ -24,10 +36,21 @@ const HUB_SLUGS = new Set([
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
+// "Korean audiovisual translation services" -> "Audiovisual"
+function leafLabel(title = "") {
+  const s = title.replace(/^(korean|french|german|spanish)\s+/i, "").replace(/\s+(translation|subtitling)?\s*services.*$/i, "").replace(/\s+translation$/i, "").trim();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : title;
+}
+
 function childLabel(title = "") {
-  return title.split(/\s[·|–]\s|:\s/)[0]
+  return title.split(/\s[-·|–]\s|:\s/)[0]
     .replace(/^(translation services for|translation services|translation|services)\s+(in |for |of )?/i, "")
     .trim() || title;
+}
+
+// Cards keep the full page name ("Translation Services in England"); pills use the short form.
+function cardLabel(title = "") {
+  return title.split(/\s[-·|–]\s|:\s/)[0].trim() || title;
 }
 
 function Children({ items, title }) {
@@ -44,7 +67,7 @@ function Children({ items, title }) {
           <div className="grid grid--services">
             {items.map((c) => (
               <a key={c.href} href={c.href} className="card card--link">
-                <h3>{childLabel(c.title)}</h3>
+                <h3>{cardLabel(c.title)}</h3>
                 {c.description ? <p>{c.description}</p> : null}
                 <span className="card__more">{UI.en.readMore}</span>
               </a>
@@ -57,11 +80,12 @@ function Children({ items, title }) {
 }
 
 function enhanceBody(html, { timelineLists = true } = {}) {
-  let body = sanitizeBody(html, { dropImageChips: true, timelineLists });
+  const tr = extractTranslators(html);
+  let body = sanitizeBody(tr.html, { dropImageChips: true, timelineLists });
   body = boldQuestionsToFaq(faqSectionsToFaq(questionRunsToFaq(body, "en", faqBlock), faqBlock), faqBlock);
   body = tidyHeadingLevels(body, {});
   body = tidyWidgetDebris(body);
-  return body;
+  return restoreBlocks(body, tr.blocks);
 }
 
 function Sections({ html }) {
@@ -86,6 +110,7 @@ function BlogIndexView() {
       </section>
       <section className="section">
         <div className="container">
+          <div className="section-head"><h2>Latest articles</h2></div>
           <div className="post-grid">
             {posts.map(({ slug, data, date }) => {
               const title = displayTitle(data);
@@ -123,11 +148,13 @@ function BlogPostView({ data, slug }) {
   const chrome = stripPostChrome(cleanBody);
   let body = questionRunsToFaq(chrome.html, "en", faqBlock, { keepLead: true });
   body = faqSectionsToFaq(body, faqBlock);
+  // The legacy contact widget at the foot of a post (heading, phone, email, address) repeats the page's CTA card.
+  body = dropGroups(body, /^contact us/i, "h4");
   const { html: tocBody, toc } = withToc(enhanceTables(body));
   body = restoreBlocks(tocBody, ex.blocks);
   const publishDate = postDate(data);
   const img = data.og?.image; // already localized by lib/content.js at read time
-  const related = getAllPosts().filter((p) => p.slug !== slug).slice(0, 4);
+  const related = relatedPosts(slug, 4);
 
   return (
     <main className="blog-post">
@@ -174,14 +201,18 @@ function BlogPostView({ data, slug }) {
           <div className="container">
             <div className="section-head"><h2>{UI.en.relatedPosts}</h2></div>
             <div className="post-grid post-grid--related">
-              {related.map((c) => {
-                const t = displayTitle(c.data);
-                return (
-                  <a key={c.slug} href={`/blog/${c.slug}/`} className="post">
-                    <div className="post__body"><h3>{t}</h3><p>{c.data.metaDescription}</p></div>
-                  </a>
-                );
-              })}
+              {related.map((c) => (
+                <a key={c.href} href={c.href} className="post">
+                  <div className="post__media">
+                    {c.img ? <Image src={c.img} alt="" width={c.imgW} height={c.imgH} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 290px" /> : <span className="post__ph" aria-hidden="true">{c.title.charAt(0)}</span>}
+                  </div>
+                  <div className="post__body">
+                    <div className="post__top">{c.date ? <time dateTime={c.date} className="post__meta">{new Date(c.date).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}</time> : <span />}</div>
+                    <h3>{c.title}</h3>
+                    <p>{c.description}</p>
+                  </div>
+                </a>
+              ))}
             </div>
             <p className="related-posts__all"><a href={UI.en.blogHref} className="card__more">{UI.en.backToBlog}</a></p>
           </div>
@@ -207,9 +238,25 @@ export default function ScrapedPage({ page, slug = [] }) {
   const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
   const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
   let pageBody = dropLeadingCtas(afterTagline);
+  // Language pages with merged sector pages: each leaf becomes a section of this page.
+  const leaves = getLeafPages(key).map(({ id, data }) => {
+    const { title, body } = splitHero(enhanceBody(data.bodyHtml, { timelineLists: true }));
+    return { id, title: title || displayTitle(data), html: body };
+  });
+  if (leaves.length) pageBody = mergeLeaves(pageBody, leaves);
 
   const children = isHub ? listChildren(slug) : [];
-  const sections = toSections(pageBody, { more: UI.en.readMore });
+  // The services hub leads with certified translation (no dedicated page yet: links to the certified will service).
+  if (key === "translation-services") {
+    children.unshift({
+      title: "Certified translation for companies and individuals",
+      description: "Certified translations of contracts, company documents, wills and personal papers, with a free quote before you commit.",
+      href: "/industry/legal/will-certified-translation-services/",
+    });
+  }
+  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore })));
+  // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
+  if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
@@ -255,10 +302,27 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title="Explore" /> : null}
+      {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
-      <Sections html={sections} />
+      {leaves.length ? (
+        <section className="section section--tint leaf-nav">
+          <div className="container">
+            <p className="leaf-nav__label">Jump to a specialism</p>
+            <ul className="pills">
+              {leaves.map((l) => (<li key={l.id}><a href={`#${l.id}`}>{leafLabel(l.title)}</a></li>))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      {key === "translators" && sections.includes("@@TRANSLATORS@@") ? (
+        <>
+          <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
+          <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
+          <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
+        </>
+      ) : <Sections html={sections} />}
 
       {!isHub ? <Children items={children} title={UI.en.related} /> : null}
 

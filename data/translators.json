@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Kerry",
+    "role": "French to English translator in the IT field",
+    "photo": "/images/wp-content/uploads/2019/07/kerry-traducteur-professionnel-fran%25C3%25A7ais-anglais-4.jpg",
+    "bio": "Kerry translates exclusively from French into English. Due to his experience and expertise, he specialises in many fields, including computer science, security, software, and hardware, but also economics, human rights, and other related fields.",
+    "bioSource": "/languages/english-translation-services/\r",
+    "bioHtml": "Kerry translates exclusively from <a href=\"/languages/french-translation-services/\">French into English.</a>&nbsp;Due to his experience and expertise, he specialises in many fields, including <a href=\"/industry/it-telecom/\">computer science, security, software, and hardware</a>, but also economics, human rights, and other related fields.",
+    "listedOnTranslatorsPage": true
+  },
+  {
+    "name": "Frédéric",
+    "role": "English to French IT translator",
+    "photo": "/images/wp-content/uploads/2020/06/frederic-150x150.jpg",
+    "bio": "Originally from the south of France, Frédéric has dual French and Argentine citizenship. After studying industrial engineering, he worked for 10 years in various countries as a systems engineer, combining his professional qualifications with his taste for travel. Frédéric translates between English and Spanish and specialises in the fields technology, computers and tourism.",
+    "bioSource": "/industry/technical/\r",
+    "bioHtml": "Originally from the south of France, Frédéric has dual French and Argentine citizenship. After studying industrial engineering, he worked for 10 years in various countries as a systems engineer, combining his professional qualifications with his taste for travel. Frédéric translates between English and Spanish and specialises in the fields <a href=\"/industry/it-telecom/\">technology, computers</a> and tourism.",
+    "listedOnTranslatorsPage": true
+  },
+  {
+    "name": "Arnaud",
+    "role": "English to French IT translator",
+    "photo": "/images/wp-content/uploads/2020/06/arnaud-bachelier-150x150.jpg",
+    "bio": "Arnaud holds a master’s degree in linguistics, translation studies, literature, and Anglo-Saxon civilisation from the University of Nantes, as well as a degree in French as a Foreign Language from the University of Grenoble. He translates from English into French for the following areas: tourism, new technologies, lifestyle, geopolitics, and literature.",
+    "bioSource": "/languages/french-translation-services/\r",
+    "bioHtml": "Arnaud holds a master’s degree in linguistics, translation studies, literature, and Anglo-Saxon civilisation from the University of Nantes, as well as a degree in French as a Foreign Language from the University of Grenoble. He translates from English into French for the following areas: <a href=\"/industry/tourism/\">tourism</a>, new technologies, lifestyle, geopolitics, and literature.",
+    "listedOnTranslatorsPage": true
+  },
+  {
+    "name": "Andy",
+    "role": "French to English business translator",
+    "photo": "/images/wp-content/uploads/2020/06/Andy-150x150.jpg",
+    "bio": "Andy has been a freelance French to English translator since 2005 and also works as a language teacher. In addition to French, he also skilfully translates from Spanish and Catalan into English for a large number of international clients.",
+    "bioSource": "/languages/english-translation-services/\r",
+    "bioHtml": "Andy has been a freelance French to English translator since 2005 and also works as a language teacher. In addition to French, he also skilfully translates from <a href=\"/languages/spanish-translation-services/\">Spanish</a> and Catalan into English for a large number of international clients.",
+    "listedOnTranslatorsPage": true
+  },
+  {
+    "name": "Marianne",
+    "role": "French and English to Dutch IT translator",
+    "photo": "/images/wp-content/uploads/2021/09/Marianne.jpg",
+    "bio": "With over 8 years working in the translation industry, Marianne is an experienced translator, whose native language is Dutch. She regularly translates from French and English into Dutch, specialising in the IT sector.",
+    "bioSource": "/languages/dutch-translation-services/\r",
+    "bioHtml": "With over 8 years working in the translation industry, Marianne is an experienced translator, whose native language is Dutch. She regularly translates from <a href=\"/languages/french-translation-services/\">French</a> and <a href=\"/languages/english-translation-services/\">English</a> into Dutch, specialising in the <a href=\"/industry/it-telecom/\">IT sector</a>.",
+    "listedOnTranslatorsPage": true
+  },
+  {
+    "name": "Stephanie",
+    "role": "French, Italian, and English to Dutch translator",
+    "photo": "/images/wp-content/uploads/2021/09/Stephanie.jpg",
+    "bio": "Stephanie gained her translation qualifications in 2000, and translates from French, Italian, and English, into her native Dutch. Translation for the ecological and social sector are among her extensive expertise.",
+    "bioSource": "/languages/dutch-translation-services/\r",
+    "bioHtml": "Stephanie gained her translation qualifications in 2000, and translates from <a href=\"/languages/french-translation-services/\">French</a>, <a href=\"/languages/italian-translation-services/\">Italian</a>, and <a href=\"/languages/english-translation-services/\">English</a>, into her native Dutch. Translation for the ecological and social sector are among her extensive expertise.",
+    "listedOnTranslatorsPage": true
+  },
+  {
+    "name": "Vanessa",
+    "role": "English to Spanish SEO copywriter and translator",
+    "photo": "/images/wp-content/uploads/2023/09/Vanessa-150x150.jpg",
+    "bio": "Vanessa has a BA in Translation, as well as an MA in Audiovisual and Creative Translation. She is a freelance translator, who has many years of experience under her belt, and she translates from English and French into Spanish (Spain). She specialises in audiovisual translation, marketing, websites, SEO, and tourism.",
+    "bioHtml": "<span>Vanessa has a BA in Translation, as well as an MA in Audiovisual and Creative Translation. She is a freelance translator, who has many years of experience under her belt, and she translates from English and French into Spanish (Spain). She specialises in audiovisual translation, marketing, websites, SEO, and tourism.</span>",
+    "bioSource": "/languages/spanish-translation-services/",
+    "listedOnTranslatorsPage": false
+  }
+]

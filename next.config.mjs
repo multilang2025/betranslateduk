@@ -1,3 +1,5 @@
+import { leafRedirects } from "./lib/leafPages.js";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -20,6 +22,8 @@ const nextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      // Language leaf pages merged into their parent page (lib/leafPages.js).
+      ...leafRedirects(),
       {
         // The live site's /blog/page/N/ URLs are a non-canonical WP rewrite
         // artifact: they never 404 regardless of N, and their content is an

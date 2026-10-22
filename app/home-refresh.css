@@ -43,7 +43,7 @@
 /* The logo band label is the home's leading H2: keep the small caps label look. */
 .bt p.clients__label { font-family: var(--font-ui); font-size: 13px; font-weight: 600; line-height: 1.4; letter-spacing: .14em; text-transform: uppercase; text-align: center; color: var(--bt-teal-600); margin: 0 0 26px; }
 .clients__marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.clients__track { display: flex; width: max-content; animation: clients-scroll 45s linear infinite; }
+.clients__track { display: flex; width: max-content; animation: clients-scroll 150s linear infinite; }
 .clients__track:has(li:hover), .clients__track:has(a:focus-visible) { animation-play-state: paused; }
 .clients__group { list-style: none; margin: 0; padding: 0 28px 0 0; display: flex; align-items: center; gap: 56px; }
 .bt .clients__group img { height: 52px; width: auto; max-width: 180px; object-fit: contain; filter: none; opacity: 1; }
@@ -439,6 +439,21 @@
   .bt main.home .team--home .team__meta { padding: 40px 10px 10px; }
   .bt main.home .team--home .team__meta strong { font-size: 14.5px; }
   .bt main.home .team--home .team__meta span { font-size: 12.5px; }
+}
+
+/* Team without photos: compact cards on tablet and mobile (no empty photo space above the name) */
+@media (max-width: 900px) {
+  .bt main.home .team--no-photo.team--home { gap: 12px; padding-bottom: 12px; }
+  .bt main.home .team--no-photo .team__card { border-width: 2px; border-radius: var(--r-lg); box-shadow: 5px 5px 0 rgba(95, 169, 177, .22); }
+  .bt main.home .team--no-photo .team__meta { padding: 12px 12px 14px; gap: 2px; }
+  .bt main.home .team--no-photo .team__meta strong { font-size: 15px; }
+  .bt main.home .team--no-photo .team__meta span { font-size: 12.5px; line-height: 1.35; }
+}
+@media (max-width: 640px) {
+  .bt main.home .team--no-photo.team--home { gap: 10px; }
+  .bt main.home .team--no-photo .team__meta { padding: 10px 10px 12px; }
+  .bt main.home .team--no-photo .team__meta strong { font-size: 14px; }
+  .bt main.home .team--no-photo .team__meta span { font-size: 12px; }
 }
 
 /* Team and reviews ombre: the same teal rotated toward blue (Mike's request); graphics stay darker than the background */

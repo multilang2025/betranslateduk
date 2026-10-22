@@ -58,3 +58,116 @@
 .bt a.bt-video:hover::before { transform: scale(1.08); }
 .bt a.bt-video:hover { text-decoration: underline; text-underline-offset: 3px; }
 .bt .sec__in a.bt-video, .bt .prose a.bt-video { border-bottom: 0; background-image: none; box-shadow: none; text-decoration: none; }
+
+/* Mobile drawer base layout (was only in the unimported ui-interp.css) */
+.bt-drawer { z-index: 120; padding: 0; gap: 0; width: min(88vw, 380px); display: flex; flex-direction: column; overflow: hidden; }
+.bt-scrim { z-index: 110; backdrop-filter: blur(2px); }
+.bt-drawer__head { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 14px 24px; border-bottom: 1px solid var(--bt-line); }
+.bt-drawer__title { font: 600 12px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.bt .bt-drawer__close { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 12px; background: var(--bt-paper-2); color: var(--bt-navy); cursor: pointer; }
+.bt-drawer__nav { flex: 1; overflow-y: auto; padding: 8px 24px; display: flex; flex-direction: column; }
+.bt a.bt-drawer__link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 0; border-bottom: 1px solid var(--bt-line); font: 600 17px var(--font-ui); color: var(--bt-navy); }
+.bt a.bt-drawer__link svg { color: var(--bt-accent); flex-shrink: 0; }
+.bt a.bt-drawer__link--sub { padding: 11px 0 11px 16px; font-size: 15px; font-weight: 500; color: var(--bt-text-mid); border-left: 2px solid var(--bt-accent-50); }
+.bt a.bt-drawer__link:hover { color: var(--bt-accent-ink); }
+.bt-drawer__cta { padding: 18px 24px calc(20px + env(safe-area-inset-bottom)); border-top: 1px solid var(--bt-line); background: var(--bt-paper); display: grid; gap: 10px; }
+.bt .bt-drawer__cta .bt-btn { width: 100%; justify-content: center; }
+.bt-drawer__note { margin: 0; text-align: center; font: 500 12.5px var(--font-ui); color: var(--bt-text-soft); }
+.bt-drawer__locales { display: flex; justify-content: center; gap: 6px; margin-top: 4px; }
+.bt a.bt-drawer__locale { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--bt-line-2); font: 500 13px var(--font-ui); color: var(--bt-text-mid); }
+.bt a.bt-drawer__locale.is-active { border-color: var(--bt-accent); background: var(--bt-accent-50); color: var(--bt-accent-ink); font-weight: 700; }
+
+/* Post cards: no cut excerpts, rows aligned by subgrid; back-to-blog button (from ES) */
+/* Blog cards: never cut the excerpt; slightly smaller text instead. */
+.bt .post-grid .post .post__body p, .bt .featured__body p, .bt .fposts__set .post p { display: block; -webkit-line-clamp: unset; overflow: visible; text-wrap: wrap; }
+.bt .post-grid .post .post__body p { font-size: 13.5px; line-height: 1.55; min-height: 0; }
+.bt .post-grid--related .post .post__body p { font-size: 13px; }
+
+/* Blog cards line up row by row (subgrid): image, tag + date, title and
+   excerpt start at the same height in every card of a row. Date always under
+   the tag so a long category never pushes the title down on its own. */
+@supports (grid-template-rows: subgrid) {
+  .bt .post-grid { grid-auto-rows: auto; }
+  .bt .post-grid > .post { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
+  .bt .post-grid > .post > .post__body { display: contents; }
+  .bt .post-grid > .post .post__top { padding: 18px 22px 0; }
+  .bt .post-grid > .post h3 { padding: 10px 22px 0; margin: 0; }
+  .bt .post-grid > .post .post__body p { padding: 10px 22px 22px; margin: 0; }
+  .bt .post-grid--related > .post .post__top { padding: 14px 16px 0; }
+  .bt .post-grid--related > .post h3 { padding: 8px 16px 0; }
+  .bt .post-grid--related > .post .post__body p { padding: 8px 16px 16px; }
+}
+.bt .post-grid .post__top { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; }
+/* "Volver al blog": a proper secondary button with room above it. */
+.bt .related-posts__all { margin: 32px 0 0; }
+.bt .related-posts__all a.card__more { display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; background: #fff; border: 1px solid var(--bt-line-2); border-radius: var(--r-pill); box-shadow: var(--shadow-xs); color: var(--bt-navy); font: 600 14.5px var(--font-ui); text-decoration: none; transition: border-color .2s ease, box-shadow .2s ease; }
+.bt .related-posts__all a.card__more:hover { border-color: var(--bt-accent); box-shadow: var(--shadow-sm); }
+.post-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.post-grid .post h3 { font-size: 1.12rem; }
+@media (max-width: 1100px) { .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .post-grid { grid-template-columns: minmax(0, 1fr); } }
+.post-grid .post { height: 100%; }
+.post-grid .post h3 { overflow-wrap: anywhere; }
+.post-grid .post p { min-height: calc(4 * 1.55em); line-height: 1.55; }
+
+/* Core values cards (services hub) */
+.bt .sec__in ul.values { list-style: none; margin: 24px 0 0; padding: 0; max-width: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.bt .sec__in ul.values li.card { margin: 0; padding: 22px 20px; }
+.bt .sec__in ul.values li.card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+.bt .sec__in ul.values li.card p { margin: 0; font-size: 14.5px; line-height: 1.55; }
+@media (max-width: 1100px) { .bt .sec__in ul.values { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .bt .sec__in ul.values { grid-template-columns: minmax(0, 1fr); gap: 12px; } .bt .sec__in ul.values li.card { padding: 16px 16px 18px; } }
+
+/* FAQs beyond the first five */
+.bt .faq__more { margin-top: 12px; }
+.bt .faq__more > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1px solid var(--bt-line-2); border-radius: var(--r-pill); font: 600 14.5px var(--font-ui); color: var(--bt-accent); }
+.bt .faq__more > summary::-webkit-details-marker { display: none; }
+.bt .faq__more > summary::after { content: "+"; }
+.bt .faq__more[open] > summary::after { content: "2"; }
+.bt .faq__more-in { display: grid; gap: 12px; margin-top: 12px; }
+
+/* No floating WhatsApp button on phones (the header and CTA band already carry the phone number) */
+@media (max-width: 640px) { .bt a.ftools__wa { display: none; } }
+
+/* Translator profiles: photo, name, role, bio */
+.bt .trans-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 24px 0 8px; }
+.bt .trans { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 22px 20px 24px; border: 1px solid var(--bt-line-2); border-radius: var(--r-lg); background: var(--bt-paper-2); }
+.bt .trans img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bt-accent); margin: 0 0 12px; }
+.bt .trans h5, .bt .trans h4 { margin: 0; font: 700 1.1rem var(--font-ui); color: var(--bt-navy); }
+.bt .trans .trans__role { margin: 0 0 8px; font: 600 12.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.bt .trans .trans__bio { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--bt-text-mid); }
+@media (max-width: 1100px) { .bt .trans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .bt .trans-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; } .bt .trans { padding: 18px 16px 20px; } }
+
+.bt .mini.mini--wide { grid-column: 1 / -1; background: none; border: 0; box-shadow: none; padding: 8px 0 0; }
+.bt .mini.mini--wide::after { display: none; }
+
+/* Translators page: filterable profile cards */
+.bt .sec__in--wide { max-width: none; }
+.bt .trx__filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.bt .trx__chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--bt-line-2); border-radius: var(--r-pill); background: transparent; color: var(--bt-text-mid); font: 600 14px var(--font-ui); cursor: pointer; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+.bt .trx__chip span { font-weight: 500; font-size: 12.5px; opacity: .7; }
+.bt .trx__chip:hover { border-color: var(--bt-accent); color: var(--bt-accent-ink); }
+.bt .trx__chip[aria-pressed="true"] { background: var(--bt-accent); border-color: var(--bt-accent); color: #fff; }
+.bt ul.trx__grid { list-style: none; margin: 0; padding: 0; max-width: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.bt .trx__card { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 22px 20px 24px; border: 1px solid var(--bt-line-2); border-radius: var(--r-lg); background: var(--bt-paper-2); }
+.bt .trx__card img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bt-accent); margin: 0 0 12px; }
+.bt .trx__card h3 { margin: 0; font: 700 1.15rem var(--font-ui); color: var(--bt-navy); }
+.bt .trx__role { margin: 0 0 8px; font: 600 12.5px var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.bt .trx__bio { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--bt-text-mid); }
+@media (max-width: 1100px) { .bt ul.trx__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .bt ul.trx__grid { grid-template-columns: minmax(0, 1fr); gap: 12px; } .bt .trx__card { padding: 18px 16px 20px; } .bt .trx__filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; } .bt .trx__chip { flex: none; } }
+
+/* Jump links to the merged language specialisms */
+.bt .leaf-nav { padding-block: 28px; }
+.bt .leaf-nav__label { margin: 0 0 12px; font: 600 12.5px var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.bt .leaf-nav .pills { margin: 0; }
+.bt .sec h2[id^="korean-"], .bt .sec h2[id^="french-"], .bt .sec h2[id^="german-"], .bt .sec h2[id^="spanish-"] { scroll-margin-top: 96px; }
+
+/* Graphic call-to-action card (closing "free quote" lines) */
+.bt .cta-card { position: relative; overflow: hidden; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px 24px; margin: 32px 0 8px; padding: 26px 30px; border: 1px solid rgba(95, 169, 177, .45); border-radius: 20px; background: linear-gradient(120deg, rgba(95, 169, 177, .24), rgba(78, 134, 176, .10) 60%, rgba(14, 23, 38, .2)); }
+.bt .cta-card::before { content: ""; position: absolute; right: -60px; top: -80px; width: 220px; height: 220px; border-radius: 50%; border: 28px solid rgba(95, 169, 177, .14); pointer-events: none; }
+.bt .cta-card__icon { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: var(--bt-accent); color: #fff; box-shadow: 0 10px 24px rgba(95, 169, 177, .35); }
+.bt .cta-card .cta-card__text { position: relative; margin: 0; max-width: none; font: 600 1.05rem/1.5 var(--font-ui); color: var(--bt-navy); }
+.bt .cta-card .bt-btn { position: relative; white-space: nowrap; width: auto; padding: 11px 22px; font-size: 14.5px; }
+@media (max-width: 760px) { .bt .cta-card { grid-template-columns: 1fr; padding: 22px 20px; } .bt .cta-card .bt-btn { justify-self: start; } }

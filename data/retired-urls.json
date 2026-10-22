@@ -1,0 +1,330 @@
+{
+  "note": "Retired URLs and where they redirect (301). Add a row for every page or post you retire. Rows with managed 'manual' are added to next.config.mjs redirects; rows with managed 'leaf' come from lib/leafPages.js. Verify after launch with tools/check-retired-redirects.mjs.",
+  "site": "https://betranslated.co.uk",
+  "entries": [
+    {
+      "from": "/languages/korean-translation-services/korean-audiovisual/",
+      "to": "/languages/korean-translation-services/#korean-audiovisual",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-business/",
+      "to": "/languages/korean-translation-services/#korean-business",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-consumer-retail/",
+      "to": "/languages/korean-translation-services/#korean-consumer-retail",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-financial/",
+      "to": "/languages/korean-translation-services/#korean-financial",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-it-translation-services/",
+      "to": "/languages/korean-translation-services/#korean-it-translation-services",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-legal/",
+      "to": "/languages/korean-translation-services/#korean-legal",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-marketing/",
+      "to": "/languages/korean-translation-services/#korean-marketing",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-technical-translation-services/",
+      "to": "/languages/korean-translation-services/#korean-technical-translation-services",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/korean-translation-services/korean-tourism-translation-services/",
+      "to": "/languages/korean-translation-services/#korean-tourism-translation-services",
+      "type": "page",
+      "reason": "Sector page merged into the Korean language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/french-audiovisual/",
+      "to": "/languages/french-translation-services/#french-audiovisual",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/french-business/",
+      "to": "/languages/french-translation-services/#french-business",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/french-e-commerce/",
+      "to": "/languages/french-translation-services/#french-e-commerce",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/french-financial/",
+      "to": "/languages/french-translation-services/#french-financial",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/french-it/",
+      "to": "/languages/french-translation-services/#french-it",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/french-marketing/",
+      "to": "/languages/french-translation-services/#french-marketing",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/french-translation-services/legal-translation/",
+      "to": "/languages/french-translation-services/#french-legal-translation",
+      "type": "page",
+      "reason": "Sector page merged into the French language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-business/",
+      "to": "/languages/german-translation-services/#german-business",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-e-commerce/",
+      "to": "/languages/german-translation-services/#german-e-commerce",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-financial/",
+      "to": "/languages/german-translation-services/#german-financial",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-it/",
+      "to": "/languages/german-translation-services/#german-it",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-legal/",
+      "to": "/languages/german-translation-services/#german-legal",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-marketing/",
+      "to": "/languages/german-translation-services/#german-marketing",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-subtitling/",
+      "to": "/languages/german-translation-services/#german-subtitling",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-technical/",
+      "to": "/languages/german-translation-services/#german-technical",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/german-translation-services/german-tourism/",
+      "to": "/languages/german-translation-services/#german-tourism",
+      "type": "page",
+      "reason": "Sector page merged into the German language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/marketing/",
+      "to": "/languages/spanish-translation-services/#spanish-marketing",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-audiovisual/",
+      "to": "/languages/spanish-translation-services/#spanish-audiovisual",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-business/",
+      "to": "/languages/spanish-translation-services/#spanish-business",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-document/",
+      "to": "/languages/spanish-translation-services/#spanish-document",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-financial/",
+      "to": "/languages/spanish-translation-services/#spanish-financial",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-it/",
+      "to": "/languages/spanish-translation-services/#spanish-it",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-legal/",
+      "to": "/languages/spanish-translation-services/#spanish-legal",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-retail-ecommerce/",
+      "to": "/languages/spanish-translation-services/#spanish-retail-ecommerce",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-technical/",
+      "to": "/languages/spanish-translation-services/#spanish-technical",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-tourism-travel/",
+      "to": "/languages/spanish-translation-services/#spanish-tourism-travel",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/languages/spanish-translation-services/spanish-website/",
+      "to": "/languages/spanish-translation-services/#spanish-website",
+      "type": "page",
+      "reason": "Sector page merged into the Spanish language page",
+      "retiredOn": "2026-10-22",
+      "managed": "leaf",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    }
+  ]
+}
