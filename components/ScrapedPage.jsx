@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips } from "@/lib/sanitize";
+import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
-import { listChildren, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
+import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
@@ -25,6 +25,12 @@ const HUB_SLUGS = new Set([
 ]);
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
+
+// "Korean audiovisual translation services" -> "Audiovisual"
+function leafLabel(title = "") {
+  const s = title.replace(/^(korean|french|german|spanish)\s+/i, "").replace(/\s+(translation|subtitling)?\s*services.*$/i, "").replace(/\s+translation$/i, "").trim();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : title;
+}
 
 function childLabel(title = "") {
   return title.split(/\s[-·|–]\s|:\s/)[0]
@@ -219,6 +225,12 @@ export default function ScrapedPage({ page, slug = [] }) {
   const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
   const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
   let pageBody = dropLeadingCtas(afterTagline);
+  // Language pages with merged sector pages: each leaf becomes a section of this page.
+  const leaves = getLeafPages(key).map(({ id, data }) => {
+    const { title, body } = splitHero(enhanceBody(data.bodyHtml, { timelineLists: true }));
+    return { id, title: title || displayTitle(data), html: body };
+  });
+  if (leaves.length) pageBody = mergeLeaves(pageBody, leaves);
 
   const children = isHub ? listChildren(slug) : [];
   // The services hub leads with certified translation (no dedicated page yet: links to the certified will service).
@@ -279,6 +291,17 @@ export default function ScrapedPage({ page, slug = [] }) {
 
       {isHub ? <Children items={children} title={key === "translation-services" ? "Our translation services" : "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
+
+      {leaves.length ? (
+        <section className="section section--tint leaf-nav">
+          <div className="container">
+            <p className="leaf-nav__label">Jump to a specialism</p>
+            <ul className="pills">
+              {leaves.map((l) => (<li key={l.id}><a href={`#${l.id}`}>{leafLabel(l.title)}</a></li>))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       {key === "translators" && sections.includes("@@TRANSLATORS@@") ? (
         <>
