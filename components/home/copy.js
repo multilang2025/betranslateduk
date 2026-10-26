@@ -35,7 +35,7 @@ const en = {
       items: [
         ["Legal interpreting services", "/translation-services/remote-interpreting/"],
         ["Business and finance interpreting", "/translation-services/remote-interpreting/"],
-        ["Remote interpreting services", "/translation-services/remote-interpreting/"],
+        ["Live interpretation services", "/translation-services/remote-interpreting/"],
       ],
       href: "/translation-services/remote-interpreting/",
     },
