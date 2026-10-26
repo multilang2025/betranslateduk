@@ -54,6 +54,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-GB" className={poppins.variable} suppressHydrationWarning>
       <head>
+        <link rel="preload" href="/brand/fonts/fraunces-1.000-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="bt">
