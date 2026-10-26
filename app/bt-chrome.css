@@ -243,3 +243,18 @@
 .bt-header__item:hover .bt-header__sub, .bt-header__item:focus-within .bt-header__sub { opacity: 1; visibility: visible; transform: none; }
 .bt .bt-header__sublink { display: block; padding: 10px 12px; border-radius: var(--r-sm); border-bottom: 0; font: 500 14.5px var(--font-ui); color: var(--bt-navy); white-space: nowrap; }
 .bt .bt-header__sublink:hover { background: var(--bt-orange-50); color: var(--bt-orange-600); }
+
+/* Quote form type tabs (translation, certified, interpreting) and honeypot */
+.quote-form__tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.quote-form__tab { font: inherit; font-family: var(--font-ui); font-size: 14.5px; font-weight: 600; color: var(--bt-navy); background: #fff; border: 1.5px solid var(--bt-line-2); border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background .15s, border-color .15s, color .15s; }
+.quote-form__tab:hover { border-color: var(--bt-orange); }
+.quote-form__tab.is-active { background: var(--bt-navy); border-color: var(--bt-navy); color: #fff; }
+.quote-form__tab:focus-visible { outline: 3px solid rgba(95, 169, 177,.45); outline-offset: 2px; }
+.quote-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.field textarea { line-height: 1.55; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .quote-form__tab { background: var(--bt-surface-2); color: var(--bt-text); }
+  html:not([data-theme="light"]) .quote-form__tab.is-active { background: var(--bt-orange); border-color: var(--bt-orange); color: #0b1620; }
+}
+html[data-theme="dark"] .quote-form__tab { background: var(--bt-surface-2); color: var(--bt-text); }
+html[data-theme="dark"] .quote-form__tab.is-active { background: var(--bt-orange); border-color: var(--bt-orange); color: #0b1620; }
