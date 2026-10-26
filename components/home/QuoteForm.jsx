@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Quote forms for the UK site: translation, certified translation and interpreting.
 // Modelled on the three betranslated.com quote forms. The submission (fields + files)
-// is posted as multipart/form-data to QUOTE_ENDPOINT, the BeTranslated intake Andre is
-// building (see the GitHub issue "Quote form backend"). Until that endpoint is set, or
-// if it fails, the form falls back to opening the visitor's mail client with the
-// request prefilled and asks them to attach the files there.
+// is relayed as JSON through /api/quote/ to the betranslated.com lead intake. When files
+// are attached, or if the relay fails, the form falls back to opening the visitor's mail
+// client with the request prefilled and asks them to attach the files there.
 const TO = "hello@betranslated.co.uk";
-const QUOTE_ENDPOINT = process.env.NEXT_PUBLIC_QUOTE_ENDPOINT || "";
+const QUOTE_ENDPOINT = process.env.NEXT_PUBLIC_QUOTE_ENDPOINT || "/api/quote/";
 const MAX_FILES = 10;
 const MAX_TOTAL_MB = 25;
 const ACCEPT = ".pdf,.doc,.docx,.odt,.rtf,.txt,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.heic,.zip";
@@ -93,6 +92,8 @@ export default function QuoteForm({ initialType = "translation" }) {
   const [status, setStatus] = useState(null);
   const [files, setFiles] = useState([]);
   const [busy, setBusy] = useState(false);
+  const startedAt = useRef(0);
+  useEffect(() => { startedAt.current = Date.now(); }, []);
 
   const interp = type === "interpreting";
   const pairs = pairOptions(interp);
@@ -148,10 +149,12 @@ export default function QuoteForm({ initialType = "translation" }) {
     data.set("message", msg);
     data.set("page", window.location.pathname);
 
-    if (QUOTE_ENDPOINT) {
+    // Files cannot go through the relay, so a request with documents uses the email fallback.
+    if (QUOTE_ENDPOINT && !files.length) {
       setBusy(true);
       try {
-        const res = await fetch(QUOTE_ENDPOINT, { method: "POST", body: data });
+        const payload = { ...Object.fromEntries(Array.from(data.entries()).filter(([, x]) => typeof x === "string")), _form_started: startedAt.current };
+        const res = await fetch(QUOTE_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
         if (res.ok) {
           setStatus("ok");
           form.reset();
