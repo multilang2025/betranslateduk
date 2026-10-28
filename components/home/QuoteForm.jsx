@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getAttribution } from "../../lib/attribution";
 
 // Quote forms for the UK site: translation, certified translation and interpreting.
 // Modelled on the three betranslated.com quote forms. The submission (fields + files)
@@ -10,6 +11,8 @@ import { useState } from "react";
 // request prefilled and asks them to attach the files there.
 const TO = "hello@betranslated.co.uk";
 const QUOTE_ENDPOINT = process.env.NEXT_PUBLIC_QUOTE_ENDPOINT || "";
+// GA4 events through components/Tracking.jsx (no-op until consent and until it is mounted).
+const track = (name, params) => window.btTrack?.(name, params);
 const MAX_FILES = 10;
 const MAX_TOTAL_MB = 25;
 const ACCEPT = ".pdf,.doc,.docx,.odt,.rtf,.txt,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png,.heic,.zip";
@@ -33,10 +36,10 @@ const TYPES = [
 
 const OPTS = {
   subject: ["General", "Legal", "Medical / Life Sciences", "Technical / Engineering", "Marketing / Advertising", "Financial", "Website / Software", "Academic / Scientific", "Other"],
-  docType: ["Birth, marriage or death certificate", "Passport or ID", "Academic certificate or transcript", "Court or legal document", "Contract or company document", "Medical record", "Driving licence", "Other"],
+  docType: ["Birth, marriage or death certificate", "Passport or ID", "Academic certificate or transcript", "Court or legal document", "Contract or company document", "Visa or immigration document", "Medical record", "Driving licence", "Other"],
   cert: ["Certified translation (signed statement of accuracy)", "Notarised translation", "Certified plus apostille", "Not sure, please advise"],
   delivery: ["Digital copy", "Hard copy by post", "Digital copy and hard copy", "Not sure, please advise"],
-  eventType: ["Conference", "Business meeting", "Legal or court proceeding", "Medical appointment", "Training session", "Webinar or virtual event", "Other"],
+  eventType: ["Conference", "Business meeting", "Legal or court proceeding", "Medical appointment", "Training session", "Webinar or virtual event", "Sports event (press conference, contract talks, transfer, matchday)", "Other"],
   mode: ["On-site (consecutive)", "On-site (simultaneous)", "Remote (RSI or video)", "Telephone interpreting", "Whispered (chuchotage)", "Not sure, please advise"],
   equipment: ["Yes, we need equipment rental", "No, equipment already arranged", "Not sure yet, please advise"],
 };
@@ -45,31 +48,32 @@ const OPTS = {
 // untouched template is never submitted as if it were a real message.
 const TEMPLATE = {
   translation: [
-    "Document type (for example contract, website, manual):",
-    "Languages (from and into):",
+    "Document or content type (for example contract, website, technical manual, marketing material):",
+    "Languages (from which language into which):",
     "Word or page count (or attach the files):",
     "Deadline:",
-    "Who will read it, and what is it for:",
-    "File format you need back (for example Word, PDF, InDesign):",
-    "Anything else, such as a glossary or style guide:",
+    "What it is for and who will read it (for example export documentation, a tender, internal use):",
+    "Format you need back (Word, PDF, InDesign):",
+    "Terminology list, glossary or style guide, if you have one:",
   ].join("\n"),
   certified: [
-    "Document type (for example birth certificate, degree certificate, contract):",
-    "Languages (from and into):",
+    "Document type (for example birth or marriage certificate, degree certificate, company document, witness statement):",
+    "Languages (from which language into which):",
     "Number of pages:",
-    "Who will receive it (for example the Home Office, a university, a solicitor, an overseas authority) and in which country:",
-    "Certification required (certified, notarised or apostille), if the receiving body has told you:",
+    "Who will receive it (for example the Home Office, a university, a solicitor, a council or a court) and in which country:",
+    "Certification the receiving body asks for (certified, notarised or apostille), if you know:",
     "Deadline:",
     "Digital copy, hard copy by post, or both:",
   ].join("\n"),
   interpreting: [
     "Date and start and finish times:",
-    "Location (city and venue) or the remote platform (for example Zoom or Teams):",
+    "Place (city and venue) or the platform if remote (Zoom, Teams):",
     "Languages (working languages A and B):",
-    "Type of interpreting (consecutive, simultaneous, whispered, telephone):",
+    "Type of event (for example press conference, contract talks, player transfer, matchday, board meeting, court hearing):",
+    "Type of interpreting (consecutive, simultaneous, whispered or phone):",
     "Number of attendees:",
-    "Subject matter, and any briefing documents you can share:",
-    "Equipment: is a booth or headsets needed:",
+    "Subject, and any briefing material you can share:",
+    "Equipment needed (booth, headsets):",
   ].join("\n"),
 };
 
@@ -134,7 +138,6 @@ export default function QuoteForm({ initialType = "translation" }) {
     } else if (!pair) next.pair = "Choose a language combination.";
     if (interp && !v.eventType) next.eventType = "Choose an event type.";
     if (interp && !v.mode) next.mode = "Choose how you need the interpreter.";
-    if (!msg.trim() || untouched) next.message = "Replace the suggested wording with your details, or delete it and write your own.";
     const fErr = filesError(files);
     if (fErr) next.files = fErr;
     setErrors(next);
@@ -145,7 +148,10 @@ export default function QuoteForm({ initialType = "translation" }) {
       : pair;
     data.set("type", type);
     data.set("languages", languages);
-    data.set("message", msg);
+    // The suggested wording counts as empty until the visitor changes it.
+    const sendMsg = untouched ? "" : msg;
+    data.set("message", sendMsg);
+    for (const [k, x] of Object.entries(getAttribution())) data.set(k, x);
     data.set("page", window.location.pathname);
 
     if (QUOTE_ENDPOINT) {
@@ -153,6 +159,7 @@ export default function QuoteForm({ initialType = "translation" }) {
       try {
         const res = await fetch(QUOTE_ENDPOINT, { method: "POST", body: data });
         if (res.ok) {
+          track("generate_lead", { form_kind: type, delivery: "endpoint" });
           setStatus("ok");
           form.reset();
           setMsg(TEMPLATE[type]);
@@ -192,8 +199,9 @@ export default function QuoteForm({ initialType = "translation" }) {
       ["Deadline", v.deadline],
       ["Documents", files.length ? files.map((f) => f.name).join(", ") : ""],
     ].filter(([, x]) => x).map(([k, x]) => `${k}: ${x}`);
-    const body = [...lines, "", msg].join("\n");
+    const body = [...lines, "", sendMsg].join("\n");
 
+    track("quote_mailto", { form_kind: type, stored: false, with_files: files.length > 0 });
     window.location.href = `mailto:${TO}?subject=${encodeURIComponent(`${typeLabel} quote request`)}&body=${encodeURIComponent(body)}`;
     setStatus(files.length ? "mailFiles" : "mail");
   }
@@ -318,7 +326,7 @@ export default function QuoteForm({ initialType = "translation" }) {
 
       <div className="field">
         <label htmlFor="q-message">{MSG_LABEL[type]}</label>
-        <span id="q-message-hint" className="field__hint">We have started the list for you. Complete each line you can, delete the ones that do not apply, and add anything else we should know.</span>
+        <span id="q-message-hint" className="field__hint">We have started the list for you. Complete each line you can, delete the ones that do not apply, and add anything else we should know. You can also leave it as it is and send your files.</span>
         <textarea
           id="q-message"
           name="message"

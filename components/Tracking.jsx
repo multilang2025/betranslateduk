@@ -10,6 +10,13 @@ import Script from "next/script";
 // - GTM, GA4 and Clarity set cookies, so they load only after the visitor
 //   accepts in the cookie banner (components/chrome/CookieConsent.jsx). Google
 //   Consent Mode v2 defaults stay "denied" until then.
+// - Contact events for GA4 (mark them as key events there): one delegated
+//   listener sends email_click, phone_click and whatsapp_click for every
+//   mailto:, tel: and wa.me link; the quote form sends generate_lead and
+//   quote_mailto through window.btTrack. Nothing is sent before consent:
+//   btTrack is a no-op until the tags have loaded.
+// - NOT mounted on the UK site yet: GTM, GA4, Clarity, Ahrefs and HOSTS below are
+//   still the betranslated.es ones. Set the UK ids and hosts before mounting it.
 const GTM = "GTM-K83LCLS";
 const GA4 = ["G-BMCV42QBEE"];
 const CLARITY = "fwucx0beoi";
@@ -27,8 +34,11 @@ window.btLoadTracking=function(){
   if(!prod||loaded)return;loaded=true;
   dataLayer.push({"gtm.start":new Date().getTime(),event:"gtm.js"});add("https://www.googletagmanager.com/gtm.js?id=${GTM}");
   gtag("js",new Date());${GA4.map((id) => `gtag("config","${id}");`).join("")}add("https://www.googletagmanager.com/gtag/js?id=${GA4[0]}");
+  window.btTrack=function(n,p){gtag("event",n,p||{});};
   (function(c,l,a,r,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};add("https://www.clarity.ms/tag/"+i+"?ref=bwt");})(window,d,"clarity","script","${CLARITY}");
 };
+window.btTrack=window.btTrack||function(){};
+d.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"",n=/^mailto:[^?]/i.test(h)?"email_click":/^tel:/i.test(h)?"phone_click":(h.indexOf("https://wa.me/")===0||h.indexOf("https://api.whatsapp.com/")===0)?"whatsapp_click":"";if(n)window.btTrack(n,{link_url:h.split("?")[0],link_area:(a.closest("footer,header,nav,aside,main")||{}).localName||""});},true);
 if(prod)add("https://analytics.ahrefs.com/analytics.js",{"data-key":"${AHREFS_KEY}"});
 try{var c=JSON.parse(localStorage.getItem("${CONSENT_KEY}")||"null");if(c&&c.v==="granted")window.btLoadTracking();}catch(e){}
 })();`;
