@@ -110,3 +110,15 @@ Checked and left as is: `latest-trends-translation-industry` (Nimdzi: USD 71.7bn
 - `translation-services-for-optical-practices`: IBISWorld GBP 5.4 billion and 5,400 businesses, lens market USD 2,015.6m to 2,811.8m.
 - `environmental-translation-services-green-economy`: Sweden wind project "300,000 homes over 15 years".
 - Still to scan: `best-translation-tools`, `immigration-can-drive-business-growth`, `tremendous-value-multilingual-website`, `zoom-interpreting` and the long tail of posts with one figure each.
+
+### Correction to the blog index finding (29 Oct 2026)
+
+The earlier note that the index shows only 9 of 66 posts was wrong. `blog.json` holds the old WordPress cards, but `/blog/` is rendered by `BlogIndexView` in `components/ScrapedPage.jsx`, which listed all 66 posts. The real problems were the plain hero, no topics or popularity, and clipped dates.
+
+### Blog hub rebuild (29 Oct 2026)
+
+- New hero: tailored copy and a blog SVG (`components/BlogHeroArt.jsx`).
+- Topic chips under the hero, then "Most read" (top 6 by GA4 sessions, `data/blog-popularity.json`, 30 Oct 2025 to 29 Oct 2026), then "Latest" (6 newest), then six topic sections (`data/blog-topics.json`) showing 3 posts each with a native `<details>` dropdown for the rest.
+- Card dates now sit in a meta row inside the card padding (they were clipped at the left edge).
+- Rule fixes: numbered headings removed from `terms-conditions` and `posts/expressions-from-the-it-crowd`; `thank-you` meta description lengthened to 139 characters; `Belgium` and other countries kept capitalised in card titles (`lib/sentenceCase.js`).
+- The 12 "possible price" files from the scan are economic statistics (city GDP, market size), not service prices. They stay in the Priority 1 fact-check queue instead.
