@@ -1,0 +1,60 @@
+/* Blog hub (/blog/): topic nav, most read, latest, and topic dropdown sections.
+   Uses the design tokens, so the dark theme follows automatically. */
+
+.blog-art svg { width: 100%; height: auto; max-width: 440px; }
+
+/* Topic chips under the hero */
+.bhub-nav { background: var(--bt-surface, #fff); border-bottom: 1px solid var(--bt-line); padding: 22px 0 24px; }
+.bhub-nav__label { margin: 0 0 12px; font: 600 12px var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bt-text-soft); }
+.bhub-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.bhub-nav a { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; border-radius: 999px; border: 1.5px solid var(--bt-line); background: var(--bt-surface-2, #fff); color: var(--bt-navy); font: 600 14.5px var(--font-ui); text-decoration: none; transition: background .15s, border-color .15s, color .15s; }
+.bhub-nav a span { font: 600 12px var(--font-ui); padding: 2px 8px; border-radius: 999px; background: rgba(126, 190, 197, .22); color: var(--bt-text-mid); }
+.bhub-nav a:hover, .bhub-nav a:focus-visible { border-color: #5FA9B1; color: #2F7C86; }
+.bhub-nav li:nth-child(-n+2) a { border-color: #F67618; }
+
+/* Sections */
+.bhub-sec .section-head p { margin: 8px 0 0; max-width: 640px; color: var(--bt-text-mid); font-size: 1.02rem; line-height: 1.6; }
+.bhub-sec--alt { background: rgba(126, 190, 197, .08); }
+.bhub-sec [id], .btopic[id], .bhub-sec[id] { scroll-margin-top: calc(var(--header-h, 72px) + 16px); }
+
+/* Card grid */
+.bgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 28px; }
+.bcard { display: flex; flex-direction: column; background: var(--bt-surface, #fff); border: 1px solid var(--bt-line); border-radius: var(--r-xl, 20px); overflow: hidden; color: inherit; text-decoration: none; box-shadow: var(--shadow-xs); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.bcard:hover, .bcard:focus-visible { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(15, 23, 42, .12); border-color: #7EBEC5; }
+.bcard__media { position: relative; aspect-ratio: 8 / 5; background: #EFF7F8; overflow: hidden; }
+.bcard__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bcard__ph { display: grid; place-items: center; height: 100%; font: 700 3rem var(--font-display); color: #5FA9B1; }
+.bcard__badge { position: absolute; left: 14px; top: 14px; padding: 6px 12px; border-radius: 999px; background: #F67618; color: #fff; font: 700 12px var(--font-ui); letter-spacing: .04em; box-shadow: 0 4px 12px rgba(0, 0, 0, .25); }
+.bcard__body { display: flex; flex-direction: column; flex: 1; padding: 18px 20px 22px; }
+/* Topic left, date right, both inside the padding and never cut off: they wrap onto two lines if the card is narrow. */
+.bcard__meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; margin-bottom: 12px; }
+.bcard__tag { font: 700 11.5px var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: #2F7C86; }
+.bcard__meta time { font: 500 13px var(--font-ui); color: var(--bt-text-soft); white-space: nowrap; }
+.bcard h3 { margin: 0 0 8px; font: 700 1.14rem/1.35 var(--font-display); color: var(--bt-navy); text-wrap: balance; }
+.bcard p { margin: 0; font: 400 14.5px/1.6 var(--font-ui); color: var(--bt-text-mid); }
+
+/* Topic sections */
+.btopic { margin-top: 56px; }
+.btopic:first-of-type { margin-top: 36px; }
+.btopic__head { border-left: 4px solid #F67618; padding-left: 16px; }
+.btopic__head h3 { margin: 0; font: 700 1.6rem/1.25 var(--font-display); color: var(--bt-navy); }
+.btopic__head p { margin: 6px 0 0; color: var(--bt-text-mid); font-size: 1rem; line-height: 1.55; }
+.btopic__more { margin-top: 22px; }
+.btopic__more summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; border: 1.5px solid #5FA9B1; color: #2F7C86; font: 600 15px var(--font-ui); background: transparent; transition: background .15s, color .15s; }
+.btopic__more summary::-webkit-details-marker { display: none; }
+.btopic__more summary::after { content: ""; width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.btopic__more summary:hover, .btopic__more summary:focus-visible { background: #5FA9B1; color: #fff; }
+.btopic__more[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+.btopic__more-close { display: none; }
+.btopic__more[open] .btopic__more-open { display: none; }
+.btopic__more[open] .btopic__more-close { display: inline; }
+
+@media (max-width: 1000px) { .bgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .bgrid { grid-template-columns: 1fr; } .btopic { margin-top: 44px; } }
+
+html[data-theme="dark"] .bhub-nav a span, html:not([data-theme="light"]) .bhub-nav a span { color: var(--bt-text); }
+html[data-theme="dark"] .bcard__tag, html:not([data-theme="light"]) .bcard__tag { color: #7EBEC5; }
+html[data-theme="dark"] .bcard__media, html:not([data-theme="light"]) .bcard__media { background: #1D2B45; }
+html[data-theme="dark"] .btopic__more summary, html:not([data-theme="light"]) .btopic__more summary { color: #7EBEC5; }
+html[data-theme="dark"] .btopic__more summary:hover, html:not([data-theme="light"]) .btopic__more summary:hover { color: #fff; }
+html[data-theme="light"] .bcard__tag { color: #2F7C86; }

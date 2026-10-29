@@ -14,7 +14,10 @@ import QuoteForm from "./home/QuoteForm";
 import TocSpy from "./TocSpy";
 import PageFx from "./PageFx";
 import PageSchema from "./PageSchema";
-import { KICKER } from "./StdHero";
+import StdHero, { KICKER } from "./StdHero";
+import BlogHub from "./BlogHub";
+import BlogHeroArt from "./BlogHeroArt";
+import { getBlogHub } from "@/lib/blogHub";
 import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
@@ -94,43 +97,24 @@ function Sections({ html }) {
 }
 
 function BlogIndexView() {
-  const posts = getAllPosts();
+  const hub = getBlogHub();
   return (
     <main>
       <PageFx />
-      <section className="page-hero">
-        <div className="container container--narrow">
-          <div className="page-hero__text">
-            <Breadcrumbs pathname="/blog/" current="Blog" />
-            <span className="ip-kicker">{KICKER}</span>
-            <h1>{UI.en.blogTitle}</h1>
-            <p className="lead">{UI.en.blogLead}</p>
-          </div>
+      <StdHero art={<BlogHeroArt />}>
+        <Breadcrumbs pathname="/blog/" current="Blog" />
+        <span className="ip-kicker">{KICKER}</span>
+        <h1>Translation blog for languages, business and culture</h1>
+        <p className="lead page-hero__tagline">Practical advice, industry trends and cultural insight from a UK translation agency.</p>
+        <p className="page-hero__sub">
+          Read how AI is changing translation, what sets British English apart, how to work with a professional translator, and why healthcare, insurance and legal teams turn to specialist linguists. {hub.total} articles, written by the BeTranslated team.
+        </p>
+        <div className="page-hero__ctas">
+          <a className="bt-btn bt-btn--primary" href={UI.en.quoteHref}>Get a free quote</a>
+          <a className="bt-btn bt-btn--ghost" href="#most-read">Start with the most read</a>
         </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <div className="section-head"><h2>Latest articles</h2></div>
-          <div className="post-grid">
-            {posts.map(({ slug, data, date }) => {
-              const title = displayTitle(data);
-              const img = data.og?.image; // already localized by lib/content.js at read time
-              return (
-                <a key={slug} href={`/blog/${slug}/`} className="post">
-                  <div className="post__media">
-                    {img ? <Image src={img} alt="" width={290} height={180} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 290px" /> : <span className="post__ph" aria-hidden="true">{title.charAt(0)}</span>}
-                  </div>
-                  <div className="post__body">
-                    <h3>{title}</h3>
-                    <p>{data.metaDescription}</p>
-                    {date ? <time dateTime={date}>{new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</time> : null}
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      </StdHero>
+      <BlogHub hub={hub} />
       <CtaBand />
     </main>
   );
