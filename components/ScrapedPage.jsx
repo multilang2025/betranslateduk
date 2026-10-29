@@ -17,7 +17,9 @@ import PageSchema from "./PageSchema";
 import StdHero, { KICKER } from "./StdHero";
 import BlogHub from "./BlogHub";
 import BlogHeroArt from "./BlogHeroArt";
-import { getBlogHub } from "@/lib/blogHub";
+import BlogCard from "./BlogCard";
+import { getBlogHub, relatedFor } from "@/lib/blogHub";
+import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
@@ -120,9 +122,7 @@ function BlogIndexView() {
   );
 }
 
-function readMinutes(text = "") {
-  return Math.max(1, Math.round(String(text).split(/\s+/).filter(Boolean).length / 200));
-}
+const longDate = (iso) => new Date(iso).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
 
 function BlogPostView({ data, slug }) {
   const pathname = `/blog/${slug}/`;
@@ -134,15 +134,20 @@ function BlogPostView({ data, slug }) {
   body = faqSectionsToFaq(body, faqBlock);
   // The legacy contact widget at the foot of a post (heading, phone, email, address) repeats the page's CTA card.
   body = dropGroups(body, /^contact us/i, "h4");
+  // The scrape ends every post with the same five thumbnails; the related articles below replace them.
+  body = splitLongParagraphs(dropRelatedWidget(body));
   const { html: tocBody, toc } = withToc(enhanceTables(body));
   body = restoreBlocks(tocBody, ex.blocks);
   const publishDate = postDate(data);
+  const modified = updatedDate(slug);
+  const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
+  const minutes = readingMinutes(body);
   const img = data.og?.image; // already localized by lib/content.js at read time
-  const related = relatedPosts(slug, 4);
+  const related = relatedFor(slug, 4);
 
   return (
     <main className="blog-post">
-      <PageSchema schema={data.schema} />
+      <PageSchema schema={withModified(data.schema, modified)} />
       <TocSpy />
       <PageFx />
       <section className="page-hero page-hero--split page-hero--post-split">
@@ -152,8 +157,9 @@ function BlogPostView({ data, slug }) {
             <h1>{title}</h1>
             {data.metaDescription ? <p className="page-hero__sub">{data.metaDescription}</p> : null}
             <div className="post-hero__meta">
-              {publishDate ? <span>{UI.en.published} {new Date(publishDate).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</span> : null}
-              <span>{readMinutes(data.bodyText)} {UI.en.minRead}</span>
+              {publishDate ? <span>{UI.en.published} <time dateTime={publishDate}>{longDate(publishDate)}</time></span> : null}
+              {showUpdated ? <span className="post-hero__updated">Updated <time dateTime={modified}>{longDate(modified)}</time></span> : null}
+              <span>{minutes} {UI.en.minRead}</span>
             </div>
             <ShareBar path={pathname} title={title} compact />
           </div>
@@ -184,18 +190,9 @@ function BlogPostView({ data, slug }) {
         <section className="section section--tint related-posts">
           <div className="container">
             <div className="section-head"><h2>{UI.en.relatedPosts}</h2></div>
-            <div className="post-grid post-grid--related">
+            <div className="bgrid bgrid--four">
               {related.map((c) => (
-                <a key={c.href} href={c.href} className="post">
-                  <div className="post__media">
-                    {c.img ? <Image src={c.img} alt="" width={c.imgW} height={c.imgH} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 290px" /> : <span className="post__ph" aria-hidden="true">{c.title.charAt(0)}</span>}
-                  </div>
-                  <div className="post__body">
-                    <div className="post__top">{c.date ? <time dateTime={c.date} className="post__meta">{new Date(c.date).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}</time> : <span />}</div>
-                    <h3>{c.title}</h3>
-                    <p>{c.description}</p>
-                  </div>
-                </a>
+                <BlogCard key={c.slug} card={c} />
               ))}
             </div>
             <p className="related-posts__all"><a href={UI.en.blogHref} className="card__more">{UI.en.backToBlog}</a></p>
