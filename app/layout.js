@@ -12,6 +12,8 @@ import "./ui-motion.css";
 import "./home-refresh.css";
 import "./share.css";
 import "./ui-orphans.css";
+import "./blog-hub.css";
+import "./blog-post.css";
 // Dark theme (prefers-color-scheme): last, so its overrides win over every file above.
 import "./dark.css";
 import SiteHeader from "@/components/chrome/SiteHeader";

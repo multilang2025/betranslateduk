@@ -1,0 +1,25 @@
+/* Blog post body: easier scanning. Lists get brand bullets, an "In short" list becomes a summary
+   card, and figures carry a credit line underneath. Colours come from the design tokens. */
+
+.blog-post .prose ul { list-style: none; padding-left: 0; }
+.blog-post .prose ul > li { position: relative; padding-left: 1.5em; margin-bottom: .55em; }
+.blog-post .prose ul > li::before { content: ""; position: absolute; left: .25em; top: .72em; width: 7px; height: 7px; border-radius: 50%; background: #5FA9B1; }
+.blog-post .prose ol { padding-left: 1.5em; }
+.blog-post .prose ol > li::marker { color: #2F7C86; font-weight: 700; }
+.blog-post .prose ul.stat-row > li::before { display: none; }
+
+/* "In short": a bold lead-in paragraph followed directly by a list. */
+.blog-post .prose p:has(> strong:only-child):has(+ ul) { margin: 1.8em 0 0; padding: 18px 22px 0; background: rgba(126, 190, 197, .14); border: 1px solid rgba(126, 190, 197, .45); border-bottom: 0; border-radius: var(--r-lg, 16px) var(--r-lg, 16px) 0 0; font: 700 12.5px var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: #2F7C86; }
+.blog-post .prose p:has(> strong:only-child):has(+ ul) > strong { font: inherit; color: inherit; }
+.blog-post .prose p:has(> strong:only-child) + ul { margin: 0 0 1.8em; padding: 12px 22px 18px; background: rgba(126, 190, 197, .14); border: 1px solid rgba(126, 190, 197, .45); border-top: 0; border-radius: 0 0 var(--r-lg, 16px) var(--r-lg, 16px); }
+.blog-post .prose p:has(> strong:only-child) + ul > li { padding-left: 1.4em; }
+.blog-post .prose p:has(> strong:only-child) + ul > li::before { left: .15em; background: #F67618; }
+
+/* Figures with a photo credit. */
+.blog-post .prose figure.post-figure { margin: 2em 0; }
+.blog-post .prose figure.post-figure img { width: 100%; height: auto; border-radius: var(--r-lg, 16px); }
+.blog-post .prose figure.post-figure figcaption { margin-top: 10px; font: 400 13.5px/1.5 var(--font-ui); color: var(--bt-text-soft); text-align: left; }
+.blog-post .prose figure figcaption a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+html[data-theme="dark"] .blog-post .prose p:has(> strong:only-child):has(+ ul),
+html:not([data-theme="light"]) .blog-post .prose p:has(> strong:only-child):has(+ ul) { color: #7EBEC5; }
