@@ -138,3 +138,10 @@ The earlier note that the index shows only 9 of 66 posts was wrong. `blog.json` 
 **Note for Mike:** the insurance post is dated 4 Nov 2023, inside the "leave 2018 to 2023 era posts untouched" window. These edits remove or soften unverifiable statistics only. Revert that file if the rule covers published posts.
 
 Still unverified from the earlier list: AI market figure and HSBC rebrand cost (`why-choose-betranslated-and-not-ai`), Facebook video figures (`boost-reach-video-subtitling`), Sweden wind project (`environmental-translation-services-green-economy`), English, Spanish, Dutch, Portuguese and French speaker counts (`guide-western-european-languages`).
+
+### Blog posts: template, bullets and images (29 Oct 2026)
+
+- Template (merged, PR 25): accurate reading time, Updated date, related articles by topic, random end-of-post thumbnails removed, long paragraphs split, bullet lists and "In short" summaries on 57 posts.
+- Images (this branch): 96 Wikimedia Commons photos on 65 posts, inserted at render time from `data/blog-images.json` (`lib/blogImages.js`), files in `public/images/blog/commons/` (1200 to 1280 px wide JPEG, 27 MB in total). Licences limited to CC0, public domain, CC BY and CC BY-SA 2.0 or later. Each figure carries "Photo: author, licence, via Wikimedia Commons. Resized from the original." with links to the file page and the licence.
+- Dropped after review (logo, loose fit or duplicate): `professional-translator-translation-app` (no image), the second image on `british-characters`, `why-choose-betranslated-and-not-ai`, `8-british-habits-that-stand-out-abroad`, `movie-dubbing`, `multilingual-chatbots-shake-up-your-sales-strategy`, `lazy-monolingual-english-speakers` and `get-high-quality-translations`, and the first image on `insurance-translation-services`.
+- Weaker matches kept, worth a human look: `latest-trends-translation-industry` (server room), `cultural-understanding-in-translation` (Chinatown street), `insurance-translation-services` (umbrella), `spanish-phrases` (tapas bar), `seo-translation` (keyboard), `trademark-translation-business-expansion` (container port, courts).
