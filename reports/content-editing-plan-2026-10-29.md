@@ -122,3 +122,19 @@ The earlier note that the index shows only 9 of 66 posts was wrong. `blog.json` 
 - Card dates now sit in a meta row inside the card padding (they were clipped at the left edge).
 - Rule fixes: numbered headings removed from `terms-conditions` and `posts/expressions-from-the-it-crowd`; `thank-you` meta description lengthened to 139 characters; `Belgium` and other countries kept capitalised in card titles (`lib/sentenceCase.js`).
 - The 12 "possible price" files from the scan are economic statistics (city GDP, market size), not service prices. They stay in the Priority 1 fact-check queue instead.
+
+### Priority 1, batch 2 (29 Oct 2026): insurance and optical posts
+
+| Post | Claim | Result |
+|------|-------|--------|
+| `insurance-translation-services` | "65% of its staff in London relocated to Hong Kong" | No source found. Replaced with Prudential's own 2023 statement that its entire senior management team has moved to Asia (blockquote). |
+| | Brexit hit "60%" worldwide and "100%" of UK insurers | Could not be checked (the CII page redirects to a verification wall). Numbers removed, link kept. "Experts unanimously agree" softened. |
+| | London Market "only 30% UK-based", "only market with the top 20 reinsurers", "33% of insurers investing in technology" | No source found. Removed or softened. Added Lloyd's gross written premium: GBP 55.5bn in 2024, GBP 52.1bn in 2023 (Lloyd's results). |
+| | FT "more than a 33% rise in two years" | FT page not reachable. Reworded as a forecast "at the time", link kept. Home insurance prices have since fallen (ABI tracker, secondary reports): the section still needs a rewrite if Mike wants this post current. |
+| | "140 certified insurers in the City of London" | Left as is. The only source is a business directory page. |
+| `translation-services-for-optical-practices` | IBISWorld GBP 5.4bn (2023) and "more than 5,400 businesses" | IBISWorld's pages disagree with each other (5.4, 5.7 and 5.8bn). Replaced with the one figure on the IBISWorld market-size page: GBP 5.8bn in 2026. Business count dropped. |
+| | Prescription lens segment USD 2,015.6m to 2,811.8m (4.9% CAGR) | No source matches. Published reports put the global market at about USD 45 to 65bn. Sentence removed. |
+
+**Note for Mike:** the insurance post is dated 4 Nov 2023, inside the "leave 2018 to 2023 era posts untouched" window. These edits remove or soften unverifiable statistics only. Revert that file if the rule covers published posts.
+
+Still unverified from the earlier list: AI market figure and HSBC rebrand cost (`why-choose-betranslated-and-not-ai`), Facebook video figures (`boost-reach-video-subtitling`), Sweden wind project (`environmental-translation-services-green-economy`), English, Spanish, Dutch, Portuguese and French speaker counts (`guide-western-european-languages`).
