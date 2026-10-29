@@ -145,3 +145,20 @@ Still unverified from the earlier list: AI market figure and HSBC rebrand cost (
 - Images (this branch): 96 Wikimedia Commons photos on 65 posts, inserted at render time from `data/blog-images.json` (`lib/blogImages.js`), files in `public/images/blog/commons/` (1200 to 1280 px wide JPEG, 27 MB in total). Licences limited to CC0, public domain, CC BY and CC BY-SA 2.0 or later. Each figure carries "Photo: author, licence, via Wikimedia Commons. Resized from the original." with links to the file page and the licence.
 - Dropped after review (logo, loose fit or duplicate): `professional-translator-translation-app` (no image), the second image on `british-characters`, `why-choose-betranslated-and-not-ai`, `8-british-habits-that-stand-out-abroad`, `movie-dubbing`, `multilingual-chatbots-shake-up-your-sales-strategy`, `lazy-monolingual-english-speakers` and `get-high-quality-translations`, and the first image on `insurance-translation-services`.
 - Weaker matches kept, worth a human look: `latest-trends-translation-industry` (server room), `cultural-understanding-in-translation` (Chinatown street), `insurance-translation-services` (umbrella), `spanish-phrases` (tapas bar), `seo-translation` (keyboard), `trademark-translation-business-expansion` (container port, courts).
+
+### Pages audit (29 Oct 2026): links, headings, meta
+
+Tested all 305 external links and every internal link (172 pages and posts), and scanned the 106 rendered pages for heading, alt text, meta and word rules.
+
+Fixed:
+- **Internal 404s (8 targets).** `lib/sanitize.js` and `lib/blogEnhance.js` still carried a helper copied from the Spanish site that turned any `betranslated.es` link into a local path. Valid links to the Spanish site's English sworn translation pages (six links, on the Spanish language page and its merged sections) became UK paths that do not exist. They now stay as external links and open in a new tab.
+- **Homepage blog block** linked "All articles" to `/en/blog/` (404) and used Spanish-site copy ("moving to Spain"). Now links to `/blog/` with a UK lead that matches the featured posts.
+- **Dead external links removed (link text kept):** Kao Data PDF on `/translation-services/england/manchester/`, BBC tea article on `8-british-habits-that-stand-out-abroad`, Startup Donut (domain now parked) on `press-release-translation`, Asia Fund Managers on the Korean financial section. The Korean claim "tenth-largest economy worldwide" was out of date (about 12th to 14th by nominal GDP), so it now says "one of the largest economies in the world".
+- **17 meta descriptions** had no call to action. Rewritten at 130 to 160 characters: `industry`, `industry/business`, `industry/it-telecom`, M&A, patents and trademarks, Portuguese, `translation-agency`, customers, Cardiff, turnaround, `translation-services`, `translation-services/england`, Bristol, Newcastle, Plymouth, Sunderland, York.
+
+Checked and clean: no dashes or banned words in any rendered page, one H1 per page, no skipped heading levels or numbered headings, meta titles under 60 characters, internal links 0 problems. "Title case" and "no alt" hits were proper nouns and decorative card images.
+
+For Mike, not changed:
+- **Analytics.** `components/Tracking.jsx` was copied from the Spanish site: it only loads on `betranslated.es` hosts, and its GA4 (`G-BMCV42QBEE`), Clarity and Ahrefs IDs are the Spanish site's. On `betranslated.co.uk` no tracking will load at launch, and adding the host would send UK traffic to the Spanish properties. It needs the UK measurement IDs.
+- **Outbound links to industry-adjacent sites** (the "no outbound links to competing or industry-adjacent sites" rule): `iti.org.uk` (2 posts), Google Translate, Linguee, Lokalise (2), ProZ rates page, all in `best-translation-tools`, `working-out-translation-rates`, `5-inspiring-freelance-jobs`, `specialised-healthcare-translation-services` and `how-succeed-freelancer-translation-business`. Left in place for Mike to decide.
+- **Links that could not be checked from here:** `topsurf.fr`, `chatbotsmagazine.com`, `liverpool.gov.uk` (connection failures), plus 31 links that block automated requests.
