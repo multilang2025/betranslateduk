@@ -26,7 +26,7 @@ function headerOffset() {
 // that fills with reading progress and takes you back to the top, next section.
 // The hint beside each arrow names the section it jumps to.
 export default function FloatingTools() {
-  const [locale, setLocale] = useState("es");
+  const [locale, setLocale] = useState("en");
   const [shown, setShown] = useState(false);
   const [prev, setPrev] = useState(null);
   const [next, setNext] = useState(null);
