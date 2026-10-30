@@ -14,7 +14,7 @@ const NAV_ITEMS = {
       children: [
         { label: "Website translation", href: "/translation-services/website-translation/" },
         { label: "Document translation", href: "/document-translation-services/" },
-        { label: "Remote interpreting", href: "/translation-services/remote-interpreting/" },
+        { label: "Live interpretation services", href: "/translation-services/remote-interpreting/" },
       ],
     },
     { label: "Languages", href: "/languages/" },
