@@ -12,7 +12,7 @@ import TurnstileField from "./TurnstileField";
 // with the request prefilled and asks them to attach the files there.
 const TO = "hello@betranslated.co.uk";
 const QUOTE_ENDPOINT = process.env.NEXT_PUBLIC_QUOTE_ENDPOINT || "/api/quote/";
-// GA4 events through components/Tracking.jsx (no-op until consent and until it is mounted).
+// GA4 events through components/Tracking.jsx (no-op until consent).
 const track = (name, params) => window.btTrack?.(name, params);
 const MAX_FILES = 10;
 const MAX_TOTAL_MB = 25;

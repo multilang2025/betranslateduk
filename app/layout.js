@@ -18,6 +18,7 @@ import SiteHeader from "@/components/chrome/SiteHeader";
 import SiteFooter from "@/components/chrome/SiteFooter";
 import CookieConsent from "@/components/chrome/CookieConsent";
 import AttributionCapture from "@/components/AttributionCapture";
+import Tracking from "@/components/Tracking";
 import ToneSections, { TONE_SCRIPT } from "@/components/ToneSections";
 import FloatingTools from "@/components/chrome/FloatingTools";
 import ArrivalTrail from "@/components/chrome/ArrivalTrail";
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="bt">
+        <Tracking />
         <AttributionCapture />
         <SiteHeader />
         {children}
