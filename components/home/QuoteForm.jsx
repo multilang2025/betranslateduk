@@ -2,15 +2,16 @@
 
 import { useState } from "react";
 import { getAttribution } from "../../lib/attribution";
+import TurnstileField from "./TurnstileField";
 
 // Quote forms for the UK site: translation, certified translation and interpreting.
 // Modelled on the three betranslated.com quote forms. The submission (fields + files)
-// is posted as multipart/form-data to QUOTE_ENDPOINT, the BeTranslated intake Andre is
-// building (see the GitHub issue "Quote form backend"). Until that endpoint is set, or
-// if it fails, the form falls back to opening the visitor's mail client with the
-// request prefilled and asks them to attach the files there.
+// is posted as multipart/form-data to /api/quote/ (app/api/quote/route.js), or to
+// NEXT_PUBLIC_QUOTE_ENDPOINT when that is set. If the post fails (route down, not
+// configured, rate limited), the form falls back to opening the visitor's mail client
+// with the request prefilled and asks them to attach the files there.
 const TO = "hello@betranslated.co.uk";
-const QUOTE_ENDPOINT = process.env.NEXT_PUBLIC_QUOTE_ENDPOINT || "";
+const QUOTE_ENDPOINT = process.env.NEXT_PUBLIC_QUOTE_ENDPOINT || "/api/quote/";
 // GA4 events through components/Tracking.jsx (no-op until consent and until it is mounted).
 const track = (name, params) => window.btTrack?.(name, params);
 const MAX_FILES = 10;
@@ -355,6 +356,7 @@ export default function QuoteForm({ initialType = "translation" }) {
         {err("files")}
       </div>
 
+      <TurnstileField />
       <button type="submit" className="bt-btn bt-btn--primary bt-btn--lg" disabled={busy} aria-busy={busy || undefined}>Request a free quote</button>
       <p className="quote-form__note" role="status">
         {status === "ok" ? OK : status === "mailFiles" ? SENT_FILES : status === "mail" ? SENT : NOTE}
