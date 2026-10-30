@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getAttribution } from "../../lib/attribution";
 import TurnstileField from "./TurnstileField";
 
@@ -98,6 +98,13 @@ export default function QuoteForm({ initialType = "translation" }) {
   const [status, setStatus] = useState(null);
   const [files, setFiles] = useState([]);
   const [busy, setBusy] = useState(false);
+
+  // Links such as /translation-agency/quote/#interpreting open that tab.
+  useEffect(() => {
+    const h = window.location.hash.slice(1);
+    if (TYPES.some((t) => t.key === h) && h !== "translation") switchType(h);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const interp = type === "interpreting";
   const pairs = pairOptions(interp);
