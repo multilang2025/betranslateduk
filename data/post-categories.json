@@ -1,0 +1,60 @@
+{
+ "_doc": "Extra categories (annex themes) added to a post's own at render time (lib/content.js blogCards). Key = post slug. Mike, 1 Nov 2026: develop annex themes to build authority beyond translation; same behaviour as betranslated.fr, .es and .nl.",
+ "top-spots-location-independent-professional": [
+  "Productivity and remote work",
+  "Living abroad"
+ ],
+ "get-started-remote-freelancer": [
+  "Productivity and remote work",
+  "Starting out and self-employment"
+ ],
+ "5-inspiring-freelance-jobs": [
+  "Productivity and remote work",
+  "Starting out and self-employment"
+ ],
+ "vital-keyboard-shortcuts-translators": [
+  "Productivity and remote work"
+ ],
+ "translation-services-need-vpn": [
+  "Digital and cybersecurity"
+ ],
+ "benefits-multilingual-people-for-companies": [
+  "Teams and generations"
+ ],
+ "8-british-habits-that-stand-out-abroad": [
+  "Living abroad"
+ ],
+ "blog-british-food-expats-miss": [
+  "Living abroad"
+ ],
+ "tips-learn-new-language-abroad": [
+  "Living abroad"
+ ],
+ "reach-new-heights-with-startup-business": [
+  "Starting out and self-employment"
+ ],
+ "how-succeed-freelancer-translation-business": [
+  "Starting out and self-employment"
+ ],
+ "british-english": [
+  "Society and language"
+ ],
+ "immigration-can-drive-business-growth": [
+  "Society and language"
+ ],
+ "advantages-gifted-bilingual-kids": [
+  "Society and language"
+ ],
+ "lazy-monolingual-english-speakers": [
+  "Society and language"
+ ],
+ "guide-western-european-languages": [
+  "Society and language"
+ ],
+ "uk-visa-sponsorship-for-businesses": [
+  "Paperwork and documents"
+ ],
+ "property-documentation-translation": [
+  "Paperwork and documents"
+ ]
+}
