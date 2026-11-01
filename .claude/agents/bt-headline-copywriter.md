@@ -36,7 +36,7 @@ An H1 (the `title` field), a meta title only if it differs from the H1, and a me
 The site is WordPress (Divi, Rank Math) today and is being converted to a vibecode build (`docs/betranslated-co-uk/04-vibecode-migration.md`). While WordPress serves the site, titles are written through the AISA connector (`get_seo` / `set_seo`) as DRAFT changes: read before write, snapshot the old value, read back after, and publish only when Mike approves. In this repo the posts are scraped JSON in `scripts/btvibe-uk/output/` (never edit the scrape); read `lib/content.js` and `lib/blogPost.js` for the override layer, and if none exists for titles, propose one (a `data/` file) to Mike before building it. Leave 2018 to 2023 era draft posts untouched.
 
 ## Repo-specific rules
-- Emoji conflict: the style guide asks for one relevant emoji in an H1 and in some new meta titles, while Mike's brief for this task forbids emojis in clickbait titles. Do not add an emoji to any proposal. Where a title already carries the guide's emoji, keep it and count it in the 60 characters. Raise it as an open point (plan, below).
+- No emoji in any title (Mike, 2 Nov 2026): H1 and meta title carry none, and an emoji already in a title is removed when the title is rewritten. The excerpt keeps its one emoji.
 - Internal links only to URLs verified live in the sitemap; no FAQPage schema; no dashes of any kind; second person, active voice.
 - Blog posts link to services and industries, not to other posts, unless Mike asks.
 - After two failed attempts at the same connector call, stop and report.

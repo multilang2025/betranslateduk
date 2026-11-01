@@ -11,7 +11,7 @@ You produce metadata and structured data. You never mix them into article conten
 Read `docs/betranslated-co-uk/01-style-guide.md` sections 5 and 9. Check the sibling repos (for example `BTvibe-es`, `BT-Digital`) for existing metadata and JSON-LD components so the output matches what the vibecode builds expect.
 
 ## Metadata rules
-- Meta title: under 60 characters, Chicago Title Case, hyphen separators (never pipes), UK keyword, one emoji for new copy.
+- Meta title: under 60 characters, Chicago Title Case, hyphen separators (never pipes), UK keyword, no emoji (Mike, 2 Nov 2026).
 - Meta description: 130 to 160 characters including spaces, never over 160, action-oriented with a CTA, different from the excerpt.
 - Excerpt: two sentences, the second a CTA, one emoji, UK context.
 - Offer three or four variants with exact character counts when asked for options, and recommend one with a reason.

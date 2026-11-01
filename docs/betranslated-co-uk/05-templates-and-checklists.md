@@ -16,7 +16,7 @@ Social copy (Facebook, LinkedIn, X) is a separate optional output.
 ## 2. Page skeleton (service or blog)
 
 ```
-H1: Main keyword plus one emoji (omit if the supplied text has no H1)
+H1: Main keyword, no emoji (omit if the supplied text has no H1)
 H2: Secondary keyword, UK context (add if the text does not start with an H2)
 Intro: who it is for, what problem it solves, UK entity reference
 H2: Sentence-case descriptive heading
@@ -40,7 +40,7 @@ KEYWORDS: Focus: [x]. Secondary: [y, z]. UK intent.
 AUDIENCE: [segment].
 LENGTH: 800 to 1,200 words.
 VOICE: British English, second person, active, no fluff.
-STRUCTURE: H1 with keyword and one emoji; H2 with secondary keyword; sentence-case H2 to H6; no numbered headings; five UK FAQs; CTA.
+STRUCTURE: H1 with keyword, no emoji; H2 with secondary keyword; sentence-case H2 to H6; no numbered headings; five UK FAQs; CTA.
 UK ENTITIES TO USE (only where relevant and accurate): [HMRC, Home Office, Companies House, NHS, British Council, FCDO, UK courts, cities].
 INTERNAL LINKS: only from this verified list: [list]. Never link to this page itself.
 BANS: em and en dashes, "break language barriers", "The Importance of", "this guide", sentences starting "By" plus gerund, outbound links to competitors, invented statistics.
@@ -58,7 +58,7 @@ Language
 - [ ] No drumming reference.
 
 Structure
-- [ ] H1 present only if the source had one, with keyword and one emoji.
+- [ ] H1 present only if the source had one, with keyword and no emoji.
 - [ ] Starts with an H2 where required.
 - [ ] H2 to H6 in sentence case, capitalised first letter, no numbers.
 - [ ] Five FAQs.

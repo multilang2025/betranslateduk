@@ -59,5 +59,5 @@ Status: planned, nothing applied. No title, meta or post is modified by this ent
 **Who reviews.** Victoria for the first pass with the QA checklist (`05-templates-and-checklists.md`), then Mike approves. Mike decides cases where the angle changes. Branch then pull request for Mike; never push to `main`; content stays DRAFT until Mike approves.
 
 **Open points.**
-1. Emoji: keep the guide's one emoji in H1s, or drop it for blog titles? Options: (a) drop it on blog titles only (recommended), (b) keep it where the H1 has one today, (c) keep it everywhere per the guide.
+1. Emoji: settled by Mike on 2 Nov 2026, no emoji in any title (H1 and meta title); existing ones go when the title is rewritten. The excerpt keeps its one emoji.
 2. Do titles change on WordPress now, or only once the vibecode build is live? Options: (a) on WordPress via AISA as drafts (recommended, CTR gains start sooner), (b) wait for the build, (c) both, with a redirect-free title change only.

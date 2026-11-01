@@ -30,7 +30,7 @@ The site is WordPress (Divi, Rank Math) today and will be converted to a vibecod
 
 - British English. No em dashes or en dashes anywhere. Second person, active voice.
 - One sentence per line in content, blank line after each full stop.
-- Meta title under 60 characters, Chicago Title Case, hyphen separator. Meta description 130 to 160 characters with a CTA. Excerpt: two sentences plus CTA plus one emoji.
+- Meta title under 60 characters, Chicago Title Case, hyphen separator. No emoji in any title, H1 or meta title (Mike, 2 Nov 2026). Meta description 130 to 160 characters with a CTA. Excerpt: two sentences plus CTA plus one emoji.
 - H2 to H6 in sentence case, no numbered headings. No "The Importance of", "this guide" or "break language barriers".
 - Internal links only to URLs verified live in the sitemap. Never link a page to itself.
 - No outbound links to competing or industry-adjacent sites.

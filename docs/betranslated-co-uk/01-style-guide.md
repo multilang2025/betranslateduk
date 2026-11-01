@@ -37,7 +37,7 @@ Single source of truth for every agent. Where two earlier rules conflicted, the 
 
 | Element | Rule |
 |---|---|
-| H1 | Contains the main keyword and one relevant emoji. British spelling. If the supplied text has no H1, do not add one. |
+| H1 | Contains the main keyword. No emoji (Mike, 2 Nov 2026: no emoji in any title). British spelling. If the supplied text has no H1, do not add one. |
 | First H2 | Secondary or related keyword, UK tone. If the supplied text does not start with an H2, add one. |
 | H2 to H6 | Sentence case. Clear and descriptive. |
 | Word count | 800 to 1,200 words for blog and service copy. |
@@ -47,7 +47,7 @@ Single source of truth for every agent. Where two earlier rules conflicted, the 
 
 | Field | Rule |
 |---|---|
-| Meta title | Title Case following Chicago Style. Hyphen separator, never a pipe. Under 60 characters. One emoji where the brief calls for it (new copy). UK-optimised keyword. |
+| Meta title | Title Case following Chicago Style. Hyphen separator, never a pipe. Under 60 characters. No emoji (Mike, 2 Nov 2026). UK-optimised keyword. |
 | Meta description | 130 to 160 characters including spaces. Hard maximum 160. Brief, clear, action-oriented, with a CTA. Never identical to the excerpt. |
 | Excerpt | Two sentences, the second acting as the CTA, plus one emoji. UK context. |
 | Canonical | Set to the page's own specific path. |
