@@ -32,3 +32,7 @@ Aucun article planifié : rien à recaler. Les nouveaux articles prendront les c
 1. Date de mise en ligne du site (début de la règle) ?
 2. Construire un filtre de planification ou fusionner chaque article le jour prévu ?
 3. Cadence : deux par semaine (défaut) ou une seule ?
+
+## Planification technique : à faire quand les articles passent en preview (décision de Mike, 1er nov. 2026)
+
+Ce site ne masque pas encore un article daté du futur (il s'afficherait tout de suite). Mike a décidé de porter le mécanisme de betranslated.com (champ de date + masquage des articles futurs jusqu'à leur jour + redéploiement quotidien) **au moment où les articles de ce site passent en preview**, pas avant. Tant que le site n'a aucun article planifié, rien à faire. Modèle de référence : `lib/blog.ts` (`isPublished`) et `.github/workflows/blog-scheduled-publish.yml` dans BT-Digital ; côté FR : `PUBLISH_SCHEDULE=on` et `docs/calendrier-publication.md` dans btvibe-fr ; côté ES : `isScheduled` dans `btvibe-es`.
