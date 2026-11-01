@@ -51,3 +51,5 @@ The site is WordPress (Divi, Rank Math) today and will be converted to a vibecod
 ## Git
 
 Work on a branch. Small commits with clear messages. No secrets. Open a pull request for Mike to review. Do not push to `main` directly.
+
+- **Calendrier de publication** (Mike, 1er nov. 2026) : jamais deux articles le même jour ; cadence régulière, par défaut deux par semaine (mardi et vendredi, 08:00 heure locale, deux jours d'écart au moins) ; ne vaut pas tant que le site est en preview. Détail, état et calendrier proposé : `docs/publication-calendar.md`.
