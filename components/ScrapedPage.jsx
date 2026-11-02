@@ -76,6 +76,7 @@ const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
   oxford: ["/images/wp-content/uploads/2025/11/oxford-skyline-1024x579.jpg", "Oxford skyline"],
   plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
   portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
+  reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading"],
   sheffield: ["/images/wp-content/uploads/2024/10/translation-services-in-sheffield.jpg", "Sheffield city centre"],
   southampton: ["/images/wp-content/uploads/2024/11/ships-port-lights-dusk-england-1804340-e1732018889626.jpg", "Southampton docks at dusk"],
   york: ["/images/wp-content/uploads/2024/11/cliffords-tower-castle-landmark-5950952-e1732896084721.jpg", "Clifford's Tower, York"],
