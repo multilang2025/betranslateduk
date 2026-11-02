@@ -21,6 +21,7 @@ import BlogCard from "./BlogCard";
 import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
+import { ctaCardHtml } from "@/lib/blogCta";
 import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
@@ -143,6 +144,8 @@ function BlogPostView({ data, slug }) {
   const modified = updatedDate(slug);
   const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
   const minutes = readingMinutes(body);
+  // Closing call-to-action card for posts that have copy in data/blog-cta/ (added after the reading time is counted).
+  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
   const related = relatedFor(slug, 4);
 
