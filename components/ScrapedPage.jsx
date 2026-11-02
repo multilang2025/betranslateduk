@@ -260,7 +260,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
-    <main className={isHub ? "hub" : undefined}>
+    <main className={isHub ? "hub" : undefined} data-slug={key}>
       <PageSchema schema={page.schema} />
       <PageFx />
       <section className="page-hero page-hero--split">

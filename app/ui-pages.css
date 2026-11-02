@@ -17,6 +17,23 @@
 .sec__in table { display: block; overflow-x: auto; border-collapse: collapse; }
 .sec__in th, .sec__in td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--bt-line); }
 
+/* Birmingham, "Why choose BeTranslated": the photo sits to the right with
+   the paragraphs that follow it running alongside, instead of stacking
+   full-width above/below the text. */
+main[data-slug="translation-services/england/birmingham"] .sec__in figure:has(> img[src*="betranslated-your-professional-t"]) {
+  float: right;
+  margin: 4px 0 20px 32px;
+  max-width: 42%;
+}
+main[data-slug="translation-services/england/birmingham"] .sec__in figure:has(> img[src*="betranslated-your-professional-t"]) img {
+  max-height: none;
+  width: 100%;
+  margin: 0;
+}
+@media (max-width: 760px) {
+  main[data-slug="translation-services/england/birmingham"] .sec__in figure:has(> img[src*="betranslated-your-professional-t"]) { float: none; max-width: 100%; margin: 1.4em 0; }
+}
+
 .bt .sec__in ul.stat-row { list-style: none; padding: 0; margin: 22px 0 1.4em; max-width: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .bt .sec__in ul.stat-row li { margin: 0; padding: 16px 18px; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); font: 500 13.5px/1.4 var(--font-ui); color: var(--bt-text-soft); }
 .bt .sec__in ul.stat-row li strong { display: block; margin-bottom: 2px; font: 700 1.6rem/1.1 var(--font-display); color: var(--bt-navy); }
