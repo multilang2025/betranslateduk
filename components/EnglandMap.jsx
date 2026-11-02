@@ -77,7 +77,7 @@ const CITIES = [
   ["Nottingham", "nottingham", 52.9548, -1.1581, 9, -6, "start"],
   ["Oxford", "oxford", 51.7520, -1.2577, -9, 11, "end"],
   ["Plymouth", "plymouth", 50.3755, -4.1427, -9, 4, "end"],
-  ["Portsmouth", "portsmouth", 50.8198, -1.0880, 9, 13, "start"],
+  ["Portsmouth", "portsmouth", 50.8198, -1.0880, 9, 24, "start"],
   ["Reading", "reading", 51.4543, -0.9781, -9, -8, "end"],
   ["Sheffield", "sheffield", 53.3811, -1.4701, 9, 4, "start"],
   ["Southampton", "southampton", 50.9097, -1.4044, -9, -6, "end"],
