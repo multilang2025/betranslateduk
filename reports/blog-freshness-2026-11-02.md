@@ -40,3 +40,18 @@ If Mike prefers not to retire anything, the fallback is to refresh each and add 
 ## Not yet checked in depth
 
 `insurance-translation-services` (statistics partly fixed, the home insurance section still describes 2023 trends and needs a rewrite), `environmental-translation-services-green-economy` (Sweden wind project claim unsourced), `boost-reach-video-subtitling` (Facebook video figures), `dubbing-english-language-content`, `translation-services-need-vpn`, `business-need-financial-translation`, `press-release-translation`, `working-out-translation-rates`.
+
+## Update pass, 2 November 2026 (nothing retired)
+
+Eight posts updated against primary sources. Every claim was checked; anything that could not be verified was removed or softened.
+
+- `uk-visa-sponsorship-for-businesses`: corrected "points-based system for British citizenship" (it governs work immigration), replaced the old Intra-Company Transfer route with Senior or Specialist Worker, removed Global Talent as an employer-sponsored route, dropped the unsupported "one to four years" licence term. All rules sourced to gov.uk, no fees or salary figures. New meta description.
+- `immigration-can-drive-business-growth`: replaced the unsourced Statista "almost 1 million" with ONS (813,000 long-term immigrants in the year ending December 2025, non-EU+ work-related down 47%); removed the unverifiable Poland and Slovenia salary claim; right-to-work duties from gov.uk. The knightsplc.com link is kept, repointed to its current address.
+- `translation-schools-belgium`: fixed "Marie Haps (ULB)" (it is part of UCLouvain via Saint-Louis), removed the unsupported Ghent "best university in Belgium" claim and the ISTI "19 languages" claim; title no longer says "The Best".
+- `guide-western-european-languages`: Spanish updated to 520 million native speakers (Cervantes Institute), Dutch to more than 25 million (Taalunie), English 1.49 billion (Statista), Welsh to 17.8% (Census 2021). Removed the unverifiable Russian, Portuguese, Italian and French figures. Fixed the Celtic, Baltic and Basque descriptions.
+- `best-translation-tools`: Word Lens and Windows Phone framing corrected, Lokalise free plan removed, unverifiable language and user counts removed, new section on AI tools versus a human translator. Every existing tool link kept.
+- `translations-universities-uk-ireland`: dropped courses that have closed or changed (Royal Holloway BA, Essex BA, Birmingham MA, Strathclyde), repointed about 30 links from university homepages to course pages. Leicester and Nottingham are described as reported closures only, pending confirmation.
+- `zoom-interpreting`: now a 2026 guide to remote interpreting on Zoom, Teams and Meet from the vendors' own help pages; new title and meta description.
+- `vital-keyboard-shortcuts-translators`: Ctrl+F2 corrected to F2, Ctrl+Alt+PrtScn replaced, Mac equivalents added.
+
+Still to confirm by hand: Leicester and Nottingham closures; EhB's and ULiège's current programmes (Belgium post); the Windows language-switch shortcuts and the Bing Translator developer wording (from memory); the Statista English figure (not a primary source). Several university course URLs are year-specific and may move.
