@@ -40,21 +40,40 @@ const HUB_SLUGS = new Set([
   "translation-agency/locations", "translation-services/england",
 ]);
 
-// Pages that always show full text, with no "Read more" (+) fold on long
-// sections or timeline steps. Add a page's slug here on request.
-const NO_FOLD_SLUGS = new Set([
-  "translation-services/england/birmingham",
-]);
+// England city pages: no "Read more" (+) fold on long sections, and a real
+// photo in the hero's second column (reusing each page's own unique photo;
+// the hero automatically goes back to a two-column layout once it has a
+// second child — see the :only-child rule in ui-fx.css). Exeter, Oxford and
+// Reading have no unique photo yet, so they're left out of HERO_IMAGE_SLUGS.
+const ENGLAND_CITY_SLUGS = [
+  "birmingham", "bournemouth", "brighton", "bristol", "cambridge", "coventry",
+  "exeter", "leeds", "leicester", "liverpool", "london", "manchester",
+  "newcastle", "norwich", "nottingham", "oxford", "plymouth", "portsmouth",
+  "reading", "sheffield", "southampton", "york",
+];
+const NO_FOLD_SLUGS = new Set(ENGLAND_CITY_SLUGS.map((c) => `translation-services/england/${c}`));
 
-// Pages that show a real photo in the hero's second column. Add a page's
-// slug here on request; the hero automatically goes back to a two-column
-// layout once it has a second child (see the :only-child rule in ui-fx.css).
-const HERO_IMAGE_SLUGS = {
-  "translation-services/england/birmingham": {
-    src: "/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg",
-    alt: "Birmingham city centre",
-  },
-};
+const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
+  birmingham: ["/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg", "Birmingham city centre"],
+  bournemouth: ["/images/wp-content/uploads/2024/11/bournemouth-pier-dawn-bournemouth-3419367-e1732805720456.jpg", "Bournemouth pier at dawn"],
+  brighton: ["/images/wp-content/uploads/2024/10/brighton-pier-arcade-beach-5643723-e1728640815917.jpg", "Brighton pier"],
+  bristol: ["/images/wp-content/uploads/2024/10/translation-services-in-bristol.webp", "Bristol city"],
+  cambridge: ["/images/wp-content/uploads/2024/10/cambridge-translation-services.jpg", "Cambridge"],
+  coventry: ["/images/wp-content/uploads/2024/11/coventry-city-england-cathedral-2979432-e1732016010941.jpg", "Coventry Cathedral"],
+  leeds: ["/images/wp-content/uploads/2024/10/1-leeds-e1729070002851.jpg", "Leeds city centre"],
+  leicester: ["/images/wp-content/uploads/2024/10/leicester-translation-service.jpg", "Leicester city centre"],
+  liverpool: ["/images/wp-content/uploads/2024/10/beatle-liverpool-raining-3819228-e1729071249160.jpg", "Liverpool waterfront"],
+  london: ["/images/wp-content/uploads/2024/10/london-translation-services.jpg", "London"],
+  manchester: ["/images/wp-content/uploads/2024/09/manchester-manhole-cover-metal-1631200-e1727351820924.jpg", "Manchester"],
+  newcastle: ["/images/wp-content/uploads/2024/11/sage-gateshead-newcastle-4331425-e1732895511280.jpg", "Sage Gateshead, Newcastle"],
+  norwich: ["/images/wp-content/uploads/2024/11/Norwich-translation-services.jpg", "Norwich"],
+  nottingham: ["/images/wp-content/uploads/2024/10/nottingham-translation-services.webp", "Nottingham city centre"],
+  plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
+  portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
+  sheffield: ["/images/wp-content/uploads/2024/10/translation-services-in-sheffield.jpg", "Sheffield city centre"],
+  southampton: ["/images/wp-content/uploads/2024/11/ships-port-lights-dusk-england-1804340-e1732018889626.jpg", "Southampton docks at dusk"],
+  york: ["/images/wp-content/uploads/2024/11/cliffords-tower-castle-landmark-5950952-e1732896084721.jpg", "Clifford's Tower, York"],
+}).map(([city, [src, alt]]) => [`translation-services/england/${city}`, { src, alt }]));
 
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
