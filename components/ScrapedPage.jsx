@@ -52,7 +52,10 @@ const ENGLAND_CITY_SLUGS = [
   "newcastle", "norwich", "nottingham", "oxford", "plymouth", "portsmouth",
   "reading", "sheffield", "southampton", "york",
 ];
-const NO_FOLD_SLUGS = new Set(ENGLAND_CITY_SLUGS.map((c) => `translation-services/england/${c}`));
+const NO_FOLD_SLUGS = new Set([
+  "translation-services/england",
+  ...ENGLAND_CITY_SLUGS.map((c) => `translation-services/england/${c}`),
+]);
 
 const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
   birmingham: ["/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg", "Birmingham city centre"],

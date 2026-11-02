@@ -72,6 +72,9 @@
 .mini:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .mini > :first-child { margin-top: 0 !important; }
 .mini p { font-size: 0.96rem; line-height: 1.6; }
+.mini ul.region-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.mini ul.region-points > li { position: relative; padding-left: 18px; font-size: 0.96rem; line-height: 1.5; color: var(--bt-text-mid); }
+.mini ul.region-points > li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--bt-orange); }
 .mini .cta-row { display: block; margin: 0.6em 0 0; }
 .bt .mini a.bt-btn { background: none; box-shadow: none; border: 0; padding: 0; color: var(--bt-orange-600); font-size: 14px; }
 
