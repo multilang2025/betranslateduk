@@ -73,7 +73,7 @@ const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
   newcastle: ["/images/wp-content/uploads/2024/11/sage-gateshead-newcastle-4331425-e1732895511280.jpg", "Sage Gateshead, Newcastle"],
   norwich: ["/images/wp-content/uploads/2024/11/Norwich-translation-services.jpg", "Norwich"],
   nottingham: ["/images/wp-content/uploads/2024/10/nottingham-translation-services.webp", "Nottingham city centre"],
-  oxford: ["/images/wp-content/uploads/2025/11/oxford-skyline-1024x579.jpg", "Oxford skyline"],
+  oxford: ["/images/wp-content/uploads/2025/11/oxford-radcliffe-square-1024x579.jpg", "Radcliffe Square, Oxford"],
   plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
   portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
   reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading"],
