@@ -293,7 +293,7 @@
    Column counts avoid an orphan card: 3 across, 4 as 2x2, 5 as 3 + 2 wide,
    6 as 3x2. */
 .bt .sec__in ul.feat-list { list-style: none; padding: 0; margin: 22px 0 1.4em; max-width: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
-.bt .sec__in ul.feat-list li { grid-column: span 2; margin: 0; padding: 14px 16px 14px 46px; position: relative; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); font: 500 15px/1.45 var(--font-ui); color: var(--bt-navy); display: flex; align-items: center; min-height: 56px; }
+.bt .sec__in ul.feat-list li { grid-column: span 2; margin: 0; padding: 17px 16px 17px 46px; min-height: 56px; position: relative; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); font: 500 15px/1.45 var(--font-ui); color: var(--bt-navy); }
 .bt .sec__in ul.feat-list li::before { content: ""; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; border-radius: 50%; background: var(--bt-accent) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%223.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m5 12 5 5 9-10%22/%3E%3C/svg%3E") center / 13px no-repeat; }
 .bt .sec__in ul.feat-list[data-count="4"] li { grid-column: span 3; }
 .bt .sec__in ul.feat-list[data-count="5"] li:nth-child(n+4), .bt .sec__in ul.feat-list[data-count="8"] li { grid-column: span 3; }
