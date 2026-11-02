@@ -799,10 +799,11 @@ html, body { overflow-x: clip; max-width: 100%; }
 @media (max-width: 900px) {
   .bt .page-hero, .bt .page-hero--post { min-height: 500px; padding: 40px 0 48px; }
   .bt .page-hero--split > .container { min-height: 0; }
-  .bt .page-hero--split > .container > :not(.page-hero__text):not(.post-hero__media--split) { display: none; }
-  /* Blog posts keep their photo on phones: it leads the hero, above the breadcrumb and title. */
+  .bt .page-hero--split > .container > :not(.page-hero__text):not(.post-hero__media--split):not(.page-hero__photo) { display: none; }
+  /* Blog posts and scraped-page photos keep their image on phones: it leads
+     the hero, above the breadcrumb and title. */
   .bt .page-hero--post-split > .container { gap: 18px; }
-  .bt .page-hero--post-split .post-hero__media--split { order: -1; justify-self: stretch; max-width: none; aspect-ratio: 16 / 9; border-radius: 18px; }
+  .bt .page-hero--post-split .post-hero__media--split, .bt .page-hero--split .page-hero__photo { order: -1; justify-self: stretch; max-width: none; aspect-ratio: 16 / 9; border-radius: 18px; }
 }
 @media (max-width: 640px) {
   .bt .page-hero { min-height: 520px; }

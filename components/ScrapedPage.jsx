@@ -46,6 +46,16 @@ const NO_FOLD_SLUGS = new Set([
   "translation-services/england/birmingham",
 ]);
 
+// Pages that show a real photo in the hero's second column. Add a page's
+// slug here on request; the hero automatically goes back to a two-column
+// layout once it has a second child (see the :only-child rule in ui-fx.css).
+const HERO_IMAGE_SLUGS = {
+  "translation-services/england/birmingham": {
+    src: "/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg",
+    alt: "Birmingham city centre",
+  },
+};
+
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
@@ -276,6 +286,11 @@ export default function ScrapedPage({ page, slug = [] }) {
               </div>
             ) : null}
           </div>
+          {HERO_IMAGE_SLUGS[key] ? (
+            <div className="page-hero__photo">
+              <img src={HERO_IMAGE_SLUGS[key].src} alt={HERO_IMAGE_SLUGS[key].alt} width="640" height="480" />
+            </div>
+          ) : null}
         </div>
       </section>
 

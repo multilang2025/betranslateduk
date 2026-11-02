@@ -63,6 +63,8 @@
 /* Scraped pages only ever render the text column (no second, art, column):
    let it span the full hero width instead of being squeezed to ~55%. */
 .page-hero--split > .container > .page-hero__text:only-child { grid-column: 1 / -1; }
+.page-hero__photo { justify-self: center; width: 100%; max-width: 440px; aspect-ratio: 4 / 3; border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+.page-hero__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .pair-art { justify-self: center; }
 .pair-art svg { width: 100%; max-width: 440px; height: auto; display: block; overflow: visible; }
 .pair-art__doc--src { animation: paFloat 7s ease-in-out infinite; }
