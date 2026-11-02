@@ -60,6 +60,9 @@
 .page-hero--split { background: radial-gradient(620px 320px at 88% 0%, rgba(95, 169, 177,.10), transparent 62%), radial-gradient(520px 320px at 0% 100%, rgba(126,190,197,.16), transparent 62%), var(--bt-paper); overflow: hidden; }
 .page-hero--split > .container, .page-hero--split + .trust-wrap > .container { max-width: 1120px; }
 .page-hero--split > .container { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 40px; align-items: center; }
+/* Scraped pages only ever render the text column (no second, art, column):
+   let it span the full hero width instead of being squeezed to ~55%. */
+.page-hero--split > .container > .page-hero__text:only-child { grid-column: 1 / -1; }
 .pair-art { justify-self: center; }
 .pair-art svg { width: 100%; max-width: 440px; height: auto; display: block; overflow: visible; }
 .pair-art__doc--src { animation: paFloat 7s ease-in-out infinite; }

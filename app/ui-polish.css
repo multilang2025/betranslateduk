@@ -52,6 +52,7 @@
 @media (prefers-reduced-motion: reduce) { .page-hero::after { animation: none; } }
 .page-hero h1 { font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.1rem); line-height: 1.08; max-width: 22ch; margin: 0 0 16px; }
 .page-hero .lead, .page-hero p.lead { max-width: 60ch; }
+.page-hero--split > .container > .page-hero__text:only-child .lead { max-width: 85ch; }
 .page-hero .crumbs { margin-bottom: 18px; }
 .page-hero__cta { margin-top: 22px; }
 .page-hero__cta .bt-btn--ghost { background: #fff; }
