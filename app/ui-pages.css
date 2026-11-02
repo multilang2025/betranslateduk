@@ -24,15 +24,6 @@
 .sec__in ul.stat-row:has(> li:nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 640px) { .bt .sec__in ul.stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-.city-map { margin: 24px auto 28px; max-width: 320px; padding: 20px; background: var(--bt-accent-50); border-radius: var(--r-lg); }
-.city-map svg { display: block; width: 100%; height: auto; overflow: visible; }
-.city-map__line { stroke: var(--bt-accent); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.6; }
-.city-map__node { fill: #fff; stroke: var(--bt-accent); stroke-width: 2; }
-.city-map__node-label { font-family: var(--font-ui); font-weight: 600; fill: var(--bt-text-mid); }
-.city-map__ring { fill: rgba(246, 118, 24, 0.18); }
-.city-map__dot { fill: var(--bt-orange); }
-.city-map__label { font-family: var(--font-ui); font-weight: 700; fill: var(--bt-navy); }
-
 .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin: 28px 0 12px; }
 .mini { background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); padding: 22px 22px 14px; box-shadow: var(--shadow-xs); transition: transform 0.2s, box-shadow 0.2s; }
 .mini:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }

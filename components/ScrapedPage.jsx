@@ -22,7 +22,6 @@ import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
 import NotFound from "./NotFoundView";
-import CityMap from "./CityMap";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -47,19 +46,6 @@ const NO_FOLD_SLUGS = new Set([
   "translation-services/england/birmingham",
 ]);
 
-// England city pages that show the small "nearby cities" map near the top.
-// Keyed by slug; neighbours are the other city pages already linked from
-// that page's copy (see components/CityMap.jsx for the shared coordinates).
-const CITY_MAP_SLUGS = {
-  "translation-services/england/birmingham": {
-    city: "birmingham",
-    neighbours: [
-      { key: "coventry", label: "Coventry" },
-      { key: "leicester", label: "Leicester" },
-      { key: "nottingham", label: "Nottingham" },
-    ],
-  },
-};
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
@@ -301,18 +287,6 @@ export default function ScrapedPage({ page, slug = [] }) {
               <li><span>Email</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
             </ul>
             <div className="form-card quote-page__form"><QuoteForm locale="en" /></div>
-          </div>
-        </section>
-      ) : null}
-
-      {CITY_MAP_SLUGS[key] ? (
-        <section className="section">
-          <div className="container container--narrow">
-            <CityMap
-              city={CITY_MAP_SLUGS[key].city}
-              neighbours={CITY_MAP_SLUGS[key].neighbours}
-              label={title.replace(/\s*translation\s+services?\s*$/i, "").trim()}
-            />
           </div>
         </section>
       ) : null}
