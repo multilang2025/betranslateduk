@@ -22,6 +22,7 @@ import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
 import NotFound from "./NotFoundView";
+import EnglandMap from "./EnglandMap";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -332,11 +333,7 @@ export default function ScrapedPage({ page, slug = [] }) {
         <Children
           items={children}
           title={HUB_TITLES[key] || "Explore"}
-          afterTitle={key === "translation-services/england" ? (
-            <figure className="england-map">
-              <img src="/images/maps/england-cities-map.png" alt="Map of England marking the cities and towns BeTranslated serves" width="1475" height="1532" />
-            </figure>
-          ) : null}
+          afterTitle={key === "translation-services/england" ? <EnglandMap /> : null}
         />
       ) : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}

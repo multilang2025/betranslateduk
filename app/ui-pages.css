@@ -1,5 +1,14 @@
 .england-map { margin: 0 auto; max-width: 460px; }
-.england-map img { display: block; width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+.england-map svg { display: block; width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+.england-map__sea { fill: #BFE0E8; }
+.england-map__land-eng { fill: #CBD9A8; stroke: #8FA06A; stroke-width: 1.3; }
+.england-map__land-other { fill: #E8E1CC; stroke: #C7BE9E; stroke-width: 1; }
+.england-map__dot { fill: var(--bt-orange); stroke: #B9731F; stroke-width: 2; transition: r .15s ease; }
+.england-map__label { font: 700 15px var(--font-ui); fill: var(--bt-navy); paint-order: stroke; stroke: #FBF8F0; stroke-width: 4px; stroke-linejoin: round; }
+.england-map__pin { cursor: pointer; }
+.england-map__pin:hover .england-map__dot { r: 9; }
+.england-map__pin:hover .england-map__label { fill: var(--bt-accent-ink); }
+.england-map__leader { stroke: var(--bt-navy); stroke-width: 1px; opacity: 0.55; }
 @media (min-width: 900px) {
   .hub-aside-layout:has(.england-map) { display: flex; align-items: flex-start; gap: 32px; }
   .hub-aside-layout:has(.england-map) .england-map { flex: none; width: 400px; margin: 0; }
