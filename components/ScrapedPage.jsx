@@ -326,6 +326,16 @@ export default function ScrapedPage({ page, slug = [] }) {
       ) : null}
 
       {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
+
+      {key === "translation-services/england" ? (
+        <section className="section section--tint">
+          <div className="container container--narrow">
+            <figure className="england-map">
+              <img src="/images/maps/england-cities-map.png" alt="Map of England marking the cities and towns BeTranslated serves" width="1475" height="1532" />
+            </figure>
+          </div>
+        </section>
+      ) : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       {leaves.length ? (

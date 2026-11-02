@@ -1,3 +1,6 @@
+.england-map { margin: 0 auto; text-align: center; }
+.england-map img { max-width: 100%; height: auto; max-height: 640px; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+
 /* Banded sections (scraped copy), mini cards, tiles, pills, blog, search. */
 .sec { padding: 72px 0; }
 .sec--alt { background: var(--bt-paper); }
