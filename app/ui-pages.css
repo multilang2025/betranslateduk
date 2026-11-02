@@ -1,5 +1,10 @@
 .england-map { margin: 0 auto; max-width: 460px; }
 .england-map img { display: block; width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+@media (min-width: 900px) {
+  .hub-aside-layout:has(.england-map) { display: flex; align-items: flex-start; gap: 32px; }
+  .hub-aside-layout:has(.england-map) .england-map { flex: none; width: 400px; margin: 0; }
+  .hub-aside-layout:has(.england-map) .pills { flex: 1 1 0; align-content: flex-start; }
+}
 
 /* Banded sections (scraped copy), mini cards, tiles, pills, blog, search. */
 .sec { padding: 72px 0; }

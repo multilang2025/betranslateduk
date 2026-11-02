@@ -101,22 +101,24 @@ function Children({ items, title, afterTitle }) {
     <section className="section section--tint">
       <div className="container">
         <div className="section-head"><h2>{title}</h2></div>
-        {afterTitle}
-        {items.length > 7 ? (
-          <ul className="pills">
-            {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
-          </ul>
-        ) : (
-          <div className="grid grid--services">
-            {items.map((c) => (
-              <a key={c.href} href={c.href} className="card card--link">
-                <h3>{cardLabel(c.title)}</h3>
-                {c.description ? <p>{c.description}</p> : null}
-                <span className="card__more">{UI.en.readMore}</span>
-              </a>
-            ))}
-          </div>
-        )}
+        <div className={afterTitle ? "hub-aside-layout" : undefined}>
+          {afterTitle}
+          {items.length > 7 ? (
+            <ul className="pills">
+              {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
+            </ul>
+          ) : (
+            <div className="grid grid--services">
+              {items.map((c) => (
+                <a key={c.href} href={c.href} className="card card--link">
+                  <h3>{cardLabel(c.title)}</h3>
+                  {c.description ? <p>{c.description}</p> : null}
+                  <span className="card__more">{UI.en.readMore}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
