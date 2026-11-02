@@ -39,6 +39,12 @@ const HUB_SLUGS = new Set([
   "languages", "industry", "translation-services", "translation-agency",
   "translation-agency/locations", "translation-services/england",
 ]);
+
+// Pages that always show full text, with no "Read more" (+) fold on long
+// sections or timeline steps. Add a page's slug here on request.
+const NO_FOLD_SLUGS = new Set([
+  "translation-services/england/birmingham",
+]);
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
@@ -236,7 +242,7 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore })));
+  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key) })));
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
