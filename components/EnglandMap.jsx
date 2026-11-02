@@ -42,7 +42,7 @@ const WALES = [[53.3569,-3.3222],[53.3476,-3.3154],[53.3205,-3.2731],[53.3148,-3
 // Simplified background context (not survey-accurate: these are decorative,
 // not the subject of the map).
 const SCOTLAND = [
-  [55.85, -5.2], [55.85, -2.0], [55.0, -2.2], [54.95, -3.0], [54.85, -3.4],
+  [58, -5.2], [58, -2.0], [55.0, -2.2], [54.95, -3.0], [54.85, -3.4],
   [55.0, -4.6], [55.3, -5.1], [55.6, -5.5],
 ];
 const IRELAND = [
@@ -55,33 +55,33 @@ const FRANCE = [
   [48.9, -3.5], [48.4, -4.6], [48.6, -2.0], [49.9, 2.0],
 ];
 
-// [label, slug, lat, lon, dx, dy, anchor, leader] - dx/dy place the label
-// relative to its dot, tuned by hand so nearby cities (Birmingham/Coventry,
+// [label, slug, lat, lon, dx, dy, anchor] - dx/dy place the label as close to
+// its dot as possible, tuned by hand so nearby cities (Birmingham/Coventry,
 // Southampton/Portsmouth, Oxford/Reading, Leeds/York, Nottingham/Leicester)
-// don't collide. "leader" draws a thin connecting line for the tightest pairs.
+// still don't collide.
 const CITIES = [
-  ["Birmingham", "birmingham", 52.4862, -1.8904, -20, -16, "end", true],
-  ["Bournemouth", "bournemouth", 50.7192, -1.8808, -14, 5, "end", false],
-  ["Brighton", "brighton", 50.8225, -0.1372, 14, 5, "start", false],
-  ["Bristol", "bristol", 51.4545, -2.5879, -14, 5, "end", false],
-  ["Cambridge", "cambridge", 52.2053, 0.1218, 14, 5, "start", false],
-  ["Coventry", "coventry", 52.4068, -1.5197, 20, 24, "start", true],
-  ["Exeter", "exeter", 50.7184, -3.5339, -14, 5, "end", false],
-  ["Leeds", "leeds", 53.8008, -1.5491, -14, 22, "end", false],
-  ["Leicester", "leicester", 52.6369, -1.1398, 12, 22, "start", false],
-  ["Liverpool", "liverpool", 53.4084, -2.9916, -14, 5, "end", false],
-  ["London", "london", 51.5074, -0.1278, 14, 5, "start", false],
-  ["Manchester", "manchester", 53.4808, -2.2426, -14, -10, "end", false],
-  ["Newcastle", "newcastle", 54.9783, -1.6178, 14, 5, "start", false],
-  ["Norwich", "norwich", 52.6309, 1.2974, -14, 5, "end", false],
-  ["Nottingham", "nottingham", 52.9548, -1.1581, 12, -12, "start", false],
-  ["Oxford", "oxford", 51.7520, -1.2577, -18, 22, "end", true],
-  ["Plymouth", "plymouth", 50.3755, -4.1427, -14, 5, "end", false],
-  ["Portsmouth", "portsmouth", 50.8198, -1.0880, 20, 26, "start", true],
-  ["Reading", "reading", 51.4543, -0.9781, 16, -14, "start", true],
-  ["Sheffield", "sheffield", 53.3811, -1.4701, 14, 5, "start", false],
-  ["Southampton", "southampton", 50.9097, -1.4044, -20, -12, "end", true],
-  ["York", "york", 53.9600, -1.0873, 14, -12, "start", false],
+  ["Birmingham", "birmingham", 52.4862, -1.8904, -9, -7, "end"],
+  ["Bournemouth", "bournemouth", 50.7192, -1.8808, -9, 4, "end"],
+  ["Brighton", "brighton", 50.8225, -0.1372, 9, 4, "start"],
+  ["Bristol", "bristol", 51.4545, -2.5879, -9, 4, "end"],
+  ["Cambridge", "cambridge", 52.2053, 0.1218, 9, 4, "start"],
+  ["Coventry", "coventry", 52.4068, -1.5197, 9, 12, "start"],
+  ["Exeter", "exeter", 50.7184, -3.5339, -9, 4, "end"],
+  ["Leeds", "leeds", 53.8008, -1.5491, -9, 11, "end"],
+  ["Leicester", "leicester", 52.6369, -1.1398, 9, 11, "start"],
+  ["Liverpool", "liverpool", 53.4084, -2.9916, -9, 4, "end"],
+  ["London", "london", 51.5074, -0.1278, 9, 4, "start"],
+  ["Manchester", "manchester", 53.4808, -2.2426, -9, -6, "end"],
+  ["Newcastle", "newcastle", 54.9783, -1.6178, 9, 4, "start"],
+  ["Norwich", "norwich", 52.6309, 1.2974, -9, 4, "end"],
+  ["Nottingham", "nottingham", 52.9548, -1.1581, 9, -6, "start"],
+  ["Oxford", "oxford", 51.7520, -1.2577, -9, 11, "end"],
+  ["Plymouth", "plymouth", 50.3755, -4.1427, -9, 4, "end"],
+  ["Portsmouth", "portsmouth", 50.8198, -1.0880, 9, 13, "start"],
+  ["Reading", "reading", 51.4543, -0.9781, 9, -7, "start"],
+  ["Sheffield", "sheffield", 53.3811, -1.4701, 9, 4, "start"],
+  ["Southampton", "southampton", 50.9097, -1.4044, -9, -6, "end"],
+  ["York", "york", 53.9600, -1.0873, 9, -6, "start"],
 ];
 
 export default function EnglandMap() {
@@ -95,15 +95,12 @@ export default function EnglandMap() {
         ))}
         <path d={toPath(WALES)} className="england-map__land-other" />
         <path d={toPath(ENGLAND)} className="england-map__land-eng" />
-        {CITIES.map(([label, slug, lat, lon, dx, dy, anchor, leader]) => {
+        {CITIES.map(([label, slug, lat, lon, dx, dy, anchor]) => {
           const [x, y] = project(lon, lat);
-          const lx = x + dx;
-          const ly = y + dy;
           return (
             <a key={slug} href={`/translation-services/england/${slug}/`} className="england-map__pin">
-              {leader ? <line x1={x} y1={y} x2={lx - (anchor === "end" ? -6 : 6)} y2={ly - 4} className="england-map__leader" /> : null}
               <circle cx={x} cy={y} r="6" className="england-map__dot" />
-              <text x={lx} y={ly} textAnchor={anchor} className="england-map__label">{label}</text>
+              <text x={x + dx} y={y + dy} textAnchor={anchor} className="england-map__label">{label}</text>
             </a>
           );
         })}
