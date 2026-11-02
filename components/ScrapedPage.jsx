@@ -95,12 +95,13 @@ function cardLabel(title = "") {
   return title.split(/\s[-·|–]\s|:\s/)[0].trim() || title;
 }
 
-function Children({ items, title }) {
+function Children({ items, title, afterTitle }) {
   if (items.length < 2) return null;
   return (
     <section className="section section--tint">
       <div className="container">
         <div className="section-head"><h2>{title}</h2></div>
+        {afterTitle}
         {items.length > 7 ? (
           <ul className="pills">
             {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
@@ -325,16 +326,16 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
-
-      {key === "translation-services/england" ? (
-        <section className="section section--tint">
-          <div className="container container--narrow">
+      {isHub ? (
+        <Children
+          items={children}
+          title={HUB_TITLES[key] || "Explore"}
+          afterTitle={key === "translation-services/england" ? (
             <figure className="england-map">
               <img src="/images/maps/england-cities-map.png" alt="Map of England marking the cities and towns BeTranslated serves" width="1475" height="1532" />
             </figure>
-          </div>
-        </section>
+          ) : null}
+        />
       ) : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
