@@ -7,8 +7,8 @@
 .sec__in h3 { font-size: 1.25rem; }
 .sec__in h4 { font-size: 1.1rem; }
 .sec__in h5 { font-size: 1rem; }
-.sec__in p { margin: 0 0 1.1em; max-width: 72ch; }
-.sec__in ul, .sec__in ol { padding-left: 1.3em; margin: 0 0 1.2em; max-width: 72ch; }
+.sec__in p { margin: 0 0 1.1em; max-width: none; }
+.sec__in ul, .sec__in ol { padding-left: 1.3em; margin: 0 0 1.2em; max-width: none; }
 .sec__in li { margin-bottom: 0.4em; }
 .sec__in strong { color: var(--bt-navy); }
 .bt .sec__in a:not(.bt-btn) { color: var(--bt-orange-600); border-bottom: 1px solid rgba(95, 169, 177, 0.3); }
