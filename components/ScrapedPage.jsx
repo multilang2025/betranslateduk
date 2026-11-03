@@ -22,6 +22,8 @@ import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
 import { ctaCardHtml } from "@/lib/blogCta";
+import ServicesHeroArt from "./ServicesHeroArt";
+import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
@@ -214,6 +216,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   if (slug.length === 1 && slug[0] === "blog") return <BlogIndexView />;
 
   const key = slug.join("/");
+  const heroOverride = HERO_OVERRIDES[key] || {};
   const pathname = pathFromUrl(page.url) + (slug.length ? "/" : "");
   const isHub = HUB_SLUGS.has(key);
   const isQuote = key === QUOTE_SLUG;
@@ -255,7 +258,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             <Breadcrumbs pathname={pathname} current={title} />
             <span className="ip-kicker">{KICKER}</span>
             <h1>{title}</h1>
-            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
+            {heroOverride.lead ? <p className="lead">{heroOverride.lead}</p> : tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
             {isQuote ? (
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
@@ -272,6 +275,7 @@ export default function ScrapedPage({ page, slug = [] }) {
               </div>
             ) : null}
           </div>
+          {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
         </div>
       </section>
 
