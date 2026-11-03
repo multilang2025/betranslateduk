@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { sentenceCase } from "@/lib/sentenceCase";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
@@ -191,7 +192,7 @@ function BlogPostView({ data, slug }) {
   const pathname = `/blog/${slug}/`;
   const ex = extractBlocks(data.bodyHtml);
   const { title: h1, body: cleanBody } = splitHero(sanitizeBody(ex.html));
-  const title = (h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+  const title = sentenceCase((h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
   const chrome = stripPostChrome(cleanBody);
   let body = questionRunsToFaq(chrome.html, "en", faqBlock, { keepLead: true });
   body = faqSectionsToFaq(body, faqBlock);
@@ -283,7 +284,7 @@ export default function ScrapedPage({ page, slug = [] }) {
 
   const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(page.bodyHtml, { timelineLists: !isHub }));
   const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
-  const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+  const title = sentenceCase((scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
   let pageBody = dropLeadingCtas(afterTagline);
   // Language pages with merged sector pages: each leaf becomes a section of this page.
   const leaves = getLeafPages(key).map(({ id, data }) => {
