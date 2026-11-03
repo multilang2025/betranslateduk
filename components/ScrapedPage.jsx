@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HERO_IMAGE_SLUGS } from "@/lib/heroImages";
 import { sentenceCase } from "@/lib/sentenceCase";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
@@ -63,30 +64,6 @@ const NO_FOLD_SLUGS = new Set([
   ...ENGLAND_CITY_SLUGS.map((c) => `translation-services/england/${c}`),
 ]);
 
-const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
-  birmingham: ["/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg", "Birmingham city centre"],
-  bournemouth: ["/images/wp-content/uploads/2024/11/bournemouth-pier-dawn-bournemouth-3419367-e1732805720456.jpg", "Bournemouth pier at dawn"],
-  brighton: ["/images/wp-content/uploads/2024/10/brighton-pier-arcade-beach-5643723-e1728640815917.jpg", "Brighton pier"],
-  bristol: ["/images/wp-content/uploads/2024/10/translation-services-in-bristol.webp", "Bristol city"],
-  cambridge: ["/images/wp-content/uploads/2024/10/cambridge-translation-services.jpg", "Cambridge"],
-  coventry: ["/images/wp-content/uploads/2024/11/coventry-city-england-cathedral-2979432-e1732016010941.jpg", "Coventry Cathedral"],
-  exeter: ["/images/wp-content/uploads/2025/11/exeter-cathedral-1024x579.jpg", "Exeter Cathedral", { author: "Simon Burchell", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/" }],
-  leeds: ["/images/wp-content/uploads/2024/10/1-leeds-e1729070002851.jpg", "Leeds city centre"],
-  leicester: ["/images/wp-content/uploads/2024/10/leicester-translation-service.jpg", "Leicester city centre"],
-  liverpool: ["/images/wp-content/uploads/2024/10/beatle-liverpool-raining-3819228-e1729071249160.jpg", "Liverpool waterfront"],
-  london: ["/images/wp-content/uploads/2024/10/london-translation-services.jpg", "London"],
-  manchester: ["/images/wp-content/uploads/2024/09/manchester-manhole-cover-metal-1631200-e1727351820924.jpg", "Manchester"],
-  newcastle: ["/images/wp-content/uploads/2024/11/sage-gateshead-newcastle-4331425-e1732895511280.jpg", "Sage Gateshead, Newcastle"],
-  norwich: ["/images/wp-content/uploads/2024/11/Norwich-translation-services.jpg", "Norwich"],
-  nottingham: ["/images/wp-content/uploads/2024/10/nottingham-translation-services.webp", "Nottingham city centre"],
-  oxford: ["/images/wp-content/uploads/2025/11/oxford-radcliffe-square-1024x579.jpg", "Radcliffe Square, Oxford", { author: "Txllxt TxllxT", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/", pageUrl: "https://commons.wikimedia.org/wiki/File:Oxford_-_Radcliffe_Square_-_View_South_towards_University_Church_of_St_Mary_the_Virgin_along_(right)_the_Radcliffe_Camera_1737-48_by_James_Gibbs_%26_(left)_All_Souls_College_1438.jpg" }],
-  plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
-  portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
-  reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading", { author: "Matt Buck", licence: "CC BY-SA 2.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/" }],
-  sheffield: ["/images/wp-content/uploads/2024/10/translation-services-in-sheffield.jpg", "Sheffield city centre"],
-  southampton: ["/images/wp-content/uploads/2024/11/ships-port-lights-dusk-england-1804340-e1732018889626.jpg", "Southampton docks at dusk"],
-  york: ["/images/wp-content/uploads/2024/11/cliffords-tower-castle-landmark-5950952-e1732896084721.jpg", "Clifford's Tower, York"],
-}).map(([city, [src, alt, credit]]) => [`translation-services/england/${city}`, { src, alt, credit }]));
 
 // CC BY-SA photos from Wikimedia Commons need the author, licence and source named next to the image.
 function PhotoCredit({ credit }) {
