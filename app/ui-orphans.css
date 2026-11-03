@@ -113,6 +113,17 @@
 /* Core values cards (services hub) */
 .bt .sec__in ul.values { list-style: none; margin: 24px 0 0; padding: 0; max-width: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .bt .sec__in ul.values li.card { margin: 0; padding: 22px 20px; }
+.bt .sec__in ul.values li.card { position: relative; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.bt .sec__in ul.values li.card:hover { transform: translateY(-3px); border-color: #7EBEC5; box-shadow: 0 12px 26px rgba(15, 23, 42, .14); }
+.value-ico { display: inline-grid; place-items: center; width: 40px; height: 40px; margin-bottom: 12px; border-radius: 12px; background: rgba(126, 190, 197, .2); color: #2F7C86; transition: transform .3s cubic-bezier(.34,1.56,.64,1), background .2s, color .2s; }
+.bt .sec__in ul.values li:nth-child(2) .value-ico { background: rgba(246, 118, 24, .14); color: #C85A0E; }
+.bt .sec__in ul.values li:nth-child(4) .value-ico { background: rgba(47, 49, 67, .12); color: #2F3143; }
+li.card:hover .value-ico { transform: scale(1.12) rotate(-6deg); }
+html[data-theme="dark"] .value-ico, html:not([data-theme="light"]) .value-ico { color: #7EBEC5; background: rgba(126, 190, 197, .16); }
+html[data-theme="dark"] .bt .sec__in ul.values li:nth-child(2) .value-ico, html:not([data-theme="light"]) .bt .sec__in ul.values li:nth-child(2) .value-ico { color: #FF9A4D; background: rgba(246, 118, 24, .16); }
+html[data-theme="dark"] .bt .sec__in ul.values li:nth-child(4) .value-ico, html:not([data-theme="light"]) .bt .sec__in ul.values li:nth-child(4) .value-ico { color: #E6EAF0; background: rgba(230, 234, 240, .12); }
+.values-cta { margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+@media (prefers-reduced-motion: reduce) { li.card:hover .value-ico, .bt .sec__in ul.values li.card:hover { transform: none; } }
 .bt .sec__in ul.values li.card h3 { margin: 0 0 8px; font-size: 1.12rem; }
 .bt .sec__in ul.values li.card p { margin: 0; font-size: 14.5px; line-height: 1.55; }
 @media (max-width: 1100px) { .bt .sec__in ul.values { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
