@@ -28,6 +28,7 @@ import ServicesShowcase from "./ServicesShowcase";
 import SectorCards from "./SectorCards";
 import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
+import EnglandMap from "./EnglandMap";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -45,6 +46,59 @@ const HUB_SLUGS = new Set([
   "languages", "industry", "translation-services", "translation-agency",
   "translation-agency/locations", "translation-services/england",
 ]);
+
+// England city pages: no "Read more" (+) fold on long sections, and a real
+// photo in the hero's second column (reusing each page's own unique photo;
+// the hero automatically goes back to a two-column layout once it has a
+// second child — see the :only-child rule in ui-fx.css). Exeter, Oxford and
+// Reading have no unique photo yet, so they're left out of HERO_IMAGE_SLUGS.
+const ENGLAND_CITY_SLUGS = [
+  "birmingham", "bournemouth", "brighton", "bristol", "cambridge", "coventry",
+  "exeter", "leeds", "leicester", "liverpool", "london", "manchester",
+  "newcastle", "norwich", "nottingham", "oxford", "plymouth", "portsmouth",
+  "reading", "sheffield", "southampton", "york",
+];
+const NO_FOLD_SLUGS = new Set([
+  "translation-services/england",
+  ...ENGLAND_CITY_SLUGS.map((c) => `translation-services/england/${c}`),
+]);
+
+const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
+  birmingham: ["/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg", "Birmingham city centre"],
+  bournemouth: ["/images/wp-content/uploads/2024/11/bournemouth-pier-dawn-bournemouth-3419367-e1732805720456.jpg", "Bournemouth pier at dawn"],
+  brighton: ["/images/wp-content/uploads/2024/10/brighton-pier-arcade-beach-5643723-e1728640815917.jpg", "Brighton pier"],
+  bristol: ["/images/wp-content/uploads/2024/10/translation-services-in-bristol.webp", "Bristol city"],
+  cambridge: ["/images/wp-content/uploads/2024/10/cambridge-translation-services.jpg", "Cambridge"],
+  coventry: ["/images/wp-content/uploads/2024/11/coventry-city-england-cathedral-2979432-e1732016010941.jpg", "Coventry Cathedral"],
+  exeter: ["/images/wp-content/uploads/2025/11/exeter-cathedral-1024x579.jpg", "Exeter Cathedral", { author: "Simon Burchell", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/" }],
+  leeds: ["/images/wp-content/uploads/2024/10/1-leeds-e1729070002851.jpg", "Leeds city centre"],
+  leicester: ["/images/wp-content/uploads/2024/10/leicester-translation-service.jpg", "Leicester city centre"],
+  liverpool: ["/images/wp-content/uploads/2024/10/beatle-liverpool-raining-3819228-e1729071249160.jpg", "Liverpool waterfront"],
+  london: ["/images/wp-content/uploads/2024/10/london-translation-services.jpg", "London"],
+  manchester: ["/images/wp-content/uploads/2024/09/manchester-manhole-cover-metal-1631200-e1727351820924.jpg", "Manchester"],
+  newcastle: ["/images/wp-content/uploads/2024/11/sage-gateshead-newcastle-4331425-e1732895511280.jpg", "Sage Gateshead, Newcastle"],
+  norwich: ["/images/wp-content/uploads/2024/11/Norwich-translation-services.jpg", "Norwich"],
+  nottingham: ["/images/wp-content/uploads/2024/10/nottingham-translation-services.webp", "Nottingham city centre"],
+  oxford: ["/images/wp-content/uploads/2025/11/oxford-radcliffe-square-1024x579.jpg", "Radcliffe Square, Oxford", { author: "Txllxt TxllxT", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/", pageUrl: "https://commons.wikimedia.org/wiki/File:Oxford_-_Radcliffe_Square_-_View_South_towards_University_Church_of_St_Mary_the_Virgin_along_(right)_the_Radcliffe_Camera_1737-48_by_James_Gibbs_%26_(left)_All_Souls_College_1438.jpg" }],
+  plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
+  portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
+  reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading", { author: "Matt Buck", licence: "CC BY-SA 2.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/" }],
+  sheffield: ["/images/wp-content/uploads/2024/10/translation-services-in-sheffield.jpg", "Sheffield city centre"],
+  southampton: ["/images/wp-content/uploads/2024/11/ships-port-lights-dusk-england-1804340-e1732018889626.jpg", "Southampton docks at dusk"],
+  york: ["/images/wp-content/uploads/2024/11/cliffords-tower-castle-landmark-5950952-e1732896084721.jpg", "Clifford's Tower, York"],
+}).map(([city, [src, alt, credit]]) => [`translation-services/england/${city}`, { src, alt, credit }]));
+
+// CC BY-SA photos from Wikimedia Commons need the author, licence and source named next to the image.
+function PhotoCredit({ credit }) {
+  const { author, licence, licenceUrl, pageUrl } = credit;
+  return (
+    <p className="page-hero__credit">
+      Photo: {author}, <a href={licenceUrl} target="_blank" rel="noopener">{licence}</a>, via{" "}
+      <a href={pageUrl || "https://commons.wikimedia.org/"} target="_blank" rel="noopener">Wikimedia Commons</a>
+    </p>
+  );
+}
+
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
@@ -65,27 +119,30 @@ function cardLabel(title = "") {
   return title.split(/\s[-·|–]\s|:\s/)[0].trim() || title;
 }
 
-function Children({ items, title }) {
+function Children({ items, title, afterTitle }) {
   if (items.length < 2) return null;
   return (
     <section className="section section--tint">
       <div className="container">
         <div className="section-head"><h2>{title}</h2></div>
-        {items.length > 7 ? (
-          <ul className="pills">
-            {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
-          </ul>
-        ) : (
-          <div className="grid grid--services">
-            {items.map((c) => (
-              <a key={c.href} href={c.href} className="card card--link">
-                <h3>{cardLabel(c.title)}</h3>
-                {c.description ? <p>{c.description}</p> : null}
-                <span className="card__more">{UI.en.readMore}</span>
-              </a>
-            ))}
-          </div>
-        )}
+        <div className={afterTitle ? "hub-aside-layout" : undefined}>
+          {afterTitle}
+          {items.length > 7 ? (
+            <ul className="pills">
+              {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
+            </ul>
+          ) : (
+            <div className="grid grid--services">
+              {items.map((c) => (
+                <a key={c.href} href={c.href} className="card card--link">
+                  <h3>{cardLabel(c.title)}</h3>
+                  {c.description ? <p>{c.description}</p> : null}
+                  <span className="card__more">{UI.en.readMore}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -245,7 +302,7 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore })));
+  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key), cardIcons: NO_FOLD_SLUGS.has(key) })));
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
@@ -255,7 +312,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
-    <main className={isHub ? "hub" : undefined} data-page={key}>
+    <main className={isHub ? "hub" : undefined} data-page={key} data-slug={key}>
       <PageSchema schema={page.schema} />
       <PageFx />
       <section className="page-hero page-hero--split">
@@ -281,6 +338,12 @@ export default function ScrapedPage({ page, slug = [] }) {
               </div>
             ) : null}
           </div>
+          {HERO_IMAGE_SLUGS[key] ? (
+            <div className="page-hero__photo">
+              <img src={HERO_IMAGE_SLUGS[key].src} alt={HERO_IMAGE_SLUGS[key].alt} width="640" height="480" />
+              {HERO_IMAGE_SLUGS[key].credit ? <PhotoCredit credit={HERO_IMAGE_SLUGS[key].credit} /> : null}
+            </div>
+          ) : null}
           {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
         </div>
       </section>
@@ -298,7 +361,13 @@ export default function ScrapedPage({ page, slug = [] }) {
       ) : null}
 
       {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
-      {isHub && key !== "translation-services" ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
+      {isHub && key !== "translation-services" ? (
+        <Children
+          items={children}
+          title={HUB_TITLES[key] || "Explore"}
+          afterTitle={key === "translation-services/england" ? <EnglandMap /> : null}
+        />
+      ) : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       {leaves.length ? (
