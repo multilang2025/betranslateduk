@@ -220,3 +220,7 @@
 .card__icon--clay img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .bt .tile span.card__icon--clay { flex: 0 0 56px; width: 56px; height: 56px; border-radius: 14px; }
 .bt .card--specialty span.card__icon.card__icon--clay { width: 72px; height: 72px; border-radius: 18px; }
+
+/* Services hero illustration: capped well under the hero's content height (about 290px at the shortest)
+   so adding it never changes the hero size. */
+.services-art svg { width: auto; height: 292px; max-width: 100%; }

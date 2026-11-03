@@ -430,3 +430,8 @@
 .qv__cc[aria-pressed="true"] { background: #5FA9B1; border-color: #5FA9B1; color: #2F3143; }
 .qv__frame:fullscreen { max-width: none; border-radius: 0; }
 .qv__frame:fullscreen .qv__video { object-fit: contain; }
+
+.page-hero__credit, .england-map__credit { margin: 6px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted, #5b6472); }
+.page-hero__credit a, .england-map__credit a { color: inherit; text-decoration: underline; }
+.page-hero__photo { position: relative; }
+.page-hero__photo .page-hero__credit { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 6px 12px; font-size: 11px; color: #fff; background: rgba(14, 23, 38, 0.7); }

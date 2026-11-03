@@ -325,6 +325,33 @@
       "retiredOn": "2026-10-22",
       "managed": "leaf",
       "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/translation-services/england/bath/",
+      "to": "/translation-services/england/bristol/",
+      "type": "page",
+      "reason": "Bath city page retired from the England set; redirects to the nearest remaining city page",
+      "retiredOn": "2026-11-03",
+      "managed": "manual",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/translation-services/england/southend-on-sea/",
+      "to": "/translation-services/england/london/",
+      "type": "page",
+      "reason": "Southend-on-Sea city page retired from the England set; redirects to the nearest remaining city page",
+      "retiredOn": "2026-11-03",
+      "managed": "manual",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
+    },
+    {
+      "from": "/translation-services/england/sunderland/",
+      "to": "/translation-services/england/newcastle/",
+      "type": "page",
+      "reason": "Sunderland city page retired from the England set; redirects to the nearest remaining city page",
+      "retiredOn": "2026-11-03",
+      "managed": "manual",
+      "status": "redirect built into next.config.mjs (lib/leafPages.js)"
     }
   ]
 }

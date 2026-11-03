@@ -21,6 +21,11 @@ import BlogCard from "./BlogCard";
 import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
+import { ctaCardHtml } from "@/lib/blogCta";
+import ServicesHeroArt from "./ServicesHeroArt";
+import ServicesShowcase from "./ServicesShowcase";
+import SectorCards from "./SectorCards";
+import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 import EnglandMap from "./EnglandMap";
 
@@ -64,7 +69,7 @@ const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
   bristol: ["/images/wp-content/uploads/2024/10/translation-services-in-bristol.webp", "Bristol city"],
   cambridge: ["/images/wp-content/uploads/2024/10/cambridge-translation-services.jpg", "Cambridge"],
   coventry: ["/images/wp-content/uploads/2024/11/coventry-city-england-cathedral-2979432-e1732016010941.jpg", "Coventry Cathedral"],
-  exeter: ["/images/wp-content/uploads/2025/11/exeter-cathedral-1024x579.jpg", "Exeter Cathedral"],
+  exeter: ["/images/wp-content/uploads/2025/11/exeter-cathedral-1024x579.jpg", "Exeter Cathedral", { author: "Simon Burchell", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/" }],
   leeds: ["/images/wp-content/uploads/2024/10/1-leeds-e1729070002851.jpg", "Leeds city centre"],
   leicester: ["/images/wp-content/uploads/2024/10/leicester-translation-service.jpg", "Leicester city centre"],
   liverpool: ["/images/wp-content/uploads/2024/10/beatle-liverpool-raining-3819228-e1729071249160.jpg", "Liverpool waterfront"],
@@ -73,14 +78,25 @@ const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
   newcastle: ["/images/wp-content/uploads/2024/11/sage-gateshead-newcastle-4331425-e1732895511280.jpg", "Sage Gateshead, Newcastle"],
   norwich: ["/images/wp-content/uploads/2024/11/Norwich-translation-services.jpg", "Norwich"],
   nottingham: ["/images/wp-content/uploads/2024/10/nottingham-translation-services.webp", "Nottingham city centre"],
-  oxford: ["/images/wp-content/uploads/2025/11/oxford-radcliffe-square-1024x579.jpg", "Radcliffe Square, Oxford"],
+  oxford: ["/images/wp-content/uploads/2025/11/oxford-radcliffe-square-1024x579.jpg", "Radcliffe Square, Oxford", { author: "Txllxt TxllxT", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/", pageUrl: "https://commons.wikimedia.org/wiki/File:Oxford_-_Radcliffe_Square_-_View_South_towards_University_Church_of_St_Mary_the_Virgin_along_(right)_the_Radcliffe_Camera_1737-48_by_James_Gibbs_%26_(left)_All_Souls_College_1438.jpg" }],
   plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
   portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
-  reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading"],
+  reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading", { author: "Matt Buck", licence: "CC BY-SA 2.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/" }],
   sheffield: ["/images/wp-content/uploads/2024/10/translation-services-in-sheffield.jpg", "Sheffield city centre"],
   southampton: ["/images/wp-content/uploads/2024/11/ships-port-lights-dusk-england-1804340-e1732018889626.jpg", "Southampton docks at dusk"],
   york: ["/images/wp-content/uploads/2024/11/cliffords-tower-castle-landmark-5950952-e1732896084721.jpg", "Clifford's Tower, York"],
-}).map(([city, [src, alt]]) => [`translation-services/england/${city}`, { src, alt }]));
+}).map(([city, [src, alt, credit]]) => [`translation-services/england/${city}`, { src, alt, credit }]));
+
+// CC BY-SA photos from Wikimedia Commons need the author, licence and source named next to the image.
+function PhotoCredit({ credit }) {
+  const { author, licence, licenceUrl, pageUrl } = credit;
+  return (
+    <p className="page-hero__credit">
+      Photo: {author}, <a href={licenceUrl} target="_blank" rel="noopener">{licence}</a>, via{" "}
+      <a href={pageUrl || "https://commons.wikimedia.org/"} target="_blank" rel="noopener">Wikimedia Commons</a>
+    </p>
+  );
+}
 
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
@@ -189,6 +205,8 @@ function BlogPostView({ data, slug }) {
   const modified = updatedDate(slug);
   const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
   const minutes = readingMinutes(body);
+  // Closing call-to-action card for posts that have copy in data/blog-cta/ (added after the reading time is counted).
+  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
   const related = relatedFor(slug, 4);
 
@@ -257,6 +275,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   if (slug.length === 1 && slug[0] === "blog") return <BlogIndexView />;
 
   const key = slug.join("/");
+  const heroOverride = HERO_OVERRIDES[key] || {};
   const pathname = pathFromUrl(page.url) + (slug.length ? "/" : "");
   const isHub = HUB_SLUGS.has(key);
   const isQuote = key === QUOTE_SLUG;
@@ -282,14 +301,17 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key) })));
+  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key), cardIcons: NO_FOLD_SLUGS.has(key) })));
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
+
+  // /translation-services/: the "every sector" accordion grid becomes the icon cards (components/SectorCards.jsx).
+  if (key === "translation-services") sections = sections.replace(/<section(?:(?!<section).)*?every sector.*?<[/]section>/s, "@@SECTORS@@");
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
-    <main className={isHub ? "hub" : undefined} data-slug={key}>
+    <main className={isHub ? "hub" : undefined} data-page={key} data-slug={key}>
       <PageSchema schema={page.schema} />
       <PageFx />
       <section className="page-hero page-hero--split">
@@ -298,7 +320,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             <Breadcrumbs pathname={pathname} current={title} />
             <span className="ip-kicker">{KICKER}</span>
             <h1>{title}</h1>
-            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
+            {heroOverride.lead ? <p className="lead">{heroOverride.lead}</p> : tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
             {isQuote ? (
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
@@ -318,8 +340,10 @@ export default function ScrapedPage({ page, slug = [] }) {
           {HERO_IMAGE_SLUGS[key] ? (
             <div className="page-hero__photo">
               <img src={HERO_IMAGE_SLUGS[key].src} alt={HERO_IMAGE_SLUGS[key].alt} width="640" height="480" />
+              {HERO_IMAGE_SLUGS[key].credit ? <PhotoCredit credit={HERO_IMAGE_SLUGS[key].credit} /> : null}
             </div>
           ) : null}
+          {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
         </div>
       </section>
 
@@ -335,7 +359,8 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? (
+      {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
+      {isHub && key !== "translation-services" ? (
         <Children
           items={children}
           title={HUB_TITLES[key] || "Explore"}
@@ -360,6 +385,12 @@ export default function ScrapedPage({ page, slug = [] }) {
           <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
           <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
           <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
+        </>
+      ) : key === "translation-services" && sections.includes("@@SECTORS@@") ? (
+        <>
+          <Sections html={sections.split("@@SECTORS@@")[0]} />
+          <SectorCards />
+          <Sections html={sections.split("@@SECTORS@@")[1]} />
         </>
       ) : <Sections html={sections} />}
 

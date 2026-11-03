@@ -87,7 +87,7 @@ const CITIES = [
 export default function EnglandMap() {
   return (
     <figure className="england-map">
-      <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="img" aria-labelledby="england-map-title">
+      <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="group" aria-labelledby="england-map-title">
         <title id="england-map-title">Map of England with 22 served cities, each linking to its own page</title>
         <rect x="0" y="0" width={VIEW_W} height={VIEW_H} className="england-map__sea" />
         {[SCOTLAND, IRELAND, FRANCE].map((shape, i) => (
@@ -105,6 +105,7 @@ export default function EnglandMap() {
           );
         })}
       </svg>
+      <figcaption className="england-map__credit">Boundary data: Office for National Statistics, Open Government Licence v3.0. Contains OS data © Crown copyright and database right.</figcaption>
     </figure>
   );
 }

@@ -162,3 +162,14 @@ For Mike, not changed:
 - **Analytics.** `components/Tracking.jsx` was copied from the Spanish site: it only loads on `betranslated.es` hosts, and its GA4 (`G-BMCV42QBEE`), Clarity and Ahrefs IDs are the Spanish site's. On `betranslated.co.uk` no tracking will load at launch, and adding the host would send UK traffic to the Spanish properties. It needs the UK measurement IDs.
 - **Outbound links to industry-adjacent sites** (the "no outbound links to competing or industry-adjacent sites" rule): `iti.org.uk` (2 posts), Google Translate, Linguee, Lokalise (2), ProZ rates page, all in `best-translation-tools`, `working-out-translation-rates`, `5-inspiring-freelance-jobs`, `specialised-healthcare-translation-services` and `how-succeed-freelancer-translation-business`. Left in place for Mike to decide.
 - **Links that could not be checked from here:** `topsurf.fr`, `chatbotsmagazine.com`, `liverpool.gov.uk` (connection failures), plus 31 links that block automated requests.
+
+### Sales rewrite of seven posts (2 Nov 2026)
+
+Rewritten for readability and conversion: `trademark-translation-business-expansion`, `seo-translation`, `professional-translation`, `tremendous-value-multilingual-website`, `why-choose-betranslated-and-not-ai`, `ai-disadvantages-for-businesses`, `commercial-translation-professionals`.
+
+- Each has a problem-led hook, an "In short" list, benefit-led question headings, bullets, a soft call to action about a third of the way down, and a closing "Get your free quote" section with the real five-step process. A closing card (copy in `data/blog-cta/<slug>.json`, rendered by `lib/blogCta.js`) sits under the article.
+- Claims about BeTranslated are limited to what the site already states (since 2002, free quote, reply within a couple of hours, native translators, edited by a qualified third party, fully remote, up to 25 languages). No new statistics, prices, guarantees or case studies.
+- Removed or softened: guaranteed first-page Google results and "highest visibility" (SEO post, now an explicit no-ranking-promise line), "guarantee a quality product", "Often it is cheaper than the alternative", "highest quality".
+- The unsourced "55% of customers" figure in the multilingual website post is replaced by CSA Research's 76% of online shoppers (survey of 8,709 consumers in 29 countries, Nov 2019 to Jan 2020), with a sourced blockquote.
+- Checked against the originals: no original link lost, no new dashes or banned words, new internal links all exist.
+- Still to confirm with Mike: the "vibe coding" and IT outstaffing links in `seo-translation` sit in an unrelated paragraph (kept as every existing link must survive), and `ai-disadvantages-for-businesses` keeps the original "UK GDPR", ICO and AI Regulation Framework claims, which have not been fact-checked.
