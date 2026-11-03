@@ -198,15 +198,17 @@
       "href": "/translation-services/website-translation/",
       "button": "See website translation",
       "image": {
-        "file": "/images/blog/commons/tremendous-value-multilingual-website-1.jpg",
-        "alt": "A bilingual Welsh and English station sign, Aberdyfi and Aberdovey, on a red brick wall",
+        "file": "/images/blog/commons/services-website-devices.jpg",
+        "alt": "A website shown across desktop, laptop, tablet and phone screens on a blue background",
         "width": 1200,
-        "height": 900,
-        "title": "File:Aberdyfi-Aberdovey railway station bilingual signboard.jpg",
-        "pageUrl": "https://commons.wikimedia.org/wiki/File:Aberdyfi-Aberdovey_railway_station_bilingual_signboard.jpg",
-        "author": "Tk420",
-        "licence": "CC BY-SA 4.0",
-        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+        "height": 630,
+        "fit": "contain",
+        "bg": "#1C527F",
+        "title": "File:Responsive-web-design-devices.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Responsive-web-design-devices.jpg",
+        "author": "Muhammad Rafizeldi",
+        "licence": "CC BY-SA 3.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
       }
     }
   ]

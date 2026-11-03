@@ -44,7 +44,7 @@ export default function ServicesShowcase() {
           {cards.map((c) => (
             <a key={c.href} href={c.href} className="svc-card">
               <span className="svc-card__media">
-                <span className="svc-card__photo"><img src={c.image.file} width={c.image.width} height={c.image.height} alt={c.image.alt} loading="lazy" decoding="async" /></span>
+                <span className="svc-card__photo" style={c.image.bg ? { background: c.image.bg } : undefined}><img style={c.image.fit ? { objectFit: c.image.fit } : undefined} src={c.image.file} width={c.image.width} height={c.image.height} alt={c.image.alt} loading="lazy" decoding="async" /></span>
                 <span className="svc-card__icon"><Icon name={c.icon} /></span>
               </span>
               <span className="svc-card__body">
