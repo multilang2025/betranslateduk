@@ -122,7 +122,11 @@ li.card:hover .value-ico { transform: scale(1.12) rotate(-6deg); }
 html[data-theme="dark"] .value-ico, html:not([data-theme="light"]) .value-ico { color: #7EBEC5; background: rgba(126, 190, 197, .16); }
 html[data-theme="dark"] .bt .sec__in ul.values li:nth-child(2) .value-ico, html:not([data-theme="light"]) .bt .sec__in ul.values li:nth-child(2) .value-ico { color: #FF9A4D; background: rgba(246, 118, 24, .16); }
 html[data-theme="dark"] .bt .sec__in ul.values li:nth-child(4) .value-ico, html:not([data-theme="light"]) .bt .sec__in ul.values li:nth-child(4) .value-ico { color: #E6EAF0; background: rgba(230, 234, 240, .12); }
-.values-cta { margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.values-cta { margin: 28px 0 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 26px 30px; border-radius: 22px; background: linear-gradient(120deg, #2F3143, #2F7C86); color: #fff; box-shadow: 0 14px 32px rgba(15, 23, 42, .18); }
+.values-cta__text { flex: 1 1 340px; }
+.values-cta h3 { margin: 0 0 6px; font-size: 1.3rem; line-height: 1.3; color: #fff; }
+.values-cta p { margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, .88); }
+.values-cta__btns { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (prefers-reduced-motion: reduce) { li.card:hover .value-ico, .bt .sec__in ul.values li.card:hover { transform: none; } }
 .bt .sec__in ul.values li.card h3 { margin: 0 0 8px; font-size: 1.12rem; }
 .bt .sec__in ul.values li.card p { margin: 0; font-size: 14.5px; line-height: 1.55; }
