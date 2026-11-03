@@ -15,22 +15,135 @@
     "secondaryLabel": "Scotland, Wales and Northern Ireland",
     "secondaryHref": "/translation-agency/locations/",
     "cities": [
-      ["Bath", "bath"], ["Birmingham", "birmingham"], ["Bournemouth", "bournemouth"], ["Brighton", "brighton"],
-      ["Bristol", "bristol"], ["Cambridge", "cambridge"], ["Coventry", "coventry"], ["Leeds", "leeds"],
-      ["Leicester", "leicester"], ["Liverpool", "liverpool"], ["London", "london"], ["Manchester", "manchester"],
-      ["Newcastle", "newcastle"], ["Norwich", "norwich"], ["Nottingham", "nottingham"], ["Plymouth", "plymouth"],
-      ["Portsmouth", "portsmouth"], ["Sheffield", "sheffield"], ["Southampton", "southampton"],
-      ["Southend-on-Sea", "southend-on-sea"], ["Sunderland", "sunderland"], ["York", "york"]
+      [
+        "Bath",
+        "bath"
+      ],
+      [
+        "Birmingham",
+        "birmingham"
+      ],
+      [
+        "Bournemouth",
+        "bournemouth"
+      ],
+      [
+        "Brighton",
+        "brighton"
+      ],
+      [
+        "Bristol",
+        "bristol"
+      ],
+      [
+        "Cambridge",
+        "cambridge"
+      ],
+      [
+        "Coventry",
+        "coventry"
+      ],
+      [
+        "Leeds",
+        "leeds"
+      ],
+      [
+        "Leicester",
+        "leicester"
+      ],
+      [
+        "Liverpool",
+        "liverpool"
+      ],
+      [
+        "London",
+        "london"
+      ],
+      [
+        "Manchester",
+        "manchester"
+      ],
+      [
+        "Newcastle",
+        "newcastle"
+      ],
+      [
+        "Norwich",
+        "norwich"
+      ],
+      [
+        "Nottingham",
+        "nottingham"
+      ],
+      [
+        "Plymouth",
+        "plymouth"
+      ],
+      [
+        "Portsmouth",
+        "portsmouth"
+      ],
+      [
+        "Sheffield",
+        "sheffield"
+      ],
+      [
+        "Southampton",
+        "southampton"
+      ],
+      [
+        "Southend-on-Sea",
+        "southend-on-sea"
+      ],
+      [
+        "Sunderland",
+        "sunderland"
+      ],
+      [
+        "York",
+        "york"
+      ]
     ],
     "otherLabel": "Also across the UK",
     "others": [
-      ["Edinburgh", "edinburgh"], ["Glasgow", "glasgow"], ["Aberdeen", "aberdeen"], ["Cardiff", "cardiff"],
-      ["Swansea", "swansea"], ["Bangor", "bangor"], ["Belfast", "belfast"], ["Londonderry", "londonderry"]
+      [
+        "Edinburgh",
+        "edinburgh"
+      ],
+      [
+        "Glasgow",
+        "glasgow"
+      ],
+      [
+        "Aberdeen",
+        "aberdeen"
+      ],
+      [
+        "Cardiff",
+        "cardiff"
+      ],
+      [
+        "Swansea",
+        "swansea"
+      ],
+      [
+        "Bangor",
+        "bangor"
+      ],
+      [
+        "Belfast",
+        "belfast"
+      ],
+      [
+        "Londonderry",
+        "londonderry"
+      ]
     ],
     "image": {
       "file": "/images/blog/commons/business-need-financial-translation-1.jpg",
       "alt": "The City of London skyline beside the Tower of London on a bright autumn day",
-      "width": 1280, "height": 853,
+      "width": 1280,
+      "height": 853,
       "title": "File:The skyline of The City of London, London's financial district (16608813171).jpg",
       "pageUrl": "https://commons.wikimedia.org/wiki/File:The_skyline_of_The_City_of_London,_London%27s_financial_district_(16608813171).jpg",
       "author": "traveljunction",
@@ -49,7 +162,8 @@
       "image": {
         "file": "/images/blog/commons/how-much-translate-document-1.jpg",
         "alt": "A pen resting on a signed contract",
-        "width": 1200, "height": 900,
+        "width": 1200,
+        "height": 900,
         "title": "File:Legal Contract & Signature - Warm Tones.jpg",
         "pageUrl": "https://commons.wikimedia.org/wiki/File:Legal_Contract_%26_Signature_-_Warm_Tones.jpg",
         "author": "Blogtrepreneur",
@@ -67,7 +181,8 @@
       "image": {
         "file": "/images/blog/commons/zoom-interpreting-1.jpg",
         "alt": "An interpreting booth overlooking a meeting room",
-        "width": 1200, "height": 800,
+        "width": 1200,
+        "height": 800,
         "title": "File:Interpreting booth Juste Lipse building 01.jpg",
         "pageUrl": "https://commons.wikimedia.org/wiki/File:Interpreting_booth_Juste_Lipse_building_01.jpg",
         "author": "FrDr",
@@ -83,14 +198,15 @@
       "href": "/translation-services/website-translation/",
       "button": "See website translation",
       "image": {
-        "file": "/images/blog/commons/best-translation-tools-1.jpg",
-        "alt": "Hands typing on a laptop at a desk",
-        "width": 1200, "height": 800,
-        "title": "File:Typing on a laptop (Unsplash).jpg",
-        "pageUrl": "https://commons.wikimedia.org/wiki/File:Typing_on_a_laptop_(Unsplash).jpg",
-        "author": "Simon Hattinga Verschure webmarbles",
-        "licence": "CC0",
-        "licenceUrl": ""
+        "file": "/images/blog/commons/tremendous-value-multilingual-website-1.jpg",
+        "alt": "A bilingual Welsh and English station sign, Aberdyfi and Aberdovey, on a red brick wall",
+        "width": 1200,
+        "height": 900,
+        "title": "File:Aberdyfi-Aberdovey railway station bilingual signboard.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Aberdyfi-Aberdovey_railway_station_bilingual_signboard.jpg",
+        "author": "Tk420",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
       }
     }
   ]
