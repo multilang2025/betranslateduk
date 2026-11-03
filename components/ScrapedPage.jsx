@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { sentenceCase } from "@/lib/sentenceCase";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
@@ -21,6 +22,11 @@ import BlogCard from "./BlogCard";
 import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
+import { ctaCardHtml } from "@/lib/blogCta";
+import ServicesHeroArt from "./ServicesHeroArt";
+import ServicesShowcase from "./ServicesShowcase";
+import SectorCards from "./SectorCards";
+import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 
 // Hub pages: their children render as a card/pill grid instead of the
@@ -129,7 +135,7 @@ function BlogPostView({ data, slug }) {
   const pathname = `/blog/${slug}/`;
   const ex = extractBlocks(data.bodyHtml);
   const { title: h1, body: cleanBody } = splitHero(sanitizeBody(ex.html));
-  const title = (h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+  const title = sentenceCase((h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
   const chrome = stripPostChrome(cleanBody);
   let body = questionRunsToFaq(chrome.html, "en", faqBlock, { keepLead: true });
   body = faqSectionsToFaq(body, faqBlock);
@@ -143,6 +149,8 @@ function BlogPostView({ data, slug }) {
   const modified = updatedDate(slug);
   const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
   const minutes = readingMinutes(body);
+  // Closing call-to-action card for posts that have copy in data/blog-cta/ (added after the reading time is counted).
+  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
   const related = relatedFor(slug, 4);
 
@@ -211,6 +219,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   if (slug.length === 1 && slug[0] === "blog") return <BlogIndexView />;
 
   const key = slug.join("/");
+  const heroOverride = HERO_OVERRIDES[key] || {};
   const pathname = pathFromUrl(page.url) + (slug.length ? "/" : "");
   const isHub = HUB_SLUGS.has(key);
   const isQuote = key === QUOTE_SLUG;
@@ -218,7 +227,7 @@ export default function ScrapedPage({ page, slug = [] }) {
 
   const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(page.bodyHtml, { timelineLists: !isHub }));
   const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
-  const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+  const title = sentenceCase((scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
   let pageBody = dropLeadingCtas(afterTagline);
   // Language pages with merged sector pages: each leaf becomes a section of this page.
   const leaves = getLeafPages(key).map(({ id, data }) => {
@@ -240,10 +249,13 @@ export default function ScrapedPage({ page, slug = [] }) {
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
+  // /translation-services/: the "every sector" accordion grid becomes the icon cards (components/SectorCards.jsx).
+  if (key === "translation-services") sections = sections.replace(/<section(?:(?!<section).)*?every sector.*?<[/]section>/s, "@@SECTORS@@");
+
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
-    <main className={isHub ? "hub" : undefined}>
+    <main className={isHub ? "hub" : undefined} data-page={key}>
       <PageSchema schema={page.schema} />
       <PageFx />
       <section className="page-hero page-hero--split">
@@ -252,7 +264,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             <Breadcrumbs pathname={pathname} current={title} />
             <span className="ip-kicker">{KICKER}</span>
             <h1>{title}</h1>
-            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
+            {heroOverride.lead ? <p className="lead">{heroOverride.lead}</p> : tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
             {isQuote ? (
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
@@ -269,6 +281,7 @@ export default function ScrapedPage({ page, slug = [] }) {
               </div>
             ) : null}
           </div>
+          {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
         </div>
       </section>
 
@@ -284,7 +297,8 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
+      {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
+      {isHub && key !== "translation-services" ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       {leaves.length ? (
@@ -303,6 +317,12 @@ export default function ScrapedPage({ page, slug = [] }) {
           <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
           <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
           <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
+        </>
+      ) : key === "translation-services" && sections.includes("@@SECTORS@@") ? (
+        <>
+          <Sections html={sections.split("@@SECTORS@@")[0]} />
+          <SectorCards />
+          <Sections html={sections.split("@@SECTORS@@")[1]} />
         </>
       ) : <Sections html={sections} />}
 
