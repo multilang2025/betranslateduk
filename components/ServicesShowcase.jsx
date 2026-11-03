@@ -40,6 +40,23 @@ export default function ServicesShowcase() {
           <p>{intro}</p>
         </div>
 
+        <div className="svc-cards">
+          {cards.map((c) => (
+            <a key={c.href} href={c.href} className="svc-card">
+              <span className="svc-card__media">
+                <span className="svc-card__photo"><img src={c.image.file} width={c.image.width} height={c.image.height} alt={c.image.alt} loading="lazy" decoding="async" /></span>
+                <span className="svc-card__icon"><Icon name={c.icon} /></span>
+              </span>
+              <span className="svc-card__body">
+                <span className="svc-card__tag">{c.tag}</span>
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+                <span className="svc-card__more">{c.button} <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          ))}
+        </div>
+
         <article className="svc-feature">
           <div className="svc-feature__body">
             <span className="svc-feature__badge"><Icon name="pin" /> {f.eyebrow}</span>
@@ -68,23 +85,6 @@ export default function ServicesShowcase() {
             <img src={f.image.file} width={f.image.width} height={f.image.height} alt={f.image.alt} loading="lazy" decoding="async" />
           </div>
         </article>
-
-        <div className="svc-cards">
-          {cards.map((c) => (
-            <a key={c.href} href={c.href} className="svc-card">
-              <span className="svc-card__media">
-                <img src={c.image.file} width={c.image.width} height={c.image.height} alt={c.image.alt} loading="lazy" decoding="async" />
-                <span className="svc-card__icon"><Icon name={c.icon} /></span>
-              </span>
-              <span className="svc-card__body">
-                <span className="svc-card__tag">{c.tag}</span>
-                <h3>{c.title}</h3>
-                <p>{c.text}</p>
-                <span className="svc-card__more">{c.button} <span aria-hidden="true">→</span></span>
-              </span>
-            </a>
-          ))}
-        </div>
 
         <p className="svc-credits">
           Photos via Wikimedia Commons:{" "}

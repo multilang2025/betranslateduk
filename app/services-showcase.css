@@ -25,13 +25,15 @@
 .svc-feature__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(47, 49, 67, .18), transparent 40%); pointer-events: none; }
 
 /* Three equal service cards. */
-.svc-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.svc-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.svc-feature { margin-top: 32px; }
 .svc-card { display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: var(--bt-surface, #fff); border: 1px solid var(--bt-line); color: inherit; text-decoration: none; box-shadow: 0 8px 24px rgba(15, 23, 42, .07); transition: transform .22s, box-shadow .22s, border-color .22s; }
 .svc-card:hover, .svc-card:focus-visible { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(15, 23, 42, .15); border-color: #7EBEC5; }
-.svc-card__media { position: relative; display: block; aspect-ratio: 3 / 2; overflow: hidden; background: #EFF7F8; }
+.svc-card__photo { position: absolute; inset: 0; overflow: hidden; display: block; }
+.svc-card__media { position: relative; display: block; aspect-ratio: 3 / 2; background: #EFF7F8; }
 .svc-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
 .svc-card:hover .svc-card__media img { transform: scale(1.05); }
-.svc-card__media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(to top, rgba(47, 49, 67, .45), transparent); pointer-events: none; }
+.svc-card__photo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(to top, rgba(47, 49, 67, .45), transparent); pointer-events: none; }
 .svc-card__icon { position: absolute; left: 20px; bottom: -22px; z-index: 2; width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: #F67618; color: #fff; box-shadow: 0 10px 22px rgba(246, 118, 24, .4); }
 .svc-card:nth-child(2) .svc-card__icon { background: #2F7C86; box-shadow: 0 10px 22px rgba(47, 124, 134, .4); }
 .svc-card:nth-child(3) .svc-card__icon { background: #2F3143; box-shadow: 0 10px 22px rgba(47, 49, 67, .4); }
@@ -62,7 +64,7 @@ html[data-theme="dark"] .svc-card__more, html:not([data-theme="light"]) .svc-car
 }
 @media (max-width: 560px) {
   .svc-card { flex-direction: column; }
-  .svc-card__media { width: 100%; flex: none; aspect-ratio: 3 / 2; }
+  .svc-card__media { width: 100%; flex: none; aspect-ratio: 3 / 2; min-height: 0; }
   .svc-card__icon { left: 20px; right: auto; bottom: -22px; width: 52px; height: 52px; border-radius: 16px; }
   .svc-card__body { padding: 36px 22px 24px; }
 }
