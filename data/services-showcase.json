@@ -198,17 +198,15 @@
       "href": "/translation-services/website-translation/",
       "button": "See website translation",
       "image": {
-        "file": "/images/blog/commons/services-website-devices.jpg",
-        "alt": "A website shown across desktop, laptop, tablet and phone screens on a blue background",
+        "file": "/images/blog/commons/best-translation-tools-1.jpg",
+        "alt": "Hands typing on a laptop at a desk",
         "width": 1200,
-        "height": 630,
-        "fit": "contain",
-        "bg": "#1C527F",
-        "title": "File:Responsive-web-design-devices.jpg",
-        "pageUrl": "https://commons.wikimedia.org/wiki/File:Responsive-web-design-devices.jpg",
-        "author": "Muhammad Rafizeldi",
-        "licence": "CC BY-SA 3.0",
-        "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+        "height": 800,
+        "title": "File:Typing on a laptop (Unsplash).jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Typing_on_a_laptop_(Unsplash).jpg",
+        "author": "Simon Hattinga Verschure webmarbles",
+        "licence": "CC0",
+        "licenceUrl": ""
       }
     }
   ]
