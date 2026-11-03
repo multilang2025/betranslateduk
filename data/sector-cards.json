@@ -1,0 +1,16 @@
+{
+  "_doc": "Sector cards on /translation-services/ (components/SectorCards.jsx). Every href is a live page.",
+  "eyebrow": "Our services",
+  "heading": "Translation services for every sector",
+  "intro": "Specialist translators for the content your business actually produces.",
+  "cards": [
+    { "icon": "doc", "title": "Professional documents", "text": "Single pages, full manuals and conference decks, delivered on time.", "href": "/document-translation-services/", "more": "Read more about document translation" },
+    { "icon": "web", "title": "Website translation", "text": "Web content and blog articles that sound natural in every market.", "href": "/translation-services/website-translation/", "more": "Read more about website translation" },
+    { "icon": "chart", "title": "Business and finance", "text": "Tenders, contracts, reports and accounts, handled by finance specialists.", "href": "/industry/business/", "more": "Read more about business translation" },
+    { "icon": "chip", "title": "High tech and IT", "text": "Software, interfaces, help files and user guides from IT specialists.", "href": "/industry/it-telecom/", "more": "Read more about IT translation" },
+    { "icon": "hardhat", "title": "Industry and construction", "text": "Technical guides, tenders and planning documents from engineering experts.", "href": "/industry/technical/", "more": "Read more about technical translation" },
+    { "icon": "megaphone", "title": "Marketing and sales", "text": "Campaigns, catalogues and press releases that stay sharp and culturally right.", "href": "/industry/marketing/", "more": "Read more about marketing translation" },
+    { "icon": "plane", "title": "Travel and tourism", "text": "Guidebooks, brochures and visitor information for global travellers.", "href": "/industry/tourism/", "more": "Read more about tourism translation" },
+    { "icon": "scale", "title": "Legal", "text": "Contracts, immigration papers and patents, checked against specialist terminology.", "href": "/industry/legal/", "more": "Read more about legal translation" }
+  ]
+}
