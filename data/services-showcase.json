@@ -1,0 +1,213 @@
+{
+  "_doc": [
+    "Content for the 'Our translation services' section on /translation-services/ (components/ServicesShowcase.jsx).",
+    "Photos come from Wikimedia Commons; the credits line under the section is built from the image entries below."
+  ],
+  "eyebrow": "What we do",
+  "heading": "Our translation services",
+  "intro": "Tell us what you need and we will match your project with the translator who best fits it.",
+  "featured": {
+    "eyebrow": "Where we work",
+    "title": "Translation services across England",
+    "text": "We translate for businesses across England, from legal and medical to technical and business documents. Choose your city to see how we can help.",
+    "href": "/translation-services/england/",
+    "button": "Explore England",
+    "secondaryLabel": "Scotland, Wales and Northern Ireland",
+    "secondaryHref": "/translation-agency/locations/",
+    "cities": [
+      [
+        "Bath",
+        "bath"
+      ],
+      [
+        "Birmingham",
+        "birmingham"
+      ],
+      [
+        "Bournemouth",
+        "bournemouth"
+      ],
+      [
+        "Brighton",
+        "brighton"
+      ],
+      [
+        "Bristol",
+        "bristol"
+      ],
+      [
+        "Cambridge",
+        "cambridge"
+      ],
+      [
+        "Coventry",
+        "coventry"
+      ],
+      [
+        "Leeds",
+        "leeds"
+      ],
+      [
+        "Leicester",
+        "leicester"
+      ],
+      [
+        "Liverpool",
+        "liverpool"
+      ],
+      [
+        "London",
+        "london"
+      ],
+      [
+        "Manchester",
+        "manchester"
+      ],
+      [
+        "Newcastle",
+        "newcastle"
+      ],
+      [
+        "Norwich",
+        "norwich"
+      ],
+      [
+        "Nottingham",
+        "nottingham"
+      ],
+      [
+        "Plymouth",
+        "plymouth"
+      ],
+      [
+        "Portsmouth",
+        "portsmouth"
+      ],
+      [
+        "Sheffield",
+        "sheffield"
+      ],
+      [
+        "Southampton",
+        "southampton"
+      ],
+      [
+        "Southend-on-Sea",
+        "southend-on-sea"
+      ],
+      [
+        "Sunderland",
+        "sunderland"
+      ],
+      [
+        "York",
+        "york"
+      ]
+    ],
+    "otherLabel": "Also across the UK",
+    "others": [
+      [
+        "Edinburgh",
+        "edinburgh"
+      ],
+      [
+        "Glasgow",
+        "glasgow"
+      ],
+      [
+        "Aberdeen",
+        "aberdeen"
+      ],
+      [
+        "Cardiff",
+        "cardiff"
+      ],
+      [
+        "Swansea",
+        "swansea"
+      ],
+      [
+        "Bangor",
+        "bangor"
+      ],
+      [
+        "Belfast",
+        "belfast"
+      ],
+      [
+        "Londonderry",
+        "londonderry"
+      ]
+    ],
+    "image": {
+      "file": "/images/blog/commons/business-need-financial-translation-1.jpg",
+      "alt": "The City of London skyline beside the Tower of London on a bright autumn day",
+      "width": 1280,
+      "height": 853,
+      "title": "File:The skyline of The City of London, London's financial district (16608813171).jpg",
+      "pageUrl": "https://commons.wikimedia.org/wiki/File:The_skyline_of_The_City_of_London,_London%27s_financial_district_(16608813171).jpg",
+      "author": "traveljunction",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    }
+  },
+  "cards": [
+    {
+      "icon": "stamp",
+      "tag": "Documents",
+      "title": "Certified translation for companies and individuals",
+      "text": "Contracts, company papers, wills and personal documents, translated and signed off as accurate. Free quote before you commit.",
+      "href": "/industry/legal/will-certified-translation-services/",
+      "button": "See certified translation",
+      "image": {
+        "file": "/images/blog/commons/how-much-translate-document-1.jpg",
+        "alt": "A pen resting on a signed contract",
+        "width": 1200,
+        "height": 900,
+        "title": "File:Legal Contract & Signature - Warm Tones.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Legal_Contract_%26_Signature_-_Warm_Tones.jpg",
+        "author": "Blogtrepreneur",
+        "licence": "CC BY 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    },
+    {
+      "icon": "headset",
+      "tag": "Live",
+      "title": "Remote interpreting services",
+      "text": "Business meetings and live events on Zoom, Teams and Google Meet, interpreted in real time by professionals. Free quote, reply within a couple of hours.",
+      "href": "/translation-services/remote-interpreting/",
+      "button": "See interpreting",
+      "image": {
+        "file": "/images/blog/commons/zoom-interpreting-1.jpg",
+        "alt": "An interpreting booth overlooking a meeting room",
+        "width": 1200,
+        "height": 800,
+        "title": "File:Interpreting booth Juste Lipse building 01.jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Interpreting_booth_Juste_Lipse_building_01.jpg",
+        "author": "FrDr",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    },
+    {
+      "icon": "globe",
+      "tag": "Online",
+      "title": "Website translation services",
+      "text": "Your site in new languages, translated directly in your HTML or XML code or through the WPML plug-in for WordPress, so every market reads a site built for it.",
+      "href": "/translation-services/website-translation/",
+      "button": "See website translation",
+      "image": {
+        "file": "/images/blog/commons/best-translation-tools-1.jpg",
+        "alt": "Hands typing on a laptop at a desk",
+        "width": 1200,
+        "height": 800,
+        "title": "File:Typing on a laptop (Unsplash).jpg",
+        "pageUrl": "https://commons.wikimedia.org/wiki/File:Typing_on_a_laptop_(Unsplash).jpg",
+        "author": "Simon Hattinga Verschure webmarbles",
+        "licence": "CC0",
+        "licenceUrl": ""
+      }
+    }
+  ]
+}
