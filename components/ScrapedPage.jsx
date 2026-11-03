@@ -23,6 +23,7 @@ import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, wi
 import { insertFigures } from "@/lib/blogImages";
 import { ctaCardHtml } from "@/lib/blogCta";
 import ServicesHeroArt from "./ServicesHeroArt";
+import ServicesShowcase from "./ServicesShowcase";
 import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 
@@ -291,7 +292,8 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
+      {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
+      {isHub && key !== "translation-services" ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       {leaves.length ? (
