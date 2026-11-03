@@ -1,0 +1,12 @@
+{
+  "_doc": [
+    "Per-page hero overrides, keyed by the page path without slashes (e.g. translation-services).",
+    "lead: the hero sentence under the H1 (otherwise the meta description is used).",
+    "art: names an illustration component (services = components/ServicesHeroArt.jsx).",
+    "Keep each lead to the same number of lines as before and each illustration under the hero's content height, so heroes stay one size across pages."
+  ],
+  "translation-services": {
+    "lead": "Our native specialists carry your message into every market, so it lands exactly as you meant it. Free quote, reply within a couple of hours.",
+    "art": "services"
+  }
+}

@@ -1,0 +1,55 @@
+/* /translation-services/: sector cards (components/SectorCards.jsx) and a readable base text size for the page. */
+
+.sector-cards__eyebrow { display: inline-block; font: 700 12.5px var(--font-ui); letter-spacing: .16em; text-transform: uppercase; color: #2F7C86; }
+.sector-cards h2 { margin: 10px 0 10px; }
+.sector-cards__intro { margin: 0 0 28px; max-width: 640px; }
+.sector-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.sector { display: flex; flex-direction: column; margin: 0; padding: 24px 22px 22px; border-radius: 20px; background: var(--bt-surface, #fff); border: 1px solid var(--bt-line); box-shadow: 0 6px 18px rgba(15, 23, 42, .06); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.sector:hover { transform: translateY(-4px); border-color: #7EBEC5; box-shadow: 0 16px 32px rgba(15, 23, 42, .14); }
+.sector__ico { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 14px; border-radius: 14px; background: rgba(126, 190, 197, .2); color: #2F7C86; transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.sector:hover .sector__ico { transform: scale(1.1) rotate(-6deg); }
+.sector:nth-child(3n+2) .sector__ico { background: rgba(246, 118, 24, .14); color: #C85A0E; }
+.sector:nth-child(3n) .sector__ico { background: rgba(47, 49, 67, .1); color: #2F3143; }
+.sector h3 { margin: 0 0 8px; font-size: 1.15rem; line-height: 1.3; }
+.sector p { margin: 0; font-size: 16px; line-height: 1.6; }
+.bt .sec__in .sector .sector__more { display: inline-block; border: 0 !important; box-shadow: none; padding: 0; margin-top: 16px; font: 700 16px/1.35 var(--font-ui); color: #F67618 !important; text-decoration: none; }
+.bt .sec__in .sector .sector__more:hover, .bt .sec__in .sector .sector__more:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+html[data-theme="dark"] .sector-cards__eyebrow, html:not([data-theme="light"]) .sector-cards__eyebrow { color: #7EBEC5; }
+html[data-theme="dark"] .sector__ico, html:not([data-theme="light"]) .sector__ico { color: #7EBEC5; background: rgba(126, 190, 197, .16); }
+html[data-theme="dark"] .sector:nth-child(3n+2) .sector__ico, html:not([data-theme="light"]) .sector:nth-child(3n+2) .sector__ico { color: #FF9A4D; background: rgba(246, 118, 24, .16); }
+html[data-theme="dark"] .sector:nth-child(3n) .sector__ico, html:not([data-theme="light"]) .sector:nth-child(3n) .sector__ico { color: #E6EAF0; background: rgba(230, 234, 240, .12); }
+html[data-theme="dark"] .sector__more, html:not([data-theme="light"]) .sector__more { color: #FF9A4D !important; }
+@media (max-width: 640px) { .sector-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
+@media (prefers-reduced-motion: reduce) { .sector:hover, .sector:hover .sector__ico { transform: none; } }
+
+/* Readable text on this page: 17px body on phones, 18px on desktop. */
+.bt main[data-page="translation-services"] .sec__in p,
+main[data-page="translation-services"] .sec__in li,
+main[data-page="translation-services"] .sec__in summary { font-size: 17px; line-height: 1.7; }
+.bt main[data-page="translation-services"] .sec__in ul.values li.card p,
+main[data-page="translation-services"] .values-cta p { font-size: 16.5px; line-height: 1.65; }
+main[data-page="translation-services"] .sec__in .faq__item summary,
+main[data-page="translation-services"] .sec__in details > summary { font-size: 17.5px; }
+@media (min-width: 900px) {
+  .bt main[data-page="translation-services"] .sec__in p,
+  main[data-page="translation-services"] .sec__in li,
+  main[data-page="translation-services"] .sec__in summary { font-size: 18px; }
+  .bt main[data-page="translation-services"] .sec__in ul.values li.card p,
+  main[data-page="translation-services"] .values-cta p { font-size: 17px; }
+  .bt main[data-page="translation-services"] .sec__in .sector p { font-size: 16.5px; }
+}
+
+.bt .sec__in .sector ul.sector__tags { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; flex: 1; align-content: flex-start; }
+.bt .sec__in .sector ul.sector__tags li { margin: 0; padding: 4px 10px; border-radius: 999px; background: rgba(126, 190, 197, .16); color: #2F7C86; font: 600 13px/1.3 var(--font-ui); }
+html[data-theme="dark"] .bt .sec__in .sector ul.sector__tags li, html:not([data-theme="light"]) .bt .sec__in .sector ul.sector__tags li { color: #7EBEC5; }
+
+/* Desktop: four cards to a row, in a wider container than the body copy. */
+@media (min-width: 1100px) {
+  .bt .sector-cards .sec__in { max-width: 1240px; }
+  .sector-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .sector { padding: 22px 20px 20px; }
+  .bt main[data-page="translation-services"] .sec__in .sector p { font-size: 15.5px; line-height: 1.6; }
+  .bt .sec__in .sector ul.sector__tags li { font-size: 12.5px; }
+  .bt .sec__in .sector .sector__more { font-size: 15px; }
+}
+.bt .sec__in ul.sector-grid { max-width: none; width: 100%; }
