@@ -30,6 +30,7 @@ export default function SectorCards() {
               </span>
               <h3>{c.title}</h3>
               <p>{c.text}</p>
+              {c.includes ? <ul className="sector__tags" aria-label="Typical content">{c.includes.map((t) => <li key={t}>{t}</li>)}</ul> : null}
               <a className="sector__more" href={c.href}>{c.more} <span aria-hidden="true">→</span></a>
             </li>
           ))}

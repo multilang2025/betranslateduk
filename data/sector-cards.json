@@ -4,13 +4,114 @@
   "heading": "Translation services for every sector",
   "intro": "Specialist translators for the content your business actually produces.",
   "cards": [
-    { "icon": "doc", "title": "Professional documents", "text": "Single pages, full manuals and conference decks, delivered on time.", "href": "/document-translation-services/", "more": "Read more about document translation" },
-    { "icon": "web", "title": "Website translation", "text": "Web content and blog articles that sound natural in every market.", "href": "/translation-services/website-translation/", "more": "Read more about website translation" },
-    { "icon": "chart", "title": "Business and finance", "text": "Tenders, contracts, reports and accounts, handled by finance specialists.", "href": "/industry/business/", "more": "Read more about business translation" },
-    { "icon": "chip", "title": "High tech and IT", "text": "Software, interfaces, help files and user guides from IT specialists.", "href": "/industry/it-telecom/", "more": "Read more about IT translation" },
-    { "icon": "hardhat", "title": "Industry and construction", "text": "Technical guides, tenders and planning documents from engineering experts.", "href": "/industry/technical/", "more": "Read more about technical translation" },
-    { "icon": "megaphone", "title": "Marketing and sales", "text": "Campaigns, catalogues and press releases that stay sharp and culturally right.", "href": "/industry/marketing/", "more": "Read more about marketing translation" },
-    { "icon": "plane", "title": "Travel and tourism", "text": "Guidebooks, brochures and visitor information for global travellers.", "href": "/industry/tourism/", "more": "Read more about tourism translation" },
-    { "icon": "scale", "title": "Legal", "text": "Contracts, immigration papers and patents, checked against specialist terminology.", "href": "/industry/legal/", "more": "Read more about legal translation" }
+    {
+      "icon": "doc",
+      "title": "Professional documents",
+      "text": "Whether it is a single page, a full user manual or a conference deck, our experienced translators know how to meet your business needs. We respond quickly to enquiries, honour your deadlines and provide professional language services at competitive prices.",
+      "href": "/document-translation-services/",
+      "more": "Read more about document translation",
+      "includes": [
+        "User manuals",
+        "PDF guides",
+        "Conference decks",
+        "Reports"
+      ]
+    },
+    {
+      "icon": "web",
+      "title": "Website translation",
+      "text": "Translating your website opens new markets, with messages that sound natural to native speakers in each one. A precise translation of your web content and blog articles helps you attract customers in new markets and convert potential leads.",
+      "href": "/translation-services/website-translation/",
+      "more": "Read more about website translation",
+      "includes": [
+        "Web pages",
+        "Blog articles",
+        "Product pages",
+        "Landing pages"
+      ]
+    },
+    {
+      "icon": "chart",
+      "title": "Business and finance",
+      "text": "Our specialised freelance translators bring the expert knowledge that accurate business and financial translations need, from the first draft to the final check.",
+      "href": "/industry/business/",
+      "more": "Read more about business translation",
+      "includes": [
+        "Tenders",
+        "Contracts",
+        "Annual reports",
+        "Balance sheets",
+        "Due diligence"
+      ]
+    },
+    {
+      "icon": "chip",
+      "title": "High tech and IT",
+      "text": "Our agency provides quality IT language solutions for a variety of industries, from software and interfaces to help files and user guides. Our IT translators are highly specialised in their area of expertise.",
+      "href": "/industry/it-telecom/",
+      "more": "Read more about IT translation",
+      "includes": [
+        "Software strings",
+        "Help files",
+        "App translation",
+        "Data sheets",
+        "Training material"
+      ]
+    },
+    {
+      "icon": "hardhat",
+      "title": "Industry and construction",
+      "text": "Our technical translations come from expert translators in engineering, construction and planning, who know the terminology your documents depend on.",
+      "href": "/industry/technical/",
+      "more": "Read more about technical translation",
+      "includes": [
+        "Environmental studies",
+        "Civil engineering",
+        "Tenders",
+        "Handbooks",
+        "Safety notes"
+      ]
+    },
+    {
+      "icon": "megaphone",
+      "title": "Marketing and sales",
+      "text": "We deliver marketing localisation that keeps your message sharp and culturally right in every market, taking linguistic subtleties and cultural context into account.",
+      "href": "/industry/marketing/",
+      "more": "Read more about marketing translation",
+      "includes": [
+        "Press releases",
+        "Catalogues",
+        "Product launches",
+        "Packaging",
+        "Media kits"
+      ]
+    },
+    {
+      "icon": "plane",
+      "title": "Travel and tourism",
+      "text": "Our travel and tourism translations are crafted to enhance global travel experiences, with accurate translations that also foster a deeper understanding of local cultures and traditions.",
+      "href": "/industry/tourism/",
+      "more": "Read more about tourism translation",
+      "includes": [
+        "Guidebooks",
+        "Brochures",
+        "Museum guides",
+        "Visitor information"
+      ]
+    },
+    {
+      "icon": "scale",
+      "title": "Legal",
+      "text": "Our legal translation services are tailored to your needs. With a specialised terminology database behind every project, your documents are translated with a high level of accuracy and professionalism.",
+      "href": "/industry/legal/",
+      "more": "Read more about legal translation",
+      "includes": [
+        "Contracts",
+        "Immigration documents",
+        "Patents and trademarks",
+        "Property documents",
+        "Insurance"
+      ]
+    }
   ]
 }

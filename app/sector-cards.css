@@ -11,7 +11,7 @@
 .sector:nth-child(3n+2) .sector__ico { background: rgba(246, 118, 24, .14); color: #C85A0E; }
 .sector:nth-child(3n) .sector__ico { background: rgba(47, 49, 67, .1); color: #2F3143; }
 .sector h3 { margin: 0 0 8px; font-size: 1.15rem; line-height: 1.3; }
-.sector p { margin: 0; flex: 1; font-size: 16px; line-height: 1.6; }
+.sector p { margin: 0; font-size: 16px; line-height: 1.6; }
 .bt .sec__in .sector .sector__more { display: inline-block; border: 0 !important; box-shadow: none; padding: 0; margin-top: 16px; font: 700 16px/1.35 var(--font-ui); color: #F67618 !important; text-decoration: none; }
 .bt .sec__in .sector .sector__more:hover, .bt .sec__in .sector .sector__more:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 html[data-theme="dark"] .sector-cards__eyebrow, html:not([data-theme="light"]) .sector-cards__eyebrow { color: #7EBEC5; }
@@ -38,3 +38,7 @@ main[data-page="translation-services"] .sec__in details > summary { font-size: 1
   main[data-page="translation-services"] .values-cta p { font-size: 17px; }
   .bt main[data-page="translation-services"] .sec__in .sector p { font-size: 16.5px; }
 }
+
+.bt .sec__in .sector ul.sector__tags { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; flex: 1; align-content: flex-start; }
+.bt .sec__in .sector ul.sector__tags li { margin: 0; padding: 4px 10px; border-radius: 999px; background: rgba(126, 190, 197, .16); color: #2F7C86; font: 600 13px/1.3 var(--font-ui); }
+html[data-theme="dark"] .bt .sec__in .sector ul.sector__tags li, html:not([data-theme="light"]) .bt .sec__in .sector ul.sector__tags li { color: #7EBEC5; }
