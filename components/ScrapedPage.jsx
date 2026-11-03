@@ -24,6 +24,7 @@ import { insertFigures } from "@/lib/blogImages";
 import { ctaCardHtml } from "@/lib/blogCta";
 import ServicesHeroArt from "./ServicesHeroArt";
 import ServicesShowcase from "./ServicesShowcase";
+import SectorCards from "./SectorCards";
 import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 
@@ -247,10 +248,13 @@ export default function ScrapedPage({ page, slug = [] }) {
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
+  // /translation-services/: the "every sector" accordion grid becomes the icon cards (components/SectorCards.jsx).
+  if (key === "translation-services") sections = sections.replace(/<section(?:(?!<section).)*?every sector.*?<[/]section>/s, "@@SECTORS@@");
+
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
-    <main className={isHub ? "hub" : undefined}>
+    <main className={isHub ? "hub" : undefined} data-page={key}>
       <PageSchema schema={page.schema} />
       <PageFx />
       <section className="page-hero page-hero--split">
@@ -312,6 +316,12 @@ export default function ScrapedPage({ page, slug = [] }) {
           <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
           <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
           <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
+        </>
+      ) : key === "translation-services" && sections.includes("@@SECTORS@@") ? (
+        <>
+          <Sections html={sections.split("@@SECTORS@@")[0]} />
+          <SectorCards />
+          <Sections html={sections.split("@@SECTORS@@")[1]} />
         </>
       ) : <Sections html={sections} />}
 
