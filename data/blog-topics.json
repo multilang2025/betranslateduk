@@ -1,0 +1,41 @@
+{
+  "note": "Blog hub topics. Each post is shown under the first topic (top to bottom) that holds one of its WordPress categories, so a post never appears twice in the topic sections. The last topic is the fallback for anything left over. Category slugs come from scripts/btvibe-uk/category-map.json.",
+  "topics": [
+    {
+      "id": "ai-and-technology",
+      "name": "AI and technology",
+      "blurb": "Machine translation, AI tools and when a human linguist still wins.",
+      "categories": ["ai", "machine-translation", "translation-tools", "translation-app", "technology", "vpns", "human-translation"]
+    },
+    {
+      "id": "careers-and-freelancing",
+      "name": "Careers and freelancing",
+      "blurb": "Working as a translator, going freelance and building language skills.",
+      "categories": ["careers", "freelancing", "freelancer-tips", "translators", "translation-skills", "remote-work", "training"]
+    },
+    {
+      "id": "interpreting-and-communication",
+      "name": "Interpreting and communication",
+      "blurb": "Live interpreting, remote meetings and getting your message across.",
+      "categories": ["interpreting", "communication", "multilingual"]
+    },
+    {
+      "id": "languages-and-culture",
+      "name": "Languages and culture",
+      "blurb": "British English, idioms, language learning and life abroad.",
+      "categories": ["culture", "languages", "language-learning", "education", "students", "lifestyle", "funny", "expat-life", "travel-and-tourism", "belgium", "good-to-know", "tips-tricks", "e-learning", "immigration", "audio-blog"]
+    },
+    {
+      "id": "business-and-growth",
+      "name": "Business and growth",
+      "blurb": "Translation for finance, law, healthcare, e-commerce and international expansion.",
+      "categories": ["business-tips", "business", "e-commerce", "marketing", "startup-business", "retail", "outsourcing", "globalisation", "globalization", "adventures-in-globalization-localization", "localisation", "logistics", "property-translation", "financial-translation", "legal-translation", "medical-translation", "international-development"]
+    },
+    {
+      "id": "translation-services",
+      "name": "Translation services",
+      "blurb": "Choosing a translation agency, rates and what to expect from a professional service.",
+      "categories": ["translation-services", "translation-agency", "professional-translation", "translation-service-providers", "translation-companies", "translation-news", "translation"]
+    }
+  ]
+}

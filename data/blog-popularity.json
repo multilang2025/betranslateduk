@@ -1,0 +1,69 @@
+{
+  "note": "Most popular posts, ranked by Google Analytics 4 landing-page sessions on betranslated.co.uk over the date range shown. Refresh by re-running the analytics export and replacing this file.",
+  "range": {
+    "startDate": "2025-10-30",
+    "endDate": "2026-10-29"
+  },
+  "posts": [
+    {
+      "slug": "british-characters",
+      "sessions": 849,
+      "clicks": 759
+    },
+    {
+      "slug": "guide-western-european-languages",
+      "sessions": 307,
+      "clicks": 276
+    },
+    {
+      "slug": "translation-schools-belgium",
+      "sessions": 192,
+      "clicks": 126
+    },
+    {
+      "slug": "8-british-habits-that-stand-out-abroad",
+      "sessions": 114,
+      "clicks": 73
+    },
+    {
+      "slug": "blog-british-food-expats-miss",
+      "sessions": 105,
+      "clicks": 70
+    },
+    {
+      "slug": "vital-keyboard-shortcuts-translators",
+      "sessions": 98,
+      "clicks": 55
+    },
+    {
+      "slug": "international-advertising-benefits",
+      "sessions": 93,
+      "clicks": 44
+    },
+    {
+      "slug": "movie-dubbing",
+      "sessions": 72,
+      "clicks": 24
+    },
+    {
+      "slug": "language-degrees",
+      "sessions": 51,
+      "clicks": 39
+    },
+    {
+      "slug": "reach-new-heights-with-startup-business",
+      "sessions": 48,
+      "clicks": 0
+    },
+    {
+      "slug": "logistics-transport-translation-services",
+      "sessions": 47,
+      "clicks": 0
+    },
+    {
+      "slug": "why-choose-betranslated-and-not-ai",
+      "sessions": 46,
+      "clicks": 1
+    }
+  ]
+}

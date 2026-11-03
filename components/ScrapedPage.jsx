@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { sentenceCase } from "@/lib/sentenceCase";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
@@ -14,8 +15,20 @@ import QuoteForm from "./home/QuoteForm";
 import TocSpy from "./TocSpy";
 import PageFx from "./PageFx";
 import PageSchema from "./PageSchema";
-import { KICKER } from "./StdHero";
+import StdHero, { KICKER } from "./StdHero";
+import BlogHub from "./BlogHub";
+import BlogHeroArt from "./BlogHeroArt";
+import BlogCard from "./BlogCard";
+import { getBlogHub, relatedFor } from "@/lib/blogHub";
+import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
+import { insertFigures } from "@/lib/blogImages";
+import { ctaCardHtml } from "@/lib/blogCta";
+import ServicesHeroArt from "./ServicesHeroArt";
+import ServicesShowcase from "./ServicesShowcase";
+import SectorCards from "./SectorCards";
+import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
+import EnglandMap from "./EnglandMap";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -33,6 +46,59 @@ const HUB_SLUGS = new Set([
   "languages", "industry", "translation-services", "translation-agency",
   "translation-agency/locations", "translation-services/england",
 ]);
+
+// England city pages: no "Read more" (+) fold on long sections, and a real
+// photo in the hero's second column (reusing each page's own unique photo;
+// the hero automatically goes back to a two-column layout once it has a
+// second child — see the :only-child rule in ui-fx.css). Exeter, Oxford and
+// Reading have no unique photo yet, so they're left out of HERO_IMAGE_SLUGS.
+const ENGLAND_CITY_SLUGS = [
+  "birmingham", "bournemouth", "brighton", "bristol", "cambridge", "coventry",
+  "exeter", "leeds", "leicester", "liverpool", "london", "manchester",
+  "newcastle", "norwich", "nottingham", "oxford", "plymouth", "portsmouth",
+  "reading", "sheffield", "southampton", "york",
+];
+const NO_FOLD_SLUGS = new Set([
+  "translation-services/england",
+  ...ENGLAND_CITY_SLUGS.map((c) => `translation-services/england/${c}`),
+]);
+
+const HERO_IMAGE_SLUGS = Object.fromEntries(Object.entries({
+  birmingham: ["/images/wp-content/uploads/2025/10/Birmingham-3-1024x579.jpg", "Birmingham city centre"],
+  bournemouth: ["/images/wp-content/uploads/2024/11/bournemouth-pier-dawn-bournemouth-3419367-e1732805720456.jpg", "Bournemouth pier at dawn"],
+  brighton: ["/images/wp-content/uploads/2024/10/brighton-pier-arcade-beach-5643723-e1728640815917.jpg", "Brighton pier"],
+  bristol: ["/images/wp-content/uploads/2024/10/translation-services-in-bristol.webp", "Bristol city"],
+  cambridge: ["/images/wp-content/uploads/2024/10/cambridge-translation-services.jpg", "Cambridge"],
+  coventry: ["/images/wp-content/uploads/2024/11/coventry-city-england-cathedral-2979432-e1732016010941.jpg", "Coventry Cathedral"],
+  exeter: ["/images/wp-content/uploads/2025/11/exeter-cathedral-1024x579.jpg", "Exeter Cathedral", { author: "Simon Burchell", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/" }],
+  leeds: ["/images/wp-content/uploads/2024/10/1-leeds-e1729070002851.jpg", "Leeds city centre"],
+  leicester: ["/images/wp-content/uploads/2024/10/leicester-translation-service.jpg", "Leicester city centre"],
+  liverpool: ["/images/wp-content/uploads/2024/10/beatle-liverpool-raining-3819228-e1729071249160.jpg", "Liverpool waterfront"],
+  london: ["/images/wp-content/uploads/2024/10/london-translation-services.jpg", "London"],
+  manchester: ["/images/wp-content/uploads/2024/09/manchester-manhole-cover-metal-1631200-e1727351820924.jpg", "Manchester"],
+  newcastle: ["/images/wp-content/uploads/2024/11/sage-gateshead-newcastle-4331425-e1732895511280.jpg", "Sage Gateshead, Newcastle"],
+  norwich: ["/images/wp-content/uploads/2024/11/Norwich-translation-services.jpg", "Norwich"],
+  nottingham: ["/images/wp-content/uploads/2024/10/nottingham-translation-services.webp", "Nottingham city centre"],
+  oxford: ["/images/wp-content/uploads/2025/11/oxford-radcliffe-square-1024x579.jpg", "Radcliffe Square, Oxford", { author: "Txllxt TxllxT", licence: "CC BY-SA 4.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0/", pageUrl: "https://commons.wikimedia.org/wiki/File:Oxford_-_Radcliffe_Square_-_View_South_towards_University_Church_of_St_Mary_the_Virgin_along_(right)_the_Radcliffe_Camera_1737-48_by_James_Gibbs_%26_(left)_All_Souls_College_1438.jpg" }],
+  plymouth: ["/images/wp-content/uploads/2024/11/harbour-night-reflection-283491-e1732879809448.jpg", "Plymouth harbour at night"],
+  portsmouth: ["/images/wp-content/uploads/2024/11/Portsmouth-Translation-services-1-e1732796352615.jpg", "Portsmouth"],
+  reading: ["/images/wp-content/uploads/2025/11/reading-the-blade-1024x579.jpg", "The Blade, Reading", { author: "Matt Buck", licence: "CC BY-SA 2.0", licenceUrl: "https://creativecommons.org/licenses/by-sa/2.0/" }],
+  sheffield: ["/images/wp-content/uploads/2024/10/translation-services-in-sheffield.jpg", "Sheffield city centre"],
+  southampton: ["/images/wp-content/uploads/2024/11/ships-port-lights-dusk-england-1804340-e1732018889626.jpg", "Southampton docks at dusk"],
+  york: ["/images/wp-content/uploads/2024/11/cliffords-tower-castle-landmark-5950952-e1732896084721.jpg", "Clifford's Tower, York"],
+}).map(([city, [src, alt, credit]]) => [`translation-services/england/${city}`, { src, alt, credit }]));
+
+// CC BY-SA photos from Wikimedia Commons need the author, licence and source named next to the image.
+function PhotoCredit({ credit }) {
+  const { author, licence, licenceUrl, pageUrl } = credit;
+  return (
+    <p className="page-hero__credit">
+      Photo: {author}, <a href={licenceUrl} target="_blank" rel="noopener">{licence}</a>, via{" "}
+      <a href={pageUrl || "https://commons.wikimedia.org/"} target="_blank" rel="noopener">Wikimedia Commons</a>
+    </p>
+  );
+}
+
 const QUOTE_SLUG = "translation-agency/quote";
 const CUSTOMERS_SLUG = "translation-agency/customers";
 
@@ -53,27 +119,30 @@ function cardLabel(title = "") {
   return title.split(/\s[-·|–]\s|:\s/)[0].trim() || title;
 }
 
-function Children({ items, title }) {
+function Children({ items, title, afterTitle }) {
   if (items.length < 2) return null;
   return (
     <section className="section section--tint">
       <div className="container">
         <div className="section-head"><h2>{title}</h2></div>
-        {items.length > 7 ? (
-          <ul className="pills">
-            {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
-          </ul>
-        ) : (
-          <div className="grid grid--services">
-            {items.map((c) => (
-              <a key={c.href} href={c.href} className="card card--link">
-                <h3>{cardLabel(c.title)}</h3>
-                {c.description ? <p>{c.description}</p> : null}
-                <span className="card__more">{UI.en.readMore}</span>
-              </a>
-            ))}
-          </div>
-        )}
+        <div className={afterTitle ? "hub-aside-layout" : undefined}>
+          {afterTitle}
+          {items.length > 7 ? (
+            <ul className="pills">
+              {items.map((c) => (<li key={c.href}><a href={c.href}>{childLabel(c.title)}</a></li>))}
+            </ul>
+          ) : (
+            <div className="grid grid--services">
+              {items.map((c) => (
+                <a key={c.href} href={c.href} className="card card--link">
+                  <h3>{cardLabel(c.title)}</h3>
+                  {c.description ? <p>{c.description}</p> : null}
+                  <span className="card__more">{UI.en.readMore}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -94,71 +163,57 @@ function Sections({ html }) {
 }
 
 function BlogIndexView() {
-  const posts = getAllPosts();
+  const hub = getBlogHub();
   return (
     <main>
       <PageFx />
-      <section className="page-hero">
-        <div className="container container--narrow">
-          <div className="page-hero__text">
-            <Breadcrumbs pathname="/blog/" current="Blog" />
-            <span className="ip-kicker">{KICKER}</span>
-            <h1>{UI.en.blogTitle}</h1>
-            <p className="lead">{UI.en.blogLead}</p>
-          </div>
+      <StdHero art={<BlogHeroArt />}>
+        <Breadcrumbs pathname="/blog/" current="Blog" />
+        <span className="ip-kicker">{KICKER}</span>
+        <h1>Translation blog for languages, business and culture</h1>
+        <p className="lead page-hero__tagline">Practical advice, industry trends and cultural insight from a UK translation agency.</p>
+        <p className="page-hero__sub">
+          Read how AI is changing translation, what sets British English apart, how to work with a professional translator, and why healthcare, insurance and legal teams turn to specialist linguists. {hub.total} articles, written by the BeTranslated team.
+        </p>
+        <div className="page-hero__ctas">
+          <a className="bt-btn bt-btn--primary" href={UI.en.quoteHref}>Get a free quote</a>
+          <a className="bt-btn bt-btn--ghost" href="#most-read">Start with the most read</a>
         </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <div className="section-head"><h2>Latest articles</h2></div>
-          <div className="post-grid">
-            {posts.map(({ slug, data, date }) => {
-              const title = displayTitle(data);
-              const img = data.og?.image; // already localized by lib/content.js at read time
-              return (
-                <a key={slug} href={`/blog/${slug}/`} className="post">
-                  <div className="post__media">
-                    {img ? <Image src={img} alt="" width={290} height={180} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 290px" /> : <span className="post__ph" aria-hidden="true">{title.charAt(0)}</span>}
-                  </div>
-                  <div className="post__body">
-                    <h3>{title}</h3>
-                    <p>{data.metaDescription}</p>
-                    {date ? <time dateTime={date}>{new Date(date).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</time> : null}
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      </StdHero>
+      <BlogHub hub={hub} />
       <CtaBand />
     </main>
   );
 }
 
-function readMinutes(text = "") {
-  return Math.max(1, Math.round(String(text).split(/\s+/).filter(Boolean).length / 200));
-}
+const longDate = (iso) => new Date(iso).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
 
 function BlogPostView({ data, slug }) {
   const pathname = `/blog/${slug}/`;
   const ex = extractBlocks(data.bodyHtml);
   const { title: h1, body: cleanBody } = splitHero(sanitizeBody(ex.html));
-  const title = (h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+  const title = sentenceCase((h1 || data.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
   const chrome = stripPostChrome(cleanBody);
   let body = questionRunsToFaq(chrome.html, "en", faqBlock, { keepLead: true });
   body = faqSectionsToFaq(body, faqBlock);
   // The legacy contact widget at the foot of a post (heading, phone, email, address) repeats the page's CTA card.
   body = dropGroups(body, /^contact us/i, "h4");
+  // The scrape ends every post with the same five thumbnails; the related articles below replace them.
+  body = splitLongParagraphs(dropRelatedWidget(body));
   const { html: tocBody, toc } = withToc(enhanceTables(body));
-  body = restoreBlocks(tocBody, ex.blocks);
+  body = insertFigures(restoreBlocks(tocBody, ex.blocks), slug);
   const publishDate = postDate(data);
+  const modified = updatedDate(slug);
+  const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
+  const minutes = readingMinutes(body);
+  // Closing call-to-action card for posts that have copy in data/blog-cta/ (added after the reading time is counted).
+  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
-  const related = relatedPosts(slug, 4);
+  const related = relatedFor(slug, 4);
 
   return (
     <main className="blog-post">
-      <PageSchema schema={data.schema} />
+      <PageSchema schema={withModified(data.schema, modified)} />
       <TocSpy />
       <PageFx />
       <section className="page-hero page-hero--split page-hero--post-split">
@@ -168,8 +223,9 @@ function BlogPostView({ data, slug }) {
             <h1>{title}</h1>
             {data.metaDescription ? <p className="page-hero__sub">{data.metaDescription}</p> : null}
             <div className="post-hero__meta">
-              {publishDate ? <span>{UI.en.published} {new Date(publishDate).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</span> : null}
-              <span>{readMinutes(data.bodyText)} {UI.en.minRead}</span>
+              {publishDate ? <span>{UI.en.published} <time dateTime={publishDate}>{longDate(publishDate)}</time></span> : null}
+              {showUpdated ? <span className="post-hero__updated">Updated <time dateTime={modified}>{longDate(modified)}</time></span> : null}
+              <span>{minutes} {UI.en.minRead}</span>
             </div>
             <ShareBar path={pathname} title={title} compact />
           </div>
@@ -200,18 +256,9 @@ function BlogPostView({ data, slug }) {
         <section className="section section--tint related-posts">
           <div className="container">
             <div className="section-head"><h2>{UI.en.relatedPosts}</h2></div>
-            <div className="post-grid post-grid--related">
+            <div className="bgrid bgrid--four">
               {related.map((c) => (
-                <a key={c.href} href={c.href} className="post">
-                  <div className="post__media">
-                    {c.img ? <Image src={c.img} alt="" width={c.imgW} height={c.imgH} sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 290px" /> : <span className="post__ph" aria-hidden="true">{c.title.charAt(0)}</span>}
-                  </div>
-                  <div className="post__body">
-                    <div className="post__top">{c.date ? <time dateTime={c.date} className="post__meta">{new Date(c.date).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}</time> : <span />}</div>
-                    <h3>{c.title}</h3>
-                    <p>{c.description}</p>
-                  </div>
-                </a>
+                <BlogCard key={c.slug} card={c} />
               ))}
             </div>
             <p className="related-posts__all"><a href={UI.en.blogHref} className="card__more">{UI.en.backToBlog}</a></p>
@@ -229,6 +276,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   if (slug.length === 1 && slug[0] === "blog") return <BlogIndexView />;
 
   const key = slug.join("/");
+  const heroOverride = HERO_OVERRIDES[key] || {};
   const pathname = pathFromUrl(page.url) + (slug.length ? "/" : "");
   const isHub = HUB_SLUGS.has(key);
   const isQuote = key === QUOTE_SLUG;
@@ -236,7 +284,7 @@ export default function ScrapedPage({ page, slug = [] }) {
 
   const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(page.bodyHtml, { timelineLists: !isHub }));
   const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
-  const title = (scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, "");
+  const title = sentenceCase((scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
   let pageBody = dropLeadingCtas(afterTagline);
   // Language pages with merged sector pages: each leaf becomes a section of this page.
   const leaves = getLeafPages(key).map(({ id, data }) => {
@@ -254,16 +302,20 @@ export default function ScrapedPage({ page, slug = [] }) {
       href: "/industry/legal/will-certified-translation-services/",
     });
   }
-  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore })));
-  // The quote page already carries the form, so drop the "Get a quote" buttons that point at the .com quote page.
-  if (isQuote) sections = sections.replace(/<a [^>]*href="[^"]*translation-quote[^"]*"[^>]*>.*?<\/a>\s*/gs, "").replace(/<p class="cta-row">\s*<\/p>/g, "");
+  let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key), cardIcons: NO_FOLD_SLUGS.has(key) })));
+  // The quote page already carries the form, so drop the "Get a quote" buttons that point at the .com quote page
+  // (or, once rewritten, at this same page).
+  if (isQuote) sections = sections.replace(/<a [^>]*href="(?:[^"]*translation-quote[^"]*|\/translation-agency\/quote\/[^"]*)"[^>]*>.*?<\/a>\s*/gs, "").replace(/<p class="cta-row">\s*<\/p>/g, "");
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
+
+  // /translation-services/: the "every sector" accordion grid becomes the icon cards (components/SectorCards.jsx).
+  if (key === "translation-services") sections = sections.replace(/<section(?:(?!<section).)*?every sector.*?<[/]section>/s, "@@SECTORS@@");
 
   const logos = isCustomers ? (page.images || []).filter((i) => /logo/i.test(i.alt || i.src || "")).slice(0, 12).map((i) => ({ src: i.src, alt: i.alt })) : []; // page.images[].src already localized by lib/content.js at read time
 
   return (
-    <main className={isHub ? "hub" : undefined}>
+    <main className={isHub ? "hub" : undefined} data-page={key} data-slug={key}>
       <PageSchema schema={page.schema} />
       <PageFx />
       <section className="page-hero page-hero--split">
@@ -272,7 +324,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             <Breadcrumbs pathname={pathname} current={title} />
             <span className="ip-kicker">{KICKER}</span>
             <h1>{title}</h1>
-            {tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
+            {heroOverride.lead ? <p className="lead">{heroOverride.lead}</p> : tagline ? <p className="lead page-hero__tagline">{tagline}</p> : page.metaDescription ? <p className="lead">{page.metaDescription}</p> : null}
             {isQuote ? (
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
@@ -289,6 +341,13 @@ export default function ScrapedPage({ page, slug = [] }) {
               </div>
             ) : null}
           </div>
+          {HERO_IMAGE_SLUGS[key] ? (
+            <div className="page-hero__photo">
+              <img src={HERO_IMAGE_SLUGS[key].src} alt={HERO_IMAGE_SLUGS[key].alt} width="640" height="480" />
+              {HERO_IMAGE_SLUGS[key].credit ? <PhotoCredit credit={HERO_IMAGE_SLUGS[key].credit} /> : null}
+            </div>
+          ) : null}
+          {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
         </div>
       </section>
 
@@ -304,7 +363,14 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {isHub ? <Children items={children} title={HUB_TITLES[key] || "Explore"} /> : null}
+      {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
+      {isHub && key !== "translation-services" ? (
+        <Children
+          items={children}
+          title={HUB_TITLES[key] || "Explore"}
+          afterTitle={key === "translation-services/england" ? <EnglandMap /> : null}
+        />
+      ) : null}
       {isCustomers ? <ClientsBand title="Trusted by global brands" logos={logos} /> : null}
 
       {leaves.length ? (
@@ -323,6 +389,12 @@ export default function ScrapedPage({ page, slug = [] }) {
           <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
           <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
           <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
+        </>
+      ) : key === "translation-services" && sections.includes("@@SECTORS@@") ? (
+        <>
+          <Sections html={sections.split("@@SECTORS@@")[0]} />
+          <SectorCards />
+          <Sections html={sections.split("@@SECTORS@@")[1]} />
         </>
       ) : <Sections html={sections} />}
 

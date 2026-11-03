@@ -1,14 +1,30 @@
+.england-map { margin: 0 auto; max-width: 460px; }
+.england-map svg { display: block; width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
+.england-map__sea { fill: #BFE0E8; }
+.england-map__land-eng { fill: #CBD9A8; stroke: #8FA06A; stroke-width: 1.3; }
+.england-map__land-other { fill: #E8E1CC; stroke: #C7BE9E; stroke-width: 1; }
+.england-map__dot { fill: var(--bt-orange); stroke: #B9731F; stroke-width: 2; transition: r .15s ease; }
+.england-map__label { font: 700 15px var(--font-ui); fill: var(--bt-navy); paint-order: stroke; stroke: #FBF8F0; stroke-width: 4px; stroke-linejoin: round; }
+.england-map__pin { cursor: pointer; }
+.england-map__pin:hover .england-map__dot { r: 9; }
+.england-map__pin:hover .england-map__label { fill: var(--bt-accent-ink); }
+@media (min-width: 900px) {
+  .hub-aside-layout:has(.england-map) { display: flex; align-items: flex-start; gap: 32px; }
+  .hub-aside-layout:has(.england-map) .england-map { flex: none; width: 400px; margin: 0; }
+  .hub-aside-layout:has(.england-map) .pills { flex: 1 1 0; align-content: flex-start; }
+}
+
 /* Banded sections (scraped copy), mini cards, tiles, pills, blog, search. */
 .sec { padding: 72px 0; }
 .sec--alt { background: var(--bt-paper); }
-.sec__in { max-width: 1000px; margin: 0 auto; padding: 0 24px; font-size: 1.0625rem; line-height: 1.75; color: var(--bt-text-mid); }
+.sec__in { max-width: 1120px; margin: 0 auto; padding: 0 24px; font-size: 1.0625rem; line-height: 1.75; color: var(--bt-text-mid); }
 .sec__in > h2 { font-size: var(--fs-h2); margin: 0 0 24px; max-width: 24ch; }
 .sec__in h3, .sec__in h4, .sec__in h5 { font-family: var(--font-ui); font-variation-settings: normal; color: var(--bt-navy); line-height: 1.3; margin: 1.6em 0 0.5em; }
 .sec__in h3 { font-size: 1.25rem; }
 .sec__in h4 { font-size: 1.1rem; }
 .sec__in h5 { font-size: 1rem; }
-.sec__in p { margin: 0 0 1.1em; max-width: 72ch; }
-.sec__in ul, .sec__in ol { padding-left: 1.3em; margin: 0 0 1.2em; max-width: 72ch; }
+.sec__in p { margin: 0 0 1.1em; max-width: none; }
+.sec__in ul, .sec__in ol { padding-left: 1.3em; margin: 0 0 1.2em; max-width: none; }
 .sec__in li { margin-bottom: 0.4em; }
 .sec__in strong { color: var(--bt-navy); }
 .bt .sec__in a:not(.bt-btn) { color: var(--bt-orange-600); border-bottom: 1px solid rgba(95, 169, 177, 0.3); }
@@ -17,11 +33,48 @@
 .sec__in table { display: block; overflow-x: auto; border-collapse: collapse; }
 .sec__in th, .sec__in td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--bt-line); }
 
+/* "Why choose BeTranslated" photo: sits to the right with whatever text
+   follows it (in the same section) running alongside, instead of stacking
+   full-width above/below. Floats are contained within their own section, so
+   this is safe even on pages where the photo isn't the first thing in it. */
+.sec__in figure:has(> img[src*="betranslated-your-professional-t"]) {
+  float: right;
+  margin: 4px 0 20px 32px;
+  max-width: 42%;
+}
+.sec__in figure:has(> img[src*="betranslated-your-professional-t"]) img {
+  max-height: none;
+  width: 100%;
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .sec__in figure:has(> img[src*="betranslated-your-professional-t"]) { float: none; max-width: 100%; margin: 1.4em 0; }
+}
+
+.bt .sec__in ul.stat-row { list-style: none; padding: 0; margin: 22px 0 1.4em; max-width: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.bt .sec__in ul.stat-row li { margin: 0; padding: 16px 18px; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); font: 500 13.5px/1.4 var(--font-ui); color: var(--bt-text-soft); }
+.bt .sec__in ul.stat-row li strong { display: block; margin-bottom: 2px; font: 700 1.6rem/1.1 var(--font-display); color: var(--bt-navy); }
+.bt .sec__in ul.stat-row li span { display: block; margin-top: 2px; }
+.sec__in ul.stat-row:has(> li:nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 640px) { .bt .sec__in ul.stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* "Term — definition" lists (sanitizer adds .term-list) as definition cards */
+.bt ul.term-list { list-style: none; margin: 8px 0 24px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: none; }
+.bt ul.term-list > li { margin: 0; padding: 16px 18px 16px 20px; background: #fff; border: 1px solid var(--bt-line); border-radius: 14px; box-shadow: var(--shadow-xs); position: relative; display: flex; flex-direction: column; gap: 4px; }
+.bt ul.term-list > li::before { content: ""; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px; border-radius: 0 3px 3px 0; background: var(--bt-accent); }
+.bt ul.term-list > li > strong { font: 700 15.5px/1.35 var(--font-ui); color: var(--bt-navy); }
+.bt ul.term-list > li > span { font-size: 15px; line-height: 1.55; color: var(--bt-text-mid); }
+.bt ul.term-list > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 640px) { .bt ul.term-list { grid-template-columns: minmax(0, 1fr); } }
+
 .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin: 28px 0 12px; }
 .mini { background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); padding: 22px 22px 14px; box-shadow: var(--shadow-xs); transition: transform 0.2s, box-shadow 0.2s; }
 .mini:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .mini > :first-child { margin-top: 0 !important; }
 .mini p { font-size: 0.96rem; line-height: 1.6; }
+.mini ul.region-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.mini ul.region-points > li { position: relative; padding-left: 18px; font-size: 0.96rem; line-height: 1.5; color: var(--bt-text-mid); }
+.mini ul.region-points > li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--bt-orange); }
 .mini .cta-row { display: block; margin: 0.6em 0 0; }
 .bt .mini a.bt-btn { background: none; box-shadow: none; border: 0; padding: 0; color: var(--bt-orange-600); font-size: 14px; }
 
@@ -259,7 +312,7 @@
    Column counts avoid an orphan card: 3 across, 4 as 2x2, 5 as 3 + 2 wide,
    6 as 3x2. */
 .bt .sec__in ul.feat-list { list-style: none; padding: 0; margin: 22px 0 1.4em; max-width: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
-.bt .sec__in ul.feat-list li { grid-column: span 2; margin: 0; padding: 14px 16px 14px 46px; position: relative; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); font: 500 15px/1.45 var(--font-ui); color: var(--bt-navy); display: flex; align-items: center; min-height: 56px; }
+.bt .sec__in ul.feat-list li { grid-column: span 2; margin: 0; padding: 17px 16px 17px 46px; min-height: 56px; position: relative; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-lg); box-shadow: var(--shadow-xs); font: 500 15px/1.45 var(--font-ui); color: var(--bt-navy); }
 .bt .sec__in ul.feat-list li::before { content: ""; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; border-radius: 50%; background: var(--bt-accent) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%223.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22m5 12 5 5 9-10%22/%3E%3C/svg%3E") center / 13px no-repeat; }
 .bt .sec__in ul.feat-list[data-count="4"] li { grid-column: span 3; }
 .bt .sec__in ul.feat-list[data-count="5"] li:nth-child(n+4), .bt .sec__in ul.feat-list[data-count="8"] li { grid-column: span 3; }
@@ -377,3 +430,8 @@
 .qv__cc[aria-pressed="true"] { background: #5FA9B1; border-color: #5FA9B1; color: #2F3143; }
 .qv__frame:fullscreen { max-width: none; border-radius: 0; }
 .qv__frame:fullscreen .qv__video { object-fit: contain; }
+
+.page-hero__credit, .england-map__credit { margin: 6px 0 0; font-size: 12px; line-height: 1.4; color: var(--muted, #5b6472); }
+.page-hero__credit a, .england-map__credit a { color: inherit; text-decoration: underline; }
+.page-hero__photo { position: relative; }
+.page-hero__photo .page-hero__credit { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 6px 12px; font-size: 11px; color: #fff; background: rgba(14, 23, 38, 0.7); }

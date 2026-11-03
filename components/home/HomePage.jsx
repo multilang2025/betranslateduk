@@ -82,7 +82,7 @@ const lc = (t) => (/^[A-ZÁÉÍÓÚ][a-záéíóúñ]/.test(t) ? t.charAt(0).toL
 // Blog teaser copy (the posts themselves: data/home-featured-posts.json).
 const POSTS_COPY = {
   es: { eyebrow: "Blog", title: "Artículos para encargar tu traducción", lead: "Lo que conviene saber antes de pedir una traducción jurada, traducir tu web o abrirte a otros mercados.", more: "Ver 3 artículos más", back: "Ver los anteriores", all: "Todos los artículos", allHref: "/blog/" },
-  en: { eyebrow: "Blog", title: "Before you order a translation", lead: "What to know about sworn translations, moving to Spain and reaching new markets.", more: "See 3 more articles", back: "Back to the first three", all: "All articles", allHref: "/en/blog/" },
+  en: { eyebrow: "Blog", title: "Before you order a translation", lead: "Practical advice on what translation costs, how to reach new markets with a multilingual website, and how to work with a professional translator.", more: "See 3 more articles", back: "Back to the first three", all: "All articles", allHref: "/blog/" },
   fr: { eyebrow: "Blog", title: "À savoir avant de commander une traduction", lead: "Traduction assermentée, création de société et installation en Espagne : ce qu’il faut savoir.", more: "Voir 3 autres articles", back: "Revenir aux précédents", all: "Tous les articles", allHref: "/fr/blog/" },
 };
 
