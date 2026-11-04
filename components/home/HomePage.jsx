@@ -88,7 +88,7 @@ const POSTS_COPY = {
 
 function featuredSets(locale) {
   const cards = blogCards(locale);
-  const picked = (FEATURED[locale] || []).map((slug) => cards.find((x) => x.slug === slug)).filter((x) => x && !x.sponsored).slice(0, 6);
+  const picked = (FEATURED[locale] || []).map((slug) => cards.find((x) => x.slug === slug)).filter((x) => x && !x.sponsored).slice(0, 6).map((x) => (FEATURED.images?.[x.slug] ? { ...x, img: FEATURED.images[x.slug], imgW: 1536, imgH: 1024 } : x));
   if (picked.length < 3) return null;
   // A second set only when it is full: no half-empty row.
   return picked.length >= 6 ? [picked.slice(0, 3), picked.slice(3, 6)] : [picked.slice(0, 3)];

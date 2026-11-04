@@ -11,5 +11,12 @@
     "5-inspiring-freelance-jobs"
   ],
   "es": [],
-  "fr": []
+  "fr": [],
+  "images": {
+    "how-much-translate-document": "/images/home-posts/how-much-translate-document.jpg",
+    "property-documentation-translation": "/images/home-posts/property-documentation-translation.jpg",
+    "translation-services-for-optical-practices": "/images/home-posts/translation-services-for-optical-practices.jpg",
+    "tremendous-value-multilingual-website": "/images/home-posts/tremendous-value-multilingual-website.jpg",
+    "5-inspiring-freelance-jobs": "/images/home-posts/5-inspiring-freelance-jobs.jpg"
+  }
 }
