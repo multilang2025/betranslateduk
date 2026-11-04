@@ -918,3 +918,14 @@ html, body { overflow-x: clip; max-width: 100%; }
 .bt .office__facts a { color: var(--bt-navy); font-weight: 500; }
 .bt .office__nw { white-space: nowrap; }
 @media (max-width: 860px) { .bt .office__card { grid-template-columns: 1fr; gap: 28px; padding: 26px 22px; } }
+
+/* Team without photos, desktop: three wide, rectangular cards a row (six translators make two tidy rows of three). */
+@media (min-width: 901px) {
+  .bt main.home .team--no-photo.team--home { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 960px; gap: 22px; padding-bottom: 28px; }
+  .bt main.home .team--no-photo .team__card { position: relative; border-width: 2px; border-radius: 18px; box-shadow: 7px 7px 0 rgba(95, 169, 177, .24); min-height: 104px; }
+  .bt main.home .team--no-photo .team__card:nth-child(even) { transform: none; }
+  .bt main.home .team--no-photo .team__card:hover { transform: translateY(-3px); }
+  .bt main.home .team--no-photo .team__meta { position: static; background: none; padding: 20px 24px; gap: 4px; display: flex; flex-direction: column; justify-content: center; height: 100%; }
+  .bt main.home .team--no-photo .team__meta strong { font-size: 1.1rem; }
+  .bt main.home .team--no-photo .team__meta span { font-size: 14.5px; line-height: 1.4; }
+}
