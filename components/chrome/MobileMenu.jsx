@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const COPY = {
   es: { open: "Abrir menú", close: "Cerrar menú", title: "Menú", call: "Llámanos", note: "Respuesta en un máximo de 8 horas" },
-  en: { open: "Open menu", close: "Close menu", title: "Menu", call: "Call us", note: "Reply within a maximum of 8 hours" },
+  en: { open: "Open menu", close: "Close menu", title: "Menu", call: "Call us at", note: "Reply within a maximum of 8 hours" },
   fr: { open: "Ouvrir le menu", close: "Fermer le menu", title: "Menu", call: "Appelez-nous", note: "Réponse sous 8 heures au maximum" },
 };
 const PHONE = { href: "tel:+442030269848", label: "+44 20 3026 9848" };
@@ -45,7 +45,7 @@ export default function MobileMenu({ items, ctaLabel, ctaHref }) {
 
   const close = () => setOpen(false);
   const drawer = (
-    <>
+    <div data-nosnippet style={{ display: "contents" }}>
       <div className={"bt-scrim" + (open ? " is-open" : "")} onClick={close} aria-hidden="true" />
       <aside id="bt-drawer" className={"bt-drawer" + (open ? " is-open" : "")} aria-hidden={!open} inert={!open} aria-label={c.title}>
         <div className="bt-drawer__head">
@@ -61,7 +61,7 @@ export default function MobileMenu({ items, ctaLabel, ctaHref }) {
               <span className="bt-drawer__label">{item.label}</span>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg>
             </a>,
-            ...(item.children || []).map((ch) => (
+            ...(item.children && (item.href === "/translation-services/" || isHere(item.href)) ? item.children : []).map((ch) => (
               <a key={ch.href} href={ch.href} className={"bt-drawer__link bt-drawer__link--sub" + (isHere(ch.href, true) ? " is-current" : "")} aria-current={isHere(ch.href, true) ? "page" : undefined} onClick={close}>
                 <span className="bt-drawer__label">{ch.label}</span>
               </a>
@@ -70,11 +70,11 @@ export default function MobileMenu({ items, ctaLabel, ctaHref }) {
         </nav>
         <div className="bt-drawer__cta">
           <a href={ctaHref} className="bt-btn bt-btn--primary bt-drawer__quote" onClick={close}>{ctaLabel}</a>
-          <a href={PHONE.href} className="bt-btn bt-btn--ghost bt-drawer__call">{c.call} · {PHONE.label}</a>
+          <a href={PHONE.href} className="bt-btn bt-btn--ghost bt-drawer__call">{c.call} {PHONE.label}</a>
           <p className="bt-drawer__note">{c.note}</p>
         </div>
       </aside>
-    </>
+    </div>
   );
 
   return (

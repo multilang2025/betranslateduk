@@ -258,3 +258,9 @@
 }
 html[data-theme="dark"] .quote-form__tab { background: var(--bt-surface-2); color: var(--bt-text); }
 html[data-theme="dark"] .quote-form__tab.is-active { background: var(--bt-orange); border-color: var(--bt-orange); color: #0b1620; }
+
+/* Tap targets on phones (from betranslated.es): breadcrumb and contact links reach 44px. */
+@media (max-width: 720px) {
+  .contact-list a { display: inline-block; padding: 8px 0; }
+  .crumbs a { display: inline-block; padding: 12px 6px; margin: -12px -6px; }
+}
