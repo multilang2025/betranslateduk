@@ -76,26 +76,29 @@ export default function SiteHeader() {
           <img {...LOGO_DARK} className="bt-logo--dark" alt="BeTranslated" style={{ ...LOGO_DARK.style, height: 32, width: "auto" }} />
         </a>
 
-        <nav className="bt-header__nav" aria-label="Principal">
-          {items.map((item) =>
-            item.children ? (
-              <div key={item.href} className="bt-header__item">
-                <a href={item.href} className="bt-header__link bt-header__link--parent" aria-haspopup="true">
+        {/* data-nosnippet keeps the menu text (and the dropdown that is in the HTML while closed) out of Google snippets; the links stay crawlable. */}
+        <div data-nosnippet style={{ display: "contents" }}>
+          <nav className="bt-header__nav" aria-label="Main">
+            {items.map((item) =>
+              item.children ? (
+                <div key={item.href} className="bt-header__item">
+                  <a href={item.href} className="bt-header__link bt-header__link--parent" aria-haspopup="true">
+                    {item.label}
+                  </a>
+                  <div className="bt-header__sub">
+                    {item.children.map((c) => (
+                      <a key={c.href} href={c.href} className="bt-header__sublink">{c.label}</a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a key={item.href} href={item.href} className="bt-header__link">
                   {item.label}
                 </a>
-                <div className="bt-header__sub">
-                  {item.children.map((c) => (
-                    <a key={c.href} href={c.href} className="bt-header__sublink">{c.label}</a>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <a key={item.href} href={item.href} className="bt-header__link">
-                {item.label}
-              </a>
-            )
-          )}
-        </nav>
+              )
+            )}
+          </nav>
+        </div>
 
         <div className="bt-header__right">
           <SearchBox />
