@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { RATING, GBP_URL } from "../lib/business";
 
 const COPY = {
-  en: { rating: "Average rating", reviews: "Google reviews", pairs: "languages we translate", since: "Since", quote: "Reply to your quote", hours: "2 h", note: "During UK business hours." },
+  en: { rating: "Average rating", reviews: "Google reviews", pairs: "languages we translate", since: "Since", quote: "Reply to your quote", hours: "8 h", note: "During UK business hours." },
 };
 
 const ease = (t) => 1 - Math.pow(1 - t, 3);
