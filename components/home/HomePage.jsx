@@ -226,20 +226,26 @@ export default function HomePage({ locale = "es" }) {
             ))}
           </div>
           {c.specCtaTitle && (<Reveal delay={120}><div className="svc-cta"><div><h3>{c.specCtaTitle}</h3><p>{c.specCtaBody}</p></div><a href={c.quoteHref} className="bt-btn bt-btn--primary bt-btn--lg">{c.specCtaBtn}</a></div></Reveal>)}
-        </div>
-      </section>
-
-      <section className="section section--navy">
-        <div className="container container--narrow center">
-          <Reveal>
-            <h2>{c.trustTitle}</h2>
-            <p>{c.trustBody}</p>
-          </Reveal>
-          <p style={{ marginTop: 32 }}>
-            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd6048f48e3c29d1:0xccf1dbee7b8d9ef4?sa=X&ved=1t:8290&hl=en" className="bt-btn bt-btn--secondary" target="_blank" rel="noopener noreferrer">
+          <p className="center" style={{ marginTop: 32 }}>
+            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd6048f48e3c29d1:0xccf1dbee7b8d9ef4?sa=X&ved=1t:8290&hl=en" className="bt-btn bt-btn--ghost" target="_blank" rel="noopener noreferrer">
               {c.reviewCta}
             </a>
           </p>
+        </div>
+      </section>
+
+      <section className="section section--navy about-split">
+        <div className="container about-split__grid">
+          <Reveal>
+            <h2>{c.trustTitle}</h2>
+            <p>{c.trustBody}</p>
+            <p>{c.trustMore}</p>
+          </Reveal>
+          <Reveal delay={80}>
+            <figure className="about-split__photo">
+              <Image src="/images/about/team-meeting.jpg" alt={c.trustPhotoAlt} width={2000} height={1312} sizes="(max-width: 900px) 100vw, 560px" loading="lazy" />
+            </figure>
+          </Reveal>
         </div>
       </section>
 

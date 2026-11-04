@@ -66,6 +66,8 @@ const en = {
 
   trustTitle: "The UK translation agency that takes your business global",
   trustBody: "Over 20 years of experience delivering accurate, on-time translation, interpreting and multilingual marketing for UK businesses, institutions and NGOs.",
+  trustMore: "Since 2002, our UK team has matched every client with a native specialist, so each translation reads naturally and arrives when promised.",
+  trustPhotoAlt: "The BeTranslated team around a meeting table, smiling as they work together",
   reviewCta: "Leave us a Google review",
 
   pairsEyebrow: "Languages", pairsTitle: "Languages we translate",
