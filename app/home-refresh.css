@@ -948,3 +948,17 @@ html, body { overflow-x: clip; max-width: 100%; }
 .bt main.home .about-split__photo { margin: 0; border-radius: 24px; overflow: hidden; border: 3px solid var(--bt-accent); box-shadow: 12px 12px 0 rgba(95, 169, 177, .25); }
 .bt main.home .about-split__photo img { display: block; width: 100%; height: auto; }
 @media (max-width: 900px) { .bt main.home .about-split__grid { grid-template-columns: 1fr; gap: 32px; } .bt main.home .about-split__photo { box-shadow: 7px 7px 0 rgba(95, 169, 177, .25); } }
+
+/* Languages we translate: a card per language with the flags of the places we write for. */
+.bt main.home .lang-grid { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.bt main.home .lang-card { display: flex; flex-direction: column; gap: 14px; height: 100%; padding: 22px 22px 20px; border-radius: 20px; border: 1px solid var(--bt-line-2); background: var(--bt-surface, #fff); text-decoration: none; box-shadow: 0 6px 18px rgba(15, 23, 42, .06); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.bt main.home .lang-card:hover, .bt main.home .lang-card:focus-visible { transform: translateY(-4px); border-color: var(--bt-accent); box-shadow: 0 16px 32px rgba(15, 23, 42, .14); }
+.bt main.home .lang-card__name { font: 700 1.3rem/1.2 var(--font-display, var(--font-ui)); color: var(--bt-navy); }
+.bt main.home .lang-card__flags { display: flex; flex-wrap: wrap; gap: 10px 10px; }
+.bt main.home .lang-flag { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; font: 500 11px/1.2 var(--font-ui); color: var(--bt-text-soft); }
+.bt main.home .lang-flag img { display: block; width: 32px; height: 24px; object-fit: cover; border-radius: 5px; border: 1px solid rgba(15, 23, 42, .18); box-shadow: 0 2px 5px rgba(15, 23, 42, .15); transition: transform .25s cubic-bezier(.34, 1.56, .64, 1); }
+.bt main.home .lang-card:hover .lang-flag img { transform: translateY(-3px) rotate(-3deg); }
+html[data-theme="dark"] .bt main.home .lang-card__name, html:not([data-theme="light"]) .bt main.home .lang-card__name { color: #fff; }
+@media (max-width: 1000px) { .bt main.home .lang-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .bt main.home .lang-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; } .bt main.home .lang-card { padding: 18px; } }
+@media (prefers-reduced-motion: reduce) { .bt main.home .lang-card:hover, .bt main.home .lang-card:hover .lang-flag img { transform: none; } }
