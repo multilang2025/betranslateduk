@@ -280,6 +280,9 @@ export default function ScrapedPage({ page, slug = [] }) {
     });
   }
   let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key), cardIcons: NO_FOLD_SLUGS.has(key) })));
+  // The quote page already carries the form, so drop the "Get a quote" buttons that point at the .com quote page
+  // (or, once rewritten, at this same page).
+  if (isQuote) sections = sections.replace(/<a [^>]*href="(?:[^"]*translation-quote[^"]*|\/translation-agency\/quote\/[^"]*)"[^>]*>.*?<\/a>\s*/gs, "").replace(/<p class="cta-row">\s*<\/p>/g, "");
   // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
   if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
