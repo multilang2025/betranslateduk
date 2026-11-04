@@ -15,7 +15,7 @@ const COPY = {
         links: [
           ["Document translation", "/document-translation-services/"],
           ["Website translation", "/translation-services/website-translation/"],
-          ["Remote interpreting services", "/translation-services/remote-interpreting/"],
+          ["Live interpretation services", "/translation-services/remote-interpreting/"],
         ],
       },
       {
