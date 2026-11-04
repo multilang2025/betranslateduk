@@ -262,9 +262,21 @@ export default function HomePage({ locale = "es" }) {
         <div className="container">
           <Reveal><Head eyebrow={c.pairsEyebrow} title={c.pairsTitle}>{c.pairsLead}</Head></Reveal>
           <Reveal>
-            <ul className="pairs">
-              {c.pairs.map(([label, href]) => (
-                <li key={href}><a href={href}>{label}</a></li>
+            <ul className="lang-grid">
+              {c.pairs.map(([label, href, flags = []]) => (
+                <li key={href}>
+                  <a href={href} className="lang-card">
+                    <span className="lang-card__name">{label}</span>
+                    <span className="lang-card__flags">
+                      {flags.map(([code, country]) => (
+                        <span key={code} className="lang-flag">
+                          <img src={`/flags/${code}.svg`} alt="" width="32" height="24" loading="lazy" />
+                          <span>{country}</span>
+                        </span>
+                      ))}
+                    </span>
+                  </a>
+                </li>
               ))}
             </ul>
           </Reveal>

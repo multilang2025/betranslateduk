@@ -72,14 +72,14 @@ const en = {
 
   pairsEyebrow: "Languages", pairsTitle: "Languages we translate",
   pairs: [
-    ["French", "/languages/french-translation-services/"],
-    ["English", "/languages/english-translation-services/"],
-    ["Italian", "/languages/italian-translation-services/"],
-    ["Spanish", "/languages/spanish-translation-services/"],
-    ["German", "/languages/german-translation-services/"],
-    ["Korean", "/languages/korean-translation-services/"],
-    ["Dutch", "/languages/dutch-translation-services/"],
-    ["Portuguese", "/languages/portuguese-translation-services/"],
+    ["French", "/languages/french-translation-services/", [["fr","France"],["be","Belgium"],["ch","Switzerland"],["ca","Canada"]]],
+    ["English", "/languages/english-translation-services/", [["gb","UK"],["us","USA"],["au","Australia"]]],
+    ["Italian", "/languages/italian-translation-services/", [["it","Italy"],["ch","Switzerland"]]],
+    ["Spanish", "/languages/spanish-translation-services/", [["es","Spain"],["mx","Mexico"],["ar","Argentina"]]],
+    ["German", "/languages/german-translation-services/", [["de","Germany"],["at","Austria"],["ch","Switzerland"]]],
+    ["Korean", "/languages/korean-translation-services/", [["kr","South Korea"]]],
+    ["Dutch", "/languages/dutch-translation-services/", [["nl","Netherlands"],["be","Belgium"]]],
+    ["Portuguese", "/languages/portuguese-translation-services/", [["pt","Portugal"],["br","Brazil"]]],
   ],
   pairsAllHref: "/languages/", pairsAll: "All languages",
 
