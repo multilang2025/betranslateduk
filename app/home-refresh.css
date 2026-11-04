@@ -929,3 +929,14 @@ html, body { overflow-x: clip; max-width: 100%; }
   .bt main.home .team--no-photo .team__meta strong { font-size: 1.1rem; }
   .bt main.home .team--no-photo .team__meta span { font-size: 14.5px; line-height: 1.4; }
 }
+
+/* Team portraits (legacy 150px photos): round avatar beside the name. */
+.bt main.home .team--no-photo .team__card { display: flex; flex-direction: row; align-items: center; gap: 14px; padding-left: 14px; }
+.bt main.home .team--no-photo .team__face { flex: 0 0 auto; width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bt-accent); background: var(--bt-teal-50); }
+.bt main.home .team--no-photo .team__meta { padding: 12px 12px 12px 0; flex: 1; min-width: 0; }
+@media (min-width: 901px) {
+  .bt main.home .team--no-photo .team__face { width: 76px; height: 76px; }
+  .bt main.home .team--no-photo .team__card { padding-left: 20px; gap: 18px; }
+  .bt main.home .team--no-photo .team__meta { padding: 20px 20px 20px 0; }
+}
+@media (max-width: 560px) { .bt main.home .team--no-photo .team__face { width: 44px; height: 44px; } .bt main.home .team--no-photo .team__card { gap: 10px; padding-left: 10px; } }
