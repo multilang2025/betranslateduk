@@ -303,7 +303,7 @@ export default function ScrapedPage({ page, slug = [] }) {
               <ul className="quote-hero__ticks">
                 <li>Fixed price and deadline before we start</li>
                 <li>Specialised native translators</li>
-                <li>Reply within a couple of hours</li>
+                <li>Reply within a maximum of 8 working hours</li>
               </ul>
             ) : null}
             {ctas ? (

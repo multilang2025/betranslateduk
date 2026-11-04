@@ -84,8 +84,8 @@ const MSG_LABEL = {
   interpreting: "Tell us about your event",
 };
 
-const NOTE = "We reply to your quote request within a couple of hours during UK business hours.";
-const OK = "We have received your request. We reply within a couple of hours during UK business hours.";
+const NOTE = "We reply to your quote request within a maximum of 8 working hours.";
+const OK = "We have received your request. We reply within a maximum of 8 working hours.";
 const SENT = "Your email app has opened with the request. If nothing appears, write to hello@betranslated.co.uk.";
 const SENT_FILES = "Your email app has opened with the request. Attach your documents to that email before sending it. If nothing appears, write to hello@betranslated.co.uk.";
 const E_FILES = `You can attach up to ${MAX_FILES} files and ${MAX_TOTAL_MB} MB in total.`;
