@@ -4,9 +4,9 @@ import { HERO_IMAGE_SLUGS } from "@/lib/heroImages";
 import { sentenceCase } from "@/lib/sentenceCase";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
-import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
+import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle, blogCards } from "@/lib/content";
 import { UI } from "@/lib/i18n";
-import { PHONE, PHONE_NATIONAL, PHONE_HREF, EMAIL } from "@/lib/business";
+import { PHONE, PHONE_NATIONAL, PHONE_HREF, EMAIL, RATING } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
 import TranslatorsGrid from "./TranslatorsGrid";
 import TRANSLATORS from "@/data/translators.json";
@@ -32,6 +32,8 @@ import SectorCards from "./SectorCards";
 import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 import EnglandMap from "./EnglandMap";
+import LanguageGrid from "./LanguageGrid";
+import LanguageHubArt from "./LanguageHubArt";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -165,6 +167,16 @@ function BlogIndexView() {
   );
 }
 
+// Small line icons for the post meta row and the cover badge (same paths as betranslated.es).
+const ICON_CALENDAR = "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z";
+const ICON_CLOCK = "M12 6v6l4 2M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0z";
+const ICON_REFRESH = "M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5";
+const ICON_TAG = "M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8zM7 7h.01";
+function MetaIcon({ d }) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
+  );
+}
 const longDate = (iso) => new Date(iso).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
 
 function BlogPostView({ data, slug }) {
@@ -189,6 +201,13 @@ function BlogPostView({ data, slug }) {
   body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE_NATIONAL, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
   const related = relatedFor(slug, 4);
+  // Category badge on the cover and the previous / next post (older = previous, newer = next), as on betranslated.es.
+  const allCards = blogCards();
+  const here = allCards.findIndex((c) => c.slug === slug);
+  // Its WordPress category when it has one, else the topic it sits under on the blog hub.
+  const category = (here >= 0 && allCards[here].category) || getBlogHub().sections.find((s) => s.posts.some((p) => p.slug === slug))?.name || "";
+  const prev = here >= 0 ? allCards[here + 1] : null;
+  const next = here > 0 ? allCards[here - 1] : null;
 
   return (
     <main className="blog-post">
@@ -202,19 +221,41 @@ function BlogPostView({ data, slug }) {
             <h1>{title}</h1>
             {data.metaDescription ? <p className="page-hero__sub">{data.metaDescription}</p> : null}
             <div className="post-hero__meta">
-              {publishDate ? <span>{UI.en.published} <time dateTime={publishDate}>{longDate(publishDate)}</time></span> : null}
-              {showUpdated ? <span className="post-hero__updated">Updated <time dateTime={modified}>{longDate(modified)}</time></span> : null}
-              <span>{minutes} {UI.en.minRead}</span>
+              <strong>Michael Bastin</strong>
+              {publishDate ? <span><MetaIcon d={ICON_CALENDAR} />{UI.en.published} <time dateTime={publishDate}>{longDate(publishDate)}</time></span> : null}
+              {showUpdated ? <span className="post-hero__updated"><MetaIcon d={ICON_REFRESH} />Updated <time dateTime={modified}>{longDate(modified)}</time></span> : null}
+              <span><MetaIcon d={ICON_CLOCK} />{minutes} {UI.en.minRead}</span>
             </div>
             <ShareBar path={pathname} title={title} compact />
           </div>
-          {img ? <figure className="post-hero__media post-hero__media--split"><Image src={img} alt="" width={1200} height={630} sizes="(max-width: 900px) 100vw, 520px" priority /></figure> : null}
+          {img ? (
+            <figure className="post-hero__media post-hero__media--split">
+              <Image src={img} alt="" width={1200} height={630} sizes="(max-width: 900px) 100vw, 520px" priority />
+              {category ? <figcaption className="post-hero__badge"><MetaIcon d={ICON_TAG} />{category}</figcaption> : null}
+            </figure>
+          ) : null}
         </div>
       </section>
       <section className="post-layout container">
         <div className="post-main">
           <article className="prose" dangerouslySetInnerHTML={{ __html: body }} />
           <ShareBar path={pathname} title={title} />
+          {prev || next ? (
+            <nav className="post-nav" aria-label="Previous post / Next post">
+              {prev ? (
+                <a className="post-nav__link post-nav__link--prev" href={prev.href} rel="prev">
+                  <span className="post-nav__dir"><span aria-hidden="true">←</span> Previous post</span>
+                  <strong>{prev.title}</strong>
+                </a>
+              ) : <span />}
+              {next ? (
+                <a className="post-nav__link post-nav__link--next" href={next.href} rel="next">
+                  <span className="post-nav__dir">Next post <span aria-hidden="true">→</span></span>
+                  <strong>{next.title}</strong>
+                </a>
+              ) : <span />}
+            </nav>
+          ) : null}
         </div>
         <aside className="post-aside">
           {toc.length > 2 ? (
@@ -226,8 +267,12 @@ function BlogPostView({ data, slug }) {
           <div className="quote-card">
             <span className="quote-card__eyebrow">Free quote</span>
             <h3>{UI.en.ctaTitle}</h3>
+            <ul className="quote-card__ticks">
+              {["No obligation", "Reply within 8 working hours", "Specialised native translators"].map((x) => (<li key={x}>{x}</li>))}
+            </ul>
             <a href={UI.en.quoteHref} className="bt-btn bt-btn--primary quote-card__btn">{UI.en.ctaButton}</a>
             <a href={PHONE_HREF} className="quote-card__call">Call us on {PHONE_NATIONAL}</a>
+            <p className="quote-card__proof"><span aria-hidden="true">★★★★★</span> {RATING.value.toFixed(1)} · {RATING.count} Google reviews</p>
           </div>
         </aside>
       </section>
@@ -324,6 +369,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             </div>
           ) : null}
           {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
+          {key === "languages" ? <LanguageHubArt badge="50+" /> : null}
         </div>
       </section>
 
@@ -340,7 +386,8 @@ export default function ScrapedPage({ page, slug = [] }) {
       ) : null}
 
       {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
-      {isHub && key !== "translation-services" ? (
+      {isHub && key === "languages" ? <LanguageGrid /> : null}
+      {isHub && key !== "translation-services" && key !== "languages" ? (
         <Children
           items={children}
           title={HUB_TITLES[key] || "Explore"}

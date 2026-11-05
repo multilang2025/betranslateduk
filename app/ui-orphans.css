@@ -186,3 +186,11 @@ html[data-theme="dark"] .bt .sec__in ul.values li:nth-child(4) .value-ico, html:
 .bt .cta-card .cta-card__text { position: relative; margin: 0; max-width: none; font: 600 1.05rem/1.5 var(--font-ui); color: var(--bt-navy); }
 .bt .cta-card .bt-btn { position: relative; white-space: nowrap; width: auto; padding: 11px 22px; font-size: 14.5px; }
 @media (max-width: 760px) { .bt .cta-card { grid-template-columns: 1fr; padding: 22px 20px; } .bt .cta-card .bt-btn { justify-self: start; } }
+
+/* One left edge (as on betranslated.es, where this lives in ui-interp.css). Hero, legacy sections (.sec__in)
+   and narrow section containers share the page container width, so content starts at the same x on every
+   band; paragraphs keep a readable measure instead. Without it the hero text sat 40px to the right of the body. */
+.page-hero.page-hero--split > .container, .page-hero--split + .trust-wrap > .container { max-width: var(--container); }
+.sec__in { max-width: var(--container); }
+main .section > .container--narrow, main .sec > .container--narrow { max-width: var(--container); }
+.sec__in > p, .sec__in > ul, .sec__in > ol, main .section > .container > p, main .section > .container--narrow > p { max-width: 75ch; }
