@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 
 const COPY = {
   es: { open: "Abrir menú", close: "Cerrar menú", title: "Menú", call: "Llámanos", note: "Respuesta en un máximo de 8 horas" },
-  en: { open: "Open menu", close: "Close menu", title: "Menu", call: "Call us at", note: "Reply within a maximum of 8 working hours" },
+  en: { open: "Open menu", close: "Close menu", title: "Menu", call: "Call us on", note: "Reply within a maximum of 8 working hours" },
   fr: { open: "Ouvrir le menu", close: "Fermer le menu", title: "Menu", call: "Appelez-nous", note: "Réponse sous 8 heures au maximum" },
 };
-const PHONE = { href: "tel:+442030269848", label: "+44 20 3026 9848" };
+const PHONE = { href: "tel:+442030269848", label: "020 3026 9848" };
 
 // One small line icon per top-level item, in menu order: home, services, languages, about, blog.
 const NAV_ICONS = [

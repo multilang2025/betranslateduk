@@ -6,7 +6,7 @@ import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tid
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle, blogCards } from "@/lib/content";
 import { UI } from "@/lib/i18n";
-import { PHONE, PHONE_HREF, EMAIL, RATING } from "@/lib/business";
+import { PHONE, PHONE_NATIONAL, PHONE_HREF, EMAIL, RATING } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
 import TranslatorsGrid from "./TranslatorsGrid";
 import TRANSLATORS from "@/data/translators.json";
@@ -198,7 +198,7 @@ function BlogPostView({ data, slug }) {
   const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
   const minutes = readingMinutes(body);
   // Closing call-to-action card for posts that have copy in data/blog-cta/ (added after the reading time is counted).
-  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE, phoneHref: PHONE_HREF });
+  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE_NATIONAL, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
   const related = relatedFor(slug, 4);
   // Category badge on the cover and the previous / next post (older = previous, newer = next), as on betranslated.es.
@@ -271,7 +271,7 @@ function BlogPostView({ data, slug }) {
               {["No obligation", "Reply within 8 working hours", "Specialised native translators"].map((x) => (<li key={x}>{x}</li>))}
             </ul>
             <a href={UI.en.quoteHref} className="bt-btn bt-btn--primary quote-card__btn">{UI.en.ctaButton}</a>
-            <a href={PHONE_HREF} className="quote-card__call">Call us at {PHONE}</a>
+            <a href={PHONE_HREF} className="quote-card__call">Call us on {PHONE_NATIONAL}</a>
             <p className="quote-card__proof"><span aria-hidden="true">★★★★★</span> {RATING.value.toFixed(1)} · {RATING.count} Google reviews</p>
           </div>
         </aside>
@@ -358,7 +358,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             ) : !isQuote ? (
               <div className="page-hero__cta">
                 <a className="bt-btn bt-btn--primary" href={UI.en.quoteHref}>{UI.en.ctaButton}</a>
-                <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.en.ctaSecondary} · {PHONE}</a>
+                <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.en.ctaSecondary} on {PHONE_NATIONAL}</a>
               </div>
             ) : null}
           </div>
