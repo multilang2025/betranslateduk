@@ -1,4 +1,5 @@
 import SHOWCASE from "@/data/services-showcase.json";
+import { imgUrl } from "@/lib/site";
 
 // "Our translation services" on /translation-services/: a featured England card (with every city we cover,
 // linked), then three service cards that each carry a photo. Layout is 1 wide card + 3 equal cards, so no
@@ -44,7 +45,7 @@ export default function ServicesShowcase() {
           {cards.map((c) => (
             <a key={c.href} href={c.href} className="svc-card">
               <span className="svc-card__media">
-                <span className="svc-card__photo" style={c.image.bg ? { background: c.image.bg } : undefined}><img style={c.image.fit ? { objectFit: c.image.fit } : undefined} src={c.image.file} width={c.image.width} height={c.image.height} alt={c.image.alt} loading="lazy" decoding="async" /></span>
+                <span className="svc-card__photo" style={c.image.bg ? { background: c.image.bg } : undefined}><img style={c.image.fit ? { objectFit: c.image.fit } : undefined} src={imgUrl(c.image.file)} width={c.image.width} height={c.image.height} alt={c.image.alt} loading="lazy" decoding="async" /></span>
                 <span className="svc-card__icon"><Icon name={c.icon} /></span>
               </span>
               <span className="svc-card__body">
@@ -82,7 +83,7 @@ export default function ServicesShowcase() {
             </div>
           </div>
           <div className="svc-feature__media">
-            <img src={f.image.file} width={f.image.width} height={f.image.height} alt={f.image.alt} loading="lazy" decoding="async" />
+            <img src={imgUrl(f.image.file)} width={f.image.width} height={f.image.height} alt={f.image.alt} loading="lazy" decoding="async" />
           </div>
         </article>
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imgUrl } from "@/lib/site";
 import { HERO_IMAGE_SLUGS } from "@/lib/heroImages";
 import { sentenceCase } from "@/lib/sentenceCase";
 import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tidyWidgetDebris, questionRunsToFaq, faqSectionsToFaq, boldQuestionsToFaq, tidyHeadingLevels, fixHeadingSkips, mergeLeaves, ctaCards, dropGroups } from "@/lib/sanitize";
@@ -318,7 +319,7 @@ export default function ScrapedPage({ page, slug = [] }) {
           </div>
           {HERO_IMAGE_SLUGS[key] ? (
             <div className="page-hero__photo">
-              <img src={HERO_IMAGE_SLUGS[key].src} alt={HERO_IMAGE_SLUGS[key].alt} width="640" height="480" />
+              <img src={imgUrl(HERO_IMAGE_SLUGS[key].src)} alt={HERO_IMAGE_SLUGS[key].alt} width="640" height="480" />
               {HERO_IMAGE_SLUGS[key].credit ? <PhotoCredit credit={HERO_IMAGE_SLUGS[key].credit} /> : null}
             </div>
           ) : null}
