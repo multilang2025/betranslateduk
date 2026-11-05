@@ -6,7 +6,7 @@ import { sanitizeBody, splitHero, splitTagline, toSections, dropLeadingCtas, tid
 import { extractBlocks, extractTranslators, restoreBlocks, withToc, enhanceTables, stripPostChrome, faqBlock } from "@/lib/blogEnhance";
 import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, postDate, displayTitle } from "@/lib/content";
 import { UI } from "@/lib/i18n";
-import { PHONE, PHONE_HREF, EMAIL } from "@/lib/business";
+import { PHONE, PHONE_NATIONAL, PHONE_HREF, EMAIL } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
 import TranslatorsGrid from "./TranslatorsGrid";
 import TRANSLATORS from "@/data/translators.json";
@@ -186,7 +186,7 @@ function BlogPostView({ data, slug }) {
   const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));
   const minutes = readingMinutes(body);
   // Closing call-to-action card for posts that have copy in data/blog-cta/ (added after the reading time is counted).
-  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE, phoneHref: PHONE_HREF });
+  body += ctaCardHtml(slug, { quoteHref: UI.en.quoteHref, phone: PHONE_NATIONAL, phoneHref: PHONE_HREF });
   const img = data.og?.image; // already localized by lib/content.js at read time
   const related = relatedFor(slug, 4);
 
@@ -227,7 +227,7 @@ function BlogPostView({ data, slug }) {
             <span className="quote-card__eyebrow">Free quote</span>
             <h3>{UI.en.ctaTitle}</h3>
             <a href={UI.en.quoteHref} className="bt-btn bt-btn--primary quote-card__btn">{UI.en.ctaButton}</a>
-            <a href={PHONE_HREF} className="quote-card__call">Call us · {PHONE}</a>
+            <a href={PHONE_HREF} className="quote-card__call">Call us on {PHONE_NATIONAL}</a>
           </div>
         </aside>
       </section>
@@ -313,7 +313,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             ) : !isQuote ? (
               <div className="page-hero__cta">
                 <a className="bt-btn bt-btn--primary" href={UI.en.quoteHref}>{UI.en.ctaButton}</a>
-                <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.en.ctaSecondary} · {PHONE}</a>
+                <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.en.ctaSecondary} on {PHONE_NATIONAL}</a>
               </div>
             ) : null}
           </div>
