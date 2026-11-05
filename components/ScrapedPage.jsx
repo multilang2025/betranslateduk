@@ -32,6 +32,8 @@ import SectorCards from "./SectorCards";
 import HERO_OVERRIDES from "@/data/page-heroes.json";
 import NotFound from "./NotFoundView";
 import EnglandMap from "./EnglandMap";
+import LanguageGrid from "./LanguageGrid";
+import LanguageHubArt from "./LanguageHubArt";
 
 // Hub pages: their children render as a card/pill grid instead of the
 // generic prose body.
@@ -324,6 +326,7 @@ export default function ScrapedPage({ page, slug = [] }) {
             </div>
           ) : null}
           {heroOverride.art === "services" ? <ServicesHeroArt /> : null}
+          {key === "languages" ? <LanguageHubArt badge="50+" /> : null}
         </div>
       </section>
 
@@ -340,7 +343,8 @@ export default function ScrapedPage({ page, slug = [] }) {
       ) : null}
 
       {isHub && key === "translation-services" ? <ServicesShowcase /> : null}
-      {isHub && key !== "translation-services" ? (
+      {isHub && key === "languages" ? <LanguageGrid /> : null}
+      {isHub && key !== "translation-services" && key !== "languages" ? (
         <Children
           items={children}
           title={HUB_TITLES[key] || "Explore"}

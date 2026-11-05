@@ -1,0 +1,52 @@
+/* /languages/: language cards with flag stacks, and the "and many more" chips. */
+.bt .lang-hub .section-head { max-width: 62ch; }
+.bt .lang-hub__grid { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.bt .lang-hub__grid > li { display: flex; }
+.bt a.lang-hub__card {
+  width: 100%; display: flex; flex-direction: column; gap: 10px; padding: 24px 22px 20px;
+  background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-xl, 20px);
+  color: var(--bt-navy); text-decoration: none; box-shadow: var(--shadow-xs);
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.bt a.lang-hub__card:hover { transform: translateY(-4px); border-color: var(--bt-accent); box-shadow: var(--shadow-md); text-decoration: none; }
+.bt .lang-hub__flags { display: flex; align-items: center; min-height: 48px; padding-left: 10px; }
+.bt .lang-hub__flags img {
+  width: 44px; height: 44px; margin-left: -10px; border-radius: 50%; object-fit: cover; background: #fff;
+  border: 3px solid #fff; box-shadow: 0 2px 8px rgba(47, 49, 67, .22); transition: margin .25s, transform .25s;
+}
+.bt a.lang-hub__card:hover .lang-hub__flags img { margin-left: -4px; }
+.bt a.lang-hub__card:hover .lang-hub__flags img:first-child { margin-left: -10px; }
+.bt .lang-hub__name { font: 700 1.45rem/1.15 var(--font-display); color: var(--bt-navy); }
+.bt .lang-hub__note { font: 400 14.5px/1.5 var(--font-ui); color: var(--bt-text-mid); }
+.bt .lang-hub__more { margin-top: auto; padding-top: 10px; font: 600 14px var(--font-ui); color: var(--bt-accent-ink); }
+.bt a.lang-hub__card:hover .lang-hub__more span { display: inline-block; transform: translateX(4px); }
+
+.bt .lang-hub__others { margin-top: 44px; padding: 26px 28px 24px; background: #fff; border: 1px solid var(--bt-line); border-radius: var(--r-xl, 20px); }
+.bt .lang-hub__others h3 { margin: 0 0 6px; font: 700 1.25rem/1.25 var(--font-display); color: var(--bt-navy); }
+.bt .lang-hub__others p { margin: 0 0 14px; color: var(--bt-text-mid); max-width: 70ch; }
+.bt .lang-hub__chips { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.bt .lang-hub__chips li { padding: 7px 14px; border-radius: 999px; background: var(--bt-teal-50, #EFF7F8); border: 1px solid var(--bt-line); font: 500 14px var(--font-ui); color: var(--bt-navy); }
+.bt .lang-hub__ask { margin: 0; font-size: 15px; }
+
+@media (max-width: 1100px) { .bt .lang-hub__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .bt .lang-hub__grid { grid-template-columns: 1fr; gap: 14px; }
+  .bt .lang-hub__others { padding: 20px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bt a.lang-hub__card, .bt .lang-hub__flags img { transition: none; }
+  .bt a.lang-hub__card:hover { transform: none; }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .bt a.lang-hub__card, html:not([data-theme="light"]) .bt .lang-hub__others { background: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .bt .lang-hub__name, html:not([data-theme="light"]) .bt .lang-hub__others h3 { color: var(--bt-text); }
+  html:not([data-theme="light"]) .bt .lang-hub__chips li { background: var(--bt-surface); color: var(--bt-text); }
+  html:not([data-theme="light"]) .bt .lang-hub__flags img { background: var(--bt-surface-2); border-color: var(--bt-surface-2); }
+  html:not([data-theme="light"]) .bt .lang-hub__more { color: var(--bt-teal); }
+}
+html[data-theme="dark"] .bt a.lang-hub__card, html[data-theme="dark"] .bt .lang-hub__others { background: var(--bt-surface-2); }
+html[data-theme="dark"] .bt .lang-hub__name, html[data-theme="dark"] .bt .lang-hub__others h3 { color: var(--bt-text); }
+html[data-theme="dark"] .bt .lang-hub__chips li { background: var(--bt-surface); color: var(--bt-text); }
+html[data-theme="dark"] .bt .lang-hub__flags img { background: var(--bt-surface-2); border-color: var(--bt-surface-2); }
+html[data-theme="dark"] .bt .lang-hub__more { color: var(--bt-teal); }
