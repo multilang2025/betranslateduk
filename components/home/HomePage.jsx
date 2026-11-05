@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imgUrl } from "@/lib/site";
 import Reveal from "../Reveal";
 import Team from "../Team";
 import HeroHighlight from "./HeroHighlight";
@@ -145,7 +146,7 @@ export default function HomePage({ locale = "es" }) {
               <ul className="clients__group" key={g} aria-hidden={g === 1 ? "true" : undefined}>
                 {[...CLIENTS, ...CLIENTS].map(([src, name], i) => (
                   <li key={src + i}>
-                    <Image src={src} alt={g === 0 ? name : ""} width={160} height={70} sizes="160px" quality={90} />
+                    <Image src={imgUrl(src)} alt={g === 0 ? name : ""} width={160} height={70} sizes="160px" quality={90} />
                   </li>
                 ))}
               </ul>
@@ -243,7 +244,7 @@ export default function HomePage({ locale = "es" }) {
           </Reveal>
           <Reveal delay={80}>
             <figure className="about-split__photo">
-              <Image src="/images/about/team-meeting.jpg" alt={c.trustPhotoAlt} width={2000} height={1312} sizes="(max-width: 900px) 100vw, 560px" loading="lazy" />
+              <Image src={imgUrl("/images/about/team-meeting.jpg")} alt={c.trustPhotoAlt} width={2000} height={1312} sizes="(max-width: 900px) 100vw, 560px" loading="lazy" />
             </figure>
           </Reveal>
         </div>

@@ -4,10 +4,17 @@ import { leafRedirects } from "./lib/leafPages.js";
 const nextConfig = {
   images: {
     remotePatterns: [
+      // Site images: the betranslated-uk-images bucket (lib/site.js IMAGES_BASE), plus the shared
+      // btvibe-images bucket for the home page team photos.
       {
         protocol: 'https',
         hostname: 'nlrpizplminaccqlaved.supabase.co',
-        pathname: '/storage/v1/object/public/**',
+        pathname: '/storage/v1/object/public/betranslated-uk-images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'nlrpizplminaccqlaved.supabase.co',
+        pathname: '/storage/v1/object/public/btvibe-images/**',
       },
     ],
   },

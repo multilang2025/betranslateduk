@@ -1,5 +1,6 @@
 // Real UK team roster, scraped verbatim from scripts/btvibe-uk/output/pages/translators.json
 // with the small portraits from the legacy site (already in public/images/wp-content/uploads).
+import { imgUrl } from "@/lib/site";
 export const MEMBERS = [
   { name: "Tony", photo: "/images/wp-content/uploads/2021/09/tony.jpg", role: "Professional French to English translator" },
   { name: "Nancy", photo: "/images/wp-content/uploads/2014/07/nancy-150x150.jpg", role: "French to English translator specialising in aeronautics" },
@@ -14,7 +15,7 @@ export default function Team({ className = "" }) {
     <ul className={"team team--no-photo " + className}>
       {MEMBERS.map((m) => (
         <li key={m.name} className="team__card">
-          <img className="team__face" src={m.photo} alt={m.name + ", " + m.role.toLowerCase()} width="150" height="150" loading="lazy" />
+          <img className="team__face" src={imgUrl(m.photo)} alt={m.name + ", " + m.role.toLowerCase()} width="150" height="150" loading="lazy" />
           <div className="team__meta">
             <strong>{m.name}</strong>
             <span>{m.role}</span>

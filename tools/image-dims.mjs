@@ -1,9 +1,10 @@
 // Records the pixel size of every content image that ships without width/height,
 // so the sanitizer can size it and the page does not shift when it loads.
-// Run after a re-scrape: node tools/image-dims.mjs
+// Run after a re-scrape: node tools/image-dims.mjs (reads public/ when the file is there, else the bucket)
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
+import { IMAGES_BASE } from "../lib/site.js";
 
 const out = "scripts/btvibe-uk/output";
 const srcs = new Set();
@@ -26,7 +27,9 @@ const dims = {};
 let missing = 0;
 for (const s of [...srcs].sort()) {
   try {
-    const m = await sharp(path.join("public", decodeURIComponent(s))).metadata();
+    const local = path.join("public", decodeURIComponent(s));
+    const input = fs.existsSync(local) ? local : Buffer.from(await (await fetch(IMAGES_BASE + s)).arrayBuffer());
+    const m = await sharp(input).metadata();
     if (m.width && m.height) dims[s] = [m.width, m.height];
   } catch {
     missing++;

@@ -3,6 +3,7 @@ import path from "node:path";
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 import sharp from "sharp";
+import { IMAGES_BASE, imgUrl } from "../../../lib/site";
 import { ogAllPages, ogCard, OG_WIDTH as W, OG_HEIGHT as H } from "../../../lib/og";
 
 // Share images, one per page: /og/<page path>.jpg
@@ -50,10 +51,22 @@ const logoUri = () => (logo ||= "data:image/png;base64," + fs.readFileSync(path.
 // Local hero photo (public/...) -> JPEG data URI sized for the right half.
 async function photoUri(src) {
   if (!src || !src.startsWith("/")) return null;
-  const file = path.join(process.cwd(), "public", src);
-  if (!fs.existsSync(file)) return null;
-  const buf = await sharp(file).resize(PHOTO_W, H, { fit: "cover", position: "centre" }).jpeg({ quality: 88 }).toBuffer();
-  return "data:image/jpeg;base64," + buf.toString("base64");
+  try {
+    let input;
+    if (IMAGES_BASE) {
+      const res = await fetch(imgUrl(src));
+      if (!res.ok) return null;
+      input = Buffer.from(await res.arrayBuffer());
+    } else {
+      const file = path.join(process.cwd(), "public", src);
+      if (!fs.existsSync(file)) return null;
+      input = file;
+    }
+    const buf = await sharp(input).resize(PHOTO_W, H, { fit: "cover", position: "centre" }).jpeg({ quality: 88 }).toBuffer();
+    return "data:image/jpeg;base64," + buf.toString("base64");
+  } catch {
+    return null; // the card falls back to the language-pair motif
+  }
 }
 
 // Brand palette (app/design-system.css).
@@ -128,7 +141,7 @@ export async function GET(_request, { params }) {
   const card = ogCard(parts[0] === "home" && parts.length === 1 ? [] : parts);
   const photo = await photoUri(card.image);
   const textW = photo ? 600 : 660;
-  const size = headlineSize(card.headline, !photo && !card.art);
+  const size = headlineSize(card.headline, false);
 
   const png = new ImageResponse(
     (

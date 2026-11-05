@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { imgUrl } from "@/lib/site";
 
 const LANGS = ["French", "English", "Spanish", "German", "Dutch", "Italian"];
 
@@ -33,7 +34,7 @@ export default function TranslatorsGrid({ people }) {
       <ul className="trx__grid">
         {shown.map((p, i) => (
           <li key={`${p.name}-${i}`} className="trx__card">
-            <img src={p.photo} alt={p.name} width="88" height="88" loading="lazy" />
+            <img src={imgUrl(p.photo)} alt={p.name} width="88" height="88" loading="lazy" />
             <h3>{p.name}</h3>
             <p className="trx__role">{p.role}</p>
             {p.bioHtml ? <p className="trx__bio" dangerouslySetInnerHTML={{ __html: p.bioHtml }} /> : null}
