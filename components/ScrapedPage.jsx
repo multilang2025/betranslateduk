@@ -23,6 +23,7 @@ import BlogCard from "./BlogCard";
 import { getBlogHub, relatedFor } from "@/lib/blogHub";
 import { dropRelatedWidget, splitLongParagraphs, readingMinutes, updatedDate, withModified } from "@/lib/blogPost";
 import { insertFigures } from "@/lib/blogImages";
+import { insertGraphics } from "@/lib/blogGraphics";
 import { ctaCardHtml } from "@/lib/blogCta";
 import ServicesHeroArt from "./ServicesHeroArt";
 import ServicesShowcase from "./ServicesShowcase";
@@ -178,7 +179,7 @@ function BlogPostView({ data, slug }) {
   // The scrape ends every post with the same five thumbnails; the related articles below replace them.
   body = splitLongParagraphs(dropRelatedWidget(body));
   const { html: tocBody, toc } = withToc(enhanceTables(body));
-  body = insertFigures(restoreBlocks(tocBody, ex.blocks), slug);
+  body = insertGraphics(insertFigures(restoreBlocks(tocBody, ex.blocks), slug), slug);
   const publishDate = postDate(data);
   const modified = updatedDate(slug);
   const showUpdated = modified && (!publishDate || modified > publishDate.slice(0, 10));

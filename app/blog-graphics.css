@@ -1,0 +1,86 @@
+/* Pictographic figures in blog posts (lib/blogGraphics.js). Teal accents only; orange stays for CTAs.
+   Colours are tokens, so dark mode follows without extra rules. */
+
+.blog-post .prose figure.cg { margin: 2.2em 0; padding: 22px 24px; border: 1px solid var(--bt-line); border-radius: var(--r-xl, 20px); background: var(--bt-paper); }
+.blog-post .prose figure.cg > figcaption { margin: 0 0 16px; font: 700 12.5px var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--bt-accent-ink); text-align: left; }
+.blog-post .prose figure.cg ul, .blog-post .prose figure.cg ol { margin: 0; padding: 0; list-style: none; }
+.blog-post .prose figure.cg li { padding: 0; margin: 0; }
+.blog-post .prose figure.cg li::before { content: none; display: none; }
+.cg-flag { width: 28px; height: 21px; border-radius: 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0, 0, 0, .12); flex: none; }
+
+/* Iceberg */
+.cg-iceberg__grid { display: grid; grid-template-columns: minmax(180px, 280px) 1fr; gap: 24px; align-items: center; }
+.cg-iceberg__art { width: 100%; height: auto; display: block; }
+.cg-ice-tip { fill: #fff; stroke: var(--bt-accent); stroke-width: 2.5; stroke-linejoin: round; }
+.cg-ice-body { fill: color-mix(in srgb, var(--bt-accent) 30%, transparent); stroke: var(--bt-accent); stroke-width: 2.5; stroke-linejoin: round; }
+.cg-ice-wave { fill: color-mix(in srgb, var(--bt-accent) 12%, transparent); }
+.cg-ice-line { fill: none; stroke: var(--bt-accent); stroke-width: 3; stroke-linecap: round; }
+.cg-ice-dots circle { fill: var(--bt-accent); opacity: .75; }
+.cg-iceberg__key { display: grid; gap: 14px; }
+.blog-post .prose .cg-key { padding: 14px 16px; border-radius: 14px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line); display: flex; flex-direction: column; gap: 4px; }
+.blog-post .prose .cg-key--deep { background: color-mix(in srgb, var(--bt-accent) 14%, transparent); border-color: color-mix(in srgb, var(--bt-accent) 45%, transparent); }
+.cg-key__tag { font: 700 11.5px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.cg-key strong { font: 700 1.1rem/1.3 var(--font-display); color: var(--bt-navy); }
+.cg-key > span:last-child { font-size: .95rem; color: var(--bt-text-mid); }
+.blog-post .prose .cg-key ul { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.blog-post .prose figure.cg .cg-key ul li { padding: 6px 12px; border-radius: 999px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line); font-size: .9rem; color: var(--bt-text); }
+
+/* Same word, two meanings */
+.blog-post .prose .cg-words ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.blog-post .prose figure.cg li.cg-word { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line); }
+.cg-word__term { font: 700 1.4rem/1.1 var(--font-display); color: var(--bt-navy); }
+.cg-word__row { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; row-gap: 2px; align-items: center; }
+.cg-word__where { font: 700 .85rem var(--font-ui); color: var(--bt-accent-ink); }
+.cg-word__mean { grid-column: 1 / -1; font-size: .95rem; line-height: 1.4; color: var(--bt-text); }
+.cg-word__ne { width: 22px; height: 22px; align-self: flex-start; fill: none; stroke: var(--bt-accent-ink); stroke-width: 2; stroke-linecap: round; }
+
+/* Dates and numbers */
+.cg-formats__date { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px 36px; padding: 6px 0 18px; }
+.cg-date { font: 700 clamp(2rem, 6vw, 3rem)/1 var(--font-display); color: var(--bt-navy); letter-spacing: .02em; }
+.cg-formats__cals { display: flex; align-items: center; gap: 14px; }
+.cg-formats__or { font: 600 .9rem var(--font-ui); color: var(--bt-text-soft); }
+.cg-cal { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.cg-cal svg { width: 110px; height: 110px; }
+.cg-cal__page { fill: var(--bt-white, #fff); stroke: var(--bt-line-2, #E5E7EB); stroke-width: 2; }
+.cg-cal__head { fill: var(--bt-accent); }
+.cg-cal__ring { fill: var(--bt-navy); }
+.cg-cal__top { font: 700 13px var(--font-ui, Arial); fill: #fff; letter-spacing: .1em; }
+.cg-cal__big { font: 700 40px var(--font-display, Georgia); fill: var(--bt-navy); }
+.cg-cal__small { font: 600 12px var(--font-ui, Arial); fill: var(--bt-text-soft); }
+.cg-cal__who { display: inline-flex; align-items: center; gap: 8px; font: 600 .9rem var(--font-ui); color: var(--bt-text); }
+.blog-post .prose .cg-formats__nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding-top: 16px; border-top: 1px dashed var(--bt-line-2, #E5E7EB); }
+.blog-post .prose figure.cg .cg-formats__nums li { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px; border-radius: 14px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line); text-align: center; }
+.cg-num { font: 700 1.35rem/1.1 var(--font-display); color: var(--bt-navy); }
+.cg-num__where { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--bt-text-mid); }
+
+/* Adaptation scale */
+.cg-scale__axis { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; margin-bottom: 18px; font: 600 .85rem var(--font-ui); color: var(--bt-text-soft); }
+.cg-scale__axis svg { width: 100%; height: 12px; fill: none; stroke: var(--bt-accent); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.blog-post .prose .cg-scale__nodes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.blog-post .prose figure.cg li.cg-scale__node { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line); }
+.blog-post .prose figure.cg li.cg-scale__node:nth-child(2) { background: color-mix(in srgb, var(--bt-accent) 10%, var(--bt-white, #fff)); }
+.blog-post .prose figure.cg li.cg-scale__node:nth-child(3) { background: color-mix(in srgb, var(--bt-accent) 20%, var(--bt-white, #fff)); }
+.cg-scale__dot { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--bt-accent); font: 700 13px var(--font-ui); color: var(--bt-accent-ink); }
+.cg-scale__node strong { font: 700 1.1rem/1.2 var(--font-display); color: var(--bt-navy); }
+.cg-scale__what { font-size: .95rem; line-height: 1.45; color: var(--bt-text); }
+.cg-scale__best { margin-top: auto; padding-top: 8px; border-top: 1px dashed var(--bt-line-2, #E5E7EB); font-size: .88rem; line-height: 1.4; color: var(--bt-text-mid); }
+.cg-scale__best b { color: var(--bt-accent-ink); font-weight: 700; margin-right: 4px; }
+
+/* Checklist */
+.blog-post .prose .cg-steps ol { position: relative; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 14px; }
+.blog-post .prose .cg-steps ol::before { content: ""; position: absolute; left: 17px; right: 17px; top: 17px; border-top: 2px dashed color-mix(in srgb, var(--bt-accent) 55%, transparent); }
+.blog-post .prose figure.cg .cg-steps li, .blog-post .prose figure.cg.cg-steps li { position: relative; display: flex; flex-direction: column; gap: 10px; font-size: .93rem; line-height: 1.45; color: var(--bt-text); }
+.cg-steps__n { position: relative; z-index: 1; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--bt-paper); border: 2px solid var(--bt-accent); font: 700 14px/1 var(--font-ui); color: var(--bt-accent-ink); }
+
+@media (max-width: 760px) {
+  .cg-iceberg__grid { grid-template-columns: 1fr; }
+  .cg-iceberg__art { max-width: 260px; margin: 0 auto; }
+  .blog-post .prose .cg-words ul, .blog-post .prose .cg-scale__nodes, .blog-post .prose .cg-formats__nums { grid-template-columns: 1fr; }
+  .blog-post .prose figure.cg .cg-formats__nums li { flex-direction: row; justify-content: space-between; text-align: left; }
+  .cg-scale__axis { grid-template-columns: 1fr; }
+  .cg-scale__axis svg { display: none; }
+  .blog-post .prose .cg-steps ol { grid-template-columns: 1fr; gap: 12px; }
+  .blog-post .prose .cg-steps ol::before { left: 16px; right: auto; top: 17px; bottom: 17px; border-top: 0; border-left: 2px dashed color-mix(in srgb, var(--bt-accent) 55%, transparent); }
+  .blog-post .prose .cg-steps li { flex-direction: row; align-items: center; }
+  .cg-steps__n { flex: none; }
+}
