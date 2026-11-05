@@ -199,7 +199,8 @@
    Footer
    ============================================================ */
 .bt-footer { background: var(--bt-navy-deep); color: rgba(255,255,255,.72); padding: 72px 24px 32px; }
-.bt-footer__inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: minmax(220px, 1.4fr) repeat(4, minmax(140px, 1fr)); gap: 40px; }
+/* Brand, four link columns and the contact block on one row (betranslated.es has three link columns). */
+.bt-footer__inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: minmax(200px, 1.3fr) repeat(4, minmax(120px, 1fr)) minmax(190px, 1.2fr); gap: 32px; }
 .bt-footer__brand { max-width: 300px; }
 .bt-footer__logo { display: block; margin-bottom: 18px; line-height: 0; }
 .bt-footer__tagline { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.55); margin: 0; }
@@ -214,7 +215,7 @@
 .bt-footer__langs-sep { margin-right: 8px; color: rgba(255,255,255,.4); }
 .bt-footer__langs + .bt-footer__bottom { margin-top: 20px; }
 .bt-footer__bottom { max-width: var(--container); margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; color: rgba(255,255,255,.45); }
-@media (max-width: 1000px) { .bt-footer__inner { grid-template-columns: 1fr 1fr 1fr; } .bt-footer__brand { grid-column: 1 / -1; max-width: none; } }
+@media (max-width: 1100px) { .bt-footer__inner { grid-template-columns: 1fr 1fr 1fr; } .bt-footer__brand { grid-column: 1 / -1; max-width: none; } }
 @media (max-width: 640px) { .bt-footer__inner { grid-template-columns: 1fr 1fr; gap: 32px 24px; } }
 @media (max-width: 400px) { .bt-footer__inner { grid-template-columns: 1fr; } }
 .bt-footer__bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }

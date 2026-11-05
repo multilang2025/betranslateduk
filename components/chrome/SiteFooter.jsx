@@ -57,6 +57,7 @@ const COPY = {
     ],
     contactTitle: "Contact",
     phone: "Phone",
+    address: ["International House, 24 Holborn Viaduct", "London EC1A 2BN, UK"],
     legal: "All rights reserved",
     cookies: "Cookie settings",
     bottomLinks: [
@@ -126,11 +127,15 @@ export default function SiteFooter() {
           </a>
           <a href={`https://wa.me/${WHATSAPP}`} className="bt-footer__link bt-footer__ci" target="_blank" rel="noopener noreferrer">
             <Glyph d={BRAND.whatsapp} size={16} />
-            <span>WhatsApp <span className="bt-footer__nw">{PHONE}</span></span>
+            <span>WhatsApp</span>
           </a>
           <a href={`mailto:${EMAIL}`} className="bt-footer__link bt-footer__ci">
             <Line d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6" />
             <span>{EMAIL}</span>
+          </a>
+          <a href={GBP_URL} className="bt-footer__link bt-footer__ci" target="_blank" rel="noopener noreferrer">
+            <Line d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            <span>{c.address[0]}<br />{c.address[1]}</span>
           </a>
         </div>
       </div>
