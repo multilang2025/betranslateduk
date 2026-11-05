@@ -23,3 +23,13 @@
 
 html[data-theme="dark"] .blog-post .prose p:has(> strong:only-child):has(+ ul),
 html:not([data-theme="light"]) .blog-post .prose p:has(> strong:only-child):has(+ ul) { color: #7EBEC5; }
+
+/* Post template aligned with betranslated.es: the hero text lines up with the article column, the hero is
+   less tall, headings sit closer together and the related block is tighter. */
+@media (min-width: 901px) {
+  .bt .blog-post .page-hero.page-hero--post-split { padding: 32px 0 40px; }
+}
+.bt .blog-post .page-hero--post-split > .container { max-width: 1200px; }
+.bt .blog-post .page-hero--post-split h1 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
+.bt .blog-post .prose h3 { margin: 28px 0 12px; }
+.bt .blog-post .related-posts.section { padding: 64px 0; }
