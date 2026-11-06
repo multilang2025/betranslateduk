@@ -42,6 +42,8 @@
 
 .wt-panel { max-width: 960px; margin: 36px auto 0; padding: 24px 28px; border: 1px solid color-mix(in srgb, var(--bt-accent) 40%, transparent); border-radius: var(--r-xl, 20px); background: color-mix(in srgb, var(--bt-accent) 8%, var(--bt-paper)); }
 .wt-panel__formats { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 16px; }
+.wt-panel__formats--platforms { margin-top: 14px; }
+.wt-panel__formats li.is-plain { font: 600 .9rem var(--font-ui); }
 .wt-panel__title { font: 700 12.5px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bt-accent-ink); }
 .wt-panel__formats ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; max-width: none; }
 .wt-panel__formats li { margin: 0; padding: 6px 14px; border-radius: 8px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line-2); font: 600 .9rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bt-text); }

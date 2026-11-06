@@ -1,6 +1,10 @@
 {
   "hero": {
-    "facts": ["WPML or direct in your files", "SEO-conscious linguists", "Free, no-obligation quote"]
+    "facts": [
+      "WPML, Polylang or direct in your files",
+      "SEO-conscious linguists",
+      "Free, no-obligation quote"
+    ]
   },
   "intro": {
     "title": "Crossing digital borders with expert web translations",
@@ -9,59 +13,215 @@
       "With your budget in mind, we craft custom solutions for British, European and global audiences."
     ],
     "languagesTitle": "Languages we translate into and from",
-    "languages": [["gb", "English"], ["nl", "Dutch"], ["fr", "French"], ["de", "German"], ["it", "Italian"], ["es", "Spanish"], ["cn", "Chinese"]],
+    "languages": [
+      [
+        "gb",
+        "English"
+      ],
+      [
+        "nl",
+        "Dutch"
+      ],
+      [
+        "fr",
+        "French"
+      ],
+      [
+        "de",
+        "German"
+      ],
+      [
+        "it",
+        "Italian"
+      ],
+      [
+        "es",
+        "Spanish"
+      ],
+      [
+        "cn",
+        "Chinese"
+      ]
+    ],
     "extra": "Arabic and other global languages on request",
-    "image": { "src": "/images/wp-content/uploads/2023/09/website-translation-services.jpg", "alt": "A laptop showing a website wireframe next to a notebook and a coffee", "width": 795, "height": 531 }
+    "image": {
+      "src": "/images/wp-content/uploads/2023/09/website-translation-services.jpg",
+      "alt": "A laptop showing a website wireframe next to a notebook and a coffee",
+      "width": 795,
+      "height": 531
+    }
   },
   "what": {
     "title": "What we translate",
     "lead": "Well-informed, SEO-conscious translators handle all your web-based activity.",
     "items": [
-      { "icon": "blog", "title": "Blog posts", "text": "Regular, high-quality articles in the languages of your choice." },
-      { "icon": "mail", "title": "Newsletters and mailing lists", "text": "Company news, product launches and sign-ups for your target market." },
-      { "icon": "share", "title": "Social media posts", "text": "Short, punchy copy that still sounds native." },
-      { "icon": "marketing", "title": "Ads", "text": "Campaign copy adapted for each audience." },
-      { "icon": "tag", "title": "Meta tags", "text": "Titles and descriptions translated for search results." },
-      { "icon": "image", "title": "Image descriptions", "text": "Alt text that helps search and accessibility." }
+      {
+        "icon": "blog",
+        "title": "Blog posts",
+        "text": "Regular, high-quality articles in the languages of your choice."
+      },
+      {
+        "icon": "mail",
+        "title": "Newsletters and mailing lists",
+        "text": "Company news, product launches and sign-ups for your target market."
+      },
+      {
+        "icon": "share",
+        "title": "Social media posts",
+        "text": "Short, punchy copy that still sounds native."
+      },
+      {
+        "icon": "marketing",
+        "title": "Ads",
+        "text": "Campaign copy adapted for each audience."
+      },
+      {
+        "icon": "tag",
+        "title": "Meta tags",
+        "text": "Titles, descriptions and social metadata translated for local search."
+      },
+      {
+        "icon": "image",
+        "title": "Image descriptions",
+        "text": "Alt text that helps search and accessibility."
+      }
     ]
   },
   "how": {
     "title": "How to send us your website content",
     "lead": "Pick the route that suits your site. We focus on the words and you keep control of the rest.",
     "items": [
-      { "icon": "word", "title": "A Word document", "text": "Our most affordable option. If you can export your content into Word, we focus on the content and you handle the rest." },
-      { "icon": "plug", "title": "Your CMS", "text": "We can help you set up multilingual plugins for popular systems such as WordPress. The plugin exports your content in formats we can work with." },
-      { "icon": "code", "title": "Directly in HTML or XML", "text": "We work in the code so the markup stays intact. Your translator edits only the visible text." },
-      { "icon": "database", "title": "Databases and catalogues", "text": "For MySQL dumps or product catalogues, we usually prefer a CSV export." }
+      {
+        "icon": "word",
+        "title": "A Word document",
+        "text": "Our most affordable option. If you can export your content into Word, we focus on the content and you handle the rest."
+      },
+      {
+        "icon": "plug",
+        "title": "Your CMS",
+        "text": "We set up multilingual plugins such as WPML and Polylang for WordPress, and deliver translations straight into your CMS."
+      },
+      {
+        "icon": "code",
+        "title": "Directly in HTML or XML",
+        "text": "We work in the code, or upload directly to the back end, so the markup stays intact. Your translator edits only the visible text."
+      },
+      {
+        "icon": "database",
+        "title": "Databases and catalogues",
+        "text": "For MySQL dumps or product catalogues, we usually prefer a CSV export."
+      }
     ],
     "formatsTitle": "Formats we accept",
-    "formats": [".po files", "HTML", "XLIFF", "CSV", "XML", "Word"],
-    "note": "We do not handle technical installation, but our consulting can help you fine-tune your multilingual site."
+    "formats": [
+      "Word",
+      "Excel",
+      "XLIFF",
+      "JSON",
+      ".po / .pot",
+      "HTML",
+      "XML",
+      "CSV"
+    ],
+    "note": "We can also handle the technical side: setting up your multilingual CMS, delivering translations directly into your site and configuring hreflang tags for each regional version.",
+    "platformsTitle": "Platforms we work with",
+    "platforms": [
+      "WordPress",
+      "Shopify",
+      "Squarespace",
+      "Webflow",
+      "Contentful",
+      "Strapi",
+      "Drupal"
+    ]
   },
   "why": {
     "title": "Why translate your website",
     "items": [
-      { "icon": "search", "title": "Be found on Google", "text": "Accurate translation and localisation of your SEO content brings more visibility, more traffic and more client engagement." },
-      { "icon": "shield", "title": "Earn trust", "text": "Content in your readers' native language gives you the edge, and gives your company credibility." },
-      { "icon": "website", "title": "Reach a bigger audience", "text": "From Welsh and Scottish Gaelic to Spanish and Japanese, the right languages open new markets." }
+      {
+        "icon": "search",
+        "title": "Be found on Google",
+        "text": "Accurate translation of your SEO content, plus hreflang tags set up for each regional version, brings more visibility, more traffic and more client engagement."
+      },
+      {
+        "icon": "shield",
+        "title": "Earn trust",
+        "text": "Content in your readers' native language gives you the edge, and gives your company credibility."
+      },
+      {
+        "icon": "website",
+        "title": "Reach a bigger audience",
+        "text": "From Welsh and Scottish Gaelic to Spanish and Japanese, the right languages open new markets."
+      }
     ]
   },
   "scope": {
     "title": "Partial or complete website translation",
     "lead": "It is not always necessary to translate everything. We can start with what matters most.",
     "items": [
-      { "icon": "partial", "title": "Partial translation", "text": "Translate the most relevant content on your site first, and add more later." },
-      { "icon": "full", "title": "Full translation", "text": "In most cases we recommend translating the whole site, to keep it consistent.", "tag": "Recommended" }
+      {
+        "icon": "partial",
+        "title": "Partial translation",
+        "text": "Translate the most relevant content on your site first, and add more later."
+      },
+      {
+        "icon": "full",
+        "title": "Full translation",
+        "text": "In most cases we recommend translating the whole site, to keep it consistent.",
+        "tag": "Recommended"
+      }
     ]
   },
   "faq": {
     "title": "Frequently asked questions",
     "items": [
-      ["Can you translate my WordPress website?", ["Yes. We translate your content through the WPML plug-in or directly in your site files.", "You keep control of the structure and design of your pages.", "Tell us how your site is built and we recommend the best method."]],
-      ["Do you translate the code and XML files as well?", ["Yes. We can work directly in HTML or XML so the markup stays intact.", "Your translator edits only the visible text and leaves the code alone.", "Send the files and we confirm what we can handle."]],
-      ["Will the translated site rank in search engines?", ["We adapt page titles, descriptions and headings for each language.", "We use search terms that people in your target market actually use.", "Good multilingual SEO also depends on your site structure, so we advise you on that too."]],
-      ["How do you handle updates to my website content?", ["You tell us which pages have changed and we translate only the new or edited text.", "We keep a glossary so wording stays consistent over time.", "That saves you from paying to retranslate unchanged content."]],
-      ["How do I get a quote for website translation?", ["Send your site address, the languages you need and your deadline.", "We review the content and reply with a free, no-obligation quote."]]
+      [
+        "Can you translate my WordPress website?",
+        [
+          "Yes. We translate your content through WPML or Polylang, or directly in your site files.",
+          "You keep control of the structure and design of your pages.",
+          "Tell us how your site is built and we recommend the best method."
+        ]
+      ],
+      [
+        "Do you translate the code and XML files as well?",
+        [
+          "Yes. We can work directly in HTML or XML so the markup stays intact.",
+          "Your translator edits only the visible text and leaves the code alone.",
+          "Send the files and we confirm what we can handle."
+        ]
+      ],
+      [
+        "Can you set up my multilingual site as well?",
+        [
+          "Yes. We can set up multilingual plugins and CMS configurations for you.",
+          "We deliver the translations directly into your site and configure hreflang tags for each regional version.",
+          "Tell us your platform and we confirm exactly what we can handle."
+        ]
+      ],
+      [
+        "Will the translated site rank in search engines?",
+        [
+          "We adapt page titles, descriptions and headings for each language.",
+          "We use search terms that people in your target market actually use.",
+          "Good multilingual SEO also depends on your site structure, so we advise you on that too."
+        ]
+      ],
+      [
+        "How do you handle updates to my website content?",
+        [
+          "You tell us which pages have changed and we translate only the new or edited text.",
+          "We keep a glossary so wording stays consistent over time.",
+          "That saves you from paying to retranslate unchanged content."
+        ]
+      ],
+      [
+        "How do I get a quote for website translation?",
+        [
+          "Send your site address, the languages you need and your deadline.",
+          "We review the content and reply with a free, no-obligation quote."
+        ]
+      ]
     ]
   }
 }

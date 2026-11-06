@@ -93,6 +93,10 @@ export default function WebsiteTranslationPage({ page, title }) {
               <span className="wt-panel__title">{PAGE.how.formatsTitle}</span>
               <ul>{PAGE.how.formats.map((f) => <li key={f}>{f}</li>)}</ul>
             </div>
+            <div className="wt-panel__formats wt-panel__formats--platforms">
+              <span className="wt-panel__title">{PAGE.how.platformsTitle}</span>
+              <ul>{PAGE.how.platforms.map((f) => <li key={f} className="is-plain">{f}</li>)}</ul>
+            </div>
             <p className="wt-panel__note">
               <span className="wt-panel__info" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></svg></span>
               <span>{PAGE.how.note}</span>
