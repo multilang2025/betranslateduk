@@ -12,6 +12,7 @@ import { HOME } from "./copy";
 import FeaturedPosts from "./FeaturedPosts";
 import GbpBadge from "./GbpBadge";
 import FEATURED from "../../data/home-featured-posts.json";
+import CLIENT_LOGOS from "../../data/clients.json";
 import { blogCards, getHomePage } from "../../lib/content";
 import PageSchema from "../PageSchema";
 
@@ -42,25 +43,7 @@ const LANG = {
 };
 // Real UK client logos, from the live homepage's own .bt-marquee band
 // (scripts/btvibe-uk/output/pages/index.json), already mirrored locally.
-const CLIENTS = [
-  ["/images/wp-content/uploads/2023/09/brandwatch-logo.png", "Brandwatch"],
-  ["/images/wp-content/uploads/2023/09/UNESCO.svg", "UNESCO"],
-  ["/images/wp-content/uploads/2023/09/barbados.svg", "Barbados"],
-  ["/images/wp-content/uploads/2023/09/Kaspersky.svg", "Kaspersky"],
-  ["/images/wp-content/uploads/2026/10/sideload-a5e2db05394c.svg", "Proxymity"],
-  ["/images/wp-content/uploads/2026/10/sideload-d3d18b829129.svg", "Save the Children"],
-  ["/images/wp-content/uploads/2026/10/sideload-4fe628da58d6.svg", "BIC"],
-  ["/images/wp-content/uploads/2020/06/aspen.jpg", "Aspen Aerogels"],
-  ["/images/wp-content/uploads/2020/06/wallonia.jpg", "AWEX"],
-  ["/images/wp-content/uploads/2020/06/arrow.jpg", "Arrow"],
-  ["/images/wp-content/uploads/2020/06/computercenter.jpg", "Computer Center"],
-  ["/images/wp-content/uploads/2020/06/vinci.jpg", "Vinci"],
-  ["/images/wp-content/uploads/2020/06/wonderbox.jpg", "Wonderbox"],
-  ["/images/wp-content/uploads/2020/06/intersystem.jpg", "Intersystem"],
-  ["/images/wp-content/uploads/2020/06/noosphere.jpg", "Noosphere"],
-  ["/images/wp-content/uploads/2020/06/vanksen.jpg", "Vanksen"],
-  ["/images/wp-content/uploads/2020/06/tms.jpg", "TMS"],
-];
+const CLIENTS = CLIENT_LOGOS;
 
 function Head({ eyebrow, title, children }) {
   return (

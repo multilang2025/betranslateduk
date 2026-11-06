@@ -9,111 +9,9 @@
     ],
     "title": "Meet the team behind our translators"
   },
-  "intro": {
-    "title": "Select professional translators for quality and affordability",
-    "lead": "Every project goes to a specialist who translates into their native language, with one project manager keeping it on track.",
-    "cards": [
-      {
-        "icon": "pin",
-        "title": "Remote teams across the UK",
-        "html": "With teams working remotely across London, Manchester, Birmingham, Leeds and Glasgow (no costly offices, company cars or heavy business rates to pay), we reduce our costs and share that price advantage with our customers, offering them <a href=\"/translation-agency/rates/\">affordable translation services</a>."
-      },
-      {
-        "icon": "badge",
-        "title": "Professional translators only",
-        "html": "BeTranslated exclusively consists of professional translators serving clients across the UK and all over Europe."
-      },
-      {
-        "icon": "person",
-        "title": "One project manager",
-        "html": "One of BeTranslated's project managers will be your point of contact and will oversee every aspect of your project."
-      }
-    ]
-  },
   "roster": {
     "title": "Meet the BeTranslated team",
     "lead": "The people who look after your project from request to delivery, backed by our network of native specialist translators."
-  },
-  "steps": {
-    "title": "What happens next",
-    "items": [
-      [
-        "Request a quote",
-        "One of our regional managers will receive your request for a translation quote."
-      ],
-      [
-        "Reply",
-        "A member of BeTranslated will respond to you within a maximum of 8 working hours."
-      ],
-      [
-        "Assessing your project",
-        "We match your project to the translator who best meets your needs according to the details of your request."
-      ],
-      [
-        "Delivery",
-        "You will receive the translated files within the agreed deadline."
-      ],
-      [
-        "Follow-up and invoicing",
-        "Once you are satisfied with your translation, we will send you your invoice."
-      ]
-    ]
-  },
-  "interp": {
-    "title": "Interpreters for meetings and events",
-    "html": "Need an interpreter as well as a translator? Our <a href=\"/translation-services/remote-interpreting/\">remote interpreting services</a> cover business meetings and virtual events on Zoom, Teams and Google Meet.",
-    "tags": [
-      "Zoom",
-      "Teams",
-      "Google Meet"
-    ],
-    "href": "/translation-services/remote-interpreting/",
-    "cta": "Explore remote interpreting"
-  },
-  "faq": {
-    "title": "Frequently asked questions",
-    "items": [
-      [
-        "How do you choose translators for my project?",
-        [
-          "We match your project to a translator with experience in your subject area.",
-          "Your language pair, the document type and the audience all guide the choice.",
-          "Tell us about your field and we find the right person."
-        ]
-      ],
-      [
-        "Do your translators work into their native language?",
-        [
-          "Yes. We work with professional translators who translate into their native language.",
-          "That keeps the finished text natural and accurate for your readers.",
-          "Mention any regional variety you need and we match it."
-        ]
-      ],
-      [
-        "Can I work with the same translator again?",
-        [
-          "Yes. You can ask us to keep the same translator for future projects.",
-          "That helps your terminology and tone stay consistent.",
-          "We keep your glossary and preferences on file for the next job."
-        ]
-      ],
-      [
-        "How do you keep my documents confidential?",
-        [
-          "We share your files only with the translators working on them.",
-          "You can ask us to sign a confidentiality agreement before you send anything.",
-          "Tell us about any extra security rules and we follow them."
-        ]
-      ],
-      [
-        "Can I get a quote before I commit?",
-        [
-          "Yes. Send us your files, the languages and your deadline.",
-          "We review them and reply with a free, no-obligation quote.",
-          "You decide whether to go ahead after you see it."
-        ]
-      ]
-    ]
   },
   "story": {
     "title": "Our story",
@@ -135,5 +33,63 @@
     "id": "O67In8Hkyxc",
     "videoTitle": "Your Professional Translation Agency - BeTranslated",
     "poster": "/video/company-poster.jpg"
+  },
+  "reasons": {
+    "title": "Why confide in the BeTranslated team",
+    "lead": "Short and sweet: here is what you can count on when you work with us.",
+    "items": [
+      "Native translators, working only into their mother tongue",
+      "Specialists in legal, financial, technical, medical and marketing content",
+      "Project managers who are, or were, translators themselves",
+      "A second independent linguist reviews your text",
+      "One point of contact from quote to delivery",
+      "A reply within 8 working hours",
+      "A free, no-obligation quote before you commit"
+    ]
+  },
+  "work": {
+    "title": "How BeTranslated works, step by step",
+    "lead": "Every project follows the same clear path, from your first message to the final invoice.",
+    "steps": [
+      [
+        "Request a quote",
+        "Send us your files and tell us the languages, purpose and deadline."
+      ],
+      [
+        "Receive your quote",
+        "We review everything and reply within 8 working hours with a clear, free quote."
+      ],
+      [
+        "We match your project",
+        "We analyse the brief and assign the native specialist who fits your subject, language pair and deadline."
+      ],
+      [
+        "Translation",
+        "Your translator works with memories and glossaries so terminology stays consistent."
+      ],
+      [
+        "Independent review",
+        "A second linguist reviews the text before it reaches you."
+      ],
+      [
+        "Delivery and invoice",
+        "You receive the files by the agreed date, and we invoice once you are satisfied."
+      ]
+    ]
+  },
+  "clients": {
+    "title": "Trusted by big names and organisations",
+    "lead": "We have translated for global brands, international organisations and charities.",
+    "names": [
+      "Save the Children",
+      "UNESCO",
+      "Kaspersky",
+      "Brandwatch",
+      "BIC",
+      "Vinci",
+      "Arrow",
+      "Barbados",
+      "Computer Center"
+    ]
   }
 }
