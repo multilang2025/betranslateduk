@@ -88,11 +88,16 @@ export default function WebsiteTranslationPage({ page, title }) {
               </li>
             ))}
           </ul>
-          <div className="wt-formats">
-            <span className="wt-formats__title">{PAGE.how.formatsTitle}</span>
-            <ul>{PAGE.how.formats.map((f) => <li key={f}>{f}</li>)}</ul>
+          <div className="wt-panel">
+            <div className="wt-panel__formats">
+              <span className="wt-panel__title">{PAGE.how.formatsTitle}</span>
+              <ul>{PAGE.how.formats.map((f) => <li key={f}>{f}</li>)}</ul>
+            </div>
+            <p className="wt-panel__note">
+              <span className="wt-panel__info" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></svg></span>
+              <span>{PAGE.how.note}</span>
+            </p>
           </div>
-          <p className="wt-note">{PAGE.how.note}</p>
         </div>
       </section>
 

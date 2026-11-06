@@ -40,12 +40,14 @@
 .wt-card--pick { border-color: var(--bt-accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--bt-accent) 35%, transparent); }
 .wt-card__tag { position: absolute; top: 16px; right: 16px; padding: 4px 10px; border-radius: 999px; background: var(--bt-accent); color: #fff; font: 700 11px/1.3 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; }
 
-.wt-formats { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 30px; }
-.wt-formats__title { font: 700 12.5px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bt-accent-ink); }
-.wt-formats ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; max-width: none; }
-.wt-formats li { margin: 0; padding: 6px 14px; border-radius: 8px; background: var(--bt-paper-2); border: 1px dashed var(--bt-line-2); font: 600 .9rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bt-text); }
-.wt-formats li::before { content: none; display: none; }
-.wt-note { max-width: 640px; margin: 16px auto 0; text-align: center; font-size: .95rem; line-height: 1.6; color: var(--bt-text-mid); }
+.wt-panel { max-width: 960px; margin: 36px auto 0; padding: 24px 28px; border: 1px solid color-mix(in srgb, var(--bt-accent) 40%, transparent); border-radius: var(--r-xl, 20px); background: color-mix(in srgb, var(--bt-accent) 8%, var(--bt-paper)); }
+.wt-panel__formats { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 16px; }
+.wt-panel__title { font: 700 12.5px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--bt-accent-ink); }
+.wt-panel__formats ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; max-width: none; }
+.wt-panel__formats li { margin: 0; padding: 6px 14px; border-radius: 8px; background: var(--bt-white, #fff); border: 1px solid var(--bt-line-2); font: 600 .9rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--bt-text); }
+.wt-panel__formats li::before { content: none; display: none; }
+.wt-page .wt-panel__note { display: flex; align-items: flex-start; justify-content: center; gap: 10px; max-width: none; margin: 18px 0 0; padding: 16px 0 0; border-top: 1px dashed var(--bt-line-2); text-align: left; font-size: .96rem; line-height: 1.55; color: var(--bt-text-mid); }
+.wt-panel__info { flex: none; display: grid; place-items: center; margin-top: 1px; color: var(--bt-accent-ink); }
 
 @media (max-width: 1100px) {
   .wt-intro__grid { grid-template-columns: 1fr; gap: 32px; }
