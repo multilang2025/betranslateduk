@@ -1,0 +1,59 @@
+{
+  "icon": "marketing",
+  "hero": {
+    "facts": ["Translators who specialise in marketing", "Culturally adapted, not word for word", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Marketing translation that reads as if it was written locally",
+    "paras": [
+      "Commercial texts need translators who respect the terminology and register of the original. Whether it is <a href=\"/blog/communication-agencies-translation/\">translating press releases</a>, brochures or international campaigns, the result has to be readable, effective and culturally sensitive.",
+      "BeTranslated has provided <a href=\"/translation-services/\">translation services</a> to a range of international companies, in the <a href=\"/languages/\">languages</a> their audiences actually speak."
+    ],
+    "checks": [
+      "Translators who specialise in marketing and sales content",
+      "Text adapted to the culture of your target audience",
+      "Commercial style carried over into the target language",
+      "Accurate translation of presentations, campaigns and more"
+    ]
+  },
+  "services": {
+    "title": "Marketing and sales content we translate",
+    "lead": "A text that works in the United Kingdom may land differently in Asia, so each file goes to a specialist.",
+    "items": [
+      { "icon": "marketing", "title": "Advertising and promotions", "text": "Commercial advertising, promotional offers and competitions." },
+      { "icon": "documents", "title": "Presentations and plans", "text": "Presentations, business plans and product launch decks." },
+      { "icon": "blog", "title": "Brochures and catalogues", "text": "Print and digital material that sells your range." },
+      { "icon": "search", "title": "Market research", "text": "Market research texts, surveys, analysis and reports." },
+      { "icon": "mail", "title": "Press and mail", "text": "Press releases, media kits and customer mailings." },
+      { "icon": "website", "title": "Websites and multimedia", "text": "Website content and multimedia presentations." }
+    ]
+  },
+  "tags": {
+    "title": "Documents we handle",
+    "items": ["Presentations", "Press releases", "Catalogues", "Market research", "Product launch presentations", "Surveys", "Websites", "Multimedia presentations", "Advertising material", "Promotional material", "Product packaging", "Media kits", "Brochures", "Flyers", "Business plans", "Mail", "Promotional offers", "Competitions", "Analysis and reports"]
+  },
+  "why": {
+    "title": "Why translate your marketing content",
+    "items": [
+      { "icon": "full", "title": "Reach a wider audience", "text": "Translating your marketing content lets you speak to far more potential customers." },
+      { "icon": "shield", "title": "Build credibility", "text": "On-brand messaging in your readers' native language makes customers more likely to trust you." },
+      { "icon": "marketing", "title": "Creative adaptation", "text": "Cultural references and wordplay need rewriting, not literal translation, much like copywriting." }
+    ]
+  },
+  "children": {
+    "title": "Related specialism",
+    "lead": "A closer look at one marketing sector.",
+    "items": [
+      { "icon": "tourism", "title": "Travel marketing translation", "text": "Websites, brochures and campaigns that help hotels and tour operators win international bookings.", "href": "/industry/marketing/travel/" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["What is marketing translation?", ["It adapts your message for a new audience rather than converting words one by one.", "The translator often rewrites the text with the target culture in mind."]],
+      ["Which marketing documents can you translate?", ["Presentations, press releases, catalogues, surveys, packaging, media kits, brochures and websites, among others.", "If your file is not listed, ask us."]],
+      ["Why not use a literal translation?", ["Cultural references and plays on words rarely carry over directly.", "A marketing specialist adapts them without changing the original message."]],
+      ["How do I get a quote?", ["Send the material, the languages you need and your deadline.", "We reply with a free, no-obligation quote."]]
+    ]
+  }
+}

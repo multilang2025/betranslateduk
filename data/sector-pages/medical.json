@@ -1,0 +1,54 @@
+{
+  "icon": "medical",
+  "hero": {
+    "facts": ["Specialised medical and pharma translators", "Confidential handling of every file", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Medical translation services: what you need to know",
+    "paras": [
+      "Free or low-cost machine translation tools are widely available, but we recommend caution with technical pharmaceutical and medical content. In these fields a missing digit or a wrong term can change the meaning of a text.",
+      "As a specialist <a href=\"/translation-agency/\">translation agency</a> with more than 15 years of experience in medical and pharmaceutical work, we only assign specialised translators to your project."
+    ],
+    "checks": [
+      "Translators with a medical or pharmacy background, or more than 5 years of medical translation experience",
+      "Accurate use of <a href=\"/blog/specialised-healthcare-translation-services/\">the language used by healthcare professionals</a>",
+      "Native translators in a wide range of languages",
+      "Files delivered in the format you send, from Word and Excel to PDF and HTML"
+    ]
+  },
+  "services": {
+    "title": "Medical documents we translate",
+    "lead": "From clinical trial protocols to patient leaflets, each file goes to a translator who knows the subject.",
+    "items": [
+      { "icon": "documents", "title": "Clinical trial documents", "text": "Protocols, informed consent forms and trial instructions." },
+      { "icon": "search", "title": "Research reports", "text": "Medical research reports and scientific papers." },
+      { "icon": "medical", "title": "Package leaflets", "text": "Patient information leaflets, prescription and medication labels." },
+      { "icon": "technical", "title": "Device manuals", "text": "Instructions for surgical instruments and medical devices." },
+      { "icon": "word", "title": "Records and test results", "text": "Medical records, reports, test results and health insurance documents." },
+      { "icon": "website", "title": "Websites and apps", "text": "Patient brochures, clinic websites and healthcare apps." }
+    ]
+  },
+  "why": {
+    "title": "Why use a specialist medical translator",
+    "items": [
+      { "icon": "shield", "title": "Precision", "text": "Medicine and pharmacy leave no room for approximation, so every term is checked." },
+      { "icon": "medical", "title": "Specialist knowledge", "text": "Our linguists understand medical jargon and the real meaning of technical terms." },
+      { "icon": "full", "title": "Peer-ready text", "text": "Healthcare professionals receive a proofread version they can rely on." },
+      { "icon": "legal", "title": "Confidentiality", "text": "Patient and research data is handled in confidence throughout the project." }
+    ]
+  },
+  "tags": {
+    "title": "Document types",
+    "items": ["Clinical trial protocols", "Research reports", "Package leaflets", "Surgical instrument instructions", "Test results", "Patient information", "Informed consent forms", "Medical records", "Health insurance documents", "Medical device manuals"]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["Why not use machine translation for medical texts?", ["Automatic engines can miss the precision that medical and pharmaceutical content needs.", "A specialist translator checks every term against the subject."]],
+      ["Who will translate my medical document?", ["A translator with a background in medicine or pharmacy, or more than 5 years of medical translation experience.", "They translate into their native language."]],
+      ["Does my translator need to be a medical professional?", ["Not necessarily. We match each project to a translator with the right specialist knowledge and linguistic skill.", "The result is a polished, accurate final text."]],
+      ["Which file formats can you handle?", ["We work with Word, Excel, PowerPoint, PDF and HTML files.", "Send your file and we confirm the best approach."]],
+      ["How do I get a quote?", ["Send the document, the languages you need and your deadline.", "We reply with a free, no-obligation quote."]]
+    ]
+  }
+}
