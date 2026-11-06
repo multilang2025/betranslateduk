@@ -1,14 +1,14 @@
 import { UI } from "@/lib/i18n";
 import { PHONE_NATIONAL, PHONE_HREF } from "@/lib/business";
 import PAGE from "@/data/translators-page.json";
-import ROSTER from "@/data/translators-roster.json";
+import TEAM from "@/data/team.json";
 import Breadcrumbs from "./Breadcrumbs";
 import StdHero, { KICKER } from "./StdHero";
 import TranslatorsHeroArt from "./TranslatorsHeroArt";
-import TranslatorsGrid from "./TranslatorsGrid";
 import CtaBand from "./CtaBand";
 import PageFx from "./PageFx";
 import PageSchema from "./PageSchema";
+import { imgUrl } from "@/lib/site";
 
 const ICONS = {
   pin: "M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
@@ -21,14 +21,14 @@ const Icon = ({ d }) => (
 
 // Rendered instead of the generic scraped layout for /translators/: custom hero, intro cards, filterable
 // roster, how a project is matched, interpreting band and FAQ. Copy lives in data/translators-page.json
-// (lifted from the live page); the roster in data/translators-roster.json.
-export default function TranslatorsPage({ page, title }) {
-  const intoCount = new Set(ROSTER.flatMap((p) => p.into || [])).size;
+// (lifted from the live page); the team in data/team.json.
+export default function TranslatorsPage({ page }) {
+  const title = PAGE.hero.title;
   return (
     <main className="tr-page" data-page="translators" data-slug="translators">
       <PageSchema schema={page.schema} />
       <PageFx />
-      <StdHero art={<TranslatorsHeroArt people={ROSTER} />}>
+      <StdHero art={<TranslatorsHeroArt people={TEAM} />}>
         <Breadcrumbs pathname="/translators/" current={title} />
         <span className="ip-kicker">{KICKER}</span>
         <h1>{title}</h1>
@@ -37,11 +37,7 @@ export default function TranslatorsPage({ page, title }) {
           <a className="bt-btn bt-btn--primary" href={UI.en.quoteHref}>{UI.en.ctaButton}</a>
           <a className="bt-btn bt-btn--ghost" href={PHONE_HREF}>{UI.en.ctaSecondary} on {PHONE_NATIONAL}</a>
         </div>
-        <ul className="tr-facts">
-          <li><strong>{ROSTER.length}</strong> translators</li>
-          <li><strong>{intoCount}</strong> target languages</li>
-          <li><strong>Since 2002</strong></li>
-        </ul>
+        <ul className="tr-facts">{PAGE.hero.facts.map((f) => <li key={f}>{f}</li>)}</ul>
       </StdHero>
 
       <section className="section tr-intro">
@@ -63,12 +59,21 @@ export default function TranslatorsPage({ page, title }) {
       </section>
 
       <section className="section section--tint tr-roster">
-        <div className="container container--wide">
+        <div className="container">
           <div className="section-head">
             <h2>{PAGE.roster.title}</h2>
             <p>{PAGE.roster.lead}</p>
           </div>
-          <TranslatorsGrid people={ROSTER} />
+          <ul className="tr-team">
+            {TEAM.map((m) => (
+              <li key={m.name} className="tr-team__card">
+                <img src={imgUrl(m.photo)} alt={m.name} width="480" height="600" loading="lazy" />
+                <strong>{m.name}</strong>
+                <span>{m.role}</span>
+                {m.languages?.length ? <em className="tr-team__langs">{m.languages.map((cc) => <img key={cc} src={`/flags/${cc}.svg`} alt="" width="22" height="16" loading="lazy" />)}</em> : null}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
