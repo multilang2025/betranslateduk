@@ -182,6 +182,33 @@ html[data-theme="dark"] .bt .sec__in ul.values li:nth-child(4) .value-ico, html:
 main .section > .container--narrow, main .sec > .container--narrow { max-width: var(--container); }
 .sec__in > p, .sec__in > ul, .sec__in > ol, main .section > .container > p, main .section > .container--narrow > p { max-width: 75ch; }
 
+/* In-article CTA card and sidebar quote card in the betranslated.es palette (pale teal card, navy text, teal ticks, white
+   contact chips, amber stars). On .es these live in ui-interp.css, a file the UK layout does not load, so the UK cards kept the
+   older dark navy look with orange glows. Dark theme rules are in dark.css. */
+/* Blog CTA card: light blue, navy text, orange quote button, white contact chips. */
+.bt .prose .post-cta { background: linear-gradient(135deg, #EAF4F5 0%, #DCEDEF 100%); color: var(--bt-text); border: 1px solid #CFE4E7; box-shadow: var(--shadow-sm); padding: 28px 30px; gap: 18px; }
+.bt .prose .post-cta::before { width: 300px; height: 300px; right: -110px; top: -140px; background: radial-gradient(circle, rgba(95,169,177,.28), transparent 65%); }
+.bt .prose .post-cta h3 { color: var(--bt-navy); font-size: 1.4rem; margin: 0 0 8px; }
+.bt .prose .post-cta p { color: var(--bt-text-mid); font-size: 1rem; }
+.bt .prose .post-cta strong { color: var(--bt-navy); }
+.bt .prose .post-cta .post-cta__note { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font: 600 13.5px var(--font-ui); color: var(--bt-accent-ink); }
+.bt .prose .post-cta .post-cta__note::before { content: ""; width: 18px; height: 18px; border-radius: 50%; background: var(--bt-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 12px no-repeat; flex-shrink: 0; }
+.bt .prose a.post-cta__contact { background: #fff; border: 1px solid #CFE4E7; color: var(--bt-navy); font-weight: 600; }
+.bt .prose a.post-cta__contact svg { color: var(--bt-accent-ink); }
+.bt .prose a.post-cta__contact:hover { background: #fff; border-color: var(--bt-accent); color: var(--bt-navy); box-shadow: var(--shadow-xs); }
+
+/* Blog sidebar quote card: light blue like the in-article CTA. */
+.bt .quote-card { background: linear-gradient(160deg, #EAF4F5 0%, #DCEDEF 100%); color: var(--bt-text-mid); border: 1px solid #CFE4E7; box-shadow: var(--shadow-sm); }
+.bt .quote-card::before { background: radial-gradient(circle, rgba(95,169,177,.28), transparent 65%); }
+.bt .quote-card__eyebrow { background: #fff; color: var(--bt-accent-ink); }
+.bt .quote-card h3 { color: var(--bt-navy); }
+.bt .quote-card__ticks li { color: var(--bt-text); }
+.bt .quote-card__ticks li::before { background-color: var(--bt-accent); }
+.bt a.quote-card__call { background: #fff; border-color: #CFE4E7; color: var(--bt-navy); font-weight: 600; }
+.bt a.quote-card__call:hover { background: #fff; border-color: var(--bt-accent); color: var(--bt-navy); }
+.bt .quote-card__proof { color: var(--bt-text-soft); }
+.bt .quote-card__proof span { color: #E3A008; }
+
 /* Desktop header finishes from betranslated.es (they live in ui-interp.css there, a file the UK layout does not load):
    link padding, growing underline, animated dropdown with an arrow and a hover arrow on each entry. */
 /* ---------- Header menu: growing underline, smoother dropdown ---------- */
