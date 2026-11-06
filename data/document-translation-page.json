@@ -1,0 +1,173 @@
+{
+  "hero": {
+    "facts": [
+      "PDF, Word, Excel and more",
+      "Native-speaking specialists",
+      "Reply within 8 working hours"
+    ]
+  },
+  "intro": {
+    "title": "Document translation built for business",
+    "paras": [
+      "BeTranslated focuses on B2B document translation. We work with small and medium-size businesses, large corporations and international organisations.",
+      "Our network of professional translators covers almost any business document, in any industry. Each project goes to the linguist whose specialist knowledge fits it best."
+    ],
+    "checks": [
+      "We work mainly for businesses and organisations, not individuals",
+      "Freelance professionals who translate only into their native language",
+      "A flexible, efficient service that adapts to your requirements"
+    ],
+    "image": {
+      "src": "/images/wp-content/uploads/2023/09/documents.jpg",
+      "alt": "Folders and binders of documents stacked on a shelf",
+      "width": 795,
+      "height": 531
+    }
+  },
+  "what": {
+    "title": "Documents we translate",
+    "lead": "From a single page to a full manual, we handle the paperwork behind your business.",
+    "items": [
+      {
+        "icon": "mail",
+        "title": "Everyday communication",
+        "text": "Internal and external memos, emails and letters."
+      },
+      {
+        "icon": "technical",
+        "title": "Plans and studies",
+        "text": "Business plans, marketing plans and feasibility studies."
+      },
+      {
+        "icon": "finance",
+        "title": "Finance and reporting",
+        "text": "Shareholder reports, loan applications, purchase orders and invoices."
+      },
+      {
+        "icon": "marketing",
+        "title": "Presentations",
+        "text": "Conference decks and investor presentations, formatting included."
+      },
+      {
+        "icon": "word",
+        "title": "White papers and summaries",
+        "text": "White papers and executive summaries that read as if written locally."
+      },
+      {
+        "icon": "documents",
+        "title": "CVs and HR files",
+        "text": "CVs and staff documents for international hiring."
+      }
+    ],
+    "formatsTitle": "File formats",
+    "formats": ["PDF", "Word", "Excel", "PowerPoint"],
+    "note": "Whatever the format, send it as it is. Tell us in the request form if you need the translation returned in a particular layout."
+  },
+  "why": {
+    "title": "Why choose our translation agency",
+    "items": [
+      {
+        "icon": "full",
+        "title": "Flexibility",
+        "text": "Freelancers in several time zones let us work around the clock. We keep to your deadline without lowering the quality."
+      },
+      {
+        "icon": "shield",
+        "title": "Professionalism",
+        "text": "Experienced translators with specialist knowledge, chosen through a rigorous selection process and supported by translation tools."
+      },
+      {
+        "icon": "mail",
+        "title": "Responsiveness",
+        "text": "You receive confirmation straight away and a personal reply within 8 working hours."
+      },
+      {
+        "icon": "finance",
+        "title": "References",
+        "text": "Years of financial, legal and business documents for companies large and small. Meet some of them on our <a href=\"/translation-agency/customers/\">customers page</a>."
+      }
+    ]
+  },
+  "sectors": {
+    "title": "Specialist knowledge for your sector",
+    "lead": "Documents differ by industry, so we match them to translators who know the field.",
+    "items": [
+      { "icon": "finance", "title": "Business and finance", "href": "/industry/business/", "text": "Tenders, contracts, reports and accounts." },
+      { "icon": "it", "title": "IT and telecoms", "href": "/industry/it-telecom/", "text": "User guides, data sheets and software documentation." },
+      { "icon": "technical", "title": "Industry and construction", "href": "/industry/technical/", "text": "Manuals, specifications and safety notes." },
+      { "icon": "marketing", "title": "Marketing and sales", "href": "/industry/marketing/", "text": "Presentations, catalogues and press releases." },
+      { "icon": "tourism", "title": "Travel and tourism", "href": "/industry/tourism/", "text": "Guides, brochures and visitor information." },
+      { "icon": "legal", "title": "Legal", "href": "/industry/legal/", "text": "Contracts, property and corporate documents." }
+    ]
+  },
+  "steps": {
+    "title": "What happens next",
+    "lead": "A simple path from request to invoice.",
+    "items": [
+      { "title": "Request a quote", "text": "Fill in the form below. A regional manager receives it." },
+      { "title": "We reply", "text": "A member of the team responds within 8 working hours." },
+      { "title": "We assess your project", "text": "We match it to the translator who best fits your needs." },
+      { "title": "Delivery", "text": "You receive the translated files by the agreed deadline." },
+      { "title": "Follow-up and invoicing", "text": "Once you are happy with the work, we send the invoice." }
+    ]
+  },
+  "quote": {
+    "title": "Send us your documents",
+    "lead": "Tell us what you need and attach your files. We reply with a free, no-obligation quote within 8 working hours.",
+    "checkTitle": "What to include in your request",
+    "checks": [
+      "What the translation is for and where it will be used.",
+      "The languages you need, from and into.",
+      "Every page of the document, or the approximate number of pages or words.",
+      "The date you need it by.",
+      "Any layout or file format you want the translation returned in."
+    ],
+    "note": "With these details we can reply with price and turnaround within a maximum of 8 working hours."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      [
+        "Do you translate documents for individuals?",
+        [
+          "We predominantly work for businesses and commercial organisations.",
+          "If you are unsure whether we can help, send us a message and we will tell you."
+        ]
+      ],
+      [
+        "Which file formats can you work with?",
+        [
+          "We handle all common formats, from PDF to Excel, as well as Word documents and presentations.",
+          "Send the file as it is and we confirm how we will return it."
+        ]
+      ],
+      [
+        "Who will translate my documents?",
+        [
+          "A freelance professional with expert knowledge of both languages and of your subject area.",
+          "Our translators only translate into their native language."
+        ]
+      ],
+      [
+        "Which languages do you translate into?",
+        [
+          "We regularly translate documents into global languages such as French, German, Russian and Portuguese.",
+          "Tell us your combination and we confirm availability."
+        ]
+      ],
+      [
+        "How quickly will I receive a quote?",
+        [
+          "You get confirmation of receipt straight away.",
+          "A more personal reply follows within 8 working hours."
+        ]
+      ],
+      [
+        "When does the translation start?",
+        [
+          "Once we agree the terms and you send back a signed order form, your translators begin immediately."
+        ]
+      ]
+    ]
+  }
+}
