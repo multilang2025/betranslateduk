@@ -4,7 +4,7 @@ import PAGE from "@/data/translators-page.json";
 import TEAM from "@/data/team.json";
 import Breadcrumbs from "./Breadcrumbs";
 import StdHero, { KICKER } from "./StdHero";
-import TranslatorsHeroArt from "./TranslatorsHeroArt";
+import VideoEmbed from "./VideoEmbed";
 import CtaBand from "./CtaBand";
 import PageFx from "./PageFx";
 import PageSchema from "./PageSchema";
@@ -19,8 +19,8 @@ const Icon = ({ d }) => (
   <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
 );
 
-// Rendered instead of the generic scraped layout for /translators/: custom hero, intro cards, filterable
-// roster, how a project is matched, interpreting band and FAQ. Copy lives in data/translators-page.json
+// Rendered instead of the generic scraped layout for /translators/: team-photo hero, our story, the team,
+// the company video, how we work, how a project is matched, interpreting band and FAQ. Copy lives in data/translators-page.json
 // (lifted from the live page); the team in data/team.json.
 export default function TranslatorsPage({ page }) {
   const title = PAGE.hero.title;
@@ -28,7 +28,7 @@ export default function TranslatorsPage({ page }) {
     <main className="tr-page" data-page="translators" data-slug="translators">
       <PageSchema schema={page.schema} />
       <PageFx />
-      <StdHero art={<TranslatorsHeroArt people={TEAM} />}>
+      <StdHero art={<div className="tr-hero-photo"><img src="/team/about-team.webp" alt="Three members of the BeTranslated team smiling around a meeting table in the office" width="1200" height="675" fetchPriority="high" /></div>}>
         <Breadcrumbs pathname="/translators/" current={title} />
         <span className="ip-kicker">{KICKER}</span>
         <h1>{title}</h1>
@@ -40,21 +40,19 @@ export default function TranslatorsPage({ page }) {
         <ul className="tr-facts">{PAGE.hero.facts.map((f) => <li key={f}>{f}</li>)}</ul>
       </StdHero>
 
-      <section className="section tr-intro">
+      <section className="section tr-story">
         <div className="container">
-          <div className="section-head">
-            <h2>{PAGE.intro.title}</h2>
-            <p>{PAGE.intro.lead}</p>
+          <div className="tr-story__grid">
+            <div className="tr-story__text">
+              <h2>{PAGE.story.title}</h2>
+              {PAGE.story.paras.map((s) => <p key={s}>{s}</p>)}
+            </div>
+            <ul className="tr-story__facts">
+              {PAGE.story.facts.map(([n, l]) => (
+                <li key={l}><strong>{n}</strong><span>{l}</span></li>
+              ))}
+            </ul>
           </div>
-          <ul className="tr-feats">
-            {PAGE.intro.cards.map((c) => (
-              <li key={c.title} className="tr-feat">
-                <span className="tr-feat__icon"><Icon d={ICONS[c.icon]} /></span>
-                <h3>{c.title}</h3>
-                <p dangerouslySetInnerHTML={{ __html: c.html }} />
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -68,9 +66,40 @@ export default function TranslatorsPage({ page }) {
             {TEAM.map((m) => (
               <li key={m.name} className="tr-team__card">
                 <img src={imgUrl(m.photo)} alt={m.name} width="640" height="800" loading="lazy" />
-                <strong>{m.name}</strong>
-                <span>{m.role}</span>
+                <div className="tr-team__body">
+                  <strong>{m.name}</strong>
+                  <span>{m.role}</span>
+                  <p>{m.bio}</p>
+                </div>
                 {m.languages?.length ? <em className="tr-team__langs">{m.languages.map((cc) => <img key={cc} src={`/flags/${cc}.svg`} alt="" width="22" height="16" loading="lazy" />)}</em> : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section tr-video">
+        <div className="container">
+          <div className="section-head">
+            <h2>{PAGE.video.title}</h2>
+            <p>{PAGE.video.lead}</p>
+          </div>
+          <VideoEmbed id={PAGE.video.id} title={PAGE.video.videoTitle} poster={PAGE.video.poster} />
+        </div>
+      </section>
+
+      <section className="section section--tint tr-intro">
+        <div className="container">
+          <div className="section-head">
+            <h2>{PAGE.intro.title}</h2>
+            <p>{PAGE.intro.lead}</p>
+          </div>
+          <ul className="tr-feats">
+            {PAGE.intro.cards.map((c) => (
+              <li key={c.title} className="tr-feat">
+                <span className="tr-feat__icon"><Icon d={ICONS[c.icon]} /></span>
+                <h3>{c.title}</h3>
+                <p dangerouslySetInnerHTML={{ __html: c.html }} />
               </li>
             ))}
           </ul>

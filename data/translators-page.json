@@ -1,9 +1,9 @@
 {
   "hero": {
-    "lead": "Meet the team who match every project with a native specialist translator or interpreter, from your first quote to final delivery.",
+    "lead": "Founded in 2002, BeTranslated is a translation agency built by translators. Meet the people who match every project with a native specialist, from first quote to final delivery.",
     "facts": [
       "Since 2002",
-      "Native specialist translators",
+      "50+ language combinations",
       "Reply within 8 working hours"
     ],
     "title": "Meet the team behind our translators"
@@ -31,7 +31,7 @@
   },
   "roster": {
     "title": "Meet the BeTranslated team",
-    "lead": "Your project manager looks after your order from request to delivery, and our network of native specialist translators does the translating."
+    "lead": "The people who look after your project from request to delivery, backed by our network of native specialist translators."
   },
   "steps": {
     "title": "What happens next",
@@ -113,5 +113,38 @@
         ]
       ]
     ]
+  },
+  "story": {
+    "title": "Our story",
+    "paras": [
+      "BeTranslated was born in 2002 in Liège, Belgium. More than two decades later, we translate for businesses and individuals across more than 50 language combinations, with offices in Belgium, Spain, France, Germany and the US, and project teams working remotely across the UK.",
+      "We are a translation agency built by translators. Every one of our project managers is, or has been, a translator, so they understand the challenges behind each brief.",
+      "Each translator works only into their native language and specialises in a sector such as legal, financial, technical, medical or marketing. Every project goes through the same quality chain: analysis of the brief, assignment to a native specialist, translation with memories and glossaries, and review by a second independent linguist."
+    ],
+    "facts": [
+      [
+        "2002",
+        "Founded in Liège, Belgium"
+      ],
+      [
+        "50+",
+        "Language combinations"
+      ],
+      [
+        "20+",
+        "Areas of specialisation"
+      ],
+      [
+        "8 hrs",
+        "Maximum reply time, working hours"
+      ]
+    ]
+  },
+  "video": {
+    "title": "Meet BeTranslated on video",
+    "lead": "A short introduction to BeTranslated, your professional translation agency.",
+    "id": "O67In8Hkyxc",
+    "videoTitle": "Your Professional Translation Agency - BeTranslated",
+    "poster": "/video/company-poster.jpg"
   }
 }
