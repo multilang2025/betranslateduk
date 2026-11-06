@@ -47,11 +47,9 @@ export default function TranslatorsPage({ page }) {
               <h2>{PAGE.story.title}</h2>
               {PAGE.story.paras.map((s) => <p key={s}>{s}</p>)}
             </div>
-            <ul className="tr-story__facts">
-              {PAGE.story.facts.map(([n, l]) => (
-                <li key={l}><strong>{n}</strong><span>{l}</span></li>
-              ))}
-            </ul>
+            <figure className="tr-story__photo">
+              <img src={PAGE.story.image.src} alt={PAGE.story.image.alt} width={PAGE.story.image.width} height={PAGE.story.image.height} loading="lazy" decoding="async" />
+            </figure>
           </div>
         </div>
       </section>

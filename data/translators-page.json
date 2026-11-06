@@ -4,6 +4,7 @@
     "facts": [
       "Since 2002",
       "50+ language combinations",
+      "20+ areas of specialisation",
       "Reply within 8 working hours"
     ],
     "title": "Meet the team behind our translators"
@@ -121,24 +122,12 @@
       "We are a translation agency built by translators. Every one of our project managers is, or has been, a translator, so they understand the challenges behind each brief.",
       "Each translator works only into their native language and specialises in a sector such as legal, financial, technical, medical or marketing. Every project goes through the same quality chain: analysis of the brief, assignment to a native specialist, translation with memories and glossaries, and review by a second independent linguist."
     ],
-    "facts": [
-      [
-        "2002",
-        "Founded in Liège, Belgium"
-      ],
-      [
-        "50+",
-        "Language combinations"
-      ],
-      [
-        "20+",
-        "Areas of specialisation"
-      ],
-      [
-        "8 hrs",
-        "Maximum reply time, working hours"
-      ]
-    ]
+    "image": {
+      "src": "/team/team-group.webp",
+      "width": 1400,
+      "height": 933,
+      "alt": "The BeTranslated team of six smiling together in the studio"
+    }
   },
   "video": {
     "title": "Meet BeTranslated on video",
