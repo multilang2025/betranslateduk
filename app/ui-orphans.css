@@ -193,7 +193,7 @@ main .section > .container--narrow, main .sec > .container--narrow { max-width: 
 .bt .prose .post-cta strong { color: var(--bt-navy); }
 .bt .prose .post-cta .post-cta__note { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; font: 600 13.5px var(--font-ui); color: var(--bt-accent-ink); }
 .bt .prose .post-cta .post-cta__note::before { content: ""; width: 18px; height: 18px; border-radius: 50%; background: var(--bt-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 12px no-repeat; flex-shrink: 0; }
-.bt .prose a.post-cta__contact { background: #fff; border: 1px solid #CFE4E7; color: var(--bt-navy); font-weight: 600; }
+.bt .prose a.post-cta__contact { border-radius: 999px; padding: 9px 16px; background: #fff; border: 1px solid #CFE4E7; color: var(--bt-navy); font-weight: 600; }
 .bt .prose a.post-cta__contact svg { color: var(--bt-accent-ink); }
 .bt .prose a.post-cta__contact:hover { background: #fff; border-color: var(--bt-accent); color: var(--bt-navy); box-shadow: var(--shadow-xs); }
 
@@ -245,3 +245,16 @@ main .section > .container--narrow, main .sec > .container--narrow { max-width: 
   .bt .bt-burger { width: 40px; height: 40px; }
 }
 @media (max-width: 350px) { .bt .bt-header__logo img { height: 24px !important; } }
+
+/* The brand colour system of betranslated.es: links, underlines, bullets and highlights use the teal through the --bt-orange*
+   variables, and only calls to action keep the real orange. On .es this lives in ui-interp.css, a file the UK layout does not
+   load, so UK links and accents were orange (dark.css already carried the dark half of the remap). Add new CTA components to the
+   restore list below. */
+.bt { --bt-orange: #5FA9B1; --bt-orange-600: #5FA9B1; --bt-orange-50: #EFF7F8; }
+.bt .bt-btn, .bt .bt-header__cta, .bt .cta-band, .bt .page-hero__cta, .bt .hero__cta,
+.bt .ip-persona__link, .bt .feature__more > summary, .bt .sec__more > summary, .bt .timeline__more > summary,
+.bt .langs-more > summary, .bt .card__more, .bt .fmt-strip__all, .bt .ip-chips__more, .bt .finder__cta,
+.bt .reviews__more, .bt .quote-card__btn, .bt .post-cta__actions, .bt .formats__card em, .bt .ip-zone--remote em,
+.bt .mini .cta-row, .bt .aside-card--cta, .bt .bt-drawer .bt-btn {
+  --bt-orange: #F67618; --bt-orange-600: #E0660E; --bt-orange-50: #FEF3E9;
+}
