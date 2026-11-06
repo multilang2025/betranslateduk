@@ -67,7 +67,7 @@ export default function TranslatorsPage({ page }) {
           <ul className="tr-team">
             {TEAM.map((m) => (
               <li key={m.name} className="tr-team__card">
-                <img src={imgUrl(m.photo)} alt={m.name} width="480" height="600" loading="lazy" />
+                <img src={imgUrl(m.photo)} alt={m.name} width="640" height="800" loading="lazy" />
                 <strong>{m.name}</strong>
                 <span>{m.role}</span>
                 {m.languages?.length ? <em className="tr-team__langs">{m.languages.map((cc) => <img key={cc} src={`/flags/${cc}.svg`} alt="" width="22" height="16" loading="lazy" />)}</em> : null}
