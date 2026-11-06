@@ -177,14 +177,14 @@
   ],
   "british-characters": [
     {
-      "file": "/images/blog/commons/british-characters-1.jpg",
-      "width": 1200,
-      "height": 900,
+      "file": "/images/blog/commons/british-characters-rowan-atkinson.jpg",
+      "width": 1280,
+      "height": 854,
       "slot": "intro",
-      "alt": "A 1950s British television set in a brown Bakelite case on a workshop shelf.",
-      "title": "File:Bush TV62 television set, UK, 1956.jpg",
-      "pageUrl": "https://commons.wikimedia.org/wiki/File:Bush_TV62_television_set,_UK,_1956.jpg",
-      "author": "electromechanic812291",
+      "alt": "Rowan Atkinson as Mr Bean, waving from an armchair strapped to the roof of a yellow Mini, a famous scene from the series.",
+      "title": "File:Rowan Atkinson on a Mini at Goodwood Circuit in 2009.jpg",
+      "pageUrl": "https://commons.wikimedia.org/wiki/File:Rowan_Atkinson_on_a_Mini_at_Goodwood_Circuit_in_2009.jpg",
+      "author": "Nathan Wong",
       "licence": "CC BY 2.0",
       "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
     }
