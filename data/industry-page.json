@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "facts": ["7 specialist sectors", "Native subject-matter translators", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Trust our language experts for specialised translation",
+    "paras": [
+      "Native speakers who master the source language are the starting point at BeTranslated. Specialised texts need more: translators who are also experts in a sector, from business and finance to technical fields.",
+      "Working alone or in multidisciplinary teams, they bring real industry know-how to every document."
+    ],
+    "checks": [
+      "A native speaker of the target language",
+      "Credentials in at least one other sector",
+      "A network of qualified, accredited specialists",
+      "One translator or a team, depending on your <a href=\"/translation-agency/turnaround/\">timeline</a>"
+    ],
+    "venn": ["Native speaker", "Sector expert", "Specialist translator"]
+  },
+  "cards": {
+    "title": "Translation services for every sector",
+    "lead": "Pick your field to see how we handle it.",
+    "items": [
+      { "icon": "finance", "title": "Business and finance", "href": "/industry/business/", "text": "Financial and business translation for international customers, by specialised freelance translators.", "tags": ["Tenders", "Contracts", "Annual reports", "Due diligence"] },
+      { "icon": "it", "title": "IT and telecoms", "href": "/industry/it-telecom/", "image": "/images/wp-content/uploads/2023/09/High-Tech-IT-Translation-Services.jpeg", "alt": "A worker in a hard hat using a tablet with a digital overlay in a warehouse", "text": "Professional IT and telecoms translation for companies in the UK and across Europe.", "tags": ["Software strings", "Interfaces", "User guides", "Apps"] },
+      { "icon": "technical", "title": "Industry and construction", "href": "/industry/technical/", "image": "/images/wp-content/uploads/2023/09/Industry-Construction-Translation-Services.jpeg", "alt": "An engineer in a hard hat operating machinery in a factory", "text": "Manuals, specifications and datasheets for engineering, construction and industry.", "tags": ["Engineering", "Data sheets", "Safety notes", "Tenders"] },
+      { "icon": "marketing", "title": "Marketing and sales", "href": "/industry/marketing/", "image": "/images/wp-content/uploads/2023/09/Marketing-Sales-Translation-Services.jpeg", "alt": "A laptop showing a marketing chart on a blue desk", "text": "Campaigns, websites and ad copy by translators who understand brand voice and UK audiences.", "tags": ["Press releases", "Catalogues", "Presentations", "Surveys"] },
+      { "icon": "tourism", "title": "Travel and tourism", "href": "/industry/tourism/", "image": "/images/wp-content/uploads/2023/09/Tourism-Travel-Translation-Services.jpeg", "alt": "A traveller holding a globe with travel doodles on a blackboard behind", "text": "Readable, accurate travel content, adapted to the language and style of each target market.", "tags": ["Websites", "Brochures and guides", "Menus", "Museum notices"] },
+      { "icon": "legal", "title": "Legal", "href": "/industry/legal/", "image": "/images/wp-content/uploads/2023/11/Legal-Translation-Services.jpg", "alt": "A gavel and scales of justice on a desk beside a law book", "text": "Accurate legal translation with glossaries, translation memories and guaranteed confidentiality.", "tags": ["Contracts", "Official documents", "Corporate legal"] },
+      { "icon": "medical", "title": "Medical", "href": "/industry/medical/", "image": "/images/wp-content/uploads/2024/01/Medical-Translation-Services.jpeg", "alt": "A doctor writing on a medical form next to a tablet", "text": "Medical translation for UK healthcare providers, pharmaceutical companies and clinical researchers.", "tags": ["Healthcare", "Pharma", "Clinical research"] },
+      { "icon": "documents", "title": "Professional documents", "href": "/document-translation-services/", "image": "/images/wp-content/uploads/2023/09/documents.jpg", "alt": "Folders and binders of documents stacked on a shelf", "text": "From a single page to a full PDF manual or conference presentation, delivered promptly and on budget.", "tags": ["Manuals", "Presentations", "Reports"] },
+      { "icon": "website", "title": "Website translation", "href": "/translation-services/website-translation/", "image": "/images/wp-content/uploads/2023/09/website-translation-services.jpg", "alt": "A laptop showing a website wireframe next to a notebook and coffee", "text": "Extend your business into new markets with web content that resonates with native speakers.", "tags": ["Web content", "Blog articles"] }
+    ]
+  }
+}
