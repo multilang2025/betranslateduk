@@ -2,37 +2,31 @@
   {
     "name": "Michael Bastin",
     "role": "Founder, CEO",
-    "photo": "/team/michael.webp",
-    "bio": "Founded BeTranslated in Liège in 2002 and leads the company today, setting the direction for how we serve our clients and work with our translators."
+    "photo": "/team/michael.webp"
   },
   {
     "name": "Annalisa",
     "role": "Admin and project manager",
-    "photo": "/team/annalisa.webp",
-    "bio": "Keeps the business running smoothly behind the scenes, from orders and invoicing to managing projects from request to delivery."
+    "photo": "/team/annalisa.webp"
   },
   {
     "name": "Elena",
     "role": "Project manager",
-    "photo": "/team/elena.webp",
-    "bio": "Looks after projects from quote to delivery, briefing the translators and keeping you updated at every stage."
+    "photo": "/team/elena.webp"
   },
   {
     "name": "Caridad",
     "role": "HR and certified translation",
-    "photo": "/team/caridad.webp",
-    "bio": "Looks after recruitment and onboarding for our translators, and coordinates certified translations of official documents."
+    "photo": "/team/caridad.webp"
   },
   {
-    "name": "Suzy",
+    "name": "Suzy Torosyan",
     "role": "Project director",
-    "photo": "/team/suzy-torosyan.webp",
-    "bio": "Leads project management, matching each brief with the right native specialist and overseeing delivery."
+    "photo": "/team/suzy-torosyan.webp"
   },
   {
     "name": "Maral",
     "role": "Project director",
-    "photo": "/team/maral.webp",
-    "bio": "Your point of contact for English-speaking markets, from scoping the project and preparing the quote to seeing it through."
+    "photo": "/team/maral.webp"
   }
 ]

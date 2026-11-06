@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "lead": "Founded in 2002, BeTranslated is a translation agency built by translators. Meet the people who match every project with a native specialist, from first quote to final delivery.",
+    "facts": [
+      "Since 2002",
+      "50+ language combinations",
+      "20+ areas of specialisation",
+      "Reply within 8 working hours"
+    ],
+    "title": "About BeTranslated"
+  },
+  "roster": {
+    "title": "Meet the BeTranslated team",
+    "lead": "The people who look after your project from request to delivery, backed by our network of native specialist translators."
+  },
+  "story": {
+    "title": "Our story",
+    "paras": [
+      "BeTranslated was born in 2002 in Liège, Belgium. More than two decades later, we translate for businesses and individuals across more than 50 language combinations, with offices in Belgium, Spain, France, Germany and the US, and project teams working remotely across the UK.",
+      "We are a translation agency built by translators. Every one of our project managers is, or has been, a translator, so they understand the challenges behind each brief.",
+      "Each translator works only into their native language and specialises in a sector such as legal, financial, technical, medical or marketing. Every project goes through the same quality chain: analysis of the brief, assignment to a native specialist, translation with memories and glossaries, and review by a second independent linguist."
+    ],
+    "image": {
+      "src": "/team/team-group.webp",
+      "width": 1400,
+      "height": 933,
+      "alt": "The BeTranslated team of six smiling together in the studio"
+    }
+  },
+  "video": {
+    "title": "Meet BeTranslated on video",
+    "lead": "A short introduction to BeTranslated, your professional translation agency.",
+    "id": "O67In8Hkyxc",
+    "videoTitle": "Your Professional Translation Agency - BeTranslated",
+    "poster": "/video/company-poster.jpg"
+  },
+  "reasons": {
+    "title": "Why confide in the BeTranslated team",
+    "lead": "Short and sweet: here is what you can count on when you work with us.",
+    "items": [
+      "Native translators, working only into their mother tongue",
+      "Specialists in legal, financial, technical, medical and marketing content",
+      "Project managers who are, or were, translators themselves",
+      "A second independent linguist reviews your text",
+      "One point of contact from quote to delivery",
+      "A reply within 8 working hours",
+      "A free, no-obligation quote before you commit"
+    ]
+  },
+  "work": {
+    "title": "How BeTranslated works, step by step",
+    "lead": "Every project follows the same clear path, from your first message to the final invoice.",
+    "steps": [
+      [
+        "Request a quote",
+        "Send us your files and tell us the languages, purpose and deadline."
+      ],
+      [
+        "Receive your quote",
+        "We review everything and reply within 8 working hours with a clear, free quote."
+      ],
+      [
+        "We match your project",
+        "We analyse the brief and assign the native specialist who fits your subject, language pair and deadline."
+      ],
+      [
+        "Translation",
+        "Your translator works with memories and glossaries so terminology stays consistent."
+      ],
+      [
+        "Independent review",
+        "A second linguist reviews the text before it reaches you."
+      ],
+      [
+        "Delivery and invoice",
+        "You receive the files by the agreed date, and we invoice once you are satisfied."
+      ]
+    ]
+  },
+  "clients": {
+    "title": "Trusted by big names and organisations",
+    "lead": "We have translated for global brands, international organisations and charities.",
+    "names": [
+      "Save the Children",
+      "UNESCO",
+      "Kaspersky",
+      "Brandwatch",
+      "BIC",
+      "Vinci",
+      "Arrow",
+      "Barbados",
+      "Computer Center"
+    ]
+  },
+  "explore": {
+    "title": "More about BeTranslated",
+    "lead": "Explore our rates, turnaround times, customers and offices."
+  }
+}
