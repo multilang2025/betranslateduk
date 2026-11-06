@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "facts": ["Zoom, Teams and Google Meet", "Certified interpreters", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Professional interpreting, wherever your meeting happens",
+    "paras": [
+      "BeTranslated provides interpreters for virtual meetings on Zoom, Microsoft Teams and Google Meet. Your audience hears you in their own language, in real time.",
+      "Our global network includes specialists in rare languages who may not be available locally."
+    ],
+    "checks": [
+      "No travel, accommodation or venue costs",
+      "Interpreters who specialise in your industry",
+      "Clear, real-time delivery on the platform you already use"
+    ],
+    "image": {
+      "src": "/images/wp-content/uploads/2023/10/BeTranslated.jpg",
+      "alt": "A remote interpreter working with a headset in front of a laptop",
+      "width": 904,
+      "height": 452
+    }
+  },
+  "options": {
+    "title": "Choose the right format",
+    "lead": "Three ways to bring an interpreter into your conversation.",
+    "items": [
+      { "icon": "mail", "title": "Telephone interpreting", "text": "Quick calls where you need a language link straight away." },
+      { "icon": "website", "title": "Video interpreting", "text": "Meetings with a live interpreter on screen, consecutive or simultaneous." },
+      { "icon": "share", "title": "Remote simultaneous interpreting", "text": "RSI for conferences, with separate audio channels for each language.", "tag": "Conferences" }
+    ]
+  },
+  "why": {
+    "title": "Why choose remote interpreting",
+    "items": [
+      { "icon": "finance", "title": "Cost savings", "text": "Cut travel, accommodation and venue rental for international meetings." },
+      { "icon": "full", "title": "Accessibility", "text": "Participants join from anywhere without being in the room." },
+      { "icon": "partial", "title": "Flexibility", "text": "Quick set-up and easy scheduling across time zones." },
+      { "icon": "shield", "title": "Lower footprint", "text": "Less travel means lower carbon emissions for your organisation." }
+    ]
+  },
+  "uses": {
+    "title": "Where remote interpreting works",
+    "lead": "From boardrooms to courtrooms, it keeps language accessible.",
+    "items": [
+      { "icon": "marketing", "title": "Business meetings and conferences", "text": "Virtual team meetings, negotiations and global events." },
+      { "icon": "medical", "title": "Healthcare", "text": "Accurate exchanges between clinicians and patients, including sign language interpreters for deaf and hard-of-hearing patients." },
+      { "icon": "legal", "title": "Legal proceedings", "text": "Virtual hearings, depositions and consultations." },
+      { "icon": "documents", "title": "Education and training", "text": "Webinars, online courses and training in several languages." },
+      { "icon": "it", "title": "Customer support", "text": "Multilingual help by video or phone." },
+      { "icon": "technical", "title": "Government services", "text": "Better access to key services for diverse communities." }
+    ]
+  },
+  "steps": {
+    "title": "How our remote interpreting works",
+    "lead": "From first conversation to a clear, shared meeting.",
+    "items": [
+      { "title": "Consultation", "text": "We learn your languages, platform and goals, then pick the right solution." },
+      { "title": "Speak", "text": "You talk naturally in your own language." },
+      { "title": "Interpret", "text": "Our interpreters keep tone, intent and meaning intact." },
+      { "title": "Transmit", "text": "Your message travels in real time by video, phone or a hybrid set-up." },
+      { "title": "Hear", "text": "Your audience receives it as if spoken directly to them." }
+    ]
+  },
+  "quote": {
+    "title": "Request an interpreter",
+    "lead": "Tell us about your event and we reply with a free, no-obligation quote.",
+    "checkTitle": "What to include in your request",
+    "checks": [
+      "The languages you need interpreted.",
+      "Date, start and finish times, and your time zone.",
+      "The platform you will use, such as Zoom, Teams or Google Meet.",
+      "The type of interpreting: consecutive, simultaneous or telephone.",
+      "The number of attendees and the subject of the meeting."
+    ],
+    "note": "With these details we can reply with availability and a quote as quickly as possible."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["Which platforms do you work with?", ["We interpret on Zoom, Microsoft Teams and Google Meet.", "Tell us your platform and we confirm the set-up."]],
+      ["What is remote simultaneous interpreting?", ["RSI delivers each language on its own audio channel, so participants listen in real time.", "It suits conferences and larger multilingual meetings."]],
+      ["Can you interpret rare languages?", ["Our global network gives access to specialists who may not be available locally.", "Ask us about your combination."]],
+      ["Do you provide sign language interpreters?", ["Yes, for healthcare and other settings where deaf and hard-of-hearing participants need access.", "Tell us the requirements and we confirm availability."]],
+      ["Can I combine remote and on-site attendees?", ["Yes. Hybrid meetings blend on-site and remote participation.", "We advise on the best set-up for your event."]],
+      ["How do I get a quote?", ["Complete the form on this page with your languages, date and platform.", "We reply with a free, no-obligation quote."]]
+    ]
+  }
+}
