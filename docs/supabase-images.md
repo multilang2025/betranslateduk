@@ -6,7 +6,7 @@
 
 ## What is in the bucket
 
-Everything that was in `public/images/` (the old WordPress uploads, blog photos, the About page photo) and `public/img/` (the page illustrations), under the same paths:
+The files are no longer in git (removed on 6 November 2026, after the bucket was checked: 658 objects, the same count and, apart from line endings in 48 SVG files, the same bytes). Everything that was in `public/images/` (the old WordPress uploads, blog photos, the About page photo) and `public/img/` (the page illustrations), under the same paths:
 
 | Site path | Bucket object |
 |-----------|---------------|
@@ -19,12 +19,20 @@ Not in the bucket: the brand fonts, logos, icons, flags, service images and the 
 
 ## Wiring
 
-- `lib/site.js`: `IMAGES_BASE`, `imgUrl()`, `unImg()` and `imgHtml()`. `NEXT_PUBLIC_IMAGES_URL` overrides the base; an empty value serves `/images` and `/img` from `public/` again.
+- `lib/site.js`: `IMAGES_BASE`, `imgUrl()`, `unImg()` and `imgHtml()`. `NEXT_PUBLIC_IMAGES_URL` overrides the base; an empty value serves `/images` and `/img` from a local `public/` copy (the folders are empty in git now).
 - `lib/content.js` rewrites `/images/...` and `/img/...` in every page and post body, and in `og.image` and `images[]`, when it reads the content (`imgHtml`, `imgUrl`).
 - Components that name an image path themselves (`Team`, `TranslatorsGrid`, `ServicesShowcase`, `HomePage`, `ScrapedPage` hero) and `lib/blogImages.js` call `imgUrl()`.
 - `lib/sanitize.js` looks image sizes up in `data/image-dims.json` with `unImg()`, because that file is keyed by the `/images/...` path.
 - `app/og/[...path]/route.js` fetches the card photo from the bucket (or reads `public/` when the base is empty). If the fetch fails the card falls back to the language-pair motif.
 - `next.config.mjs` lets `next/image` load only `betranslated-uk-images/**` and `btvibe-images/**` from the Supabase host.
+
+## Adding or replacing an image
+
+1. Put the file under `public/images/...` or `public/img/...` (both folders are git-ignored: they are only a staging area).
+2. Upload it: `node tools/upload-images.mjs --dir public/images/blog/commons` (or any folder), or add it in the Supabase dashboard under the same path.
+3. Refer to it by its `/images/...` path in content or data files. Use a new file name when you replace a picture: objects are cached for a year.
+
+With the staging folders empty, `NEXT_PUBLIC_IMAGES_URL=` (empty) no longer shows images, because nothing is served from `public/` any more.
 
 ## Uploading
 

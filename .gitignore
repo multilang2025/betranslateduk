@@ -1,3 +1,8 @@
 node_modules/
 .next/
 *.log
+
+# Site images live in the Supabase bucket betranslated-uk-images (docs/supabase-images.md). These two folders are
+# only a staging area for tools/upload-images.mjs: do not commit them.
+/public/images/
+/public/img/
