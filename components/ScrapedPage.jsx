@@ -11,6 +11,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import TranslatorsPage from "./TranslatorsPage";
 import AboutPage from "./AboutPage";
 import IndustryPage from "./IndustryPage";
+import WebsiteTranslationPage from "./WebsiteTranslationPage";
 import CtaBand from "./CtaBand";
 import ClientsBand from "./ClientsBand";
 import ShareBar from "./ShareBar";
@@ -320,6 +321,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   if (leaves.length) pageBody = mergeLeaves(pageBody, leaves);
 
   const children = isHub ? listChildren(slug) : [];
+  if (key === "translation-services/website-translation") return <WebsiteTranslationPage page={page} title={title} />;
   if (key === "industry") return <IndustryPage page={page} title={title} />;
   if (key === "translation-agency") return <AboutPage page={page} children={children} />;
   // The services hub leads with certified translation (no dedicated page yet: links to the certified will service).

@@ -19,6 +19,7 @@ import "./blog-graphics.css";
 import "./translators-page.css";
 import "./about-page.css";
 import "./industry-page.css";
+import "./website-translation-page.css";
 import "./services-showcase.css";
 import "./sector-cards.css";
 // Dark theme (prefers-color-scheme): last, so its overrides win over every file above.
