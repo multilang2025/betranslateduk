@@ -9,6 +9,7 @@ const SPOTS = [
   ["Elena", 352, 90, 44, "pair-art__chip--b"],
   ["Caridad", 84, 226, 38, "pair-art__chip--b"],
   ["Suzy Torosyan", 364, 222, 40, "pair-art__chip--a"],
+  ["Maral", 222, 266, 34, ""],
 ];
 
 export default function TranslatorsHeroArt({ people }) {
