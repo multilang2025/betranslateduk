@@ -59,7 +59,6 @@ export default function TranslatorsPage({ page, title }) {
               </li>
             ))}
           </ul>
-          <p className="tr-intro__video"><a className="bt-video" href={PAGE.intro.videoHref} target="_blank" rel="noopener noreferrer">Watch our video</a></p>
         </div>
       </section>
 

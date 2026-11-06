@@ -18,8 +18,6 @@
 .tr-feat h3 { margin: 6px 0 0; font: 700 1.2rem/1.25 var(--font-display); color: var(--bt-navy); }
 .tr-feat p { margin: 0; font-size: 1rem; line-height: 1.6; color: var(--bt-text-mid); }
 .tr-feat p a { color: var(--bt-accent-ink); text-decoration: underline; text-underline-offset: 3px; }
-.tr-intro__video { display: flex; justify-content: center; margin: 26px 0 0; }
-.tr-intro__video .bt-video { margin: 0; }
 
 /* Roster */
 .tr-roster .container--wide { max-width: 1240px; }
