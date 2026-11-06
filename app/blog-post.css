@@ -44,3 +44,23 @@ html:not([data-theme="light"]) .blog-post .prose p:has(> strong:only-child):has(
 .post-nav__link strong { font: 700 1rem/1.35 var(--font-display); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 @media (max-width: 600px) { .post-nav { grid-template-columns: 1fr; } .post-nav__link--next { text-align: left; align-items: flex-start; } }
 .bt .post-nav__link strong { display: block; -webkit-line-clamp: unset; overflow: visible; }
+
+/* In-article contents list: the rail, slim scrollbar and active marker from betranslated.es. These rules live in
+   ui-interp.css there, a file the UK layout does not load, so the list scrolled sideways (a horizontal scrollbar). */
+/* Blog TOC: a rail with a progress line instead of a boxed scroller. No
+   horizontal scrollbar, slim vertical one, fades at the edges, active item
+   marked on the rail. */
+.bt .post-toc { padding: 18px 18px 14px; }
+.bt .post-toc ol { position: relative; gap: 0; max-height: 38vh; overflow-x: hidden; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(95,169,177,.45) transparent; padding: 4px 6px 4px 0; margin-left: 2px; border-left: 2px solid var(--bt-line);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 18px), transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 18px), transparent 100%); }
+.bt .post-toc ol::-webkit-scrollbar { width: 4px; }
+.bt .post-toc ol::-webkit-scrollbar-thumb { background: rgba(95,169,177,.45); border-radius: 4px; }
+.bt .post-toc li { position: relative; }
+.bt .post-toc a { position: relative; grid-template-columns: 22px 1fr; margin: 0; padding: 7px 8px 7px 12px; border-radius: 0 10px 10px 0; font-size: 13.5px; color: var(--bt-text-mid); overflow-wrap: anywhere; }
+.bt .post-toc a::after { content: ""; position: absolute; left: -2px; top: 6px; bottom: 6px; width: 2px; border-radius: 2px; background: transparent; transition: background .2s ease; }
+.bt .post-toc a::before { font-size: 11.5px; }
+.bt .post-toc a:hover { background: var(--bt-accent-50); color: var(--bt-navy); }
+.bt .post-toc a.is-active { background: var(--bt-accent-50); color: var(--bt-navy); font-weight: 600; }
+.bt .post-toc a.is-active::after { background: var(--bt-accent); }
+.bt .post-toc a.is-active::before { color: var(--bt-accent-ink); }
+.bt .post-toc__title { color: var(--bt-accent-ink); }
