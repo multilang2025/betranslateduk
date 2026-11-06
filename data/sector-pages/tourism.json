@@ -1,0 +1,47 @@
+{
+  "icon": "tourism",
+  "hero": {
+    "facts": ["Native-language tourism translators", "Readable, accurate, market-adapted", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Tourism translation that is readable, accurate and effective",
+    "paras": [
+      "A tourism translation needs to be readable, accurate and effective. We adapt style and language to your target market, to help you attract new clients.",
+      "When people travel overseas, they want tourist information in their own language, whether they are booking a city break or a surf trip with <a href=\"https://matosurf.com/en/\">Matosurf</a>. Our translation services let you cater for visitors from all around the globe."
+    ],
+    "checks": [
+      "Specialist translators who respect the terminology and register of the original",
+      "Every translation produced by a translator working into their native language",
+      "Style adapted to your target market"
+    ]
+  },
+  "services": {
+    "title": "Tourism content we translate",
+    "lead": "From a travel agency website to a museum sign, we match each file to the right specialist.",
+    "items": [
+      { "icon": "website", "title": "Travel websites", "text": "Websites for travel agencies and travel agents." },
+      { "icon": "tourism", "title": "Destination information", "text": "Information on tourist destinations and services available to tourists." },
+      { "icon": "documents", "title": "Brochures and guides", "text": "Travel brochures, catalogues and travel guides." },
+      { "icon": "word", "title": "Menus", "text": "Menus for gourmet restaurants and guest house meals." },
+      { "icon": "image", "title": "Museum and event displays", "text": "Exhibition displays, notices and signs for museums and cultural events." },
+      { "icon": "tag", "title": "Accommodation content", "text": "Information on holiday homes, guest houses, campsites and hotels." }
+    ]
+  },
+  "why": {
+    "title": "Why translate your tourism content",
+    "items": [
+      { "icon": "full", "title": "Welcome every visitor", "text": "Visitors from around the globe find the information they need in their own language." },
+      { "icon": "marketing", "title": "Attract new clients", "text": "Style and language adapted to your target market." },
+      { "icon": "shield", "title": "Clear message", "text": "Native-language translators convey your message clearly." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["What tourism content can you translate?", ["Websites, brochures, guides, menus, museum displays and accommodation information.", "If you do not see your content type, ask us."]],
+      ["Who will translate my tourism content?", ["A specialist translator working into their native language.", "This is a requirement for every project at BeTranslated."]],
+      ["Can the translation be adapted to my target market?", ["Yes. We adapt style and language to the market you want to reach."]],
+      ["How do I get a quote?", ["Send the content, the languages you need and your deadline.", "We reply with a free, no-obligation quote."]]
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "icon": "it",
+  "hero": {
+    "facts": ["Translators with IT experience", "Dedicated project managers", "European and Asian languages"]
+  },
+  "intro": {
+    "title": "Specialist IT translation for hardware, software and telecoms",
+    "paras": [
+      "IT translations must be accurate, and there is no room for doubt. English is everywhere in the sector, so only a specialist knows which terms to translate and which to leave in English.",
+      "For businesses that also need the software itself designed or localised, we work alongside development partners such as <a href=\"https://globaprom.com\">Globaprom</a>."
+    ],
+    "checks": [
+      "Translators with prior professional experience in information and communications technology",
+      "The same translators allocated to the same client, so terminology stays consistent",
+      "Version control that keeps content and style consistent across updates",
+      "Dutch, French, Spanish, German and Asian languages such as Korean"
+    ]
+  },
+  "tags": {
+    "title": "IT content we translate",
+    "items": ["Software strings", "HTML pages", "Help files", "Interfaces", "IT solutions", "Networks", "User guides", "Technical documentation", "Handbooks", "Instruction manuals", "Data sheets", "Product information", "Safety notes", "Training documents", "App translations", "Software documentation", "Online games"]
+  },
+  "services": {
+    "title": "IT translation services we carry out regularly",
+    "lead": "A few examples of the work our clients ask for most often.",
+    "items": [
+      { "icon": "code", "title": "User interfaces", "text": "UX and UI text, and requests from users to programmers." },
+      { "icon": "technical", "title": "Test scenarios", "text": "User acceptance (UAT) and compliance (ITT) test scenarios." },
+      { "icon": "it", "title": "Online games", "text": "Game text translated for each player market." },
+      { "icon": "documents", "title": "Software and hardware documents", "text": "User and installation manuals, intranet and extranet content, training kits and telecoms FAQs." },
+      { "icon": "word", "title": "Tenders and bids", "text": "Calls for bids and tender specifications for IT and telecommunications contracts." },
+      { "icon": "shield", "title": "Cloud and security", "text": "Applications and manuals for cloud computing and security software such as VPN, firewall and antivirus." }
+    ]
+  },
+  "why": {
+    "title": "How we handle IT projects",
+    "items": [
+      { "icon": "full", "title": "Dedicated project managers", "text": "Each document is often the basis for several future versions, so we plan for them." },
+      { "icon": "code", "title": "Software localisation", "text": "Not everything needs re-localising with each update, which keeps costs sensible for regular clients." },
+      { "icon": "shield", "title": "Consistent terminology", "text": "The same specialist translators work on your projects from one job to the next." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["Which IT documents can you translate?", ["We translate software strings, interfaces, user guides, technical documentation, data sheets and training documents.", "Tell us what you have and we confirm the best fit."]],
+      ["Do you translate terms or leave them in English?", ["Our IT specialists decide which terms to translate and which to keep in English.", "They follow the conventions of your sector and language."]],
+      ["Do you also localise software?", ["We translate software strings and related documentation.", "Where the software itself must be designed or localised, we work alongside development partners."]],
+      ["How do you keep terminology consistent?", ["We allocate the same translators to the same client.", "Version control keeps content and style consistent across updates."]]
+    ]
+  }
+}

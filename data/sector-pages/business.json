@@ -1,0 +1,47 @@
+{
+  "icon": "finance",
+  "hero": {
+    "facts": ["Native specialist translators", "All main European and Asian languages", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Focus on your core business and leave the translations to us",
+    "paras": [
+      "Translation is both a profession and a passion at BeTranslated. Our specialist freelance translators help you reach your commercial goals while you concentrate on running the business.",
+      "We take care of your projects in Dutch, English, French, German and many other languages."
+    ],
+    "checks": [
+      "Translators with subject-specific business experience",
+      "Dedicated project managers who keep to your deadline and budget",
+      "Support for all aspects of multilingual commercial communication"
+    ]
+  },
+  "services": {
+    "title": "Business documents we translate",
+    "lead": "From a tender to an annual report, we match each file to the right specialist.",
+    "items": [
+      { "icon": "documents", "title": "Tenders and proposals", "text": "Bids and proposals that win business in another language." },
+      { "icon": "word", "title": "Commercial documents", "text": "Contracts, protocols and business correspondence." },
+      { "icon": "finance", "title": "Reports and accounts", "text": "Annual and quarterly reports, balance sheets and statements of accounts." },
+      { "icon": "search", "title": "Due diligence", "text": "Due diligence reports and investor information." },
+      { "icon": "legal", "title": "Patent specifications", "text": "Precise wording for technical and legal filings." },
+      { "icon": "website", "title": "Websites and articles", "text": "Your <a href=\"/translation-services/website-translation/\">website content</a> and professional articles." }
+    ]
+  },
+  "why": {
+    "title": "Why translate your business content",
+    "items": [
+      { "icon": "full", "title": "Reach new markets", "text": "Offering your content in French, German and other languages brings you more customers." },
+      { "icon": "shield", "title": "Build trust", "text": "Partners and suppliers respond to material in their own language." },
+      { "icon": "finance", "title": "Lasting results", "text": "Professional translation of your commercial documents pays back in the short, medium and long term." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["Which languages do you cover for business translation?", ["We cover all main European and Asian languages.", "Tell us your combination and we confirm availability."]],
+      ["Do you only translate documents, or websites too?", ["Both. We translate commercial documents and the content of your website.", "Many clients start with the website and add documents later."]],
+      ["Who will translate my financial documents?", ["A specialist translator with experience in business and finance, working into their native language.", "A project manager oversees deadlines and budget."]],
+      ["How do I get a quote?", ["Send the document, the languages you need and your deadline.", "We reply with a free, no-obligation quote."]]
+    ]
+  }
+}

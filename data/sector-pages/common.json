@@ -1,0 +1,17 @@
+{
+  "steps": {
+    "title": "How we work",
+    "lead": "A simple path from request to delivery.",
+    "items": [
+      { "title": "Request a quote", "text": "Send your files, languages and deadline." },
+      { "title": "We reply", "text": "A member of the team responds within 8 working hours." },
+      { "title": "We match a specialist", "text": "Your project goes to the translator who knows your field." },
+      { "title": "Delivery", "text": "You receive the translation by the agreed deadline." },
+      { "title": "Follow-up", "text": "Once you are happy, we send the invoice." }
+    ]
+  },
+  "more": {
+    "title": "Explore our other areas of expertise",
+    "lead": "Specialist translators for every sector."
+  }
+}

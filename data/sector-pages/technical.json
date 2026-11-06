@@ -1,0 +1,64 @@
+{
+  "icon": "technical",
+  "hero": {
+    "facts": ["Translators with technical training", "Industrial, technical and construction documents", "Free, no-obligation quote"]
+  },
+  "intro": {
+    "title": "Technical translators for industry and construction",
+    "paras": [
+      "Our technical translators work on industrial, technical and construction documents, from environmental studies and user guides to civil engineering and planning publications.",
+      "We also handle contracts, quotes, tenders, project descriptions, technical documentation, handbooks and training documents."
+    ],
+    "checks": [
+      "Specialist linguists for each technical field",
+      "Up to date with industry standards and vocabulary in source and target languages",
+      "Projects in Dutch, French, Spanish, German and other languages"
+    ]
+  },
+  "services": {
+    "title": "Technical documents we translate",
+    "lead": "Your sector produces a large volume of documentation, and we match each file to a translator who knows the field.",
+    "items": [
+      { "icon": "documents", "title": "Manuals and standards", "text": "Manuals, instructions and security standards." },
+      { "icon": "technical", "title": "Machinery user guides", "text": "User guides for tools and machinery." },
+      { "icon": "word", "title": "Technical specifications", "text": "Specifications, plus installation, use and upkeep of technical installations." },
+      { "icon": "tag", "title": "Training materials", "text": "Technical training programmes, courses and brochures." },
+      { "icon": "search", "title": "Bids and reports", "text": "Calls for bids and submissions, technical reports and survey reports." },
+      { "icon": "shield", "title": "Environmental impact studies", "text": "Studies for pipelines, mines, refineries and public buildings." }
+    ]
+  },
+  "tags": {
+    "title": "Documents we handle for the construction industry",
+    "items": [
+      "Contracts",
+      "Quotes",
+      "Tenders",
+      "Project descriptions",
+      "Technical documentation",
+      "Handbooks",
+      "Training documents",
+      "Environmental studies",
+      "Civil engineering and planning",
+      "Client consultancy"
+    ]
+  },
+  "why": {
+    "title": "Why work with our technical translators",
+    "items": [
+      { "icon": "technical", "title": "Suppliers and manufacturers", "text": "Documents for building products, flooring, roofing, insulation, plumbing, woodwork, kitchens, bathrooms, HVAC, electrical and home automation equipment, and finishing materials such as paints and textiles." },
+      { "icon": "full", "title": "Property developers", "text": "Documents for and by developers, including more commercial material aimed at potential buyers or investors. See our guide to <a href=\"/blog/property-documentation-translation/\">property documentation translation</a>." },
+      { "icon": "shield", "title": "Environmental safety", "text": "The sector is closely involved with environmental protection, and our translators know the standards and vocabulary in both languages." },
+      { "icon": "it", "title": "Continuing training", "text": "Our translators have technical and professional training and keep up with technological advances. For software and hardware content, see <a href=\"/industry/it-telecom/\">IT and telecom translation</a>." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["Which technical documents do you translate?", ["Manuals, user guides, specifications, training material, bids, reports and environmental studies.", "We also handle contracts, quotes and tenders."]],
+      ["Do you translate documents for property developers?", ["Yes. We translate documents for and by developers, including material aimed at buyers or investors.", "Our article on <a href=\"/blog/property-documentation-translation/\">property documentation translation</a> explains more."]],
+      ["Who translates my technical files?", ["A translator with technical and professional training in the relevant field, working into their native language."]],
+      ["Do you cover commercial or tourism content too?", ["Yes. See our pages on <a href=\"/industry/business/\">business and finance</a> and <a href=\"/industry/tourism/\">travel and tourism</a> translation."]],
+      ["How do I get a quote?", ["Send the document, the languages you need and your deadline through our <a href=\"/translation-agency/quote/\">quote page</a>.", "We reply with a free, no-obligation quote."]]
+    ]
+  }
+}

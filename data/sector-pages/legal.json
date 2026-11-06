@@ -1,0 +1,63 @@
+{
+  "icon": "legal",
+  "hero": {
+    "facts": ["Legal translators and solicitors", "Terminology database and translation memories", "Confidentiality and NDAs"]
+  },
+  "intro": {
+    "title": "Accurate legal translation, delivered on time",
+    "paras": [
+      "Legal translations are handled by legal translation experts and solicitors. We always work towards a <a href=\"/translation-agency/turnaround/\">precise deadline</a> and deliver your documents on time.",
+      "An extensive terminology database, with glossaries and translation memories, is available to all our translators. Your legal documents are translated more quickly and consistently."
+    ],
+    "checks": [
+      "Experienced translators who are experts in their field",
+      "Your confidentiality is guaranteed, with an NDA on request",
+      "Efficient solutions for official and corporate legal translation",
+      "A specialised international network across many language combinations"
+    ]
+  },
+  "services": {
+    "title": "Legal documents we translate",
+    "lead": "From contracts to certificates, each file goes to a translator with legal experience.",
+    "items": [
+      { "icon": "legal", "title": "Contracts and agreements", "text": "Employment contracts, sales agreements, shareholder agreements and international agreements." },
+      { "icon": "documents", "title": "Merger and acquisition files", "text": "Letters of intent, purchase agreements and due diligence reports." },
+      { "icon": "shield", "title": "Litigation documents", "text": "Complaints, responses, depositions, motions, notices and summons." },
+      { "icon": "tag", "title": "Patents and trademarks", "text": "Applications, including the description of the invention or mark." },
+      { "icon": "word", "title": "Wills and trusts", "text": "Wills, trusts, powers of attorney and advance directives." },
+      { "icon": "documents", "title": "Business documents", "text": "Business plans, annual reports, meeting minutes and internal <a href=\"/document-translation-services/\">business documents</a>." }
+    ]
+  },
+  "tags": {
+    "title": "More legal material we handle",
+    "items": ["Immigration documents", "Legal disclaimers", "Data protection policies", "Compliance documents", "Insurance policies", "Legal certificates", "Employee handbooks", "Terms and conditions", "<a href=\"/blog/property-documentation-translation/\">Property</a> documents"]
+  },
+  "children": {
+    "title": "Legal translation specialisms",
+    "lead": "Explore the pages for our most requested legal services.",
+    "items": [
+      { "icon": "legal", "title": "Contract translation", "text": "Accurate translation of contracts for individuals and businesses in Great Britain.", "href": "/industry/legal/contract-translation-services/" },
+      { "icon": "finance", "title": "Merger and acquisition", "text": "Translation of M&A and due diligence documents for deals that span countries.", "href": "/industry/legal/merger-and-acquisition-translation/" },
+      { "icon": "tag", "title": "Patents and trademarks", "text": "Translation of patent and trademark filings to protect intellectual property across borders.", "href": "/industry/legal/patents-and-trademarks-translation-services/" },
+      { "icon": "word", "title": "Will certified translation", "text": "Certified translation of wills, probate and trust documents for courts and authorities.", "href": "/industry/legal/will-certified-translation-services/" }
+    ]
+  },
+  "why": {
+    "title": "Why specialist legal translation",
+    "items": [
+      { "icon": "search", "title": "Legal systems differ", "text": "Legal language varies from country to country and changes over time." },
+      { "icon": "full", "title": "Concepts adapted", "text": "Translators adapt concepts between systems such as Roman and Anglo-Saxon law." },
+      { "icon": "shield", "title": "Rights preserved", "text": "We convey the meaning and intent of the original across legal systems." },
+      { "icon": "database", "title": "Consistent terminology", "text": "Glossaries and translation memories keep wording uniform." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      ["Who translates my legal documents?", ["Legal translation experts and solicitors, working into their native language.", "They are professionals in the legal field."]],
+      ["Is my document kept confidential?", ["Yes. We handle every document with absolute discretion.", "For sensitive material we are happy to sign a non-disclosure agreement."]],
+      ["Which languages do you cover?", ["Among others English, Chinese, Spanish, Italian, German, Dutch, Danish and Polish.", "Tell us your combination and we confirm availability."]],
+      ["How do you keep terminology consistent?", ["All translators use our terminology database, with glossaries and translation memories.", "This speeds up delivery and keeps wording consistent."]]
+    ]
+  }
+}
