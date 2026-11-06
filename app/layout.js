@@ -21,6 +21,7 @@ import "./about-page.css";
 import "./industry-page.css";
 import "./website-translation-page.css";
 import "./document-translation-page.css";
+import "./remote-interpreting-page.css";
 import "./services-showcase.css";
 import "./sector-cards.css";
 // Dark theme (prefers-color-scheme): last, so its overrides win over every file above.
