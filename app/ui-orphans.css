@@ -208,3 +208,40 @@ main .section > .container--narrow, main .sec > .container--narrow { max-width: 
 .bt a.quote-card__call:hover { background: #fff; border-color: var(--bt-accent); color: var(--bt-navy); }
 .bt .quote-card__proof { color: var(--bt-text-soft); }
 .bt .quote-card__proof span { color: #E3A008; }
+
+/* Desktop header finishes from betranslated.es (they live in ui-interp.css there, a file the UK layout does not load):
+   link padding, growing underline, animated dropdown with an arrow and a hover arrow on each entry. */
+/* ---------- Header menu: growing underline, smoother dropdown ---------- */
+.bt a.bt-header__link { position: relative; padding: 6px 0; border-bottom: 0; background: linear-gradient(var(--bt-orange), var(--bt-orange)) center bottom / 0 2px no-repeat; transition: color .2s ease, background-size .3s cubic-bezier(.2,.7,.2,1); }
+.bt a.bt-header__link:hover, .bt a.bt-header__link:focus-visible, .bt-header__item:hover > a.bt-header__link { color: var(--bt-orange-600); background-size: 100% 2px; border-bottom: 0; }
+.bt a.bt-header__link:focus-visible { outline: 2px solid var(--bt-orange); outline-offset: 4px; border-radius: 4px; }
+.bt-header__link--parent::after { transition: transform .25s ease; }
+
+.bt-header__sub { transform: translateY(8px) scale(.97); transform-origin: top left; transition: opacity .2s ease, transform .25s cubic-bezier(.2,.8,.2,1), visibility .2s; box-shadow: 0 18px 40px rgba(47,49,67,.14), 0 2px 6px rgba(47,49,67,.06); }
+.bt-header__item:hover .bt-header__sub, .bt-header__item:focus-within .bt-header__sub { transform: none; }
+.bt-header__sub::after { content: ""; position: absolute; top: -7px; left: 30px; width: 12px; height: 12px; background: #fff; border-left: 1px solid var(--bt-line); border-top: 1px solid var(--bt-line); transform: rotate(45deg); border-radius: 2px 0 0 0; }
+.bt .bt-header__sublink { position: relative; display: flex; align-items: center; gap: 10px; padding: 11px 14px; opacity: 0; transform: translateY(-4px); transition: background .18s ease, color .18s ease, opacity .25s ease, transform .3s ease, padding .2s ease; }
+.bt-header__item:hover .bt-header__sublink, .bt-header__item:focus-within .bt-header__sublink { opacity: 1; transform: none; }
+.bt-header__item:hover .bt-header__sublink:nth-child(2), .bt-header__item:focus-within .bt-header__sublink:nth-child(2) { transition-delay: 0s, 0s, .06s, .06s, 0s; }
+.bt .bt-header__sublink::after { content: "→"; margin-left: auto; color: var(--bt-orange); opacity: 0; transform: translateX(-6px); transition: opacity .18s ease, transform .2s ease; }
+.bt .bt-header__sublink:hover { padding-left: 18px; }
+.bt .bt-header__sublink:hover::after { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .bt a.bt-header__link, .bt-header__sub, .bt .bt-header__sublink { transition: none; }
+  .bt .bt-header__sublink { opacity: 1; transform: none; }
+}
+
+/* Phone header from betranslated.es: 16px gutter, smaller icon buttons and a 40px menu button so the burger is not pushed
+   past the edge at 360px. */
+/* Phones: logo + search + theme + language + menu must fit with a 16 px gutter
+   (the theme toggle pushed the menu button past the edge at 360 px). */
+@media (max-width: 600px) {
+  .bt .bt-header__inner { padding: 0 16px; gap: 8px; }
+}
+@media (max-width: 420px) {
+  .bt .bt-header__right { gap: 2px; }
+  .bt .bt-header__right .bt-iconbtn, .bt .bt-theme { width: 36px; height: 36px; min-width: 36px; }
+  .bt .bt-lang__btn { min-width: 36px; min-height: 40px; padding: 0 4px; }
+  .bt .bt-burger { width: 40px; height: 40px; }
+}
+@media (max-width: 350px) { .bt .bt-header__logo img { height: 24px !important; } }
