@@ -8,8 +8,7 @@ import { listChildren, getLeafPages, pathFromUrl, getAllPosts, relatedPosts, pos
 import { UI } from "@/lib/i18n";
 import { PHONE, PHONE_NATIONAL, PHONE_HREF, EMAIL, RATING } from "@/lib/business";
 import Breadcrumbs from "./Breadcrumbs";
-import TranslatorsGrid from "./TranslatorsGrid";
-import TRANSLATORS from "@/data/translators.json";
+import TranslatorsPage from "./TranslatorsPage";
 import CtaBand from "./CtaBand";
 import ClientsBand from "./ClientsBand";
 import ShareBar from "./ShareBar";
@@ -309,6 +308,7 @@ export default function ScrapedPage({ page, slug = [] }) {
   const { title: scrapedH1, body: afterHero } = splitHero(enhanceBody(page.bodyHtml, { timelineLists: !isHub }));
   const { tagline, ctas, body: afterTagline } = isHub ? splitTagline(afterHero) : { tagline: "", ctas: "", body: afterHero };
   const title = sentenceCase((scrapedH1 || page.title || "").replace(/\s*[|·–]\s*BeTranslated.*$/i, ""));
+  if (key === "translators") return <TranslatorsPage page={page} title={title} />;
   let pageBody = dropLeadingCtas(afterTagline);
   // Language pages with merged sector pages: each leaf becomes a section of this page.
   const leaves = getLeafPages(key).map(({ id, data }) => {
@@ -327,8 +327,6 @@ export default function ScrapedPage({ page, slug = [] }) {
     });
   }
   let sections = ctaCards(fixHeadingSkips(toSections(pageBody, { more: UI.en.readMore, noFold: NO_FOLD_SLUGS.has(key), cardIcons: NO_FOLD_SLUGS.has(key) })));
-  // /translators/: the name list becomes the filterable profile grid (components/TranslatorsGrid.jsx).
-  if (key === "translators") sections = sections.replace(/<div class="mini-grid"[^>]*>.*?<\/div><\/div>(<p>CONTACT US<\/p>)?/s, "@@TRANSLATORS@@");
 
   // /translation-services/: the "every sector" accordion grid becomes the icon cards (components/SectorCards.jsx).
   if (key === "translation-services") sections = sections.replace(/<section(?:(?!<section).)*?every sector.*?<[/]section>/s, "@@SECTORS@@");
@@ -407,13 +405,7 @@ export default function ScrapedPage({ page, slug = [] }) {
         </section>
       ) : null}
 
-      {key === "translators" && sections.includes("@@TRANSLATORS@@") ? (
-        <>
-          <Sections html={sections.split("@@TRANSLATORS@@")[0] + "</div></section>"} />
-          <section className="sec"><div className="sec__in sec__in--wide"><TranslatorsGrid people={TRANSLATORS} /></div></section>
-          <Sections html={sections.split("@@TRANSLATORS@@")[1].replace(/^<\/div><\/section>/, "")} />
-        </>
-      ) : key === "translation-services" && sections.includes("@@SECTORS@@") ? (
+      {key === "translation-services" && sections.includes("@@SECTORS@@") ? (
         <>
           <Sections html={sections.split("@@SECTORS@@")[0]} />
           <SectorCards />

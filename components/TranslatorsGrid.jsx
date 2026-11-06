@@ -3,43 +3,64 @@
 import { useMemo, useState } from "react";
 import { imgUrl } from "@/lib/site";
 
-const LANGS = ["French", "English", "Spanish", "German", "Dutch", "Italian"];
+// Target languages offered as filters, in display order: [flag, label].
+const INTO = [["gb", "English"], ["fr", "French"], ["es", "Spanish"], ["de", "German"], ["nl", "Dutch"]];
+const FLAG_NAME = { gb: "English", fr: "French", es: "Spanish", de: "German", nl: "Dutch", it: "Italian" };
 
-// Languages a translator works with, read from the role line (bio as a fallback).
-function languagesOf(p) {
-  const from = (t) => LANGS.filter((l) => new RegExp(String.raw`\b${l}\b`, "i").test(t));
-  const fromRole = from(p.role);
-  return fromRole.length ? fromRole : from(p.bio);
-}
+const Flag = ({ cc, size = 18 }) => (
+  <img className="trx__flag" src={`/flags/${cc}.svg`} alt="" width={size} height={Math.round(size * 0.75)} loading="lazy" decoding="async" />
+);
 
-// Profile cards for the freelance translators, filterable by language.
+// Profile cards for the translators, filterable by the language they translate into.
 export default function TranslatorsGrid({ people }) {
-  const [lang, setLang] = useState("All");
-  const items = useMemo(() => people.map((p) => ({ ...p, langs: languagesOf(p) })), [people]);
-  const chips = useMemo(
-    () => ["All", ...LANGS.filter((l) => items.some((p) => p.langs.includes(l)))],
-    [items],
-  );
-  const shown = lang === "All" ? items : items.filter((p) => p.langs.includes(lang));
+  const [lang, setLang] = useState("all");
+  const [open, setOpen] = useState(null);
+  const counts = useMemo(() => Object.fromEntries(INTO.map(([cc]) => [cc, people.filter((p) => p.into?.includes(cc)).length])), [people]);
+  const shown = lang === "all" ? people : people.filter((p) => p.into?.includes(lang));
   return (
     <div className="trx">
-      <div className="trx__filters" role="group" aria-label="Filter translators by language">
-        {chips.map((c) => (
-          <button key={c} type="button" className="trx__chip" aria-pressed={lang === c} onClick={() => setLang(c)}>
-            {c}
-            <span>{c === "All" ? items.length : items.filter((p) => p.langs.includes(c)).length}</span>
+      <div className="trx__filters" role="group" aria-label="Filter translators by the language they translate into">
+        <button type="button" className="trx__chip" aria-pressed={lang === "all"} onClick={() => setLang("all")}>
+          All translators <span>{people.length}</span>
+        </button>
+        {INTO.filter(([cc]) => counts[cc]).map(([cc, label]) => (
+          <button key={cc} type="button" className="trx__chip" aria-pressed={lang === cc} onClick={() => setLang(cc)}>
+            <Flag cc={cc} />
+            Into {label} <span>{counts[cc]}</span>
           </button>
         ))}
       </div>
-      <ul className="trx__grid">
-        {shown.map((p, i) => (
-          <li key={`${p.name}-${i}`} className="trx__card">
-            <img src={imgUrl(p.photo)} alt={p.name} width="88" height="88" loading="lazy" />
-            <h3>{p.name}</h3>
-            <p className="trx__role">{p.role}</p>
-            {p.bioHtml ? <p className="trx__bio" dangerouslySetInnerHTML={{ __html: p.bioHtml }} /> : null}
-          </li>
-        ))}
+      <ul className="trx__grid" aria-live="polite">
+        {shown.map((p, i) => {
+          const key = `${p.name}-${i}`;
+          const isOpen = open === key;
+          return (
+            <li key={key} className="trx__card">
+              <div className="trx__head">
+                <img src={imgUrl(p.photo)} alt={p.name} width="72" height="72" loading="lazy" />
+                <div>
+                  <h3>{p.name}</h3>
+                  {p.from?.length || p.into?.length ? (
+                    <p className="trx__route" aria-label={`Translates ${p.from.map((c) => FLAG_NAME[c]).join(" and ")} into ${p.into.map((c) => FLAG_NAME[c]).join(" and ")}`}>
+                      {p.from.map((c) => <Flag key={c} cc={c} size={20} />)}
+                      {p.from.length && p.into.length ? <span aria-hidden="true">→</span> : null}
+                      {p.into.map((c) => <Flag key={c} cc={c} size={20} />)}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+              <p className="trx__role">{p.role}</p>
+              {p.bioHtml ? (
+                <>
+                  <p className={`trx__bio${isOpen ? " is-open" : ""}`} dangerouslySetInnerHTML={{ __html: p.bioHtml }} />
+                  <button type="button" className="trx__more" aria-expanded={isOpen} onClick={() => setOpen(isOpen ? null : key)}>
+                    {isOpen ? "Show less" : "Read profile"}
+                  </button>
+                </>
+              ) : null}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
