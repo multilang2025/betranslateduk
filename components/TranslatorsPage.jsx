@@ -30,7 +30,17 @@ export default function TranslatorsPage({ page }) {
     <main className="tr-page" data-page="translators" data-slug="translators">
       <PageSchema schema={page.schema} />
       <PageFx />
-      <StdHero art={<div className="tr-hero-photo"><img src="/team/about-team.webp" alt="Three members of the BeTranslated team smiling around a meeting table in the office" width="1200" height="675" fetchPriority="high" /></div>}>
+      <StdHero art={
+        <div className="tr-hero-art">
+          <span className="tr-hero-art__blob tr-hero-art__blob--teal" aria-hidden="true" />
+          <span className="tr-hero-art__blob tr-hero-art__blob--orange" aria-hidden="true" />
+          <span className="tr-hero-art__blob tr-hero-art__blob--navy" aria-hidden="true" />
+          <span className="tr-hero-art__ring" aria-hidden="true" />
+          <span className="tr-hero-art__dot tr-hero-art__dot--a" aria-hidden="true" />
+          <span className="tr-hero-art__dot tr-hero-art__dot--b" aria-hidden="true" />
+          <div className="tr-hero-photo"><img src="/team/about-team.webp" alt="Three members of the BeTranslated team smiling around a meeting table in the office" width="1200" height="675" fetchPriority="high" /></div>
+        </div>
+      }>
         <Breadcrumbs pathname="/translators/" current={title} />
         <span className="ip-kicker">{KICKER}</span>
         <h1>{title}</h1>
