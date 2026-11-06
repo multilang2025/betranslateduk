@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Michael Bastin",
+    "role": "Founder, CEO",
+    "photo": "/team/michael.webp"
+  },
+  {
+    "name": "Annalisa",
+    "role": "Admin and project manager",
+    "photo": "/team/annalisa.webp"
+  },
+  {
+    "name": "Elena",
+    "role": "Project manager",
+    "photo": "/team/elena.webp"
+  },
+  {
+    "name": "Caridad",
+    "role": "HR and certified translation",
+    "photo": "/team/caridad.webp"
+  },
+  {
+    "name": "Suzy Torosyan",
+    "role": "Project director",
+    "photo": "/team/suzy-torosyan.webp"
+  },
+  {
+    "name": "Maral",
+    "role": "Project director",
+    "photo": "/team/maral.webp"
+  }
+]
